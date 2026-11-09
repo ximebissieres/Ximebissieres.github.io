@@ -41,32 +41,38 @@
     <div class="hero-orb" aria-hidden="true"></div>
     <div class="wrap">
       <div class="hero-grid">
-        <p class="hero-kicker eyebrow"><span class="dot" aria-hidden="true"></span>Product Designer · Contenido y sistemas</p>
-        <h1 class="hero-name" id="hero-name">
-          <span class="line"><span>Ximena</span></span>
-          <span class="line indent"><span><em>Bissieres</em></span></span>
-        </h1>
-        <div class="hero-aside">
-          <figure class="portrait">
-            <!-- Para usar tu foto: sube assets/foto.jpg y reemplaza el span por
-                 <img src="assets/foto.jpg" alt="Retrato de Ximena Bissieres" width="672" height="840"> -->
-            <div class="portrait-frame"><span class="portrait-ph" aria-hidden="true">XB</span></div>
-          </figure>
+        <div class="hero-copy">
+          <p class="hero-kicker eyebrow"><span class="dot" aria-hidden="true"></span><span>Product Designer · Contenido y sistemas</span></p>
+          <h1 class="hero-name" id="hero-name">
+            <span class="line"><span>Ximena</span></span>
+            <span class="line"><span><em>Bissieres</em></span></span>
+          </h1>
           <p class="hero-lede">Diseño productos digitales donde <em>el lenguaje</em> ordena la experiencia: desde el research hasta la interfaz, con foco en claridad, accesibilidad y negocio.</p>
           <div class="cta">
             <a class="btn primary" href="#casos">Ver casos <span class="arr" aria-hidden="true">→</span></a>
             <a class="btn soft" href="#contacto">Contacto</a>
           </div>
         </div>
+        <figure class="hero-photo">
+          <!-- Tu foto: súbela como assets/foto.jpg y aparece aquí automáticamente.
+               Si el encuadre necesita ajuste, cambia object-position en .portrait-frame img. -->
+          <div class="portrait-frame">
+            <span class="portrait-ph" aria-hidden="true">XB</span>
+            <img src="assets/foto.jpg" alt="Retrato de Ximena Bissieres" width="960" height="1120" decoding="async" fetchpriority="high" onerror="this.remove()">
+          </div>
+        </figure>
       </div>
-      <dl class="quick" data-reveal>
-        <div><dt>Especialidad</dt><dd>Product Design con foco en contenido y sistemas</dd></div>
-        <div><dt>Industrias</dt><dd>Retail, salud y aerolíneas</dd></div>
-        <div><dt>He trabajado con</dt><dd>LATAM Airlines, Cencosud (Santa Isabel y Paris) y Monchis</dd></div>
-        <div><dt>Experiencia</dt><dd><mark class="tbd">[X]</mark> años en equipos de producto</dd></div>
-      </dl>
     </div>
   </section>
+
+  <div class="wrap">
+    <dl class="quick" data-reveal>
+      <div><dt>Especialidad</dt><dd>Product Design con foco en contenido y sistemas</dd></div>
+      <div><dt>Industrias</dt><dd>Retail, salud y aerolíneas</dd></div>
+      <div><dt>He trabajado con</dt><dd>LATAM Airlines, Cencosud (Santa Isabel y Paris) y Monchis</dd></div>
+      <div><dt>Experiencia</dt><dd><mark class="tbd">[X]</mark> años en equipos de producto</dd></div>
+    </dl>
+  </div>
 
   <!-- ---------------- Casos ---------------- -->
   <section class="section" id="casos" aria-labelledby="casos-title">
