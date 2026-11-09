@@ -98,8 +98,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .nav a:hover { color: var(--fg); }
 
 /* Hero */
-.hero { padding-block: clamp(56px, 10vw, 120px) clamp(48px, 7vw, 88px); display: grid; gap: 48px; }
-@media (min-width: 960px) { .hero { grid-template-columns: 1.15fr 1fr; align-items: end; } }
+.hero { padding-block: clamp(48px, 8vw, 104px) clamp(40px, 5vw, 64px); display: grid; gap: 48px; }
+@media (min-width: 960px) { .hero { grid-template-columns: 1.4fr 1fr; align-items: center; } }
 .hero h1 { font-size: clamp(2.8rem, 8vw, 5.6rem); font-weight: 700; letter-spacing: -0.03em; }
 .hero .role { margin-top: 14px; font-family: var(--display); font-size: clamp(1.25rem, 2.6vw, 1.6rem); font-weight: 400; color: var(--muted); }
 .hero .lede { margin-top: 28px; max-width: 34rem; font-size: 1.2rem; line-height: 1.55; }
@@ -115,14 +115,27 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 .btn.primary:hover { background: var(--fg); border-color: var(--fg); }
 
-/* Specimen: microcopy anotado */
-.specimen { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; }
-.specimen .q { font-family: var(--display); font-size: clamp(1.5rem, 3.2vw, 2.1rem); font-weight: 600; line-height: 1.2; }
-.specimen ol { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
-.specimen li { display: grid; grid-template-columns: 2.4rem 1fr; align-items: baseline; font-size: 1.12rem; }
-.specimen li span { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
-.specimen li.opt { color: var(--muted); }
-.specimen .note { margin-top: 20px; font-size: 0.9rem; color: var(--muted); max-width: 30rem; }
+/* Retrato y datos rápidos */
+.portrait { margin: 0; justify-self: start; width: min(100%, 22rem); }
+@media (min-width: 960px) { .portrait { justify-self: end; } }
+.portrait img, .portrait-ph {
+  display: block; width: 100%; aspect-ratio: 4 / 5; max-width: 100%;
+  border-radius: 20px; object-fit: cover;
+}
+.portrait-ph {
+  display: grid; place-items: center;
+  background: var(--accent-soft); color: var(--accent);
+  font-family: var(--display); font-weight: 700; font-size: clamp(4rem, 12vw, 7rem); letter-spacing: -0.04em;
+}
+@media (max-width: 959px) { .portrait { width: 7.5rem; order: -1; } .portrait-ph { font-size: 2.6rem; border-radius: 16px; } .hero { gap: 28px; } }
+.quick {
+  margin: 0 0 clamp(48px, 7vw, 80px); display: grid; gap: 0 32px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  border-top: 1px solid var(--fg);
+}
+.quick div { padding-block: 16px; border-bottom: 1px solid var(--line); min-width: 0; }
+.quick dt { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.quick dd { margin: 6px 0 0; font-size: 1rem; }
 
 /* Secciones */
 section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line); }
@@ -251,18 +264,17 @@ td:first-child { font-weight: 600; }
           <a class="btn" href="#contacto">Contacto</a>
         </div>
       </div>
-      <figure class="specimen" aria-label="Ejemplo de microcopy del checkout de Monchis">
-        <p class="label">Checkout · Monchis</p>
-        <p class="q">¿Todo listo para hacer tu pedido?</p>
-        <ol>
-          <li><span>01</span>Confirma tu dirección</li>
-          <li><span>02</span>Elige tu método de pago</li>
-          <li><span>03</span>Finaliza</li>
-          <li class="opt"><span>opc.</span>Si quieres, también puedes revisar el detalle de tu pedido</li>
-        </ol>
-        <figcaption class="note">El orden de esta frase definió el orden de la pantalla: la entrega pasó al primer bloque del checkout.</figcaption>
+      <figure class="portrait">
+        <!-- Para usar tu foto: sube foto.jpg al repositorio y reemplaza el div por <img src="foto.jpg" alt="Ximena Bissieres"> -->
+        <div class="portrait-ph" aria-label="Ximena Bissieres">XB</div>
       </figure>
     </section>
+    <dl class="quick">
+      <div><dt>Especialidad</dt><dd>Product Design con foco en contenido y sistemas</dd></div>
+      <div><dt>Industrias</dt><dd>Retail, salud y aerolíneas</dd></div>
+      <div><dt>He trabajado con</dt><dd>LATAM Airlines, Cencosud (Santa Isabel y Paris) y Monchis</dd></div>
+      <div><dt>Experiencia</dt><dd><mark class="tbd">[X]</mark> años en equipos de producto</dd></div>
+    </dl>
   </div>
 
   <section class="block" id="casos">
