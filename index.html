@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ximena Bissieres</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ximena Bissieres, Product Designer especializada en contenido y sistemas. Casos de Monchis, LATAM Airlines, Santa Isabel y Paris Marketplace.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna editorial alineada a la izquierda; el lenguaje (microcopy anotado) es el elemento gráfico principal. */
+:root {
+  --bg: #F3F5F8;
+  --surface: #FFFFFF;
+  --fg: #141B2D;
+  --muted: #586174;
+  --line: #D8DDE6;
+  --accent: #3634D9;
+  --accent-soft: #E4E3FF;
+  --tbd: #9A5B00;
+  --tbd-bg: #FFF1D6;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Figtree", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --wrap: 72rem;
+  --prose: 40rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1320; --surface: #171C2C; --fg: #E8EBF2; --muted: #9AA3B5; --line: #283047;
+    --accent: #9C9AFF; --accent-soft: #25264D; --tbd: #FFC266; --tbd-bg: #3A2A0E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1320; --surface: #171C2C; --fg: #E8EBF2; --muted: #9AA3B5; --line: #283047;
+  --accent: #9C9AFF; --accent-soft: #25264D; --tbd: #FFC266; --tbd-bg: #3A2A0E;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; }
+a { color: var(--accent); text-underline-offset: 0.2em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 700px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+.label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.tbd {
+  background: var(--tbd-bg);
+  color: var(--tbd);
+  border-radius: 3px;
+  padding: 0 0.25em;
+  font-size: 0.92em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--surface); padding: 8px 12px; z-index: 30; }
+
+/* Header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--fg); text-decoration: none; }
+.nav { display: flex; gap: clamp(12px, 3vw, 28px); font-size: 0.95rem; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--fg); }
+
+/* Hero */
+.hero { padding-block: clamp(56px, 10vw, 120px) clamp(48px, 7vw, 88px); display: grid; gap: 48px; }
+@media (min-width: 960px) { .hero { grid-template-columns: 1.15fr 1fr; align-items: end; } }
+.hero h1 { font-size: clamp(2.8rem, 8vw, 5.6rem); font-weight: 700; letter-spacing: -0.03em; }
+.hero .role { margin-top: 14px; font-family: var(--display); font-size: clamp(1.25rem, 2.6vw, 1.6rem); font-weight: 400; color: var(--muted); }
+.hero .lede { margin-top: 28px; max-width: 34rem; font-size: 1.2rem; line-height: 1.55; }
+.hero .cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--body); font-weight: 600; font-size: 0.98rem;
+  padding: 12px 20px; border-radius: 999px; text-decoration: none;
+  border: 1.5px solid var(--fg); color: var(--fg); background: transparent;
+  transition: background .15s, color .15s;
+}
+.btn:hover { background: var(--fg); color: var(--bg); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn.primary:hover { background: var(--fg); border-color: var(--fg); }
+
+/* Specimen: microcopy anotado */
+.specimen { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; }
+.specimen .q { font-family: var(--display); font-size: clamp(1.5rem, 3.2vw, 2.1rem); font-weight: 600; line-height: 1.2; }
+.specimen ol { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+.specimen li { display: grid; grid-template-columns: 2.4rem 1fr; align-items: baseline; font-size: 1.12rem; }
+.specimen li span { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
+.specimen li.opt { color: var(--muted); }
+.specimen .note { margin-top: 20px; font-size: 0.9rem; color: var(--muted); max-width: 30rem; }
+
+/* Secciones */
+section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line); }
+.block-head { display: grid; gap: 10px; margin-bottom: 40px; }
+.block-head h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+
+/* Lista de casos */
+.cases { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--fg); }
+.cases li { border-bottom: 1px solid var(--line); }
+.case-link {
+  display: grid; gap: 10px 32px; padding-block: 28px; color: var(--fg); text-decoration: none;
+}
+@media (min-width: 820px) { .case-link { grid-template-columns: 14rem 1fr 2rem; align-items: start; } }
+.case-link .co { font-family: var(--display); font-weight: 600; font-size: 1.15rem; }
+.case-link .co small { display: block; font-family: var(--mono); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.case-link .t { font-family: var(--display); font-size: clamp(1.35rem, 2.6vw, 1.85rem); line-height: 1.2; text-wrap: balance; }
+.case-link .shows { margin-top: 10px; color: var(--muted); font-size: 0.98rem; }
+.case-link .arrow { font-family: var(--display); font-size: 1.6rem; color: var(--muted); transition: transform .2s, color .2s; display: none; }
+@media (min-width: 820px) { .case-link .arrow { display: block; } }
+.case-link:hover .t { color: var(--accent); }
+.case-link:hover .arrow { color: var(--accent); transform: translateX(6px); }
+
+/* Sobre mí */
+.about { display: grid; gap: 48px; }
+@media (min-width: 900px) { .about { grid-template-columns: 1fr 1fr; } }
+.prose { max-width: var(--prose); display: grid; gap: 1.1em; }
+.prose.big p:first-child { font-family: var(--display); font-size: 1.45rem; line-height: 1.35; }
+.skills { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.skills li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 16px; padding-block: 18px; border-top: 1px solid var(--line); }
+.skills li:last-child { border-bottom: 1px solid var(--line); }
+.skills b { font-family: var(--mono); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); padding-top: 3px; }
+
+/* Contacto */
+.contact h2 { font-size: clamp(2.2rem, 6vw, 4rem); max-width: 18ch; }
+.contact-list { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+.site-footer { padding-block: 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+.site-footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+/* Caso */
+.case { padding-block: clamp(40px, 7vw, 80px) 0; }
+.back { font-size: 0.95rem; color: var(--muted); text-decoration: none; }
+.back:hover { color: var(--accent); }
+.case-hero { padding-block: 28px 48px; display: grid; gap: 20px; max-width: 54rem; }
+.case-hero h1 { font-size: clamp(2.1rem, 5.4vw, 3.8rem); letter-spacing: -0.02em; }
+.case-hero .summary { font-size: 1.2rem; line-height: 1.55; max-width: var(--prose); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 0 32px; margin: 0 0 24px; border-top: 1px solid var(--fg); }
+.facts div { padding-block: 16px; border-bottom: 1px solid var(--line); min-width: 0; }
+.facts dt { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 4px 0 0; font-size: 0.98rem; }
+.facts .wide { grid-column: 1 / -1; }
+
+.chapter { padding-block: 48px; border-top: 1px solid var(--line); display: grid; gap: 24px; }
+@media (min-width: 960px) { .chapter { grid-template-columns: 16rem minmax(0, 1fr); gap: 48px; } }
+.chapter > header { display: grid; gap: 8px; align-content: start; }
+.chapter > header h2 { font-size: 1.55rem; }
+.chapter .body { display: grid; gap: 1.1em; max-width: 46rem; min-width: 0; }
+.chapter ul, .chapter ol { margin: 0; padding-left: 1.2em; display: grid; gap: 0.45em; }
+.chapter h3 { font-size: 1.2rem; margin-top: 0.6em; }
+.question { font-family: var(--display); font-size: 1.35rem; line-height: 1.35; border-left: 2px solid var(--accent); padding-left: 18px; }
+.quote-ui {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 20px 22px; font-family: var(--display); font-size: 1.2rem; line-height: 1.4;
+}
+.quote-ui .label { display: block; margin-bottom: 8px; font-family: var(--mono); }
+
+.decision { display: grid; gap: 0.8em; padding: 24px 0; border-top: 1px dashed var(--line); }
+.decision:first-of-type { border-top: 0; padding-top: 0; }
+.decision .who { justify-self: start; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.decision .who.team { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+.decision p b { font-weight: 600; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 34rem; }
+th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--mono); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; }
+
+.ph { margin: 0; display: grid; gap: 8px; }
+.ph-box {
+  aspect-ratio: 16 / 8; max-width: 100%;
+  border: 1.5px dashed var(--line); border-radius: 12px;
+  display: grid; place-items: center; text-align: center; padding: 16px;
+  background: repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in srgb, var(--line) 35%, transparent) 14px 15px);
+  color: var(--muted); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.ph figcaption { font-size: 0.9rem; color: var(--muted); }
+
+.results { list-style: none; padding: 0 !important; }
+.results li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.results li:first-child { border-top: 1px solid var(--line); }
+.learn { font-family: var(--display); font-size: 1.45rem; line-height: 1.35; }
+
+.case-foot { padding-block: 56px 72px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center; }
+.next { text-decoration: none; color: var(--fg); display: grid; gap: 4px; }
+.next .t { font-family: var(--display); font-size: clamp(1.3rem, 3vw, 1.9rem); }
+.next:hover .t { color: var(--accent); }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Ximena Bissieres</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#casos">Casos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============ HOME ============ -->
+<div data-view="home">
+  <div class="wrap">
+    <section class="hero" id="inicio">
+      <div>
+        <h1>Ximena Bissieres</h1>
+        <p class="role">Product Designer · Contenido y sistemas</p>
+        <p class="lede">Diseño productos digitales donde el lenguaje ordena la experiencia: desde el research hasta la interfaz, con foco en claridad, accesibilidad y negocio.</p>
+        <div class="cta">
+          <a class="btn primary" href="#casos">Ver casos</a>
+          <a class="btn" href="#contacto">Contacto</a>
+        </div>
+      </div>
+      <figure class="specimen" aria-label="Ejemplo de microcopy del checkout de Monchis">
+        <p class="label">Checkout · Monchis</p>
+        <p class="q">¿Todo listo para hacer tu pedido?</p>
+        <ol>
+          <li><span>01</span>Confirma tu dirección</li>
+          <li><span>02</span>Elige tu método de pago</li>
+          <li><span>03</span>Finaliza</li>
+          <li class="opt"><span>opc.</span>Si quieres, también puedes revisar el detalle de tu pedido</li>
+        </ol>
+        <figcaption class="note">El orden de esta frase definió el orden de la pantalla: la entrega pasó al primer bloque del checkout.</figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <section class="block" id="casos">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="label">Casos seleccionados</p>
+        <h2>Cuatro problemas, cuatro formas de diseñar producto</h2>
+      </div>
+      <ul class="cases">
+        <li><a class="case-link" href="#monchis">
+          <span class="co">Monchis<small>Delivery · Paraguay</small></span>
+          <span><span class="t">Cómo rediseñamos las direcciones para reducir entregas fallidas sin agregar fricción a la compra</span>
+          <span class="shows" style="display:block">Pensamiento sistémico y decisiones de producto con trade-offs</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li><a class="case-link" href="#latam">
+          <span class="co">LATAM Airlines<small>Aerolínea · Web</small></span>
+          <span><span class="t">De una landing de vuelos a una plataforma multiproducto que subió el CTR de hoteles sin afectar vuelos</span>
+          <span class="shows" style="display:block">Estrategia de producto, facilitación y conversión</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li><a class="case-link" href="#santa-isabel">
+          <span class="co">Santa Isabel<small>Cencosud · Retail</small></span>
+          <span><span class="t">Rediseño de una app que era copia de otra, guiado por research y storytelling</span>
+          <span class="shows" style="display:block">Rediseño end-to-end, research y criterio de negocio</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li><a class="case-link" href="#paris">
+          <span class="co">Paris Marketplace<small>Cencosud · Marketplace</small></span>
+          <span><span class="t">Un sistema de voz y tono para que cualquier equipo escriba de forma consistente a los sellers</span>
+          <span class="shows" style="display:block">Pensamiento de sistemas y liderazgo</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="sobre-mi">
+    <div class="wrap about">
+      <div>
+        <div class="block-head">
+          <p class="label">Sobre mí</p>
+          <h2>El mensaje primero, la interfaz después</h2>
+        </div>
+        <div class="prose big">
+          <p>Soy diseñadora de producto con background en contenido. Durante <mark class="tbd">[X]</mark> años he trabajado en retail, salud y aerolíneas, en equipos junto a research, diseño, producto y desarrollo.</p>
+          <p>Mi forma de diseñar parte por el mensaje: qué necesita entender la persona, en qué orden y con qué palabras. Esa estructura define la jerarquía, los flujos y la interfaz. Por eso puedo moverme entre research, UI y estrategia de contenido sin perder el hilo.</p>
+          <p>Me interesan los problemas donde una experiencia confusa le cuesta dinero al negocio y esfuerzo a las personas.</p>
+        </div>
+      </div>
+      <div>
+        <p class="label" style="margin-bottom:16px">Qué hago</p>
+        <ul class="skills">
+          <li><b>Research</b><span>Entrevistas, user personas, focus groups y testeos de guerrilla</span></li>
+          <li><b>Estrategia</b><span>Workshops con stakeholders, priorización y working backwards</span></li>
+          <li><b>Diseño</b><span>Arquitectura de información, flujos, jerarquía y wireframes</span></li>
+          <li><b>Contenido</b><span>Voz y tono, microcopy, sistemas de nomenclatura y accesibilidad</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contacto">
+    <div class="wrap">
+      <p class="label" style="margin-bottom:16px">Contacto</p>
+      <h2>¿Tienes un producto que necesita ser más claro? Conversemos.</h2>
+      <div class="contact-list">
+        <a class="btn primary" href="mailto:"><mark class="tbd">[tu email]</mark></a>
+        <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn <mark class="tbd">[link]</mark></a>
+        <a class="btn" href="#" target="_blank" rel="noopener">CV en PDF <mark class="tbd">[link]</mark></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CASO: MONCHIS ============ -->
+<article class="case" data-view="monchis" hidden>
+  <div class="wrap">
+    <a class="back" href="#casos">← Todos los casos</a>
+    <header class="case-hero">
+      <p class="label">Monchis · Delivery en Paraguay</p>
+      <h1>Cómo rediseñamos la experiencia de direcciones para reducir entregas fallidas sin agregar fricción a la compra</h1>
+      <p class="summary">En Paraguay, muchas direcciones se dan con referencias e intersecciones, y los repartidores no encontraban a los clientes. Rediseñamos la dirección en tres momentos del journey: onboarding, home y checkout. Las tres iniciativas llegaron a producción y bajaron los reclamos, los tiempos de entrega y los pedidos no entregados <mark class="tbd">[cifras por verificar]</mark>.</p>
+    </header>
+    <dl class="facts">
+      <div><dt>Empresa</dt><dd>Monchis, delivery en Paraguay</dd></div>
+      <div><dt>Producto</dt><dd>App de usuarios</dd></div>
+      <div><dt>Año y duración</dt><dd><mark class="tbd">[año]</mark> · <mark class="tbd">[X meses]</mark></dd></div>
+      <div><dt>Cargo</dt><dd>UX Writer / Content Designer</dd></div>
+      <div><dt>Estado</dt><dd>3 iniciativas en producción</dd></div>
+      <div><dt>Equipo</dt><dd>Service Design, Product Design, Content Design, Product Managers y Desarrollo</dd></div>
+      <div class="wide"><dt>Qué hice</dt><dd>Definición del problema, flujos, criterios de comportamiento, jerarquía de información, contenido y argumentación con stakeholders</dd></div>
+    </dl>
+
+    <section class="chapter">
+      <header><p class="label">El problema</p><h2>Tener una dirección no garantizaba ser encontrado</h2></header>
+      <div class="body">
+        <p>Los repartidores no encontraban a los clientes, incluso hablando por WhatsApp. Eso generaba demoras, pedidos no entregados, reclamos al Contact Center y cancelaciones de operaciones.</p>
+        <p>Había dos causas distintas:</p>
+        <ul>
+          <li><b>Direcciones imprecisas.</b> El registro era un formulario de calle, intersección y número, sin mapa ni geolocalización.</li>
+          <li><b>Direcciones equivocadas.</b> Personas que pedían desde otro lugar y olvidaban cambiar su dirección. Cambiarla exigía ir al menú lateral, y el checkout ni siquiera la mostraba.</li>
+        </ul>
+        <p class="question">La restricción que lo hacía difícil: la dirección define qué comercios están disponibles. Cambiarla sin control podía dejar un pedido fuera de cobertura.</p>
+        <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Mensajes de WhatsApp anonimizados entre cliente y repartidor, o una dirección real con referencias ambiguas, junto al volumen de reclamos por dirección.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Discovery</p><h2>El encuentro físico era más complejo de lo que suponíamos</h2></header>
+      <div class="body">
+        <p>La investigación la lideró Service Design, con Product Design y Content Design. Incluyó entrevistas a usuarios, observación a repartidores, pedidos hechos por el equipo en terreno en Paraguay y análisis de motivos de reclamo <mark class="tbd">[N entrevistas y observaciones]</mark>.</p>
+        <p>El hallazgo central fue que el encuentro físico entre repartidor y cliente era mucho más complejo de lo que suponíamos. Mi aporte fue identificar qué datos necesitábamos para dimensionar el problema y apoyar el análisis.</p>
+        <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Journey del pedido con los puntos donde falla la dirección.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Estrategia</p><h2>La dirección no era un problema de onboarding</h2></header>
+      <div class="body">
+        <p>La primera decisión importante fue de alcance. La dirección afectaba el descubrimiento de comercios, la compra, el checkout y la entrega. En vez de rediseñarlo todo de una vez, el equipo dividió el trabajo en tres iniciativas que se lanzaron por etapas.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Momento</th><th>Antes</th><th>Después</th></tr></thead>
+          <tbody>
+            <tr><td>1. Onboarding y direcciones</td><td>Formulario de texto, sin mapa ni geolocalización</td><td>Formulario con referencias y mapa para ajustar el punto exacto</td></tr>
+            <tr><td>2. Home</td><td>Cambiar dirección exigía ir al menú lateral</td><td>Aviso contextual si estás lejos de tu dirección, con acceso directo al cambio</td></tr>
+            <tr><td>3. Checkout</td><td>La dirección no se veía ni se podía cambiar</td><td>Mapa visible, ajuste del pin y cambio entre direcciones guardadas con cobertura</td></tr>
+          </tbody>
+        </table></div>
+        <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Journey horizontal con capturas antes y después en cada momento.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Decisiones</p><h2>Cuatro decisiones y sus trade-offs</h2></header>
+      <div class="body">
+        <div class="decision">
+          <span class="who">Mi propuesta</span>
+          <h3>1 · Complementar la dirección escrita con referencias y un mapa</h3>
+          <p>El texto solo no bastaba en un país donde las direcciones se describen con referencias. Propuse agregar campos de referencia y un mapa para ajustar el punto de entrega.</p>
+          <p><b>Trade-off:</b> más pasos en el registro a cambio de una ubicación precisa. <mark class="tbd">[cómo mantuvieron el flujo corto]</mark></p>
+          <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Formulario antes y después, lado a lado.</figcaption></figure>
+        </div>
+        <div class="decision">
+          <span class="who">Mi propuesta</span>
+          <h3>2 · Advertir en vez de bloquear</h3>
+          <p>La alternativa en discusión era impedir el pedido si la ubicación actual estaba muy lejos de la dirección elegida.</p>
+          <p>La distancia no siempre significa un error. Hay casos legítimos, como pedir antes de llegar a casa o enviar comida a otra persona. Bloquear habría castigado a esas personas y costado ventas.</p>
+          <p>Propuse un aviso amable en la home que pregunta si el pedido es para alguien más y ofrece cambiar la dirección en un toque.</p>
+          <div class="quote-ui"><span class="label">Aviso en la home</span><mark class="tbd">[texto final del aviso]</mark></div>
+          <p><b>Trade-off:</b> aceptamos que algunas personas ignorarían el aviso, a cambio de no perder pedidos válidos.</p>
+        </div>
+        <div class="decision">
+          <span class="who">Mi propuesta, respaldada por los PM</span>
+          <h3>3 · El checkout es para confirmar, no para configurar</h3>
+          <p>Se propuso que el checkout permitiera editar todo: productos, dirección libre, delivery o retiro y otros detalles.</p>
+          <p>Abrí la discusión sobre el propósito del checkout. La persona ya tomó muchas decisiones en el camino; convertir el checkout en otra etapa de configuración agrega fricción justo antes de pagar. Pero también era la última oportunidad de evitar un pedido cancelado por dirección. Para equilibrar ambas cosas propuse:</p>
+          <ul>
+            <li>Mostrar la dirección con un mapa y permitir ajustar el pin</li>
+            <li>Cambiar solo entre direcciones guardadas que tengan cobertura del comercio</li>
+            <li>Mantener el aviso si tu ubicación no coincide con la dirección</li>
+            <li>Dejar fuera las ediciones extensas</li>
+            <li>Un botón de finalizar siempre visible, habilitado solo cuando está toda la información necesaria</li>
+          </ul>
+          <p>Los Product Managers respaldaron la propuesta y se adoptó para la experiencia final.</p>
+          <div class="quote-ui"><span class="label">La historia del checkout</span>¿Todo listo para hacer tu pedido? Confirma tu dirección, elige tu método de pago y finaliza. Si quieres, también puedes revisar el detalle de tu pedido.</div>
+          <p><b>Jerarquía final:</b></p>
+          <ol>
+            <li><b>Entrega:</b> mapa, dirección o punto de retiro, tiempo estimado y acciones limitadas para corregir</li>
+            <li><b>Pago y beneficios:</b> método de pago y cupones</li>
+            <li><b>Resumen del pedido:</b> productos e importes</li>
+          </ol>
+          <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Benchmark de checkouts convencionales junto al de Monchis: la entrega sube al primer bloque.</figcaption></figure>
+        </div>
+        <div class="decision">
+          <span class="who team">Decisión del equipo</span>
+          <h3>4 · Ajustar el pin sin salir de la cobertura</h3>
+          <p>Mover el pin no equivale a cambiar de dirección. Diseño, Producto y Desarrollo definimos un radio máximo de 50 metros, que se reduce cuando la ubicación está cerca del límite de cobertura del comercio. Así la persona gana precisión sin que el pedido quede fuera de zona.</p>
+          <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Diagrama del radio de 50 m que se achica cerca del borde de cobertura.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Autoría</p><h2>Qué fue mío y qué fue del equipo</h2></header>
+      <div class="body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Decisión</th><th>Autoría</th></tr></thead>
+          <tbody>
+            <tr><td>Referencias y mapa ajustable en el registro</td><td>Mi propuesta</td></tr>
+            <tr><td>Advertir en vez de bloquear</td><td>Mi propuesta, frente a una alternativa en discusión</td></tr>
+            <tr><td>Propósito del checkout y ediciones limitadas</td><td>Mi propuesta, respaldada por los PM</td></tr>
+            <tr><td>Dividir el proyecto en tres iniciativas</td><td>Equipo</td></tr>
+            <tr><td>Radio dinámico de 50 m</td><td>Equipo: Diseño, Producto y Desarrollo</td></tr>
+            <tr><td>Research y hallazgos</td><td>Liderado por Service Design, con mi apoyo</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Resultados</p><h2>Después del lanzamiento</h2></header>
+      <div class="body">
+        <p>Tras el lanzamiento se hizo seguimiento y se observó una baja en:</p>
+        <ul class="results">
+          <li>Reclamos al Contact Center por direcciones: <mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark> en <mark class="tbd">[periodo]</mark></li>
+          <li>Pedidos no entregados por dirección: <mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></li>
+          <li>Tiempo de entrega: <mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Lo que haría distinto</p><h2>Probar antes de lanzar</h2></header>
+      <div class="body">
+        <p>No hicimos pruebas de usabilidad antes de lanzar; validamos con Product Managers y con Desarrollo. Con más tiempo habría probado tres cosas:</p>
+        <ul>
+          <li>Si las personas entienden cómo mover el pin en el mapa</li>
+          <li>Cuántas veces el aviso de la home aparece cuando no hay error</li>
+          <li>Si limitar las ediciones en el checkout genera abandono</li>
+        </ul>
+        <p><a class="btn" href="#" target="_blank" rel="noopener">Ver flujos en Figma <mark class="tbd">[link]</mark></a></p>
+      </div>
+    </section>
+
+    <footer class="case-foot">
+      <a class="back" href="#casos">← Todos los casos</a>
+      <a class="next" href="#latam"><span class="label">Siguiente caso</span><span class="t">LATAM Airlines →</span></a>
+    </footer>
+  </div>
+</article>
+
+<!-- ============ CASO: LATAM ============ -->
+<article class="case" data-view="latam" hidden>
+  <div class="wrap">
+    <a class="back" href="#casos">← Todos los casos</a>
+    <header class="case-hero">
+      <p class="label">LATAM Airlines · Web</p>
+      <h1>De una landing de vuelos a una plataforma multiproducto</h1>
+      <p class="summary">Rediseñamos la landing de ofertas para que vuelos, hoteles y paquetes convivieran en un solo flujo. El CTR de hoteles subió <mark class="tbd">[X%]</mark> y el de vuelos se mantuvo estable.</p>
+    </header>
+    <dl class="facts">
+      <div><dt>Empresa</dt><dd>LATAM Airlines</dd></div>
+      <div><dt>Año y duración</dt><dd><mark class="tbd">[año]</mark> · <mark class="tbd">[X meses]</mark></dd></div>
+      <div><dt>Cargo</dt><dd>UX Writer</dd></div>
+      <div><dt>Plataforma</dt><dd>Web <mark class="tbd">[desktop / mobile]</mark></dd></div>
+      <div><dt>Equipo</dt><dd>Yo, una diseñadora UX/UI, producto y desarrollo</dd></div>
+      <div class="wide"><dt>Qué hice</dt><dd>Research, facilitación de workshops, arquitectura de información, storytelling y testeo</dd></div>
+    </dl>
+
+    <section class="chapter">
+      <header><p class="label">El problema</p><h2>Una landing que solo vendía vuelos</h2></header>
+      <div class="body">
+        <p>La landing de ofertas solo mostraba vuelos. El negocio necesitaba vender hoteles y paquetes, y más adelante rent a car y asistencia en viaje.</p>
+        <p>Los equipos internos tenían dos dolores: cargar promociones era rígido y los productos complementarios casi no se veían.</p>
+        <p class="question">¿Cómo sumamos productos sin canibalizar la venta de vuelos, que es el core del negocio?</p>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Proceso</p><h2>De la historia al wireframe</h2></header>
+      <div class="body">
+        <ol>
+          <li><b>Entender al negocio.</b> Entrevistas con stakeholders y focus groups con <mark class="tbd">[N]</mark> usuarios internos que gestionan campañas.</li>
+          <li><b>Alinear la visión.</b> Facilité un workshop con la metodología working backwards. <mark class="tbd">[resultado del workshop]</mark></li>
+          <li><b>Estructurar con contenido.</b> Diseñé la arquitectura de mensajes de la landing: qué ve primero la persona, cómo se presenta cada producto y cuándo aparece la oferta. Esa estructura se convirtió en el wireframe base junto a mi dupla UX/UI.</li>
+          <li><b>Iterar con negocio.</b> <mark class="tbd">[N]</mark> rondas de iteración con producto y desarrollo.</li>
+          <li><b>Validar en terreno.</b> Testeos de guerrilla con <mark class="tbd">[N]</mark> pasajeros en el aeropuerto <mark class="tbd">[nombre]</mark>.</li>
+        </ol>
+        <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Wireframe o mapa de la arquitectura de mensajes.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Decisiones clave</p><h2>Sumar sin canibalizar</h2></header>
+      <div class="body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Decisión</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Vuelos se mantiene como primer bloque</td><td>Proteger el core del negocio mientras se suman productos</td></tr>
+            <tr><td>Un mismo patrón de módulo para cada producto</td><td>Escalar a rent a car y asistencia sin rediseñar</td></tr>
+            <tr><td><mark class="tbd">[decisión sobre títulos o CTAs]</mark></td><td><mark class="tbd">[razón basada en el research]</mark></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Antes y después</p><h2>Qué cambió en la landing</h2></header>
+      <div class="body">
+        <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Captura antes y captura después.</figcaption></figure>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Elemento</th><th>Antes</th><th>Después</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Título principal</td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[razón]</mark></td></tr>
+            <tr><td>CTA de hoteles</td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[razón]</mark></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Resultados</p><h2>Más hoteles, vuelos estables</h2></header>
+      <div class="body">
+        <ul class="results">
+          <li>8 de cada 10 personas entendieron la nueva experiencia en su primera interacción (testeo con <mark class="tbd">[N]</mark> pasajeros).</li>
+          <li>El CTR del módulo de hoteles subió <mark class="tbd">[X%]</mark> en <mark class="tbd">[periodo]</mark>.</li>
+          <li>El CTR de vuelos se mantuvo estable.</li>
+          <li>Los equipos internos gestionan campañas con más facilidad <mark class="tbd">[dato concreto]</mark>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Aprendizaje</p></header>
+      <div class="body">
+        <p class="learn">Diseñar la estructura del mensaje antes que la interfaz nos permitió ponernos de acuerdo rápido con negocio. Cuando la historia estaba clara, el layout casi se resolvía solo.</p>
+        <p><a class="btn" href="#" target="_blank" rel="noopener">Ver flujos en Figma <mark class="tbd">[link]</mark></a></p>
+      </div>
+    </section>
+
+    <footer class="case-foot">
+      <a class="back" href="#casos">← Todos los casos</a>
+      <a class="next" href="#santa-isabel"><span class="label">Siguiente caso</span><span class="t">Santa Isabel →</span></a>
+    </footer>
+  </div>
+</article>
+
+<!-- ============ CASO: SANTA ISABEL ============ -->
+<article class="case" data-view="santa-isabel" hidden>
+  <div class="wrap">
+    <a class="back" href="#casos">← Todos los casos</a>
+    <header class="case-hero">
+      <p class="label">Santa Isabel · Cencosud</p>
+      <h1>Darle identidad propia a una app que era copia de otra</h1>
+      <p class="summary">La app de Santa Isabel era idéntica a la de Jumbo. La rediseñamos desde el research para personas sensibles al precio y con baja habilidad digital. La propuesta fue tan sólida que el negocio decidió implementarla primero en Jumbo.</p>
+    </header>
+    <dl class="facts">
+      <div><dt>Empresa</dt><dd>Santa Isabel, Cencosud</dd></div>
+      <div><dt>Año y duración</dt><dd><mark class="tbd">[año]</mark> · <mark class="tbd">[X meses]</mark></dd></div>
+      <div><dt>Cargo</dt><dd>UX Writer</dd></div>
+      <div><dt>Plataforma</dt><dd>App iOS y Android</dd></div>
+      <div><dt>Equipo</dt><dd>Yo, UX Researcher, <mark class="tbd">[diseñadores UI]</mark>, producto y desarrollo</dd></div>
+      <div class="wide"><dt>Qué hice</dt><dd>Research, user personas, arquitectura de información, storytelling por pantalla, flujos y librería de microcopy</dd></div>
+    </dl>
+
+    <section class="chapter">
+      <header><p class="label">El problema</p><h2>Dos apps idénticas para dos clientes muy distintos</h2></header>
+      <div class="body">
+        <p>La app de Santa Isabel tenía los mismos textos, la misma UI y la misma lógica que la de Jumbo; solo cambiaba el color. Cencosud mantenía dos apps idénticas para dos clientes muy distintos.</p>
+        <p class="question">¿Cómo diseñamos una app que responda a quien compra en Santa Isabel y no a quien compra en Jumbo?</p>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Research</p><h2>Cuatro rasgos de quien compra en Santa Isabel</h2></header>
+      <div class="body">
+        <p>Junto al UX Researcher hicimos <mark class="tbd">[N]</mark> entrevistas y armamos user personas y mapas de empatía. Encontramos cuatro rasgos clave:</p>
+        <ul>
+          <li>Mucha sensibilidad al precio y a las promociones</li>
+          <li>Comparan entre supermercados antes de comprar</li>
+          <li>No tienen patrones de compra fijos</li>
+          <li>Baja habilidad digital, por lo que la accesibilidad pasó a ser prioridad</li>
+        </ul>
+        <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>User persona resumida.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Decisiones clave</p><h2>Una historia por pantalla</h2></header>
+      <div class="body">
+        <div class="decision">
+          <h3>1 · Cada pantalla cuenta una historia en tres momentos</h3>
+          <p>Qué es, cuánto cuesta y por qué conviene. Este orden definió la jerarquía de títulos, los tamaños de tipografía y la posición de los bloques en la UI.</p>
+          <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Pantalla anotada con los tres momentos.</figcaption></figure>
+        </div>
+        <div class="decision">
+          <h3>2 · Accesibilidad desde la estructura</h3>
+          <p>Definimos una jerarquía semántica de títulos para lectores de pantalla y propusimos modo claro y oscuro <mark class="tbd">[aclara qué parte fue tu aporte]</mark>.</p>
+        </div>
+        <div class="decision">
+          <h3>3 · Lenguaje inclusivo y anticipatorio</h3>
+          <p>Mensajes que explican el siguiente paso antes de que la persona lo necesite, para que sienta control en cada etapa.</p>
+        </div>
+        <div class="decision">
+          <h3>4 · Una sola regla de nomenclatura</h3>
+          <p>Cada concepto se llama igual en toda la app, desde el acceso hasta el pago.</p>
+        </div>
+        <p><b>Flujos diseñados:</b> home, ficha de producto, carrito y checkout. Además creé una librería de microcopy reutilizable para el equipo.</p>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Antes y después</p><h2>Palabras para una persona con baja habilidad digital</h2></header>
+      <div class="body">
+        <figure class="ph"><div class="ph-box">Imagen pendiente</div><figcaption>Captura de la app Jumbo / Santa Isabel antes y de la propuesta.</figcaption></figure>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Elemento</th><th>Antes</th><th>Después</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Saludo de inicio</td><td><mark class="tbd">[texto anterior]</mark></td><td>Te damos la bienvenida</td><td>Lenguaje inclusivo, sin marcar género</td></tr>
+            <tr><td>Botón de detalle</td><td><mark class="tbd">[texto anterior]</mark></td><td>Revisar más detalles</td><td>Acción clara para personas con baja habilidad digital</td></tr>
+            <tr><td><mark class="tbd">[Precio o promoción]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[razón]</mark></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Resultado</p><h2>Una decisión de negocio inesperada</h2></header>
+      <div class="body">
+        <p>La propuesta fue muy bien recibida y el negocio decidió implementarla primero en Jumbo.</p>
+        <p>Advertí el riesgo: el diseño respondía a otro perfil socioeconómico y podía no rendir igual. Dejé documentados los supuestos del research para medirlos después. <mark class="tbd">[qué pasó tras el lanzamiento]</mark></p>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Aprendizaje</p></header>
+      <div class="body">
+        <p class="learn">Un buen diseño también incluye saber advertir riesgos y dejar evidencia para el siguiente paso, aunque la decisión final sea del negocio.</p>
+        <p><a class="btn" href="#" target="_blank" rel="noopener">Ver flujos en Figma <mark class="tbd">[link]</mark></a></p>
+      </div>
+    </section>
+
+    <footer class="case-foot">
+      <a class="back" href="#casos">← Todos los casos</a>
+      <a class="next" href="#paris"><span class="label">Siguiente caso</span><span class="t">Paris Marketplace →</span></a>
+    </footer>
+  </div>
+</article>
+
+<!-- ============ CASO: PARIS ============ -->
+<article class="case" data-view="paris" hidden>
+  <div class="wrap">
+    <a class="back" href="#casos">← Todos los casos</a>
+    <header class="case-hero">
+      <p class="label">Paris Marketplace · Cencosud</p>
+      <h1>Un sistema de voz y tono para que cualquier equipo hable igual con los sellers</h1>
+      <p class="summary">Cada área le escribía a los sellers a su manera. Lideré la creación de un manual de voz, tono y estilo que hoy usan <mark class="tbd">[N]</mark> equipos sin formación en contenido.</p>
+    </header>
+    <dl class="facts">
+      <div><dt>Empresa</dt><dd>Paris Marketplace, Cencosud</dd></div>
+      <div><dt>Año y duración</dt><dd><mark class="tbd">[año]</mark> · <mark class="tbd">[X meses]</mark></dd></div>
+      <div><dt>Cargo</dt><dd>UX Writer</dd></div>
+      <div><dt>Plataforma</dt><dd>Canales digitales para sellers <mark class="tbd">[portal, correos, notificaciones]</mark></dd></div>
+      <div><dt>Equipo</dt><dd>Yo como líder, una UX Writer junior y equipos de UX, Fulfillment y Comercial</dd></div>
+      <div class="wide"><dt>Qué hice</dt><dd>Liderazgo del proyecto, mentoría, facilitación de workshops, benchmark y diseño del sistema</dd></div>
+    </dl>
+
+    <section class="chapter">
+      <header><p class="label">El problema</p><h2>Tres áreas, tres estilos</h2></header>
+      <div class="body">
+        <p>UX, Fulfillment y Comercial le escribían a los sellers cada uno con su propio estilo. Los mensajes eran inconsistentes y a veces difíciles de entender. <mark class="tbd">[señal concreta: consultas, tickets o reclamos]</mark></p>
+        <p class="question">¿Cómo logramos que personas que no son especialistas en contenido escriban de forma consistente sin depender de una UX Writer?</p>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Proceso</p><h2>Del diagnóstico a una herramienta práctica</h2></header>
+      <div class="body">
+        <ol>
+          <li><b>Diagnóstico.</b> Análisis de <mark class="tbd">[N]</mark> mensajes en los canales existentes y benchmark de buenas prácticas.</li>
+          <li><b>Co-creación.</b> Workshops con UX, Fulfillment, Comercial y stakeholders para definir cómo queríamos sonar.</li>
+          <li><b>Sistema.</b> Definimos cuatro pilares de voz, reglas de estilo y lineamientos de inclusión y accesibilidad.</li>
+          <li><b>Herramienta práctica.</b> Ejemplos de qué hacer y qué no hacer para que cualquiera pudiera aplicarlo.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Liderazgo</p><h2>Liderazgo y mentoría</h2></header>
+      <div class="body">
+        <p>Lideré el proyecto y acompañé a una UX Writer junior en el research y la redacción. <mark class="tbd">[qué partes delegaste y cómo la guiaste]</mark></p>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">El sistema</p><h2>Cuatro pilares de voz</h2></header>
+      <div class="body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Pilar de voz</th><th>Qué significa</th><th>Ejemplo</th></tr></thead>
+          <tbody>
+            <tr><td>Prácticos y cercanos</td><td><mark class="tbd">[definición]</mark></td><td><mark class="tbd">[mensaje real]</mark></td></tr>
+            <tr><td>Guías y amigables</td><td><mark class="tbd">[definición]</mark></td><td><mark class="tbd">[mensaje real]</mark></td></tr>
+            <tr><td>Ambiciosos y confiables</td><td><mark class="tbd">[definición]</mark></td><td><mark class="tbd">[mensaje real]</mark></td></tr>
+            <tr><td>Transparentes y resolutivos</td><td><mark class="tbd">[definición]</mark></td><td><mark class="tbd">[mensaje real]</mark></td></tr>
+          </tbody>
+        </table></div>
+        <h3>Antes y después</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Mensaje a seller</th><th>Antes</th><th>Después</th><th>Pilar aplicado</th></tr></thead>
+          <tbody>
+            <tr><td><mark class="tbd">[Ej.: producto rechazado]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[pilar]</mark></td></tr>
+            <tr><td><mark class="tbd">[Ej.: pago retenido]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[texto]</mark></td><td><mark class="tbd">[pilar]</mark></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Resultados</p><h2>Consistencia que no depende de una persona</h2></header>
+      <div class="body">
+        <ul class="results">
+          <li>Una guía compartida que usan <mark class="tbd">[N]</mark> equipos sin formación en contenido.</li>
+          <li>Mensajes consistentes para los sellers en <mark class="tbd">[canales]</mark>.</li>
+          <li><mark class="tbd">[señal de impacto: menos consultas, menos tiempo de revisión o adopción en onboarding]</mark></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <header><p class="label">Aprendizaje</p></header>
+      <div class="body">
+        <p class="learn">Un sistema de diseño también puede estar hecho de palabras. Si las reglas son claras y con ejemplos, la consistencia escala sin depender de una sola persona.</p>
+        <p><a class="btn" href="#" target="_blank" rel="noopener">Ver manual en Notion <mark class="tbd">[link]</mark></a></p>
+      </div>
+    </section>
+
+    <footer class="case-foot">
+      <a class="back" href="#casos">← Todos los casos</a>
+      <a class="next" href="#monchis"><span class="label">Volver al primer caso</span><span class="t">Monchis →</span></a>
+    </footer>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Ximena Bissieres</span>
+    <span>Product Designer · Contenido y sistemas</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var views = document.querySelectorAll('[data-view]');
+  var cases = ['monchis', 'latam', 'santa-isabel', 'paris'];
+  var current = null;
+  function route() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var view = cases.indexOf(id) >= 0 ? id : 'home';
+    var changed = view !== current;
+    views.forEach(function (v) { v.hidden = v.getAttribute('data-view') !== view; });
+    current = view;
+    if (view !== 'home') {
+      window.scrollTo(0, 0);
+    } else {
+      var target = id && document.getElementById(id);
+      if (target) {
+        if (changed) { requestAnimationFrame(function () { target.scrollIntoView(); }); }
+      } else if (changed) { window.scrollTo(0, 0); }
+    }
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
