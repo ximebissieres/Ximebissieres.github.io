@@ -1,0 +1,40 @@
+---
+layout: default
+body_class: is-project
+---
+{%- assign p = site.data.projects | where: "slug", page.slug | first -%}
+{%- assign total = site.data.projects | size -%}
+{%- assign next_index = p.order | modulo: total -%}
+{%- assign n = site.data.projects[next_index] -%}
+<article class="case" aria-labelledby="case-title">
+  <div class="wrap">
+    <div class="case-top">
+      <a class="back" href="/#proyectos"><span class="arr" aria-hidden="true">←</span> Todos los proyectos</a>
+      <span class="case-count">Proyecto {{ p.order }} de {{ total }}</span>
+    </div>
+    <header class="case-hero">
+      <p class="eyebrow">{{ p.company }} · {{ p.sector }}</p>
+      <h1 class="case-title" id="case-title">{{ p.title_html }}</h1>
+      <p class="case-summary">{{ page.summary }}</p>
+    </header>
+    {% include project-media.html project=p size="hero" %}
+    {{ content }}
+  </div>
+
+  <nav class="next-project" aria-label="Siguiente proyecto">
+    <div class="wrap">
+      <a class="next-card" href="/proyectos/{{ n.slug }}/">
+        <span class="next-text">
+          <span class="eyebrow">Siguiente proyecto · {{ n.order }} de {{ total }}</span>
+          <span class="next-title">{{ n.company }}</span>
+          <span class="next-sub">{{ n.name }}</span>
+          <span class="pcard-cta">Ver proyecto <span class="arr">→</span></span>
+        </span>
+        {% include project-media.html project=n size="next" %}
+      </a>
+      <div class="next-links">
+        <a class="back" href="/#proyectos"><span class="arr" aria-hidden="true">←</span> Todos los proyectos</a>
+      </div>
+    </div>
+  </nav>
+</article>

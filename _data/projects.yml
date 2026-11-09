@@ -1,0 +1,54 @@
+# Fuente única de los proyectos: alimenta las tarjetas de la home,
+# el menú "Proyectos" y la navegación al siguiente caso.
+# El orden refleja la prioridad del portafolio.
+- slug: monchis
+  order: 1
+  company: Monchis
+  sector: Delivery · Paraguay
+  name: Rediseño de direcciones
+  menu: Direcciones
+  featured: true
+  title_html: Cómo rediseñamos la experiencia de direcciones para reducir entregas fallidas <em>sin agregar fricción</em> a la compra
+  problem: Los repartidores no encontraban a los clientes. Rediseñamos la dirección en onboarding, home y checkout para reducir entregas fallidas sin frenar la compra.
+  contribution: Decisiones de producto con trade-offs y 3 iniciativas en producción
+  role: UX Writer / Content Designer
+  cover: illustration
+- slug: latam
+  order: 2
+  company: LATAM Airlines
+  sector: Aerolínea · Web
+  name: Landing multiproducto
+  menu: Landing multiproducto
+  title_html: De una landing de vuelos a una plataforma <em>multiproducto</em>
+  problem: La landing de ofertas solo vendía vuelos. La convertimos en una plataforma donde vuelos, hoteles y paquetes conviven en un mismo flujo.
+  contribution: Research, workshops y arquitectura de mensajes. 8 de cada 10 personas entendieron la experiencia
+  role: UX Writer
+  cover: /assets/img/latam-landing.webp
+  cover_alt: Landing de ofertas de LATAM rediseñada, con destinos y precios destacados
+  cover_position: 50% 0%
+- slug: santa-isabel
+  order: 3
+  company: Santa Isabel
+  sector: Cencosud · App
+  name: Rediseño de la app
+  menu: Rediseño app
+  title_html: Darle <em>identidad propia</em> a una app que era copia de otra
+  problem: La app era idéntica a la de Jumbo. La rediseñamos desde el research para personas sensibles al precio y con baja habilidad digital.
+  contribution: Research, storytelling por pantalla y microcopy de punta a punta
+  role: UX Writer
+  cover: /assets/img/santa-isabel-propuesta.webp
+  cover_alt: Pantallas de la propuesta de la app de Santa Isabel, desde el acceso hasta el pago
+  cover_position: 50% 50%
+- slug: paris
+  order: 4
+  company: Paris Marketplace
+  sector: Cencosud · Sellers
+  name: Sistema de voz y tono
+  menu: Voz y tono
+  title_html: Un sistema de voz y tono para que cualquier equipo <em>hable igual</em> con los sellers
+  problem: Cada área le escribía a los sellers a su manera. Creamos un manual de voz, tono y estilo que cualquier equipo puede aplicar.
+  contribution: Liderazgo del proyecto, mentoría y diseño del sistema
+  role: UX Writer, líder del proyecto
+  cover: /assets/img/paris-portada.webp
+  cover_alt: Portada de Paris Marketplace
+  cover_position: 50% 50%

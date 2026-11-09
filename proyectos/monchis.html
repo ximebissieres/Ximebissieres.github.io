@@ -1,0 +1,223 @@
+---
+layout: project
+body_class: is-project
+slug: monchis
+title: Monchis · Rediseño de direcciones
+permalink: /proyectos/monchis/
+description: Cómo rediseñamos la experiencia de direcciones de Monchis para reducir entregas fallidas sin agregar fricción a la compra.
+summary: 'En Paraguay, muchas direcciones se dan con referencias e intersecciones, y los repartidores no encontraban a los clientes. Rediseñamos la dirección en tres momentos del journey: onboarding, home y checkout. Las tres iniciativas llegaron a producción y bajaron los reclamos, los tiempos de entrega y los pedidos no entregados <mark class="tbd">[cifras por verificar]</mark>.'
+---
+<section class="overview" aria-label="Resumen del caso">
+  <div><h2>El problema</h2><p>Los repartidores no encontraban a los clientes: demoras, pedidos no entregados, reclamos y cancelaciones.</p></div>
+  <div><h2>Mi rol</h2><p>UX Writer / Content Designer. Problema, flujos, jerarquía, contenido y argumentación con stakeholders.</p></div>
+  <div><h2>Proceso</h2><p>Discovery en terreno, tres iniciativas por etapas y cuatro decisiones de diseño.</p></div>
+  <div><h2>Impacto</h2><p>3 iniciativas en producción y baja en reclamos, tiempos y pedidos no entregados <mark class="tbd">[cifras por verificar]</mark>.</p></div>
+</section>
+
+<dl class="facts">
+  <div><dt>Empresa</dt><dd>Monchis, delivery en Paraguay</dd></div>
+  <div><dt>Producto</dt><dd>App de usuarios</dd></div>
+  <div><dt>Año y duración</dt><dd><mark class="tbd">[año]</mark> · <mark class="tbd">[X meses]</mark></dd></div>
+  <div><dt>Estado</dt><dd>3 iniciativas en producción</dd></div>
+</dl>
+
+<div class="case-body">
+  <nav class="toc" aria-label="Etapas del caso"><p class="eyebrow">En este caso</p><ol></ol></nav>
+  <div class="chapters">
+
+    <section class="chapter" id="contexto" data-title="Contexto">
+      <header class="chapter-head"><p class="eyebrow">Contexto</p><h2 class="chapter-title">Tener una dirección no garantizaba <em>ser encontrado</em></h2></header>
+      <p class="lead">Los repartidores no encontraban a los clientes, incluso hablando por WhatsApp. Eso generaba demoras, pedidos no entregados, reclamos al Contact Center y cancelaciones de operaciones.</p>
+      <div class="cards two">
+        <div class="card"><p class="eyebrow">Causa 1</p><h3>Direcciones imprecisas</h3><p>El registro era un formulario de calle, intersección y número, sin mapa ni geolocalización.</p></div>
+        <div class="card"><p class="eyebrow">Causa 2</p><h3>Direcciones equivocadas</h3><p>Personas que pedían desde otro lugar y olvidaban cambiar su dirección. Cambiarla exigía ir al menú lateral, y el checkout ni siquiera la mostraba.</p></div>
+      </div>
+      <p class="statement"><span class="eyebrow">La restricción</span>La dirección define qué comercios están disponibles. Cambiarla sin control podía dejar un pedido fuera de cobertura.</p>
+      {% include media.html caption="Mensajes de WhatsApp anonimizados entre cliente y repartidor, o una dirección real con referencias ambiguas, junto al volumen de reclamos por dirección." ratio="16 / 8" %}
+    </section>
+
+    <section class="chapter" id="rol" data-title="Mi rol">
+      <header class="chapter-head"><p class="eyebrow">Mi rol</p><h2 class="chapter-title">Qué hice y <em>qué fue del equipo</em></h2></header>
+      <dl class="role-grid">
+        <div><dt>Cargo</dt><dd>UX Writer / Content Designer</dd></div>
+        <div><dt>Equipo</dt><dd>Service Design, Product Design, Content Design, Product Managers y Desarrollo</dd></div>
+        <div class="wide"><dt>Qué hice</dt><dd>Definición del problema, flujos, criterios de comportamiento, jerarquía de información, contenido y argumentación con stakeholders</dd></div>
+      </dl>
+      <ul class="authors">
+        <li><span>Referencias y mapa ajustable en el registro</span><span class="who">Mi propuesta</span></li>
+        <li><span>Advertir en vez de bloquear</span><span class="who">Mi propuesta, frente a una alternativa en discusión</span></li>
+        <li><span>Propósito del checkout y ediciones limitadas</span><span class="who pm">Mi propuesta, respaldada por los PM</span></li>
+        <li><span>Dividir el proyecto en tres iniciativas</span><span class="who team">Equipo</span></li>
+        <li><span>Radio dinámico de 50 m</span><span class="who team">Equipo: Diseño, Producto y Desarrollo</span></li>
+        <li><span>Research y hallazgos</span><span class="who team">Liderado por Service Design, con mi apoyo</span></li>
+      </ul>
+    </section>
+
+    <section class="chapter" id="investigacion" data-title="Investigación">
+      <header class="chapter-head"><p class="eyebrow">Investigación</p><h2 class="chapter-title">El encuentro físico era más complejo <em>de lo que suponíamos</em></h2></header>
+      <div class="split wide-left">
+        <div class="prose">
+          <p>La investigación la lideró Service Design, con Product Design y Content Design <mark class="tbd">[N entrevistas y observaciones]</mark>.</p>
+          <ul class="methods" aria-label="Métodos">
+            <li>Entrevistas a usuarios</li><li>Observación a repartidores</li><li>Pedidos en terreno en Paraguay</li><li>Análisis de motivos de reclamo</li>
+          </ul>
+        </div>
+        <div class="card"><p class="eyebrow">Mi aporte</p><p class="ink">Identificar qué datos necesitábamos para dimensionar el problema y apoyar el análisis.</p></div>
+      </div>
+      <p class="big-quote">El encuentro físico entre repartidor y cliente era mucho más complejo de lo que suponíamos.</p>
+      {% include media.html caption="Journey del pedido con los puntos donde falla la dirección." ratio="16 / 8" %}
+    </section>
+
+    <section class="chapter" id="proceso" data-title="Proceso">
+      <header class="chapter-head"><p class="eyebrow">Proceso</p><h2 class="chapter-title">La dirección <em>no era</em> un problema de onboarding</h2></header>
+      <p class="lead">La dirección afectaba el descubrimiento de comercios, la compra, el checkout y la entrega. En vez de rediseñarlo todo de una vez, el equipo dividió el trabajo en tres iniciativas que se lanzaron por etapas.</p>
+      <div class="journey" data-state="despues">
+        <div class="seg" role="group" aria-label="Comparar el journey">
+          <span class="thumb" aria-hidden="true"></span>
+          <button type="button" data-set="antes" aria-pressed="false">Antes</button>
+          <button type="button" data-set="despues" aria-pressed="true">Después</button>
+        </div>
+        <ol class="journey-steps">
+          <li><span class="n" aria-hidden="true">1</span><h3>Onboarding y direcciones</h3>
+            <div class="st antes"><span class="eyebrow">Antes</span><p>Formulario de texto, sin mapa ni geolocalización</p></div>
+            <div class="st despues"><span class="eyebrow">Después</span><p>Formulario con referencias y mapa para ajustar el punto exacto</p></div></li>
+          <li><span class="n" aria-hidden="true">2</span><h3>Home</h3>
+            <div class="st antes"><span class="eyebrow">Antes</span><p>Cambiar dirección exigía ir al menú lateral</p></div>
+            <div class="st despues"><span class="eyebrow">Después</span><p>Aviso contextual si estás lejos de tu dirección, con acceso directo al cambio</p></div></li>
+          <li><span class="n" aria-hidden="true">3</span><h3>Checkout</h3>
+            <div class="st antes"><span class="eyebrow">Antes</span><p>La dirección no se veía ni se podía cambiar</p></div>
+            <div class="st despues"><span class="eyebrow">Después</span><p>Mapa visible, ajuste del pin y cambio entre direcciones guardadas con cobertura</p></div></li>
+        </ol>
+      </div>
+      {% include media.html caption="Journey horizontal con capturas antes y después en cada momento." ratio="16 / 8" %}
+    </section>
+
+    <section class="chapter" id="decisiones" data-title="Decisiones de diseño">
+      <header class="chapter-head"><p class="eyebrow">Decisiones de diseño</p><h2 class="chapter-title">Cuatro decisiones <em>y sus trade-offs</em></h2></header>
+      <div class="decisions">
+
+        <div class="decision">
+          <span class="d-num" aria-hidden="true">01</span>
+          <div class="d-head"><span class="who">Mi propuesta</span><h3>Complementar la dirección escrita con referencias y un mapa</h3></div>
+          <div class="d-body">
+            <p>El texto solo no bastaba en un país donde las direcciones se describen con referencias. Propuse agregar campos de referencia y un mapa para ajustar el punto de entrega.</p>
+            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Más pasos en el registro</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Una ubicación precisa</p></div></div>
+            <p><mark class="tbd">[cómo mantuvieron el flujo corto, por ejemplo campos opcionales o el pin precargado]</mark></p>
+            {% include media.html caption="Formulario antes y después, lado a lado." ratio="16 / 8" %}
+          </div>
+        </div>
+
+        <div class="decision">
+          <span class="d-num" aria-hidden="true">02</span>
+          <div class="d-head"><span class="who">Mi propuesta, frente a una alternativa en discusión</span><h3>Advertir en vez de bloquear</h3></div>
+          <div class="d-body">
+            <div class="versus">
+              <div class="alt"><span class="eyebrow">La alternativa en discusión</span><p>Impedir el pedido si la ubicación actual estaba muy lejos de la dirección elegida.</p></div>
+              <div class="mine"><span class="eyebrow">Lo que propuse</span><p>Un aviso amable en la home que pregunta si el pedido es para alguien más y ofrece cambiar la dirección en un toque.</p></div>
+            </div>
+            <p>La distancia no siempre significa un error. Hay casos legítimos, como pedir antes de llegar a casa o enviar comida a otra persona. Bloquear habría castigado a esas personas y costado ventas.</p>
+            <div class="ui-quote"><span class="eyebrow">Aviso en la home</span><mark class="tbd">[texto final del aviso y por qué elegiste esas palabras]</mark></div>
+            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Algunas personas ignorarían el aviso</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>No perder pedidos válidos</p></div></div>
+          </div>
+        </div>
+
+        <div class="decision">
+          <span class="d-num" aria-hidden="true">03</span>
+          <div class="d-head"><span class="who pm">Mi propuesta, respaldada por los PM</span><h3>El checkout es para <em>confirmar</em>, no para configurar</h3></div>
+          <div class="d-body">
+            <div class="versus">
+              <div class="alt"><span class="eyebrow">El contexto</span><p>Se propuso que el checkout permitiera editar todo: productos, dirección libre, delivery o retiro y otros detalles.</p></div>
+              <div class="mine"><span class="eyebrow">Mi postura</span><p>La persona ya tomó muchas decisiones en el camino; convertir el checkout en otra etapa de configuración agrega fricción justo antes de pagar. Pero también era la última oportunidad de evitar un pedido cancelado por dirección.</p></div>
+            </div>
+            <p>Abrí la discusión sobre el propósito del checkout. Para equilibrar ambas cosas propuse:</p>
+            <ul>
+              <li>Mostrar la dirección con un mapa y permitir ajustar el pin</li>
+              <li>Cambiar solo entre direcciones guardadas que tengan cobertura del comercio</li>
+              <li>Mantener el aviso si tu ubicación no coincide con la dirección</li>
+              <li>Dejar fuera las ediciones extensas</li>
+              <li>Un botón de finalizar siempre visible, habilitado solo cuando está toda la información necesaria</li>
+            </ul>
+            <p>Los Product Managers respaldaron la propuesta y se adoptó para la experiencia final.</p>
+          </div>
+        </div>
+
+        <div class="decision">
+          <span class="d-num" aria-hidden="true">04</span>
+          <div class="d-head"><span class="who team">Decisión del equipo</span><h3>Ajustar el pin sin salir de la cobertura</h3></div>
+          <div class="d-body">
+            <p>Mover el pin no equivale a cambiar de dirección. Diseño, Producto y Desarrollo definimos un radio máximo de 50 metros, que se reduce cuando la ubicación está cerca del límite de cobertura del comercio. Así la persona gana precisión sin que el pedido quede fuera de zona.</p>
+            <figure class="fig">
+              <div class="card outline diagram">
+                <svg viewBox="0 0 600 300" role="img" aria-labelledby="radio-t">
+                  <title id="radio-t">Esquema: el radio de 50 metros se reduce cerca del límite de cobertura</title>
+                  <rect x="0" y="0" width="600" height="300" style="fill:#FFFCFA"/>
+                  <path d="M440 -10 A 330 330 0 0 1 440 310 L 620 310 L 620 -10 Z" style="fill:#F3E4E7;fill-opacity:.6"/>
+                  <path d="M440 -10 A 330 330 0 0 1 440 310" style="fill:none;stroke:#A66B7B;stroke-width:1.5;stroke-dasharray:6 7"/>
+                  <text x="580" y="34" text-anchor="end" style="font:500 13px 'Inter',sans-serif;fill:#8E5767">Fuera de cobertura</text>
+                  <text x="440" y="290" text-anchor="end" style="font:500 13px 'Inter',sans-serif;fill:#8E5767">Límite de cobertura del comercio</text>
+                  <circle cx="170" cy="150" r="70" style="fill:#D8A7B1;fill-opacity:.4;stroke:#A66B7B;stroke-width:1.5"/>
+                  <circle cx="170" cy="150" r="5" style="fill:#29262B"/>
+                  <line x1="170" y1="150" x2="240" y2="150" style="stroke:#29262B;stroke-width:1"/>
+                  <text x="205" y="142" text-anchor="middle" style="font:500 13px 'Inter',sans-serif;fill:#29262B">50 m</text>
+                  <text x="170" y="250" text-anchor="middle" style="font:400 14px 'Inter',sans-serif;fill:#29262B">Radio máximo</text>
+                  <circle cx="420" cy="150" r="32" style="fill:#D8A7B1;fill-opacity:.4;stroke:#A66B7B;stroke-width:1.5"/>
+                  <circle cx="420" cy="150" r="5" style="fill:#29262B"/>
+                  <text x="380" y="214" text-anchor="middle" style="font:400 14px 'Inter',sans-serif;fill:#29262B">Cerca del límite,</text>
+                  <text x="380" y="232" text-anchor="middle" style="font:400 14px 'Inter',sans-serif;fill:#29262B">el radio se reduce</text>
+                </svg>
+              </div>
+              <figcaption class="fig-cap"><b>Esquema ilustrativo</b> de la regla del radio dinámico, no a escala.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="solucion" data-title="Solución">
+      <header class="chapter-head"><p class="eyebrow">Solución</p><h2 class="chapter-title">Un checkout que cuenta <em>una historia</em></h2></header>
+      <div class="split">
+        <div class="stack">
+          <div class="ui-quote"><span class="eyebrow">La historia del checkout</span>¿Todo listo para hacer tu pedido? Confirma tu dirección, elige tu método de pago y finaliza. Si quieres, también puedes revisar el detalle de tu pedido.</div>
+          <p><b>Jerarquía final</b></p>
+          <ol class="plain-list">
+            <li><b>Entrega:</b> mapa, dirección o punto de retiro, tiempo estimado y acciones limitadas para corregir</li>
+            <li><b>Pago y beneficios:</b> método de pago y cupones</li>
+            <li><b>Resumen del pedido:</b> productos e importes</li>
+          </ol>
+        </div>
+        <figure class="fig">
+          <div class="phone" aria-hidden="true">
+            <div class="ttl">¿Todo listo para hacer tu pedido?</div>
+            <div class="blk b1"><b><span class="num">1</span>Entrega</b><span>Mapa, dirección, tiempo estimado</span><div class="map"></div></div>
+            <div class="blk b2"><b><span class="num">2</span>Pago y beneficios</b><span>Método de pago y cupones</span></div>
+            <div class="blk b3"><b><span class="num">3</span>Resumen del pedido</b><span>Productos e importes</span></div>
+            <div class="cta-ph">Finalizar</div>
+          </div>
+          <figcaption class="fig-cap"><b>Esquema ilustrativo</b> de la jerarquía final. No es la pantalla real.</figcaption>
+        </figure>
+      </div>
+      {% include media.html caption="Benchmark de checkouts convencionales junto al de Monchis: la entrega sube al primer bloque." ratio="16 / 8" %}
+    </section>
+
+    <section class="chapter" id="resultados" data-title="Resultados">
+      <header class="chapter-head"><p class="eyebrow">Resultados</p><h2 class="chapter-title">Después del lanzamiento</h2></header>
+      <p class="lead">Tras el lanzamiento se hizo seguimiento y se observó una baja en:</p>
+      <div class="metrics">
+        <div class="metric"><p>Reclamos al Contact Center por direcciones</p><span class="val"><mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></span><p class="fig-cap">en <mark class="tbd">[periodo]</mark></p></div>
+        <div class="metric"><p>Pedidos no entregados por dirección</p><span class="val"><mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></span></div>
+        <div class="metric"><p>Tiempo de entrega</p><span class="val"><mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></span></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="aprendizajes" data-title="Aprendizajes">
+      <header class="chapter-head"><p class="eyebrow">Aprendizajes</p><h2 class="chapter-title">Lo que haría distinto: probar <em>antes</em> de lanzar</h2></header>
+      <p class="lead">No hicimos pruebas de usabilidad antes de lanzar; validamos con Product Managers y con Desarrollo. Con más tiempo habría probado tres cosas:</p>
+      <div class="cards">
+        <div class="card outline"><p class="eyebrow">Probaría</p><h3>Si las personas entienden cómo mover el pin en el mapa</h3></div>
+        <div class="card outline"><p class="eyebrow">Probaría</p><h3>Cuántas veces el aviso de la home aparece cuando no hay error</h3></div>
+        <div class="card outline"><p class="eyebrow">Probaría</p><h3>Si limitar las ediciones en el checkout genera abandono</h3></div>
+      </div>
+      <p><a class="btn" href="#" target="_blank" rel="noopener">Ver flujos en Figma <mark class="tbd">[link]</mark> <span class="arr" aria-hidden="true">↗</span></a></p>
+    </section>
+  </div>
+</div>

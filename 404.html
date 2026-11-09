@@ -1,0 +1,16 @@
+---
+layout: default
+title: Página no encontrada
+permalink: /404.html
+---
+<section class="section not-found">
+  <div class="wrap">
+    <p class="eyebrow">Error 404</p>
+    <h1 class="section-title">Esta página <em>no existe</em></h1>
+    <p class="lead">Puede que el enlace haya cambiado. Estos son los proyectos del portafolio:</p>
+    <ol class="project-grid compact">
+      {% for p in site.data.projects %}<li>{% include project-card.html project=p %}</li>{% endfor %}
+    </ol>
+    <p><a class="btn primary" href="/">Ir al inicio <span class="arr" aria-hidden="true">→</span></a></p>
+  </div>
+</section>

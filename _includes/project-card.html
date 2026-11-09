@@ -1,0 +1,15 @@
+{%- assign p = include.project -%}
+<article class="pcard{% if p.featured %} pcard-featured{% endif %}">
+  {% include project-media.html project=p size="card" %}
+  <div class="pcard-body">
+    <p class="pcard-meta">
+      <span class="pcard-n" aria-hidden="true">0{{ p.order }}</span>
+      <span class="eyebrow">{{ p.company }} · {{ p.sector }}</span>
+      {% if p.featured %}<span class="pcard-flag">Caso principal</span>{% endif %}
+    </p>
+    <h3 class="pcard-title"><a href="/proyectos/{{ p.slug }}/">{{ p.name }}</a></h3>
+    <p class="pcard-problem">{{ p.problem }}</p>
+    <dl class="pcard-contrib"><dt>Mi aporte</dt><dd>{{ p.contribution }}</dd></dl>
+    <span class="pcard-cta" aria-hidden="true">Ver proyecto <span class="arr">→</span></span>
+  </div>
+</article>

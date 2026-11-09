@@ -1,0 +1,57 @@
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Ximena Bissieres, ir al inicio">
+      <span class="brand-mark" aria-hidden="true">X<span style="color:var(--rose)">b</span></span>
+      <span class="brand-name">Ximena Bissieres</span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="/" data-nav="inicio">Inicio</a></li>
+        <li class="has-menu">
+          <button class="nav-link nav-trigger{% if page.slug %} is-active{% endif %}" type="button" aria-expanded="false" aria-controls="menu-proyectos" data-nav="proyectos">
+            Proyectos
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="menu" id="menu-proyectos" hidden>
+            <ul class="menu-list">
+              {% for p in site.data.projects %}
+              <li>
+                <a class="menu-item" href="/proyectos/{{ p.slug }}/"{% if page.slug == p.slug %} aria-current="page"{% endif %}>
+                  <span class="menu-n" aria-hidden="true">0{{ p.order }}</span>
+                  <span class="menu-text"><b>{{ p.company }}</b><span>{{ p.menu }}</span></span>
+                  <span class="menu-arr" aria-hidden="true">→</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            <a class="menu-all" href="/#proyectos">Ver todos los proyectos</a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="/#sobre-mi" data-nav="sobre-mi">Sobre mí</a></li>
+        <li><a class="nav-link" href="/#contacto" data-nav="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="menu-toggle-label">Menú</span>
+      <span class="burger" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="wrap" aria-label="Principal (móvil)">
+      <a class="m-link" href="/">Inicio</a>
+      <p class="m-group eyebrow">Proyectos</p>
+      <ul class="m-projects">
+        {% for p in site.data.projects %}
+        <li><a class="m-project" href="/proyectos/{{ p.slug }}/"{% if page.slug == p.slug %} aria-current="page"{% endif %}><span class="menu-n" aria-hidden="true">0{{ p.order }}</span><span class="menu-text"><b>{{ p.company }}</b><span>{{ p.menu }}</span></span></a></li>
+        {% endfor %}
+      </ul>
+      <a class="m-link" href="/#sobre-mi">Sobre mí</a>
+      <a class="m-link" href="/#contacto">Contacto</a>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>

@@ -1,0 +1,12 @@
+# Portafolio de Ximena Bissieres · se publica con GitHub Pages (Jekyll)
+title: Ximena Bissieres
+description: Product Designer especializada en contenido y sistemas.
+lang: es
+url: https://ximebissieres.github.io
+cv_url: https://drive.google.com/file/d/1nrHjRSnpFOwwXJnKw0vn-z2yrDg4grrt/view
+linkedin_url: ""   # pendiente
+email: ""          # pendiente
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

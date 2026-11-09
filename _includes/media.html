@@ -1,0 +1,14 @@
+{%- comment -%}
+  Figura reutilizable. Con `src` muestra la imagen; sin `src` muestra un espacio
+  preparado para incorporarla después. Parámetros: src, alt, caption, ratio, fit, position.
+{%- endcomment -%}
+<figure class="shot{% if include.class %} {{ include.class }}{% endif %}">
+  {%- if include.src -%}
+  <div class="shot-frame"{% if include.ratio %} style="aspect-ratio: {{ include.ratio }}"{% endif %}>
+    <img src="{{ include.src }}" alt="{{ include.alt }}" loading="lazy" decoding="async"{% if include.ratio %} style="object-fit: {{ include.fit | default: 'cover' }}; object-position: {{ include.position | default: '50% 50%' }}"{% endif %}>
+  </div>
+  {%- else -%}
+  <div class="ph-box"{% if include.ratio %} style="aspect-ratio: {{ include.ratio }}"{% endif %}><span>Imagen pendiente</span></div>
+  {%- endif -%}
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

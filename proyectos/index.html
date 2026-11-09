@@ -1,0 +1,15 @@
+---
+layout: default
+title: Proyectos
+permalink: /proyectos/
+head_extra: '<meta http-equiv="refresh" content="0; url=/#proyectos">'
+---
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Proyectos</p>
+    <h1 class="section-title">Te llevamos a todos los proyectos…</h1>
+    <ul class="simple-list">
+      {% for p in site.data.projects %}<li><a class="link-arrow" href="/proyectos/{{ p.slug }}/">{{ p.company }}: {{ p.name }} →</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,158 +1,129 @@
 /* Ximena Bissieres · Portafolio
-   Navegación por #hash, transiciones entre vistas, revelado al hacer scroll
-   y microinteracciones. Sin dependencias. */
+   Sitio multipágina (Jekyll / GitHub Pages). Este archivo solo agrega
+   comportamiento: menú de proyectos, menú móvil, estado activo de la
+   navegación, índice de etapas, progreso de lectura y microinteracciones.
+   Todo el contenido funciona sin JavaScript. */
 (function () {
   'use strict';
-  var root = document.documentElement;
-  root.classList.remove('no-js');
-  root.classList.add('js');
-
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var CASES = ['monchis', 'latam', 'santa-isabel', 'paris'];
-  var views = Array.prototype.slice.call(document.querySelectorAll('[data-view]'));
-  var header = document.querySelector('.site-header');
-  var progress = document.querySelector('.progress');
-  var current = null;
-  var pendingSource = null;
+  var isHome = document.body.classList.contains('is-home');
+  var isProject = document.body.classList.contains('is-project');
 
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
 
-  /* ---------- Covers: reutilizar el de la home en cada caso ---------- */
-  $$('[data-cover-slot]').forEach(function (slot) {
-    var src = $('.project[data-case="' + slot.getAttribute('data-cover-slot') + '"] .cover');
-    if (src) {
-      var clone = src.cloneNode(true);
-      $$('a', clone).forEach(function (a) { a.remove(); });
-      slot.appendChild(clone);
-    }
+  /* ---------- Menú desplegable de proyectos (clic, teclado y táctil) ---------- */
+  var trigger = $('.nav-trigger');
+  var menu = $('#menu-proyectos');
+  function setMenu(open, focusFirst) {
+    if (!trigger || !menu) return;
+    trigger.setAttribute('aria-expanded', String(open));
+    menu.hidden = !open;
+    if (open && focusFirst) { var first = $('.menu-item', menu); if (first) first.focus(); }
+  }
+  if (trigger && menu) {
+    trigger.addEventListener('click', function () { setMenu(trigger.getAttribute('aria-expanded') !== 'true'); });
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); setMenu(true, true); }
+    });
+    menu.addEventListener('keydown', function (e) {
+      var items = $$('a', menu);
+      var i = items.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.hidden && !e.target.closest('.has-menu')) setMenu(false);
+    });
+    document.addEventListener('focusin', function (e) {
+      if (!menu.hidden && !e.target.closest('.has-menu')) setMenu(false);
+    });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  }
+
+  /* ---------- Menú móvil ---------- */
+  var toggle = $('.menu-toggle');
+  var mobile = $('#mobile-menu');
+  function setMobile(open) {
+    if (!toggle || !mobile) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    $('.menu-toggle-label', toggle).textContent = open ? 'Cerrar' : 'Menú';
+    mobile.hidden = !open;
+    document.body.classList.toggle('menu-open', open);
+  }
+  if (toggle && mobile) {
+    toggle.addEventListener('click', function () { setMobile(toggle.getAttribute('aria-expanded') !== 'true'); });
+    mobile.addEventListener('click', function (e) { if (e.target.closest('a')) setMobile(false); });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (menu && !menu.hidden) { setMenu(false); trigger.focus(); }
+    if (mobile && !mobile.hidden) { setMobile(false); toggle.focus(); }
   });
 
-  /* ---------- Revelado al hacer scroll ---------- */
-  var revealObserver = null;
-  if ('IntersectionObserver' in window && !reduce) {
-    revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    $$('[data-reveal], .dots, .thread').forEach(function (el) { revealObserver.observe(el); });
-  } else {
-    $$('[data-reveal], .dots, .thread').forEach(function (el) { el.classList.add('in'); });
-  }
-
-  /* ---------- Router ---------- */
-  function viewFromHash() {
-    var id = decodeURIComponent(location.hash.slice(1));
-    return { id: id, view: CASES.indexOf(id) >= 0 ? id : 'home' };
-  }
-
-  function render() {
-    var r = viewFromHash();
-    var changed = r.view !== current;
-    views.forEach(function (v) { v.hidden = v.getAttribute('data-view') !== r.view; });
-    document.body.setAttribute('data-view', r.view === 'home' ? 'home' : 'case');
-    current = r.view;
-    if (r.view !== 'home') {
-      if (changed) window.scrollTo({ top: 0, behavior: 'instant' });
-      var h1 = $('[data-view="' + r.view + '"] .case-title');
-      document.title = (h1 ? h1.getAttribute('data-short') + ' · ' : '') + 'Ximena Bissieres';
-    } else {
-      document.title = 'Ximena Bissieres · Product Designer';
-      var target = r.id && document.getElementById(r.id);
-      if (changed) {
-        if (target) target.scrollIntoView({ behavior: 'instant' });
-        else window.scrollTo({ top: 0, behavior: 'instant' });
-      }
-    }
-    updateNav();
-    onScroll();
-  }
-
-  function clearNames() {
-    $$('.vt-named').forEach(function (el) { el.style.viewTransitionName = ''; el.classList.remove('vt-named'); });
-  }
-  function nameEl(el, name) { if (el) { el.style.viewTransitionName = name; el.classList.add('vt-named'); } }
-
-  function navigate() {
-    var next = viewFromHash().view;
-    if (reduce || !document.startViewTransition || next === current) { render(); return; }
-    var src = pendingSource; pendingSource = null;
-    if (src && next !== 'home') {
-      nameEl(src.title, 'case-title');
-      nameEl(src.cover, 'case-cover');
-    }
-    var t = document.startViewTransition(function () {
-      clearNames();
-      render();
-      if (src && next !== 'home') {
-        var art = $('[data-view="' + next + '"]');
-        nameEl($('.case-title', art), 'case-title');
-        nameEl($('[data-cover-slot] .cover', art), 'case-cover');
-      }
-    });
-    t.finished.then(clearNames, clearNames);
-  }
-
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest('a[href^="#"]');
-    if (!a) return;
-    var project = a.closest('.project');
-    pendingSource = project ? { title: $('.project-title', project), cover: $('.cover', project) } : null;
-  });
-  window.addEventListener('hashchange', navigate);
-
-  /* ---------- Navegación: estado activo ---------- */
-  var navLinks = $$('.nav a');
-  var activeSection = '';
-  function updateNav() {
-    var key = current === 'home' ? activeSection : 'casos';
-    navLinks.forEach(function (a) {
-      var on = a.getAttribute('href') === '#' + key;
-      a.classList.toggle('is-active', on);
-      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
-    });
-  }
-  if ('IntersectionObserver' in window) {
+  /* ---------- Estado activo de la navegación en la home ---------- */
+  if (isHome && 'IntersectionObserver' in window) {
+    var links = $$('.nav [data-nav]');
     var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { activeSection = e.target.id; updateNav(); } });
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var key = e.target.id === 'inicio' ? 'inicio' : e.target.id;
+        links.forEach(function (l) {
+          var on = l.getAttribute('data-nav') === key;
+          l.classList.toggle('is-active', on);
+        });
+      });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['inicio', 'casos', 'sobre-mi', 'contacto'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+    ['inicio', 'proyectos', 'sobre-mi', 'contacto'].forEach(function (id) {
+      var el = document.getElementById(id); if (el) spy.observe(el);
+    });
   }
 
-  /* ---------- Índice del caso y barra de progreso ---------- */
-  $$('[data-view] .case-body').forEach(function (body) {
-    var toc = $('.toc ol', body);
-    var chapters = $$('.chapter', body);
-    var buttons = chapters.map(function (ch, i) {
-      var title = ch.getAttribute('data-title') || ('Sección ' + (i + 1));
-      var li = document.createElement('li');
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = title;
-      b.addEventListener('click', function () {
-        ch.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-        var h = $('.chapter-title, h2', ch);
-        if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+  /* ---------- Revelado al hacer scroll (solo bloques principales) ---------- */
+  var revealEls = $$('[data-reveal], .dots, .thread');
+  if ('IntersectionObserver' in window && !reduce) {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
       });
-      li.appendChild(b);
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
+    revealEls.forEach(function (el) { ro.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Caso: índice de etapas y progreso de lectura ---------- */
+  if (isProject) {
+    var toc = $('.toc ol');
+    var chapters = $$('.chapter[id]');
+    var tocLinks = chapters.map(function (ch, i) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + ch.id;
+      a.innerHTML = '<span class="toc-n">' + String(i + 1).padStart(2, '0') + '</span>' + (ch.getAttribute('data-title') || '');
+      li.appendChild(a);
       if (toc) toc.appendChild(li);
-      return b;
+      return a;
     });
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            var i = chapters.indexOf(e.target);
-            buttons.forEach(function (b, j) { b.classList.toggle('is-active', j === i); });
-          }
+          if (!e.isIntersecting) return;
+          var i = chapters.indexOf(e.target);
+          tocLinks.forEach(function (a, j) {
+            a.classList.toggle('is-active', j === i);
+            if (j === i) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current');
+          });
         });
       }, { rootMargin: '-30% 0px -60% 0px' });
       chapters.forEach(function (c) { io.observe(c); });
     }
-  });
+  }
 
+  var header = $('.site-header');
+  var progress = $('.progress');
   var ticking = false;
   function onScroll() {
     if (ticking) return;
@@ -160,18 +131,18 @@
     requestAnimationFrame(function () {
       ticking = false;
       header.classList.toggle('scrolled', window.scrollY > 8);
-      if (current && current !== 'home') {
+      if (isProject && progress) {
         var max = document.documentElement.scrollHeight - window.innerHeight;
         progress.style.setProperty('--p', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
       }
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   /* ---------- Antes / Después ---------- */
   $$('.journey').forEach(function (j) {
     var seg = $('.seg', j);
-    var thumb = $('.thumb', seg);
     var btns = $$('button', seg);
     function place(btn) {
       seg.style.setProperty('--tw', btn.offsetWidth + 'px');
@@ -184,8 +155,11 @@
         place(b);
       });
     });
-    var on = btns.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; })[0];
-    if (on && thumb) { requestAnimationFrame(function () { place(on); }); window.addEventListener('resize', function () { place($('button[aria-pressed="true"]', seg)); }); }
+    var on = $('button[aria-pressed="true"]', seg);
+    if (on) {
+      requestAnimationFrame(function () { place(on); });
+      window.addEventListener('resize', function () { place($('button[aria-pressed="true"]', seg)); });
+    }
   });
 
   /* ---------- Copiar email ---------- */
@@ -201,9 +175,8 @@
     });
   });
 
-  /* ---------- Respuesta al cursor (solo desktop) ---------- */
+  /* ---------- Respuesta al cursor (solo desktop, sin movimiento reducido) ---------- */
   if (finePointer && !reduce) {
-    // Covers con capas: se desplazan según la profundidad de cada capa.
     document.addEventListener('pointermove', function (e) {
       var cover = e.target.closest && e.target.closest('.cover');
       if (!cover) return;
@@ -221,7 +194,6 @@
       }
     });
 
-    // Halo del hero que sigue al cursor con suavidad.
     var hero = $('.hero');
     var orb = $('.hero-orb');
     var frame = $('.portrait-frame');
@@ -245,6 +217,4 @@
       }, { passive: true });
     }
   }
-
-  render();
 })();

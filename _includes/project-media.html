@@ -1,0 +1,9 @@
+{%- comment -%} Portada de un proyecto: imagen real o ilustración. Parámetros: project, size (card|hero) {%- endcomment -%}
+{%- assign p = include.project -%}
+<div class="pmedia pmedia-{{ include.size | default: 'card' }}" style="view-transition-name: media-{{ p.slug }}">
+  {%- if p.cover == 'illustration' -%}
+    {% include cover-{{ p.slug }}.html %}
+  {%- else -%}
+    <img src="{{ p.cover }}" alt="{{ p.cover_alt }}" style="object-position: {{ p.cover_position | default: '50% 50%' }}" loading="{% if include.size == 'hero' %}eager{% else %}lazy{% endif %}" decoding="async">
+  {%- endif -%}
+</div>
