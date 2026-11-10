@@ -18,17 +18,17 @@ summary: 'Rediseñamos la landing de ofertas para que vuelos, hoteles y paquetes
   <nav class="toc" aria-label="Etapas del caso"><p class="eyebrow">En este caso</p><ol></ol></nav>
   <div class="chapters">
 
-    <section class="chapter" id="contexto" data-title="Contexto">
+    <section class="chapter chapter--context" id="contexto" data-title="Contexto">
       <header class="chapter-head"><p class="eyebrow">Contexto</p><h2 class="chapter-title">Una landing que <em>solo vendía vuelos</em></h2></header>
       <p class="lead">La landing de ofertas solo mostraba vuelos. El negocio necesitaba vender hoteles y paquetes, y más adelante rent a car y asistencia en viaje.</p>
-      <ul class="products" aria-label="Productos de la landing">
-        <li class="core"><small>Core</small>Vuelos</li>
-        <li class="now"><small>Se suman</small>Hoteles</li>
-        <li class="now"><small>Se suman</small>Paquetes</li>
-        <li class="later"><small>Más adelante</small>Rent a car</li>
-        <li class="later"><small>Más adelante</small>Asistencia en viaje</li>
-      </ul>
-      <p>Los equipos internos tenían dos dolores: cargar promociones era rígido y los productos complementarios casi no se veían.</p>
+      <ol class="offer-tl" aria-label="Productos de la landing" data-scroll-draw>
+        <li class="tl-core" style="--at:0"><span class="tl-stage">Core</span><span class="tl-dot" aria-hidden="true"></span><span class="tl-name">Vuelos</span></li>
+        <li class="tl-now" style="--at:.25"><span class="tl-stage">Se suman</span><span class="tl-dot" aria-hidden="true"></span><span class="tl-name">Hoteles</span></li>
+        <li class="tl-now" style="--at:.5"><span class="tl-stage tl-repeat">Se suman</span><span class="tl-dot" aria-hidden="true"></span><span class="tl-name">Paquetes</span></li>
+        <li class="tl-later" style="--at:.75"><span class="tl-stage">Más adelante</span><span class="tl-dot" aria-hidden="true"></span><span class="tl-name">Rent a car</span></li>
+        <li class="tl-later" style="--at:1"><span class="tl-stage tl-repeat">Más adelante</span><span class="tl-dot" aria-hidden="true"></span><span class="tl-name">Asistencia en viaje</span></li>
+      </ol>
+      <p class="ctx-pains">Los equipos internos tenían dos dolores: cargar promociones era rígido y los productos complementarios casi no se veían.</p>
       <p class="statement"><span class="eyebrow">Pregunta de diseño</span>¿Cómo sumamos productos sin canibalizar la venta de vuelos, que es el core del negocio?</p>
     </section>
 

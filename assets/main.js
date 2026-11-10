@@ -147,6 +147,30 @@
     remeasureShift();
   }
 
+  /* ---------- Líneas de tiempo que se dibujan con el scroll ([data-scroll-draw]) ----------
+     --tl: 0 cuando el elemento asoma por abajo · 1 cuando llega a un 40 % del alto
+     de la pantalla. Reversible. Sin JS o con movimiento reducido, CSS usa 1. */
+  var draws = $$('[data-scroll-draw]');
+  if (draws.length && !reduce) {
+    var drawItems = [], drawTicking = false;
+    var measureDraw = function () {
+      drawItems = draws.map(function (el) { return { el: el, top: el.getBoundingClientRect().top + window.scrollY }; });
+    };
+    var updateDraw = function () {
+      drawTicking = false;
+      var vh = window.innerHeight;
+      drawItems.forEach(function (it) {
+        var t = (window.scrollY + vh * 0.92 - it.top) / (vh * 0.5);
+        it.el.style.setProperty('--tl', Math.min(1, Math.max(0, t)).toFixed(4));
+      });
+    };
+    window.addEventListener('scroll', function () { if (!drawTicking) { drawTicking = true; requestAnimationFrame(updateDraw); } }, { passive: true });
+    var remeasureDraw = function () { measureDraw(); updateDraw(); };
+    window.addEventListener('resize', remeasureDraw);
+    window.addEventListener('load', remeasureDraw);
+    remeasureDraw();
+  }
+
   var header = $('.site-header');
   var progress = $('.progress');
   var ticking = false;
