@@ -172,7 +172,6 @@
   }
 
   var header = $('.site-header');
-  var progress = $('.progress');
   var ticking = false;
   function onScroll() {
     if (ticking) return;
@@ -180,10 +179,6 @@
     requestAnimationFrame(function () {
       ticking = false;
       header.classList.toggle('scrolled', window.scrollY > 8);
-      if (isProject && progress) {
-        var max = document.documentElement.scrollHeight - window.innerHeight;
-        progress.style.setProperty('--p', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
-      }
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
