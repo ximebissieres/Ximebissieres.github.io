@@ -1398,3 +1398,78 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .decisions-panel { grid-template-rows: auto auto auto; }
   .decisions-panel > li { grid-row: span 3; grid-template-rows: subgrid; row-gap: 8px; }
 }
+
+/* ==========================================================================
+   LATAM · componentes del caso (objetivos, investigación, anatomía, validación)
+   ========================================================================== */
+/* Objetivos de producto: lista compacta a dos columnas */
+.chapter--context .ctx-goals { margin-top: 28px; display: grid; gap: 12px; max-width: 46rem; }
+.ctx-goals .eyebrow { font-size: .7rem; letter-spacing: .14em; color: var(--rose-ink); }
+.ctx-goals ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px 32px; }
+@media (min-width: 640px) { .ctx-goals ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ctx-goals li { position: relative; padding-left: 18px; font-size: .95rem; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+.ctx-goals li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--blush); }
+
+/* Investigación: panel editorial 2 × 2 */
+.research-list {
+  list-style: none; margin: 0; padding: 0; counter-reset: rl;
+  display: grid; grid-template-columns: 1fr; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+}
+@media (min-width: 760px) { .research-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.research-list > li { position: relative; display: grid; gap: 8px; align-content: start; padding: 22px 24px 24px; counter-increment: rl; }
+.research-list > li + li { border-top: 1px solid var(--line); }
+@media (min-width: 760px) {
+  .research-list > li + li { border-top: 0; }
+  .research-list > li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .research-list > li:nth-child(even) { border-left: 1px solid var(--line); }
+}
+.research-list .eyebrow { display: flex; align-items: center; gap: 10px; font-size: .7rem; letter-spacing: .14em; color: var(--muted); }
+.research-list .eyebrow::before { content: counter(rl, decimal-leading-zero); color: var(--rose-ink); font-variant-numeric: tabular-nums; }
+.research-list h3 { font-family: var(--display); font-weight: var(--w-semibold); font-size: 1.15rem; line-height: 1.3; letter-spacing: -0.015em; }
+.research-list dl { margin: 4px 0 0; display: grid; gap: 10px; }
+.research-list dt { font-size: .72rem; font-weight: var(--w-semibold); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.research-list dd { margin: 2px 0 0; font-size: .95rem; line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+.research-list .rl-found { padding: 10px 12px; border-radius: 12px; background: var(--bg-3); }
+.research-list .rl-found dt { color: var(--rose-ink); }
+.research-list .link-arrow { white-space: nowrap; }
+.research-close { margin-top: 8px; }
+.research-close .statement { font-size: var(--step-1, 1.25rem); }
+
+/* Decisiones con tensión y evidencia (5 filas alineadas) */
+.decisions-panel .dec-meta, .decisions-panel .dec-ev { font-size: .9rem; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+.decisions-panel .dec-meta { padding-top: 10px; border-top: 1px solid var(--line); margin-top: 4px; }
+.decisions-panel .dec-meta b, .decisions-panel .dec-ev b { display: block; font-size: .72rem; font-weight: var(--w-semibold); letter-spacing: .08em; text-transform: uppercase; color: var(--rose-ink); margin-bottom: 2px; }
+@media (min-width: 760px) {
+  .decisions-panel--full { grid-template-rows: repeat(5, auto); }
+  .decisions-panel--full > li { grid-row: span 5; }
+}
+.shot.shot-evidence { max-width: 38rem; }
+
+/* Solución: anatomía con marcadores numerados */
+.anatomy { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 900px) { .anatomy { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; } }
+.anatomy-shot { position: relative; margin: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--surface); }
+.anatomy-shot img { display: block; width: 100%; height: auto; }
+.anatomy .pin {
+  position: absolute; transform: translate(-50%, -50%);
+  width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--ink); color: var(--bg); font: var(--w-semibold) .8rem/1 var(--sans);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--blush) 70%, transparent);
+}
+.anatomy-notes { list-style: none; margin: 0; padding: 0; counter-reset: an; display: grid; gap: 18px; }
+.anatomy-notes li { counter-increment: an; display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 14px; row-gap: 4px; }
+.anatomy-notes li::before {
+  content: counter(an); grid-row: span 2; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--ink); color: var(--bg); font: var(--w-semibold) .8rem/1 var(--sans);
+}
+.anatomy-notes h3 { font-family: var(--display); font-weight: var(--w-semibold); font-size: 1.05rem; line-height: 1.3; padding-top: 3px; }
+.anatomy-notes p { font-size: .95rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.details-row { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 760px) { .details-row { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+@media (max-width: 599px) { .anatomy .pin { width: 22px; height: 22px; font-size: .7rem; box-shadow: 0 0 0 3px color-mix(in srgb, var(--blush) 70%, transparent); } }
+
+/* Validación y aprendizajes */
+.validation-note { max-width: 40rem; font-size: .95rem; color: var(--muted); }
+.learning-note { max-width: 44rem; color: var(--muted); text-wrap: pretty; }
+@media (max-width: 759px) { .details-row .shot:last-child { max-width: 22rem; } }

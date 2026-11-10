@@ -8,5 +8,6 @@ url: https://ximebissieres.github.io
 exclude:
   - README.md
   - GUIA-DE-CONTENIDO.md
+  - LATAM_PENDIENTES.md
   - Gemfile
   - Gemfile.lock

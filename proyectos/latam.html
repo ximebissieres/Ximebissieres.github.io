@@ -4,14 +4,18 @@ body_class: is-project
 slug: latam
 title: LATAM Airlines · Landing multiproducto
 permalink: /proyectos/latam/
-description: Cómo la landing de ofertas de LATAM pasó de vender solo vuelos a una plataforma multiproducto.
-summary: 'Rediseñamos la landing de ofertas para que vuelos, hoteles y paquetes convivieran en un solo flujo. El CTR de hoteles subió <mark class="tbd">[X%]</mark> y el de vuelos se mantuvo estable.'
+description: Cómo evolucionamos la landing de ofertas de LATAM hacia una experiencia multiproducto sin restar protagonismo a los vuelos.
+summary: 'LATAM necesitaba sumar hoteles y paquetes a su landing de ofertas sin desplazar a los vuelos del lugar central que ocupaban en el negocio. El desafío exigió repensar jerarquías, patrones y recorridos, combinando necesidades comerciales, investigación y validación con usuarios.'
 ---
+{%- comment -%}
+  Contenido editorial del caso LATAM. Los datos sin respaldo (métricas, fechas,
+  resultados de testeo) NO se publican: están en LATAM_PENDIENTES.md.
+{%- endcomment -%}
 <section class="overview overview--editorial" aria-label="Resumen del caso">
-  <div><h2>El problema</h2><p><span class="ov-lead">La landing solo mostraba vuelos;</span> el negocio necesitaba vender hoteles y paquetes.</p></div>
-  <div><h2>Mi rol</h2><p><span class="ov-lead">UX Writer / Content Designer.</span> Research, facilitación de workshops, arquitectura de información, storytelling y validación, junto a mi dupla UX/UI.</p></div>
-  <div><h2>Proceso</h2><p class="ov-main">Stakeholders, working backwards, arquitectura de mensajes, iteración y testeo de guerrilla.</p></div>
-  <div class="ov-impact"><h2>Impacto</h2><p><span class="ov-kpi">8 de cada 10</span> personas entendieron la experiencia. CTR de hoteles <mark class="tbd">[+X%]</mark>, vuelos estable.</p></div>
+  <div><h2>El problema</h2><p><span class="ov-lead">La landing de ofertas estaba centrada en vuelos;</span> el negocio necesitaba incorporar productos complementarios como hoteles y paquetes.</p></div>
+  <div><h2>Mi rol</h2><p><span class="ov-lead">Product Designer.</span> Investigación, workshops, arquitectura de información, jerarquización, storytelling y validación, en colaboración con Producto y mi dupla UX/UI.</p></div>
+  <div><h2>Proceso</h2><p class="ov-main">Discovery, levantamiento de necesidades, priorización, definición de experiencia, iteraciones y validación con usuarios.</p></div>
+  <div class="ov-impact"><h2>Impacto</h2><p><span class="ov-lead">Una experiencia multiproducto</span> testeada con pasajeros y pensada para sumar nuevas categorías sin rediseñar.</p></div>
 </section>
 
 <div class="case-body">
@@ -29,72 +33,127 @@ summary: 'Rediseñamos la landing de ofertas para que vuelos, hoteles y paquetes
         <li class="tl-later" style="--at:1"><span class="tl-stage tl-repeat">Más adelante</span><span class="tl-dot" aria-hidden="true"></span><span class="tl-name">Asistencia en viaje</span></li>
       </ol>
       <p class="ctx-pains">Los equipos internos tenían dos dolores: cargar promociones era rígido y los productos complementarios casi no se veían.</p>
+      <div class="ctx-goals">
+        <p class="eyebrow">Objetivos de producto</p>
+        <ul>
+          <li>Aumentar el descubrimiento de productos complementarios.</li>
+          <li>Facilitar la exploración de hoteles y paquetes.</li>
+          <li>Mantener la relevancia de vuelos.</li>
+          <li>Mejorar la organización de la información.</li>
+          <li>Preparar una arquitectura capaz de integrar nuevas categorías.</li>
+          <li>Considerar las necesidades operativas de los equipos internos.</li>
+        </ul>
+      </div>
       <p class="statement"><span class="eyebrow">Pregunta de diseño</span>¿Cómo sumamos productos sin canibalizar la venta de vuelos, que es el core del negocio?</p>
     </section>
 
     <section class="chapter" id="investigacion" data-title="Investigación">
-      <header class="chapter-head"><p class="eyebrow">Investigación</p><h2 class="chapter-title">Entender al negocio <em>y alinear la visión</em></h2></header>
-      <div class="split">
-        <div class="cards" style="grid-template-columns:1fr">
-          <div class="card"><p class="eyebrow">Entender al negocio</p><p class="ink">Entrevistas con stakeholders y focus groups con <mark class="tbd">[N]</mark> usuarios internos que gestionan campañas.</p></div>
-          <div class="card"><p class="eyebrow">Alinear la visión</p><p class="ink">Facilité un workshop con la metodología working backwards. <mark class="tbd">[resultado del workshop]</mark></p></div>
-        </div>
-        {% include media.html src="/assets/img/latam-mapeo-dolores.webp" alt="Mapeo de dolores con notas adhesivas agrupadas en cuatro grupos" caption="Mapeo de dolores del research con usuarios internos." %}
+      <header class="chapter-head"><p class="eyebrow">Investigación</p><h2 class="chapter-title">Entender a usuarios <em>y equipos internos</em></h2></header>
+      <p class="lead">Partimos levantando el problema con Producto y Tecnología, y ampliamos la mirada hacia los equipos que administraban las ofertas y hacia las personas que buscaban sus viajes.</p>
+      <ol class="research-list">
+        <li>
+          <p class="eyebrow">Producto y Tecnología</p>
+          <h3>Delimitar el problema</h3>
+          <dl>
+            <div><dt>Qué buscábamos</dt><dd>Entender el problema, sus restricciones y los objetivos del negocio.</dd></div>
+            <div><dt>Cómo</dt><dd>Trabajamos con Producto y Tecnología usando un Brief Canvas para estructurar el desafío.</dd></div>
+          </dl>
+        </li>
+        <li>
+          <p class="eyebrow">Marketing, Comercial y Producto</p>
+          <h3>Alinear prioridades</h3>
+          <dl>
+            <div><dt>Qué buscábamos</dt><dd>Construir criterios compartidos para evolucionar la experiencia.</dd></div>
+            <div><dt>Cómo</dt><dd>Facilité un workshop con la metodología Working Backwards.</dd></div>
+          </dl>
+        </li>
+        <li>
+          <p class="eyebrow">Equipos internos</p>
+          <h3>Entender la operación</h3>
+          <dl>
+            <div><dt>Qué buscábamos</dt><dd>Cómo administraban las promociones y ofertas.</dd></div>
+            <div><dt>Cómo</dt><dd>Moderé focus groups con los equipos que cargaban las campañas.</dd></div>
+            <div class="rl-found"><dt>Qué aprendimos</dt><dd>Cargar promociones era rígido y los productos complementarios tenían poca visibilidad.</dd></div>
+          </dl>
+        </li>
+        <li>
+          <p class="eyebrow">Pasajeros</p>
+          <h3>Probar con quienes viajan</h3>
+          <dl>
+            <div><dt>Qué buscábamos</dt><dd>Cómo exploraban la oferta e interpretaban las nuevas categorías.</dd></div>
+            <div><dt>Cómo</dt><dd>Testeos de guerrilla en el aeropuerto. <a class="link-arrow" href="#validacion">Ver validación</a></dd></div>
+          </dl>
+        </li>
+      </ol>
+      <div class="split research-close">
+        <p class="statement"><span class="eyebrow">Cómo influyó</span>Con esos hallazgos construí el storytelling que guió la nueva landing y definí jerarquías de información junto a mi dupla UX/UI y los equipos de Producto y Desarrollo.</p>
+        {% include media.html src="/assets/img/latam-mapeo-dolores.webp" alt="Mapeo de dolores con notas adhesivas agrupadas en cuatro grupos" caption="Mapeo de dolores del research." %}
       </div>
     </section>
 
     <section class="chapter" id="proceso" data-title="Proceso">
-      <header class="chapter-head"><p class="eyebrow">Proceso</p><h2 class="chapter-title">De la historia <em>al wireframe</em></h2></header>
-      <ol class="timeline horizontal" style="--steps:5">
-        <li><b>Entender al negocio</b><p>Entrevistas con stakeholders y focus groups con usuarios internos.</p></li>
-        <li><b>Alinear la visión</b><p>Workshop con la metodología working backwards.</p></li>
-        <li><b>Estructurar con contenido</b><p>Diseñé la arquitectura de mensajes de la landing: qué ve primero la persona, cómo se presenta cada producto y cuándo aparece la oferta. Esa estructura se convirtió en el wireframe base junto a mi dupla UX/UI.</p></li>
-        <li><b>Iterar con negocio</b><p><mark class="tbd">[N]</mark> rondas de iteración con producto y desarrollo.</p></li>
-        <li><b>Validar en terreno</b><p>Testeos de guerrilla con <mark class="tbd">[N]</mark> pasajeros en el aeropuerto <mark class="tbd">[nombre]</mark>.</p></li>
+      <header class="chapter-head"><p class="eyebrow">Proceso</p><h2 class="chapter-title">De hallazgos <em>a criterios de diseño</em></h2></header>
+      <p class="lead">Trabajamos de forma colaborativa para definir cómo debían convivir distintas categorías de producto en una misma página. Las decisiones se tradujeron en criterios de arquitectura, jerarquía y patrones reutilizables, que revisamos y ajustamos con los equipos involucrados.</p>
+      <ol class="timeline horizontal" style="--steps:4">
+        <li><b>Estructurar con contenido</b><p>Diseñé la arquitectura de mensajes de la landing: qué ve primero la persona, cómo se presenta cada producto y cuándo aparece la oferta.</p></li>
+        <li><b>Wireframe base</b><p>Esa estructura se convirtió en el wireframe base, trabajado junto a mi dupla UX/UI.</p></li>
+        <li><b>Iterar con negocio</b><p>Iteramos y validamos la propuesta con negocio, Producto y Desarrollo.</p></li>
+        <li><b>Validar en terreno</b><p>Testeos de guerrilla con pasajeros en el aeropuerto.</p></li>
       </ol>
-      {% include media.html caption="Wireframe o mapa de la arquitectura de mensajes." ratio="16 / 8" %}
     </section>
 
     <section class="chapter" id="decisiones" data-title="Decisiones de diseño">
       <header class="chapter-head"><p class="eyebrow">Decisiones de diseño</p><h2 class="chapter-title">Sumar <em>sin canibalizar</em></h2></header>
-      <ol class="decisions-panel">
-        <li><p class="eyebrow">Decisión</p><h3>Vuelos se mantiene como primer bloque</h3><p>Proteger el core del negocio mientras se suman productos.</p></li>
-        <li><p class="eyebrow">Decisión</p><h3>Un mismo patrón de módulo para cada producto</h3><p>Escalar a rent a car y asistencia sin rediseñar.</p></li>
-        <!-- Tercera decisión, pendiente de definir. Cuando la tengas, quita estas
-             marcas de comentario y reemplaza los textos entre corchetes:
-        <li><p class="eyebrow">Decisión</p><h3>[decisión sobre títulos o CTAs]</h3><p>[razón basada en el research]</p></li>
-        -->
+      <p class="lead">La solución debía impulsar nuevas categorías sin diluir el propósito principal de la landing.</p>
+      <ol class="decisions-panel decisions-panel--full">
+        <li>
+          <p class="eyebrow">Decisión</p>
+          <h3>Vuelos se mantiene como primer bloque</h3>
+          <p>Proteger el core del negocio mientras se suman productos.</p>
+          <p class="dec-meta"><b>Tensión</b> Dar visibilidad a hoteles y paquetes sin restar protagonismo a los vuelos.</p>
+          <p class="dec-ev"><b>Evidencia</b> En la landing, Vuelos es la primera pestaña.</p>
+        </li>
+        <li>
+          <p class="eyebrow">Decisión</p>
+          <h3>Un mismo patrón de módulo para cada producto</h3>
+          <p>Escalar a rent a car y asistencia sin rediseñar.</p>
+          <p class="dec-meta"><b>Tensión</b> Sumar categorías sin volver inconsistente la experiencia.</p>
+          <p class="dec-ev"><b>Evidencia</b> Vuelos, Hoteles y Paquetes comparten el mismo patrón de pestaña.</p>
+        </li>
       </ol>
+      {% include media.html src="/assets/img/latam-detalle-pestanas.webp" alt="Pestañas de la landing: Vuelos seleccionada en primer lugar, seguida de Hoteles y Paquetes con el mismo diseño" caption="Detalle de la landing rediseñada: Vuelos abre la experiencia y las tres categorías comparten patrón." class="shot-evidence" %}
     </section>
 
     <section class="chapter" id="solucion" data-title="Solución">
-      <header class="chapter-head"><p class="eyebrow">Solución</p><h2 class="chapter-title">Qué cambió <em>en la landing</em></h2></header>
-      <div class="split before-after">
-        {% include media.html caption="Antes: la landing de ofertas solo con vuelos." ratio="4 / 5" %}
-        {% include media.html src="/assets/img/latam-landing.webp" alt="Landing de ofertas de LATAM rediseñada, con buscador, destinos más buscados y precios" caption="Después: la landing rediseñada." ratio="4 / 5" position="50% 0%" %}
+      <header class="chapter-head"><p class="eyebrow">Solución</p><h2 class="chapter-title">Una estructura <em>preparada para crecer</em></h2></header>
+      <p class="lead">La propuesta organizó vuelos, hoteles y paquetes con una lógica común. Los filtros acompañan la exploración sin competir con las ofertas y, dentro de las tarjetas, precio y descuento mantienen su protagonismo para facilitar la comparación.</p>
+      <div class="anatomy">
+        <figure class="anatomy-shot">
+          <img src="/assets/img/latam-anatomia.webp" alt="Parte superior de la landing rediseñada de LATAM: pestañas de producto, controles de búsqueda y filtros, y tarjetas de destinos con precios" width="1400" height="1180" loading="lazy" decoding="async">
+          <span class="pin" style="left:43%;top:33.5%" aria-hidden="true">1</span>
+          <span class="pin" style="left:82%;top:45.8%" aria-hidden="true">2</span>
+          <span class="pin" style="left:89%;top:92.7%" aria-hidden="true">3</span>
+        </figure>
+        <ol class="anatomy-notes">
+          <li><h3>Pestañas por producto</h3><p>Vuelos, Hoteles y Paquetes con un mismo patrón; Vuelos abre la experiencia.</p></li>
+          <li><h3>Exploración</h3><p>Origen, destino y filtros como controles livianos sobre las ofertas, sin competir con ellas.</p></li>
+          <li><h3>Tarjetas de oferta</h3><p>Precio desde, precio anterior y descuento a la vista; las ofertas se ordenan por mayor descuento.</p></li>
+        </ol>
       </div>
-      <div class="strings">
-        <div class="string"><span class="el">Título principal</span><span class="before"><span class="eyebrow">Antes</span><mark class="tbd">[texto]</mark></span><span class="to" aria-hidden="true">→</span><span class="after"><span class="eyebrow">Después</span><mark class="tbd">[texto]</mark></span><span class="why"><mark class="tbd">[razón]</mark></span></div>
-        <div class="string"><span class="el">CTA de hoteles</span><span class="before"><span class="eyebrow">Antes</span><mark class="tbd">[texto]</mark></span><span class="to" aria-hidden="true">→</span><span class="after"><span class="eyebrow">Después</span><mark class="tbd">[texto]</mark></span><span class="why"><mark class="tbd">[razón]</mark></span></div>
+      <div class="details-row">
+        {% include media.html src="/assets/img/latam-detalle-filtros.webp" alt="Controles de exploración: origen, destino, filtros por tipo de vuelo y cabina, y orden por mayor descuento" caption="Exploración: filtros livianos y orden por mayor descuento." %}
+        {% include media.html src="/assets/img/latam-detalle-oferta.webp" alt="Tarjeta de oferta a Sao Paulo con precio desde, precio anterior tachado, precio actual y descuento de 35 %" caption="Tarjeta de oferta: precio y descuento visibles para comparar." %}
       </div>
     </section>
 
-    <section class="chapter" id="resultados" data-title="Resultados">
-      <header class="chapter-head"><p class="eyebrow">Resultados</p><h2 class="chapter-title">Más hoteles, <em>vuelos estables</em></h2></header>
-      <div class="split">
-        <div class="stat">
-          <p class="stat-num">8 <em>de cada</em> 10</p>
-          <div class="dots" role="img" aria-label="8 de cada 10 personas">
-            <i class="on" style="--i:0"></i><i class="on" style="--i:1"></i><i class="on" style="--i:2"></i><i class="on" style="--i:3"></i><i class="on" style="--i:4"></i><i class="on" style="--i:5"></i><i class="on" style="--i:6"></i><i class="on" style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i>
-          </div>
-          <p>personas entendieron la nueva experiencia en su primera interacción (testeo con <mark class="tbd">[N]</mark> pasajeros).</p>
+    <section class="chapter" id="validacion" data-title="Validación y resultados">
+      <header class="chapter-head"><p class="eyebrow">Validación y resultados</p><h2 class="chapter-title">Validar con <em>quienes viajan</em></h2></header>
+      <div class="split validation">
+        <div class="stack">
+          <p class="lead">Validamos la propuesta con pasajeros mediante testeos de guerrilla en el aeropuerto, para revisar la comprensión de la experiencia multiproducto y cómo exploraban las nuevas categorías.</p>
+          <p class="validation-note">Los resultados cuantitativos de negocio están pendientes de documentación y no se presentan aquí como logros verificados.</p>
         </div>
-        {% include media.html src="/assets/img/latam-testeo-aeropuerto.webp" alt="Testeo de guerrilla con pasajeros en el aeropuerto, frente a un letrero de LATAM" caption="Testeo de guerrilla con pasajeros en el aeropuerto." ratio="3 / 2" %}
-      </div>
-      <div class="metrics">
-        <div class="metric"><p>CTR del módulo de hoteles</p><span class="val">Subió <mark class="tbd">[X%]</mark></span><p class="fig-cap">en <mark class="tbd">[periodo]</mark></p></div>
-        <div class="metric light"><p>CTR de vuelos</p><span class="val">Se mantuvo estable</span></div>
-        <div class="metric light"><p>Equipos internos</p><span class="val" style="font-size:1.25rem">Gestionan campañas con más facilidad</span><p class="fig-cap"><mark class="tbd">[dato concreto: menos tiempo de carga, más campañas publicadas]</mark></p></div>
+        {% include media.html src="/assets/img/latam-testeo-aeropuerto-recorte.webp" alt="Testeo de guerrilla con pasajeros en el aeropuerto, frente a un letrero de LATAM" caption="Testeo de guerrilla con pasajeros en el aeropuerto." %}
       </div>
     </section>
 
@@ -102,6 +161,7 @@ summary: 'Rediseñamos la landing de ofertas para que vuelos, hoteles y paquetes
       <header class="chapter-head"><p class="eyebrow">Aprendizajes</p><h2 class="chapter-title">La historia primero</h2></header>
       <div class="learning">
         <p class="big-quote">Diseñar la estructura del mensaje antes que la interfaz nos permitió ponernos de acuerdo rápido con negocio. Cuando la historia estaba clara, <em>el layout casi se resolvía solo.</em></p>
+        <p class="learning-note">También confirmé que el contenido rinde más cuando parte de la investigación y se integra al diseño de la experiencia desde el inicio, no al final como corrección de textos.</p>
         <p><a class="btn" href="https://www.figma.com/design/suAsMBPqsie8YXV5vHyDLt/Redise%C3%B1o-landing-multiproducto?node-id=0-1&amp;p=f&amp;t=CxkHiRSvh8NHQZDh-0" target="_blank" rel="noopener">Ver flujos en Figma <span class="arr" aria-hidden="true">↗</span></a></p>
       </div>
     </section>
