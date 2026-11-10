@@ -36,6 +36,16 @@
     bajada: "En Paraguay, las direcciones suelen construirse a partir de referencias e intersecciones. Para Monchis, esto se traducía en demoras, entregas fallidas y reclamos."
     etiqueta_descripcion: "El proyecto"
     descripcion: "Rediseñamos la experiencia de direcciones en tres momentos del journey para mejorar la precisión sin agregar fricción a la compra."
+    # Composición visual del hero: componente real + elementos cartográficos.
+    visual:
+      imagen: "/assets/img/monchis-punto-exacto.webp"
+      imagen_alt: "Componente de mapa de Monchis: un pin rojo sobre calles y el botón «Elegí el punto exacto de entrega»"
+      ancho: 1444            # tamaño real del componente (no cambiar si no cambias la imagen)
+      alto: 468
+      pin_x: 52.5            # posición del pin dentro del componente, en %
+      pin_y: 32
+      etiqueta_componente: "Componente original · Figma"
+      etiqueta_referencias: "Referencias e intersecciones"
 - slug: latam
   category: Aerolínea
   teaser: Vuelos, hoteles y paquetes en una landing, sin afectar vuelos.

@@ -161,6 +161,7 @@ Cada proyecto es un bloque que empieza con `- slug:`. Estos datos se comparten e
 | Etiqueta del caso | `sector` | Sobre el título, en la página del caso |
 | Título del caso | `title_html` | Título grande de la página del caso (`*texto*` en rosa) |
 | Portada narrativa del caso (opcional) | `hero` → `titulo`, `bajada`, `etiqueta_descripcion`, `descripcion` | Reemplaza el título y el resumen de la portada del caso. Hoy solo la usa Monchis. Si un proyecto no tiene `hero`, se usa `title_html` |
+| Composición visual del hero (opcional) | `hero` → `visual` → `imagen`, `imagen_alt`, `etiqueta_componente`, `etiqueta_referencias` | Componente real sobre un mapa decorativo. `ancho`/`alto` son el tamaño real de la imagen y `pin_x`/`pin_y` la posición del pin en %: cámbialos solo si reemplazas la imagen |
 | Imagen | `cover` | Tarjeta y portada del caso |
 | Descripción de la imagen | `cover_alt` | Lectores de pantalla |
 | Encuadre de la imagen | `cover_position` | `"50% 0%"` muestra la parte de arriba; `"50% 50%"`, el centro |

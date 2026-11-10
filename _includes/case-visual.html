@@ -1,0 +1,34 @@
+{%- comment -%}
+  Composición del hero de un caso: componente real del producto en el centro
+  + elementos cartográficos decorativos (fondo de calles, recorrido punteado
+  por referencias, anillos que destacan el pin).
+  Datos: _data/projects.yml → hero.visual. Parámetro: project.
+
+  Coordenadas del pin dentro del componente (en % de su ancho y alto):
+  pin_x / pin_y. Los anillos y el recorrido se anclan a ese punto, así la
+  composición queda alineada en cualquier tamaño de pantalla.
+{%- endcomment -%}
+{%- assign p = include.project -%}
+{%- assign v = p.hero.visual -%}
+<figure class="pmedia pmedia-hero cvis" style="view-transition-name: media-{{ p.slug }}; --pin-x: {{ v.pin_x | default: 50 }}%; --pin-y: {{ v.pin_y | default: 50 }}%; --ratio: {{ v.ancho }} / {{ v.alto }};">
+  <svg class="cvis-streets" viewBox="0 0 1200 525" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g class="st-wide"><path d="M-40 150 L1240 92"/><path d="M-40 418 L1240 470"/><path d="M262 -40 L318 565"/><path d="M948 -40 L905 565"/></g>
+    <g class="st-thin"><path d="M-40 284 L1240 268"/><path d="M590 -40 L582 565"/><path d="M1090 -40 L1150 565"/><path d="M-40 520 L420 -40"/><path d="M120 -40 L80 565"/></g>
+  </svg>
+
+  <div class="cvis-card">
+    <span class="cvis-rings" aria-hidden="true"><i></i><i></i><i></i></span>
+
+    <svg class="cvis-trail" viewBox="0 0 323 500" aria-hidden="true" focusable="false">
+      <path class="tr-path" d="M14 440 C 70 424, 58 336, 120 318 S 200 362, 236 280 S 292 212, 323 209"/>
+      <g class="tr-cross"><path d="M54 372 h16 M62 364 v16"/><path d="M172 338 h16 M180 330 v16"/></g>
+      <circle class="tr-ref" cx="120" cy="318" r="7"/>
+      <circle class="tr-ref" cx="236" cy="280" r="7"/>
+      <circle class="tr-start" cx="14" cy="440" r="4"/>
+    </svg>
+    <span class="cvis-label">{% include texto.html t=v.etiqueta_referencias %}</span>
+
+    <span class="cvis-tag">{% include texto.html t=v.etiqueta_componente %}</span>
+    <img class="cvis-shot" src="{{ v.imagen }}" alt="{{ v.imagen_alt | escape }}" width="{{ v.ancho }}" height="{{ v.alto }}" decoding="async" fetchpriority="high">
+  </div>
+</figure>

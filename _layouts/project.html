@@ -31,7 +31,11 @@ body_class: is-project
       <p class="case-summary">{{ page.summary }}</p>
     </header>
     {%- endif %}
+    {%- if p.hero and p.hero.visual %}
+    {% include case-visual.html project=p %}
+    {%- else %}
     {% include project-media.html project=p size="hero" %}
+    {%- endif %}
     {{ content }}
   </div>
 
