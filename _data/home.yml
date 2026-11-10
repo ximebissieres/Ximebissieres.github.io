@@ -95,7 +95,7 @@ enfoque:
 # --- 04 · Contacto y CV -------------------------------------------------------
 contacto:
   etiqueta: "Contacto"
-  titulo: "¿Tienes un producto que necesita ser más claro? *Conversemos.*"
+  titulo: "*¿Conversamos?.*"
   bajada: "Si quieres conocer más sobre mi experiencia o conversar sobre un proyecto, escríbeme."
 
   # Botón principal. Si escribes tu email, el botón abre el correo.
@@ -120,4 +120,4 @@ contacto:
 # --- Pie de página (aparece en todas las páginas) ----------------------------
 pie:
   izquierda: "© 2026 Ximena Bissieres"
-  derecha: "Product Designer · Contenido y sistemas"
+  derecha: "Product Designer · Research & Content"
