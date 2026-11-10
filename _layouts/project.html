@@ -14,7 +14,7 @@ body_class: is-project
     </div>
     <header class="case-hero">
       <p class="eyebrow">{{ p.company }} · {{ p.sector }}</p>
-      <h1 class="case-title" id="case-title">{{ p.title_html }}</h1>
+      <h1 class="case-title" id="case-title">{% include texto.html t=p.title_html %}</h1>
       <p class="case-summary">{{ page.summary }}</p>
     </header>
     {% include project-media.html project=p size="hero" %}

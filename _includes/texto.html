@@ -1,0 +1,7 @@
+{%- comment -%}
+  Muestra un texto editable de _data/*.yml.
+  *texto* → destacado en rosa · [[texto]] → marca amarilla de "pendiente".
+  Uso: {% include texto.html t=site.data.home.hero.bajada %}
+{%- endcomment -%}
+{%- capture _html -%}{{ include.t | markdownify }}{%- endcapture -%}
+{{- _html | strip | remove_first: '<p>' | replace: '</p>', '' | replace: '[[', '<mark class="tbd">[' | replace: ']]', ']</mark>' -}}

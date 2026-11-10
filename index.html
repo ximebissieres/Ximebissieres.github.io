@@ -1,8 +1,13 @@
 ---
 layout: default
 body_class: is-home
-description: Ximena Bissieres, Product Designer especializada en contenido y sistemas. Casos de Monchis, LATAM Airlines, Santa Isabel y Paris Marketplace.
 ---
+{%- comment -%}
+  HOME · Esta plantilla no contiene textos.
+  Todos los textos se editan en _data/home.yml (y los proyectos en _data/projects.yml).
+  Guía: GUIA-DE-CONTENIDO.md
+{%- endcomment -%}
+{%- assign h = site.data.home -%}
 <script>
   /* Compatibilidad con los enlaces antiguos (#monchis, #casos, etc.) */
   (function () {
@@ -13,28 +18,27 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
   })();
 </script>
 
+  <!-- ---------------- 01 · Hero ---------------- -->
   <section class="hero" id="inicio" aria-labelledby="hero-name">
     <div class="hero-orb" aria-hidden="true"></div>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="hero-kicker eyebrow"><span class="dot" aria-hidden="true"></span><span>Product Designer · Contenido y sistemas</span></p>
+          <p class="hero-kicker eyebrow"><span class="dot" aria-hidden="true"></span><span>{% include texto.html t=h.hero.etiqueta %}</span></p>
           <h1 class="hero-name" id="hero-name">
-            <span class="line"><span>Ximena</span></span>
-            <span class="line"><span><em>Bissieres</em></span></span>
+            <span class="line"><span>{{ h.hero.nombre_linea_1 }}</span></span>
+            <span class="line"><span><em>{{ h.hero.nombre_linea_2 }}</em></span></span>
           </h1>
-          <p class="hero-lede">Diseño productos digitales donde <em>el lenguaje</em> ordena la experiencia: desde el research hasta la interfaz, con foco en claridad, accesibilidad y negocio.</p>
+          <p class="hero-lede">{% include texto.html t=h.hero.bajada %}</p>
           <div class="cta">
-            <a class="btn primary" href="#proyectos">Ver proyectos <span class="arr" aria-hidden="true">→</span></a>
-            <a class="btn soft" href="#contacto">Contacto</a>
+            <a class="btn primary" href="#proyectos">{{ h.hero.boton_principal }} <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn soft" href="#contacto">{{ h.hero.boton_secundario }}</a>
           </div>
         </div>
         <figure class="hero-photo">
-          <!-- Tu foto: súbela como assets/foto.jpg y aparece aquí automáticamente.
-               Si el encuadre necesita ajuste, cambia object-position en .portrait-frame img. -->
           <div class="portrait-frame">
-            <span class="portrait-ph" aria-hidden="true">XB</span>
-            <img src="assets/foto.jpg" alt="Ximena Bissieres trabajando en su computador, sonriendo y con audífonos" width="1000" height="1777" decoding="async" fetchpriority="high" onerror="this.remove()">
+            <span class="portrait-ph" aria-hidden="true">{{ h.hero.foto_iniciales }}</span>
+            <img src="{{ h.hero.foto }}" alt="{{ h.hero.foto_descripcion | escape }}" width="1000" height="1777" decoding="async" fetchpriority="high" onerror="this.remove()">
           </div>
         </figure>
       </div>
@@ -43,10 +47,9 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
 
   <div class="wrap">
     <dl class="quick" data-reveal>
-      <div><dt>Especialidad</dt><dd>Product Design con foco en contenido y sistemas</dd></div>
-      <div><dt>Industrias</dt><dd>Retail, salud y aerolíneas</dd></div>
-      <div><dt>He trabajado con</dt><dd>LATAM Airlines, Cencosud (Santa Isabel y Paris) y Monchis</dd></div>
-      <div><dt>Experiencia</dt><dd><mark class="tbd">[X]</mark> años en equipos de producto</dd></div>
+      {%- for dato in h.datos_rapidos %}
+      <div><dt>{{ dato.etiqueta }}</dt><dd>{% include texto.html t=dato.texto %}</dd></div>
+      {%- endfor %}
     </dl>
   </div>
 
@@ -54,9 +57,9 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
   <section class="section projects-section" id="proyectos" aria-labelledby="proyectos-title">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Proyectos seleccionados</p>
-        <h2 class="sec-title" id="proyectos-title">Cuatro proyectos, <em>cuatro formas</em> de diseñar producto</h2>
-        <p class="sec-note">Cada caso abre su propia historia: el problema, mi rol, el proceso, las decisiones y los resultados.</p>
+        <p class="eyebrow">{% include texto.html t=h.proyectos.etiqueta %}</p>
+        <h2 class="sec-title" id="proyectos-title">{% include texto.html t=h.proyectos.titulo %}</h2>
+        <p class="sec-note">{% include texto.html t=h.proyectos.bajada %}</p>
       </header>
       <ol class="project-grid">
         {% for p in site.data.projects %}
@@ -70,39 +73,39 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
   <section class="home-section" id="enfoque" aria-labelledby="enfoque-title">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Mi enfoque</p>
-        <h2 class="sec-title" id="enfoque-title">Entender el problema. <em>Diseñar la solución.</em></h2>
-        <p class="sec-note">Combino investigación, estrategia, diseño y contenido para crear productos digitales centrados en las personas y alineados con los objetivos del negocio.</p>
+        <p class="eyebrow">{% include texto.html t=h.enfoque.etiqueta %}</p>
+        <h2 class="sec-title" id="enfoque-title">{% include texto.html t=h.enfoque.titulo %}</h2>
+        <p class="sec-note">{% include texto.html t=h.enfoque.bajada %}</p>
       </header>
       <ul class="skills-grid">
-        <li class="skill"><span class="skill-dot" aria-hidden="true"></span><h3>Research</h3><p>Entrevistas, user personas, focus groups y testeos de guerrilla.</p></li>
-        <li class="skill"><span class="skill-dot" aria-hidden="true"></span><h3>Estrategia</h3><p>Workshops con stakeholders, priorización y working backwards.</p></li>
-        <li class="skill"><span class="skill-dot" aria-hidden="true"></span><h3>Diseño</h3><p>Arquitectura de información, flujos, jerarquía y wireframes.</p></li>
-        <li class="skill skill-base"><span class="skill-dot" aria-hidden="true"></span><span class="skill-tag">Mi base</span><h3>Contenido</h3><p>Voz y tono, microcopy, sistemas de nomenclatura y accesibilidad.</p></li>
+        {%- for c in h.enfoque.capacidades %}
+        <li class="skill{% if c.destacada %} skill-base{% endif %}"><span class="skill-dot" aria-hidden="true"></span>{% if c.destacada and c.marca %}<span class="skill-tag">{{ c.marca }}</span>{% endif %}<h3>{% include texto.html t=c.nombre %}</h3><p>{% include texto.html t=c.descripcion %}</p></li>
+        {%- endfor %}
       </ul>
     </div>
   </section>
 
   <!-- ---------------- 04 · Contacto y CV ---------------- -->
-  {%- assign cv_file = site.static_files | where: "path", site.cv_pdf | first -%}
+  {%- assign ct = h.contacto -%}
+  {%- assign cv_file = site.static_files | where: "path", ct.cv_pdf | first -%}
   <section class="home-section contact" id="contacto" aria-labelledby="contacto-title">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Contacto</p>
-        <h2 class="sec-title" id="contacto-title">¿Tienes un producto que necesita ser más claro? <em>Conversemos.</em></h2>
-        <p class="sec-note">Si quieres conocer más sobre mi experiencia o conversar sobre un proyecto, escríbeme.</p>
+        <p class="eyebrow">{% include texto.html t=ct.etiqueta %}</p>
+        <h2 class="sec-title" id="contacto-title">{% include texto.html t=ct.titulo %}</h2>
+        <p class="sec-note">{% include texto.html t=ct.bajada %}</p>
       </header>
       <div class="contact-actions">
-        {%- if site.email != "" %}
-        <a class="btn primary" href="mailto:{{ site.email }}">Escríbeme <span class="arr" aria-hidden="true">→</span></a>
+        {%- if ct.email and ct.email != "" %}
+        <a class="btn primary" href="mailto:{{ ct.email }}">{{ ct.boton_email }} <span class="arr" aria-hidden="true">→</span></a>
         {%- else %}
-        <button class="btn primary" type="button" data-copy="" aria-describedby="copy-status">Escríbeme <mark class="tbd">[tu email]</mark></button>
+        <button class="btn primary" type="button" data-copy="" data-msg-pending="{{ ct.mensaje_email_pendiente | escape }}" aria-describedby="copy-status">{{ ct.boton_email }} {% include texto.html t=ct.email_pendiente %}</button>
         {%- endif %}
-        <a class="btn" href="{% if cv_file %}{{ site.cv_pdf }}{% else %}{{ site.cv_url }}{% endif %}" target="_blank" rel="noopener">Ver mi CV <span class="arr" aria-hidden="true">↗</span></a>
-        {%- if site.linkedin_url != "" %}
-        <a class="btn soft" href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn" href="{% if cv_file %}{{ ct.cv_pdf }}{% else %}{{ ct.cv_enlace_alternativo }}{% endif %}" target="_blank" rel="noopener">{{ ct.boton_cv }} <span class="arr" aria-hidden="true">↗</span></a>
+        {%- if ct.linkedin and ct.linkedin != "" %}
+        <a class="btn soft" href="{{ ct.linkedin }}" target="_blank" rel="noopener">{{ ct.boton_linkedin }} <span class="arr" aria-hidden="true">↗</span></a>
         {%- else %}
-        <a class="btn soft" href="#" target="_blank" rel="noopener">LinkedIn <mark class="tbd">[link]</mark> <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn soft" href="#" target="_blank" rel="noopener">{{ ct.boton_linkedin }} {% include texto.html t=ct.linkedin_pendiente %} <span class="arr" aria-hidden="true">↗</span></a>
         {%- endif %}
       </div>
       <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>

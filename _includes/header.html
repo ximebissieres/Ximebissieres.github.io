@@ -1,17 +1,19 @@
-<a class="skip" href="#contenido">Saltar al contenido</a>
+{%- comment -%} Menú superior. Textos: _data/home.yml → menu. Proyectos: _data/projects.yml {%- endcomment -%}
+{%- assign m = site.data.home.menu -%}
+<a class="skip" href="#contenido">{{ m.saltar_al_contenido }}</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/" aria-label="Ximena Bissieres, ir al inicio">
-      <span class="brand-mark" aria-hidden="true">X<span style="color:var(--rose)">b</span></span>
-      <span class="brand-name">Ximena Bissieres</span>
+    <a class="brand" href="/" aria-label="{{ m.marca_descripcion | escape }}">
+      <span class="brand-mark" aria-hidden="true">{{ m.marca_iniciales }}<span style="color:var(--rose)">{{ m.marca_iniciales_destacada }}</span></span>
+      <span class="brand-name">{{ m.marca_nombre }}</span>
     </a>
 
-    <nav class="nav" aria-label="Principal">
+    <nav class="nav" aria-label="{{ m.nombre_menu_lector | escape }}">
       <ul class="nav-list">
-        <li><a class="nav-link" href="/" data-nav="inicio">Inicio</a></li>
+        <li><a class="nav-link" href="/" data-nav="inicio">{{ m.inicio }}</a></li>
         <li class="has-menu">
           <button class="nav-link nav-trigger{% if page.slug %} is-active{% endif %}" type="button" aria-expanded="false" aria-controls="menu-proyectos" data-nav="proyectos">
-            Proyectos
+            {{ m.proyectos }}
             <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="menu" id="menu-proyectos" hidden>
@@ -26,32 +28,32 @@
               </li>
               {% endfor %}
             </ul>
-            <a class="menu-all" href="/#proyectos">Ver todos los proyectos</a>
+            <a class="menu-all" href="/#proyectos">{{ m.ver_todos_los_proyectos }}</a>
           </div>
         </li>
-        <li><a class="nav-link" href="/#enfoque" data-nav="enfoque">Mi enfoque</a></li>
-        <li><a class="nav-link" href="/#contacto" data-nav="contacto">Contacto</a></li>
+        <li><a class="nav-link" href="/#enfoque" data-nav="enfoque">{{ m.enfoque }}</a></li>
+        <li><a class="nav-link" href="/#contacto" data-nav="contacto">{{ m.contacto }}</a></li>
       </ul>
     </nav>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="menu-toggle-label">Menú</span>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-label-open="{{ m.boton_movil_abrir | escape }}" data-label-close="{{ m.boton_movil_cerrar | escape }}">
+      <span class="menu-toggle-label">{{ m.boton_movil_abrir }}</span>
       <span class="burger" aria-hidden="true"><i></i><i></i></span>
     </button>
   </div>
 
   <div class="mobile-menu" id="mobile-menu" hidden>
-    <nav class="wrap" aria-label="Principal (móvil)">
-      <a class="m-link" href="/">Inicio</a>
-      <p class="m-group eyebrow">Proyectos</p>
+    <nav class="wrap" aria-label="{{ m.nombre_menu_movil_lector | escape }}">
+      <a class="m-link" href="/">{{ m.inicio }}</a>
+      <p class="m-group eyebrow">{{ m.proyectos }}</p>
       <ul class="m-projects">
         {% for p in site.data.projects %}
         <li><a class="m-project" href="/proyectos/{{ p.slug }}/"{% if page.slug == p.slug %} aria-current="page"{% endif %}><span class="menu-n" aria-hidden="true">0{{ p.order }}</span><span class="menu-text"><b>{{ p.company }}</b><span>{{ p.menu }}</span></span></a></li>
         {% endfor %}
       </ul>
-      <a class="m-link m-all" href="/#proyectos">Ver todos los proyectos</a>
-      <a class="m-link" href="/#enfoque">Mi enfoque</a>
-      <a class="m-link" href="/#contacto">Contacto</a>
+      <a class="m-link m-all" href="/#proyectos">{{ m.ver_todos_los_proyectos }}</a>
+      <a class="m-link" href="/#enfoque">{{ m.enfoque }}</a>
+      <a class="m-link" href="/#contacto">{{ m.contacto }}</a>
     </nav>
   </div>
   <div class="progress" aria-hidden="true"></div>

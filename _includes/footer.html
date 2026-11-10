@@ -1,6 +1,7 @@
+{%- comment -%} Pie de página. Textos: _data/home.yml → pie {%- endcomment -%}
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 Ximena Bissieres</span>
-    <span>Product Designer · Contenido y sistemas</span>
+    <span>{% include texto.html t=site.data.home.pie.izquierda %}</span>
+    <span>{% include texto.html t=site.data.home.pie.derecha %}</span>
   </div>
 </footer>

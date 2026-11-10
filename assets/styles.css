@@ -883,6 +883,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 }
 .pcard .pmedia .cover { transition: transform .8s var(--ease); }
 .pcard:active { transform: scale(.985); }
+.pcard-more { display: none; }
 
 /* Mobile: cards horizontales compactas */
 @media (max-width: 639px) {
@@ -894,7 +895,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .pcard-desc { -webkit-line-clamp: 3; }
   .pcard-kicker { white-space: normal; }
   .pcard-title a::after { border-radius: 18px; }
-  .pcard-body::after { content: "Ver proyecto →"; font-size: .85rem; font-weight: var(--w-semibold); color: var(--ink); margin-top: 2px; }
+  .pcard-more { display: block; font-size: .85rem; font-weight: var(--w-semibold); color: var(--ink); margin-top: 2px; }
 }
 
 /* CTA usado en la tarjeta "Siguiente proyecto" de los casos */

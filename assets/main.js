@@ -48,7 +48,7 @@
   function setMobile(open) {
     if (!toggle || !mobile) return;
     toggle.setAttribute('aria-expanded', String(open));
-    $('.menu-toggle-label', toggle).textContent = open ? 'Cerrar' : 'Menú';
+    $('.menu-toggle-label', toggle).textContent = toggle.getAttribute(open ? 'data-label-close' : 'data-label-open');
     mobile.hidden = !open;
     document.body.classList.toggle('menu-open', open);
   }
@@ -167,8 +167,8 @@
     var status = document.getElementById(btn.getAttribute('aria-describedby'));
     btn.addEventListener('click', function () {
       var text = btn.getAttribute('data-copy');
-      if (!text) { if (status) status.textContent = 'Email pendiente de agregar.'; return; }
-      var done = function () { if (status) status.textContent = 'Email copiado: ' + text; };
+      if (!text) { if (status) status.textContent = btn.getAttribute('data-msg-pending') || ''; return; }
+      var done = function () { if (status) status.textContent = text; };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, function () { if (status) status.textContent = text; });
       } else if (status) { status.textContent = text; }
