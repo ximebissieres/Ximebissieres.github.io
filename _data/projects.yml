@@ -21,7 +21,7 @@
 #                       caso dentro de una ventana de navegador. Hoy lo usa LATAM.
 #  - slug ............. Dirección de la página (/proyectos/slug/). NO cambiar.
 # =============================================================================
-- slug: Monchis
+- slug: monchis
   category: Delivery App
   teaser: Menos entregas fallidas, sin agregar fricción a la compra.
   order: 1
