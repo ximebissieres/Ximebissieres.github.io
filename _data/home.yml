@@ -81,13 +81,13 @@ enfoque:
   # Capacidades: "destacada: true" pinta la tarjeta en rosa con su "marca".
   capacidades:
     - nombre: "Research"
-      descripcion: "Investigo y testeo para detectar fricciones y oportunidades que orientan las decisiones del producto."
+      descripcion: "Investigo y testeo para detectar fricciones y oportunidades que orientan las decisiones."
     - nombre: "Estrategia"
       descripcion: "Colaboro con stakeholders para conectar hallazgos con los objetivos del negocio."
     - nombre: "Diseño"
       descripcion: "transformo hallzgos en flujos, jerarquías y wireframes que simplifican la experiencia."
     - nombre: "Diseño de contenido"
-      descripcion: "Integro storytelling y microcopy desde el inicio del proceso para construir narrativas que conecten con las necesidades."
+      descripcion: "Integro storytelling y microcopy para construir narrativas que conecten con las necesidades."
       destacada: true
       marca: "Mi sello"
 
