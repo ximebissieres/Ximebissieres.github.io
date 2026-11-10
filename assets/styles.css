@@ -965,7 +965,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .not-found .project-grid { margin-block: 32px; }
 
 /* ---------- Caso · siguiente proyecto (navegación secundaria compacta) ---------- */
-.next-project { padding-block: clamp(16px, 2vw, 24px) clamp(48px, 6vw, 72px); }
+.next-project { padding-block: clamp(48px, 6vw, 88px) clamp(48px, 6vw, 72px); }
 .next-project .wrap { display: grid; gap: 18px; }
 .next-card {
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(20px, 3vw, 40px);
