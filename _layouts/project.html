@@ -24,6 +24,14 @@ body_class: is-project
         </div>
       </div>
     </header>
+    {%- elsif p.hero_layout == "navegador" %}
+    <header class="case-hero case-hero--split">
+      <p class="eyebrow">{{ p.company }} · {{ p.sector }}</p>
+      <div class="case-split">
+        <h1 class="case-title" id="case-title">{% include texto.html t=p.title_html %}</h1>
+        <p class="case-summary">{{ page.summary }}</p>
+      </div>
+    </header>
     {%- else %}
     <header class="case-hero">
       <p class="eyebrow">{{ p.company }} · {{ p.sector }}</p>
@@ -33,6 +41,8 @@ body_class: is-project
     {%- endif %}
     {%- if p.hero and p.hero.visual %}
     {% include case-visual.html project=p %}
+    {%- elsif p.hero_layout == "navegador" %}
+    {% include case-browser.html project=p %}
     {%- else %}
     {% include project-media.html project=p size="hero" %}
     {%- endif %}

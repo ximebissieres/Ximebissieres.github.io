@@ -1,0 +1,21 @@
+{%- comment -%}
+  Portada de caso con la captura real dentro de una ventana de navegador
+  minimalista (sin URL ni textos inventados), sobre un contenedor rosa suave
+  con una capa trasera que da profundidad. La captura no se modifica:
+  solo se encuadra. Al hacer scroll se desplaza levemente dentro de la
+  ventana (assets/main.js → data-scroll-shift).
+  Parámetro: project (usa cover y cover_alt de _data/projects.yml).
+{%- endcomment -%}
+{%- assign p = include.project -%}
+<figure class="pmedia pmedia-hero cbrowser" style="view-transition-name: media-{{ p.slug }}" data-scroll-shift>
+  <span class="cbrowser-back" aria-hidden="true"></span>
+  <div class="cbrowser-window">
+    <div class="cbrowser-bar" aria-hidden="true">
+      <span class="cbrowser-dots"><i></i><i></i><i></i></span>
+      <span class="cbrowser-url"></span>
+    </div>
+    <div class="cbrowser-view">
+      <img src="{{ p.cover }}" alt="{{ p.cover_alt | escape }}" width="1400" height="2157" decoding="async" fetchpriority="high">
+    </div>
+  </div>
+</figure>

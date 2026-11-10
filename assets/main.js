@@ -122,6 +122,31 @@
     }
   }
 
+  /* ---------- Portada de caso: la captura se desliza dentro de la ventana ----------
+     0 con la página arriba · 1 cuando la portada sale por arriba. Reversible.
+     Las posiciones se miden al cargar o redimensionar, nunca en cada cuadro. */
+  var shifts = $$('[data-scroll-shift]');
+  if (shifts.length && !reduce) {
+    var shiftItems = [], shiftTicking = false;
+    var measureShift = function () {
+      shiftItems = shifts.map(function (el) {
+        var r = el.getBoundingClientRect();
+        return { el: el, end: r.top + window.scrollY + r.height };
+      });
+    };
+    var updateShift = function () {
+      shiftTicking = false;
+      shiftItems.forEach(function (it) {
+        it.el.style.setProperty('--shift', Math.min(1, Math.max(0, window.scrollY / it.end)).toFixed(4));
+      });
+    };
+    window.addEventListener('scroll', function () { if (!shiftTicking) { shiftTicking = true; requestAnimationFrame(updateShift); } }, { passive: true });
+    var remeasureShift = function () { measureShift(); updateShift(); };
+    window.addEventListener('resize', remeasureShift);
+    window.addEventListener('load', remeasureShift);
+    remeasureShift();
+  }
+
   var header = $('.site-header');
   var progress = $('.progress');
   var ticking = false;

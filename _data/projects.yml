@@ -17,6 +17,8 @@
 #                       de los bloques en este archivo.
 #  - hero ............. (Opcional) Portada narrativa del caso: titulo, bajada,
 #                       etiqueta_descripcion y descripcion. Hoy solo Monchis la usa.
+#  - hero_layout ...... (Opcional) "navegador" muestra la captura de la portada del
+#                       caso dentro de una ventana de navegador. Hoy lo usa LATAM.
 #  - slug ............. Dirección de la página (/proyectos/slug/). NO cambiar.
 # =============================================================================
 - slug: monchis
@@ -58,6 +60,7 @@
   cover: /assets/img/latam-landing.webp
   cover_alt: Landing de ofertas de LATAM rediseñada, con destinos y precios destacados
   cover_position: 50% 0%
+  hero_layout: navegador   # portada del caso: captura dentro de una ventana de navegador
 - slug: santa-isabel
   category: Supermercado
   teaser: Una app con identidad propia, diseñada desde el research.
