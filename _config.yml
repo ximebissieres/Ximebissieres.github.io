@@ -3,6 +3,9 @@ title: Ximena Bissieres
 description: Product Designer especializada en contenido y sistemas.
 lang: es
 url: https://ximebissieres.github.io
+# CV: sube el PDF a assets/cv/ con este nombre y el botón "Ver mi CV" lo abrirá.
+# Mientras no exista, el botón usa el enlace de Google Drive (cv_url).
+cv_pdf: /assets/cv/Ximena-Bissieres-CV.pdf
 cv_url: https://drive.google.com/file/d/1nrHjRSnpFOwwXJnKw0vn-z2yrDg4grrt/view
 linkedin_url: ""   # pendiente
 email: ""          # pendiente

@@ -9,6 +9,7 @@
     <nav class="nav" aria-label="Principal">
       <ul class="nav-list">
         <li><a class="nav-link" href="/" data-nav="inicio">Inicio</a></li>
+        <li><a class="nav-link" href="/#enfoque" data-nav="enfoque">Mi enfoque</a></li>
         <li class="has-menu">
           <button class="nav-link nav-trigger{% if page.slug %} is-active{% endif %}" type="button" aria-expanded="false" aria-controls="menu-proyectos" data-nav="proyectos">
             Proyectos
@@ -29,7 +30,6 @@
             <a class="menu-all" href="/#proyectos">Ver todos los proyectos</a>
           </div>
         </li>
-        <li><a class="nav-link" href="/#sobre-mi" data-nav="sobre-mi">Sobre mí</a></li>
         <li><a class="nav-link" href="/#contacto" data-nav="contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -43,13 +43,14 @@
   <div class="mobile-menu" id="mobile-menu" hidden>
     <nav class="wrap" aria-label="Principal (móvil)">
       <a class="m-link" href="/">Inicio</a>
+      <a class="m-link" href="/#enfoque">Mi enfoque</a>
       <p class="m-group eyebrow">Proyectos</p>
       <ul class="m-projects">
         {% for p in site.data.projects %}
         <li><a class="m-project" href="/proyectos/{{ p.slug }}/"{% if page.slug == p.slug %} aria-current="page"{% endif %}><span class="menu-n" aria-hidden="true">0{{ p.order }}</span><span class="menu-text"><b>{{ p.company }}</b><span>{{ p.menu }}</span></span></a></li>
         {% endfor %}
       </ul>
-      <a class="m-link" href="/#sobre-mi">Sobre mí</a>
+      <a class="m-link m-all" href="/#proyectos">Ver todos los proyectos</a>
       <a class="m-link" href="/#contacto">Contacto</a>
     </nav>
   </div>

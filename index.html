@@ -8,7 +8,8 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
   (function () {
     var h = location.hash.slice(1);
     if (['monchis', 'latam', 'santa-isabel', 'paris'].indexOf(h) >= 0) location.replace('/proyectos/' + h + '/');
-    else if (h === 'casos') history.replaceState(null, '', '#proyectos');
+    else if (h === 'casos') location.replace('#proyectos');
+    else if (h === 'sobre-mi') location.replace('#enfoque');
   })();
 </script>
 
@@ -49,15 +50,30 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
     </dl>
   </div>
 
-  <!-- ---------------- Proyectos ---------------- -->
+  <!-- ---------------- 02 · Mi enfoque ---------------- -->
+  <section class="home-section" id="enfoque" aria-labelledby="enfoque-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">Mi enfoque</p>
+        <h2 class="sec-title" id="enfoque-title">Entender el problema. <em>Diseñar la solución.</em></h2>
+        <p class="sec-note">Combino investigación, estrategia, diseño y contenido para crear productos digitales centrados en las personas y alineados con los objetivos del negocio.</p>
+      </header>
+      <ul class="skills-grid">
+        <li class="skill"><span class="skill-dot" aria-hidden="true"></span><h3>Research</h3><p>Entrevistas, user personas, focus groups y testeos de guerrilla.</p></li>
+        <li class="skill"><span class="skill-dot" aria-hidden="true"></span><h3>Estrategia</h3><p>Workshops con stakeholders, priorización y working backwards.</p></li>
+        <li class="skill"><span class="skill-dot" aria-hidden="true"></span><h3>Diseño</h3><p>Arquitectura de información, flujos, jerarquía y wireframes.</p></li>
+        <li class="skill skill-base"><span class="skill-dot" aria-hidden="true"></span><span class="skill-tag">Mi base</span><h3>Contenido</h3><p>Voz y tono, microcopy, sistemas de nomenclatura y accesibilidad.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ---------------- 03 · Proyectos ---------------- -->
   <section class="section projects-section" id="proyectos" aria-labelledby="proyectos-title">
     <div class="wrap">
-      <header class="projects-head">
-        <div>
-          <p class="eyebrow">Proyectos seleccionados</p>
-          <h2 class="section-title" id="proyectos-title">Cuatro proyectos, <em>cuatro formas</em> de diseñar producto</h2>
-        </div>
-        <p class="section-note">Cada caso abre su propia historia: el problema, mi rol, el proceso, las decisiones y los resultados.</p>
+      <header class="sec-head">
+        <p class="eyebrow">Proyectos seleccionados</p>
+        <h2 class="sec-title" id="proyectos-title">Cuatro proyectos, <em>cuatro formas</em> de diseñar producto</h2>
+        <p class="sec-note">Cada caso abre su propia historia: el problema, mi rol, el proceso, las decisiones y los resultados.</p>
       </header>
       <ol class="project-grid">
         {% for p in site.data.projects %}
@@ -67,66 +83,27 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
     </div>
   </section>
 
-  <!-- ---------------- Sobre mí ---------------- -->
-  <section class="section" id="sobre-mi" aria-labelledby="sobre-title">
+  <!-- ---------------- 04 · Contacto y CV ---------------- -->
+  {%- assign cv_file = site.static_files | where: "path", site.cv_pdf | first -%}
+  <section class="home-section contact" id="contacto" aria-labelledby="contacto-title">
     <div class="wrap">
-      <header class="section-head" data-reveal>
-        <p class="eyebrow">Sobre mí</p>
-        <h2 class="section-title" id="sobre-title">El mensaje primero, <em>la interfaz después</em></h2>
+      <header class="sec-head">
+        <p class="eyebrow">Contacto</p>
+        <h2 class="sec-title" id="contacto-title">¿Tienes un producto que necesita ser más claro? <em>Conversemos.</em></h2>
+        <p class="sec-note">Si quieres conocer más sobre mi experiencia o conversar sobre un proyecto, escríbeme.</p>
       </header>
-      <div class="about">
-        <p class="about-quote" data-reveal>Mi forma de diseñar parte por el mensaje: qué necesita entender la persona, <em>en qué orden</em> y con qué palabras.</p>
-        <div class="about-text" data-reveal style="--d:1">
-          <p>Soy diseñadora de producto con background en contenido. Durante <mark class="tbd">[X]</mark> años he trabajado en retail, salud y aerolíneas, en equipos junto a research, diseño, producto y desarrollo.</p>
-          <p>Esa estructura define la jerarquía, los flujos y la interfaz. Por eso puedo moverme entre research, UI y estrategia de contenido sin perder el hilo.</p>
-          <p>Me interesan los problemas donde una experiencia confusa le cuesta dinero al negocio y esfuerzo a las personas.</p>
-        </div>
-      </div>
-
-      <div class="thread">
-        <div class="thread-head" data-reveal>
-          <h3>Qué hago</h3>
-          <p>Cuatro disciplinas unidas por un mismo hilo: el contenido.</p>
-        </div>
-        <svg class="thread-svg" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
-          <path pathLength="1" d="M0 30 C 120 0, 200 60, 330 30 S 540 0, 660 30 S 880 60, 1000 30"/>
-        </svg>
-        <ul class="nodes">
-          <li class="node" tabindex="0" data-reveal style="--d:0">
-            <span class="node-dot" aria-hidden="true"></span>
-            <h4>Research</h4>
-            <ul><li>Entrevistas</li><li>User personas</li><li>Focus groups</li><li>Testeos de guerrilla</li></ul>
-          </li>
-          <li class="node" tabindex="0" data-reveal style="--d:1">
-            <span class="node-dot" aria-hidden="true"></span>
-            <h4>Estrategia</h4>
-            <ul><li>Workshops con stakeholders</li><li>Priorización</li><li>Working backwards</li></ul>
-          </li>
-          <li class="node" tabindex="0" data-reveal style="--d:2">
-            <span class="node-dot" aria-hidden="true"></span>
-            <h4>Diseño</h4>
-            <ul><li>Arquitectura de información</li><li>Flujos</li><li>Jerarquía</li><li>Wireframes</li></ul>
-          </li>
-          <li class="node home-base" tabindex="0" data-reveal style="--d:3">
-            <span class="base-tag">Mi base</span>
-            <span class="node-dot" aria-hidden="true"></span>
-            <h4>Contenido</h4>
-            <ul><li>Voz y tono</li><li>Microcopy</li><li>Sistemas de nomenclatura</li><li>Accesibilidad</li></ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------------- Contacto ---------------- -->
-  <section class="contact" id="contacto" aria-labelledby="contacto-title">
-    <div class="wrap">
-      <p class="eyebrow" data-reveal>Contacto</p>
-      <h2 class="contact-title" id="contacto-title" data-reveal>¿Tienes un producto que necesita ser más claro? <em>Conversemos.</em></h2>
-      <div class="contact-actions" data-reveal style="--d:1">
-        <button class="btn primary" type="button" data-copy="" aria-describedby="copy-status">Copiar email <mark class="tbd">[tu email]</mark></button>
-        <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn <mark class="tbd">[link]</mark> <span class="arr" aria-hidden="true">↗</span></a>
-        <a class="btn" href="{{ site.cv_url }}" target="_blank" rel="noopener">Currículum <span class="arr" aria-hidden="true">↗</span></a>
+      <div class="contact-actions">
+        {%- if site.email != "" %}
+        <a class="btn primary" href="mailto:{{ site.email }}">Escríbeme <span class="arr" aria-hidden="true">→</span></a>
+        {%- else %}
+        <button class="btn primary" type="button" data-copy="" aria-describedby="copy-status">Escríbeme <mark class="tbd">[tu email]</mark></button>
+        {%- endif %}
+        <a class="btn" href="{% if cv_file %}{{ site.cv_pdf }}{% else %}{{ site.cv_url }}{% endif %}" target="_blank" rel="noopener">Ver mi CV <span class="arr" aria-hidden="true">↗</span></a>
+        {%- if site.linkedin_url != "" %}
+        <a class="btn soft" href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
+        {%- else %}
+        <a class="btn soft" href="#" target="_blank" rel="noopener">LinkedIn <mark class="tbd">[link]</mark> <span class="arr" aria-hidden="true">↗</span></a>
+        {%- endif %}
       </div>
       <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
     </div>

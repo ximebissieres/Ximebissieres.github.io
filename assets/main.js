@@ -76,13 +76,13 @@
         });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['inicio', 'proyectos', 'sobre-mi', 'contacto'].forEach(function (id) {
+    ['inicio', 'enfoque', 'proyectos', 'contacto'].forEach(function (id) {
       var el = document.getElementById(id); if (el) spy.observe(el);
     });
   }
 
   /* ---------- Revelado al hacer scroll (solo bloques principales) ---------- */
-  var revealEls = $$('[data-reveal], .dots, .thread');
+  var revealEls = $$('[data-reveal], .dots');
   if ('IntersectionObserver' in window && !reduce) {
     var ro = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
