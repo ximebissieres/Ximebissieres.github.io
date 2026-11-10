@@ -1080,15 +1080,11 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 
 /* ==========================================================================
    Hero narrativo de caso (.case-hero--story) · hoy solo Monchis
-   Identificación → desafío (título) → contexto (bajada) → el proyecto.
+   Epígrafe original → desafío (título) → contexto (bajada) → el proyecto.
    ========================================================================== */
 .case-hero--story { gap: 0; padding-block: clamp(20px, 3vw, 32px) clamp(28px, 4vw, 44px); }
-.case-id { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: clamp(14px, 2vw, 20px); }
-.case-id .eyebrow { color: var(--rose-ink); }
-.case-sector {
-  font-size: .75rem; font-weight: var(--w-medium); color: var(--muted);
-  padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line);
-}
+/* Epígrafe: el mismo de la portada original (estilo .eyebrow, 24 px sobre el título) */
+.case-hero--story > .eyebrow { margin-bottom: 24px; }
 .case-hero--story .case-title { font-size: clamp(2.1rem, 1.3rem + 3vw, 3.9rem); line-height: 1.04; max-width: 19ch; }
 .case-intro {
   display: grid; gap: 20px; margin-top: clamp(22px, 3vw, 36px);

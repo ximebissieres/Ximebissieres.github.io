@@ -14,7 +14,7 @@ body_class: is-project
     </div>
     {%- if p.hero %}
     <header class="case-hero case-hero--story">
-      <p class="case-id"><span class="eyebrow">{{ p.company }} · {{ p.name }}</span><span class="case-sector">{{ p.sector }}</span></p>
+      <p class="eyebrow">{{ p.company }} · {{ p.sector }}</p>
       <h1 class="case-title" id="case-title">{% include texto.html t=p.hero.titulo %}</h1>
       <div class="case-intro">
         <p class="case-lede">{% include texto.html t=p.hero.bajada %}</p>
