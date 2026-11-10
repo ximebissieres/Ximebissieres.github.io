@@ -21,12 +21,12 @@
 #                       caso dentro de una ventana de navegador. Hoy lo usa LATAM.
 #  - slug ............. Dirección de la página (/proyectos/slug/). NO cambiar.
 # =============================================================================
-- slug: monchis
-  category: Delivery
+- slug: Monchis
+  category: Delivery App
   teaser: Menos entregas fallidas, sin agregar fricción a la compra.
   order: 1
   company: Monchis
-  sector: Delivery · Paraguay
+  sector: Delivery App · Paraguay
   name: Rediseño de direcciones
   menu: Direcciones
   title_html: Cómo rediseñamos la experiencia de direcciones para reducir entregas fallidas *sin agregar fricción* a la compra
