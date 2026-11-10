@@ -110,7 +110,7 @@ contacto:
   # CV · botón secundario. Sube el PDF a assets/cv/ con este nombre y el botón
   # lo abrirá. Mientras no exista ese PDF, el botón usa cv_enlace_alternativo.
   # WhatsApp y Correo se ocultan solos si su dato queda vacío (""); el CV siempre se muestra.
-  boton_cv: "Ver mi CV"
+  boton_cv: "Revisa mi CV"
   cv_pdf: "/assets/cv/Ximena-Bissieres-CV.pdf"
   cv_enlace_alternativo: "https://drive.google.com/file/d/1nrHjRSnpFOwwXJnKw0vn-z2yrDg4grrt/view"
 
