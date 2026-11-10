@@ -88,26 +88,23 @@ body_class: is-home
   <!-- ---------------- 04 · Contacto y CV ---------------- -->
   {%- assign ct = h.contacto -%}
   {%- assign cv_file = site.static_files | where: "path", ct.cv_pdf | first -%}
-  <section class="home-section contact" id="contacto" aria-labelledby="contacto-title" data-m-tint>
+  <section class="home-section contact" id="contacto" aria-labelledby="contacto-title">
     <div class="wrap">
-      <header class="sec-head" data-m-drift="-10">
-        <p class="eyebrow" data-m>{% include texto.html t=ct.etiqueta %}</p>
-        <h2 class="sec-title" id="contacto-title" data-m-split>{% include texto.html t=ct.titulo %}</h2>
-        <p class="sec-note" data-m>{% include texto.html t=ct.bajada %}</p>
-      </header>
-      <div class="contact-actions">
-        {%- if ct.email and ct.email != "" %}
-        <a class="btn primary" data-m style="--i:0" href="mailto:{{ ct.email }}">{{ ct.boton_email }} <span class="arr" aria-hidden="true">→</span></a>
-        {%- else %}
-        <button class="btn primary" data-m style="--i:0" type="button" data-copy="" data-msg-pending="{{ ct.mensaje_email_pendiente | escape }}" aria-describedby="copy-status">{{ ct.boton_email }} {% include texto.html t=ct.email_pendiente %}</button>
-        {%- endif %}
-        <a class="btn" href="{% if cv_file %}{{ ct.cv_pdf }}{% else %}{{ ct.cv_enlace_alternativo }}{% endif %}" target="_blank" rel="noopener" data-m style="--i:1">{{ ct.boton_cv }} <span class="arr" aria-hidden="true">↗</span></a>
-        {%- if ct.linkedin and ct.linkedin != "" %}
-        <a class="btn soft" data-m style="--i:2" href="{{ ct.linkedin }}" target="_blank" rel="noopener">{{ ct.boton_linkedin }} <span class="arr" aria-hidden="true">↗</span></a>
-        {%- else %}
-        <a class="btn soft" data-m style="--i:2" href="#" target="_blank" rel="noopener">{{ ct.boton_linkedin }} {% include texto.html t=ct.linkedin_pendiente %} <span class="arr" aria-hidden="true">↗</span></a>
-        {%- endif %}
+      <div class="contact-inner">
+        <header class="sec-head" data-m-drift="-10">
+          <p class="eyebrow" data-m>{% include texto.html t=ct.etiqueta %}</p>
+          <h2 class="sec-title" id="contacto-title" data-m-split>{% include texto.html t=ct.titulo %}</h2>
+          <p class="sec-note" data-m>{% include texto.html t=ct.bajada %}</p>
+        </header>
+        <div class="contact-actions">
+          {%- if ct.email and ct.email != "" %}
+          <a class="btn primary" data-m style="--i:0" href="mailto:{{ ct.email }}">{{ ct.boton_email }} <span class="arr" aria-hidden="true">→</span></a>
+          {%- endif %}
+          <a class="btn" data-m style="--i:1" href="{% if cv_file %}{{ ct.cv_pdf }}{% else %}{{ ct.cv_enlace_alternativo }}{% endif %}" target="_blank" rel="noopener">{{ ct.boton_cv }} <span class="arr" aria-hidden="true">↗</span></a>
+          {%- if ct.linkedin and ct.linkedin != "" %}
+          <a class="btn tertiary" data-m style="--i:2" href="{{ ct.linkedin }}" target="_blank" rel="noopener">{{ ct.boton_linkedin }} <span class="arr" aria-hidden="true">↗</span></a>
+          {%- endif %}
+        </div>
       </div>
-      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
     </div>
   </section>

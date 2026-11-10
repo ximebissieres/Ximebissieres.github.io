@@ -827,10 +827,23 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .skill:hover .skill-dot { background: var(--rose); }
 }
 
-/* ---------- Contacto (cierre compacto) ---------- */
-.contact { background: var(--bg-2); }
-.contact .eyebrow { color: var(--rose-ink); }
+/* ---------- Contacto (cierre en el mismo plano que la Home) ----------
+   Mismo fondo, ancho y escala que las demás secciones; una línea fina,
+   alineada al contenido, separa el cierre de Mi enfoque. */
+.contact { padding-top: 0; }
+.contact-inner { border-top: 1px solid var(--line); padding-top: var(--section-y); }
 .contact .sec-head { margin-bottom: 24px; }
+.contact .sec-note { max-width: 50rem; }
+/* Botón terciario: sin borde, mismo relleno al pasar el mouse */
+.btn.tertiary { --btn-bd: transparent; --btn-fill: var(--bg-2); --btn-fg-hover: var(--ink); }
+/* Pie de la Home: mismo fondo, línea fina alineada al contenido */
+.is-home .site-footer { background: var(--bg); color: var(--muted); }
+.is-home .site-footer .wrap {
+  padding-block: 0 32px;
+  background: linear-gradient(var(--line), var(--line)) top / 100% 1px no-repeat;
+  background-origin: content-box; background-clip: content-box;
+}
+.is-home .site-footer .wrap > span { padding-top: 20px; }
 
 /* ---------- Home · galería de proyectos ----------
    Desktop: una fila de cuatro cards, la sección completa cabe en el viewport.
@@ -1030,7 +1043,6 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 
 /* Tono de fondo que se completa al entrar en cada sección (reversible) */
 .motion .projects-section { background: color-mix(in srgb, var(--bg-3) calc(var(--tint, 1) * 100%), var(--bg)); }
-.motion .contact { background: color-mix(in srgb, var(--bg-2) calc(var(--tint, 1) * 100%), var(--bg)); }
 
 /* Movimiento ligado al scroll · solo desktop (≥ 1024 px) */
 .motion-scroll .hero-copy {

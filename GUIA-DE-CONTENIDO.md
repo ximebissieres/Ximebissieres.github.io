@@ -120,16 +120,17 @@ Para destacar otra capacidad, mueve las líneas `destacada: true` y `marca: "Mi 
 | Texto o enlace | Campo |
 |---|---|
 | "Contacto" | `etiqueta` |
-| "¿Tienes un producto que necesita ser más claro? Conversemos." | `titulo` |
+| "¿Conversamos?" | `titulo` |
 | Bajada | `bajada` |
-| **Tu email** (el botón abre el correo) | `email` → ej. `email: "nombre@dominio.com"` |
+| **Tu email**: activa el botón principal "Escríbeme", que abre el correo | `email` → ej. `email: "nombre@dominio.com"` |
 | Texto del botón ("Escríbeme") | `boton_email` |
-| Marca amarilla mientras no hay email / mensaje al hacer clic | `email_pendiente` / `mensaje_email_pendiente` |
 | Texto del botón del CV ("Ver mi CV") | `boton_cv` |
 | Ruta del CV en PDF | `cv_pdf` |
 | Enlace del CV mientras no exista el PDF (Google Drive) | `cv_enlace_alternativo` |
-| **Tu LinkedIn** | `linkedin` → ej. `linkedin: "https://www.linkedin.com/in/tu-usuario"` |
-| Texto del botón ("LinkedIn") / marca pendiente | `boton_linkedin` / `linkedin_pendiente` |
+| **Tu LinkedIn**: activa el botón "LinkedIn" | `linkedin` → ej. `linkedin: "https://www.linkedin.com/in/tu-usuario"` |
+| Texto del botón ("LinkedIn") | `boton_linkedin` |
+
+**Botones que aparecen solos:** "Escríbeme" y "LinkedIn" solo se muestran cuando `email` o `linkedin` tienen un valor. Mientras estén vacíos (`""`), no aparecen, para que nadie haga clic en un botón que no lleva a ningún lado. "Ver mi CV" siempre está visible.
 
 **Ten en cuenta:** tu sitio es público. El email que escribas aquí quedará visible en la web y en el historial de GitHub.
 
