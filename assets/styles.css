@@ -827,12 +827,14 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .skill:hover .skill-dot { background: var(--rose); }
 }
 
-/* ---------- Contacto (cierre en el mismo plano que la Home) ----------
-   Mismo fondo, ancho y escala que las demás secciones; una línea fina,
-   alineada al contenido, separa el cierre de Mi enfoque. */
-.contact { padding-top: 0; }
-.contact-inner { border-top: 1px solid var(--line); padding-top: var(--section-y); }
+/* ---------- Contacto (cierre con fondo rosa empolvado) ----------
+   Banda completa en --bg-2 (#F3E4E7), el color original, que continúa en el
+   pie. Mismo ancho, espaciado y escala tipográfica que el resto de la Home. */
+.contact { background: var(--bg-2); }
+.contact .eyebrow { color: var(--rose-ink); }
 .contact .sec-head { margin-bottom: 24px; }
+/* Botones secundarios en blanco cálido sobre el rosa */
+.contact .btn.soft { --btn-bg: var(--bg); --btn-bd: color-mix(in srgb, var(--rose) 22%, var(--bg-2)); }
 .contact .sec-note { max-width: 50rem; }
 /* Íconos de línea en los botones de contacto */
 .btn-ico { width: 18px; height: 18px; flex: none; transition: transform .45s var(--ease); }
@@ -841,11 +843,10 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (max-width: 520px) {
   .contact-actions .btn { flex: 1 1 100%; justify-content: center; }
 }
-/* Pie de la Home: mismo fondo, línea fina alineada al contenido */
-.is-home .site-footer { background: var(--bg); color: var(--muted); }
+/* Pie de la Home: continúa la banda rosa del contacto con una línea fina alineada al contenido */
 .is-home .site-footer .wrap {
   padding-block: 0 32px;
-  background: linear-gradient(var(--line), var(--line)) top / 100% 1px no-repeat;
+  background: linear-gradient(color-mix(in srgb, var(--rose) 22%, var(--bg-2)), color-mix(in srgb, var(--rose) 22%, var(--bg-2))) top / 100% 1px no-repeat;
   background-origin: content-box; background-clip: content-box;
 }
 .is-home .site-footer .wrap > span { padding-top: 20px; }
@@ -1048,6 +1049,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 
 /* Tono de fondo que se completa al entrar en cada sección (reversible) */
 .motion .projects-section { background: color-mix(in srgb, var(--bg-3) calc(var(--tint, 1) * 100%), var(--bg)); }
+.motion .contact { background: color-mix(in srgb, var(--bg-2) calc(var(--tint, 1) * 100%), var(--bg)); }
 
 /* Movimiento ligado al scroll · solo desktop (≥ 1024 px) */
 .motion-scroll .hero-copy {

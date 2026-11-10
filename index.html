@@ -88,7 +88,7 @@ body_class: is-home
   <!-- ---------------- 04 · Contacto y CV ---------------- -->
   {%- assign ct = h.contacto -%}
   {%- assign cv_file = site.static_files | where: "path", ct.cv_pdf | first -%}
-  <section class="home-section contact" id="contacto" aria-labelledby="contacto-title">
+  <section class="home-section contact" id="contacto" aria-labelledby="contacto-title" data-m-tint="0.3">
     <div class="wrap">
       <div class="contact-inner">
         <header class="sec-head" data-m-drift="-10">

@@ -95,7 +95,7 @@
     vh = window.innerHeight;
     heroH = hero ? Math.max(1, hero.offsetHeight) : 1;
     items = [];
-    tints.forEach(function (el) { items.push({ el: el, type: 'tint', top: absTop(el), h: el.offsetHeight }); });
+    tints.forEach(function (el) { items.push({ el: el, type: 'tint', top: absTop(el), h: el.offsetHeight, span: parseFloat(el.getAttribute('data-m-tint')) || 0.55 }); });
     drifts.forEach(function (el) { items.push({ el: el, type: 'drift', top: absTop(el), h: el.offsetHeight, k: parseFloat(el.getAttribute('data-m-drift')) || 0 }); });
     skills.forEach(function (el, i, all) { items.push({ el: el, type: 'drift', top: absTop(el), h: el.offsetHeight, k: ((all.length - 1) / 2 - i) * 5 }); });
     media.forEach(function (el) { items.push({ el: el, type: 'py', top: absTop(el), h: el.offsetHeight }); });
@@ -113,8 +113,8 @@
     for (var i = 0; i < items.length; i++) {
       var it = items[i];
       if (it.type === 'tint') {
-        // 0 cuando la sección asoma por abajo · 1 cuando su borde llega al 45 % superior
-        set(it.el, '--tint', clamp((y + vh - it.top) / (vh * 0.55), 0, 1).toFixed(3));
+        // 0 cuando la sección asoma por abajo · 1 tras recorrer `span` (fracción del viewport, 0.55 por defecto)
+        set(it.el, '--tint', clamp((y + vh - it.top) / (vh * it.span), 0, 1).toFixed(3));
         continue;
       }
       if (!wide) continue;
