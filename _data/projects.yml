@@ -2,6 +2,8 @@
 # el menú "Proyectos" y la navegación al siguiente caso.
 # El orden refleja la prioridad del portafolio.
 - slug: monchis
+  category: Delivery
+  teaser: Menos entregas fallidas, sin agregar fricción a la compra.
   order: 1
   company: Monchis
   sector: Delivery · Paraguay
@@ -14,6 +16,8 @@
   role: UX Writer / Content Designer
   cover: illustration
 - slug: latam
+  category: Aerolínea
+  teaser: Vuelos, hoteles y paquetes en una landing, sin afectar vuelos.
   order: 2
   company: LATAM Airlines
   sector: Aerolínea · Web
@@ -27,6 +31,8 @@
   cover_alt: Landing de ofertas de LATAM rediseñada, con destinos y precios destacados
   cover_position: 50% 0%
 - slug: santa-isabel
+  category: Supermercado
+  teaser: Una app con identidad propia, diseñada desde el research.
   order: 3
   company: Santa Isabel
   sector: Cencosud · App
@@ -40,6 +46,8 @@
   cover_alt: Pantallas de la propuesta de la app de Santa Isabel, desde el acceso hasta el pago
   cover_position: 50% 50%
 - slug: paris
+  category: Sellers
+  teaser: Un manual de voz y tono que cualquier equipo puede aplicar.
   order: 4
   company: Paris Marketplace
   sector: Cencosud · Sellers
