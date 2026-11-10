@@ -834,8 +834,13 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .contact-inner { border-top: 1px solid var(--line); padding-top: var(--section-y); }
 .contact .sec-head { margin-bottom: 24px; }
 .contact .sec-note { max-width: 50rem; }
-/* Botón terciario: sin borde, mismo relleno al pasar el mouse */
-.btn.tertiary { --btn-bd: transparent; --btn-fill: var(--bg-2); --btn-fg-hover: var(--ink); }
+/* Íconos de línea en los botones de contacto */
+.btn-ico { width: 18px; height: 18px; flex: none; transition: transform .45s var(--ease); }
+@media (hover: hover) { .btn:hover .btn-ico { transform: translateY(-1px); } }
+/* Mobile: los tres botones ocupan el ancho disponible sin desbordarse */
+@media (max-width: 520px) {
+  .contact-actions .btn { flex: 1 1 100%; justify-content: center; }
+}
 /* Pie de la Home: mismo fondo, línea fina alineada al contenido */
 .is-home .site-footer { background: var(--bg); color: var(--muted); }
 .is-home .site-footer .wrap {

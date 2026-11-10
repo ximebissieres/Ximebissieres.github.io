@@ -122,17 +122,19 @@ Para destacar otra capacidad, mueve las líneas `destacada: true` y `marca: "Mi 
 | "Contacto" | `etiqueta` |
 | "¿Conversamos?" | `titulo` |
 | Bajada | `bajada` |
-| **Tu email**: activa el botón principal "Escríbeme", que abre el correo | `email` → ej. `email: "nombre@dominio.com"` |
-| Texto del botón ("Escríbeme") | `boton_email` |
+| **Tu WhatsApp**: botón principal (oscuro) que abre una conversación | `whatsapp` → ej. `whatsapp: "+56 9 8189 4577"` |
+| Texto del botón ("WhatsApp") | `boton_whatsapp` |
+| **Tu email**: botón "Correo", que abre el programa de correo | `email` → ej. `email: "nombre@dominio.com"` |
+| Texto del botón ("Correo") | `boton_email` |
 | Texto del botón del CV ("Ver mi CV") | `boton_cv` |
 | Ruta del CV en PDF | `cv_pdf` |
 | Enlace del CV mientras no exista el PDF (Google Drive) | `cv_enlace_alternativo` |
-| **Tu LinkedIn**: activa el botón "LinkedIn" | `linkedin` → ej. `linkedin: "https://www.linkedin.com/in/tu-usuario"` |
-| Texto del botón ("LinkedIn") | `boton_linkedin` |
 
-**Botones que aparecen solos:** "Escríbeme" y "LinkedIn" solo se muestran cuando `email` o `linkedin` tienen un valor. Mientras estén vacíos (`""`), no aparecen, para que nadie haga clic en un botón que no lleva a ningún lado. "Ver mi CV" siempre está visible.
+**Número de WhatsApp:** escríbelo con código de país, como prefieras verlo (`+56 9 8189 4577`). Los espacios, el `+`, los guiones y los paréntesis se quitan solos al armar el enlace.
 
-**Ten en cuenta:** tu sitio es público. El email que escribas aquí quedará visible en la web y en el historial de GitHub.
+**Botones que se ocultan solos:** si dejas `whatsapp` o `email` vacíos (`""`), ese botón no aparece. "Ver mi CV" siempre está visible.
+
+**Ten en cuenta:** tu sitio es público. El número y el email que escribas aquí quedarán visibles en la web y en el historial de GitHub.
 
 **Agregar tu CV en PDF:** en GitHub, abre la carpeta `assets` → **Add file → Upload files** → arrastra tu PDF y, en el nombre, escribe `cv/Ximena-Bissieres-CV.pdf` → **Commit changes**. El botón "Ver mi CV" lo abrirá automáticamente en una pestaña nueva. Para reemplazarlo más adelante, sube uno nuevo con el mismo nombre.
 

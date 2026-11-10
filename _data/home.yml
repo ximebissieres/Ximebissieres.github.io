@@ -98,21 +98,21 @@ contacto:
   titulo: "¿Conversamos?"
   bajada: "Si te interesa mi trabajo o crees que puedo aportar a tu equipo, me encantará saber de ti."
 
-  # Botón principal (oscuro). Escribe tu email y el botón "Escríbeme" aparece
-  # y abre el correo. Si lo dejas vacío (""), el botón no se muestra.
-  email: ""
-  boton_email: "Escríbeme"
+  # WhatsApp · botón principal (oscuro). Escribe el número con código de país;
+  # los espacios y el signo + se ignoran al armar el enlace.
+  whatsapp: "+56 9 8189 4577"
+  boton_whatsapp: "WhatsApp"
 
-  # CV: sube el PDF a assets/cv/ con este nombre y el botón lo abrirá.
-  # Mientras no exista ese PDF, el botón usa cv_enlace_alternativo.
+  # Correo · botón secundario. Abre el programa de correo (mailto:).
+  email: "xime.bissieres@gmail.com"
+  boton_email: "Correo"
+
+  # CV · botón secundario. Sube el PDF a assets/cv/ con este nombre y el botón
+  # lo abrirá. Mientras no exista ese PDF, el botón usa cv_enlace_alternativo.
+  # WhatsApp y Correo se ocultan solos si su dato queda vacío (""); el CV siempre se muestra.
   boton_cv: "Ver mi CV"
   cv_pdf: "/assets/cv/Ximena-Bissieres-CV.pdf"
   cv_enlace_alternativo: "https://drive.google.com/file/d/1nrHjRSnpFOwwXJnKw0vn-z2yrDg4grrt/view"
-
-  # LinkedIn (botón sin borde): pega la dirección completa
-  # (https://www.linkedin.com/in/...). Si lo dejas vacío, el botón no se muestra.
-  linkedin: ""
-  boton_linkedin: "LinkedIn"
 
 
 # --- Pie de página (aparece en todas las páginas) ----------------------------

@@ -97,13 +97,23 @@ body_class: is-home
           <p class="sec-note" data-m>{% include texto.html t=ct.bajada %}</p>
         </header>
         <div class="contact-actions">
+          {%- assign wa = ct.whatsapp | remove: " " | remove: "+" | remove: "-" | remove: "(" | remove: ")" -%}
+          {%- if wa != "" %}
+          <a class="btn primary" data-m style="--i:0" href="https://wa.me/{{ wa }}" target="_blank" rel="noopener">
+            <svg class="btn-ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.8a7.2 7.2 0 0 0-6.3 10.7L2.8 17.2l3.8-.9A7.2 7.2 0 1 0 10 2.8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            {{ ct.boton_whatsapp }}
+          </a>
+          {%- endif %}
           {%- if ct.email and ct.email != "" %}
-          <a class="btn primary" data-m style="--i:0" href="mailto:{{ ct.email }}">{{ ct.boton_email }} <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn soft" data-m style="--i:1" href="mailto:{{ ct.email }}">
+            <svg class="btn-ico" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.8" y="4.5" width="14.4" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m3.6 5.6 6.4 5 6.4-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {{ ct.boton_email }}
+          </a>
           {%- endif %}
-          <a class="btn" data-m style="--i:1" href="{% if cv_file %}{{ ct.cv_pdf }}{% else %}{{ ct.cv_enlace_alternativo }}{% endif %}" target="_blank" rel="noopener">{{ ct.boton_cv }} <span class="arr" aria-hidden="true">↗</span></a>
-          {%- if ct.linkedin and ct.linkedin != "" %}
-          <a class="btn tertiary" data-m style="--i:2" href="{{ ct.linkedin }}" target="_blank" rel="noopener">{{ ct.boton_linkedin }} <span class="arr" aria-hidden="true">↗</span></a>
-          {%- endif %}
+          <a class="btn soft" data-m style="--i:2" href="{% if cv_file %}{{ ct.cv_pdf }}{% else %}{{ ct.cv_enlace_alternativo }}{% endif %}" target="_blank" rel="noopener">
+            <svg class="btn-ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.8h6l3 3v11.4h-9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11.5 2.8v3h3M7.8 10.2h4.4M7.8 13.2h4.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {{ ct.boton_cv }}
+          </a>
         </div>
       </div>
     </div>
