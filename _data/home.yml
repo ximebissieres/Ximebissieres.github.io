@@ -28,7 +28,7 @@ menu:
   marca_nombre: "Ximena Bissieres"              # nombre junto al logo
   marca_descripcion: "Ximena Bissieres, ir al inicio"   # lo lee el lector de pantalla
   inicio: "Inicio"
-  proyectos: "Proyectos"
+  proyectos: "Mis proyectos"
   ver_todos_los_proyectos: "Ver todos los proyectos"
   enfoque: "Mi enfoque"
   contacto: "Contacto"
@@ -40,11 +40,11 @@ menu:
 
 # --- 01 · Hero: presentación --------------------------------------------------
 hero:
-  etiqueta: "Product Designer · Contenido y sistemas"
+  etiqueta: "Product Designer · Research & Content"
   nombre_linea_1: "Ximena"
   nombre_linea_2: "Bissieres"                   # esta línea va en rosa
-  bajada: "Diseño productos digitales donde *el lenguaje* ordena la experiencia: desde el research hasta la interfaz, con foco en claridad, accesibilidad y negocio."
-  boton_principal: "Ver proyectos"
+  bajada: "Identifico oportunidades y transformo problemas complejos en experiencias digitales claras y accesibles, conectando las necesidades de las personas con los objetivos del negocio."
+  boton_principal: "Revisar proyectos"
   boton_secundario: "Contacto"
   foto: "/assets/foto.jpg"                      # para cambiar la foto, sube otra con este nombre
   foto_descripcion: "Ximena Bissieres trabajando en su computador, sonriendo y con audífonos"
@@ -55,13 +55,13 @@ hero:
 # Puedes agregar o quitar filas copiando o borrando un bloque "- etiqueta / texto".
 datos_rapidos:
   - etiqueta: "Especialidad"
-    texto: "Product Design con foco en contenido y sistemas"
+    texto: "Product Design con foco en research y contenido."
   - etiqueta: "Industrias"
-    texto: "Retail, salud y aerolíneas"
-  - etiqueta: "He trabajado con"
-    texto: "LATAM Airlines, Cencosud (Santa Isabel y Paris) y Monchis"
+    texto: "Banca, Retail, Salud, aerolíneas y delivery."
+  - etiqueta: "He trabajado en"
+    texto: "itti, LATAM Airlines, Cencosud, Tenpo, Banco Ripley y más."
   - etiqueta: "Experiencia"
-    texto: "[[X]] años en equipos de producto"
+    texto: "+6 años en equipos de producto"
 
 
 # --- 02 · Proyectos (encabezado de la sección) --------------------------------
