@@ -15,6 +15,8 @@
 #  - cover_position ... Encuadre de la imagen (horizontal vertical), ej. "50% 0%" = arriba
 #  - order ............ Orden y número (01, 02…). Si reordenas, cambia también el orden
 #                       de los bloques en este archivo.
+#  - hero ............. (Opcional) Portada narrativa del caso: titulo, bajada,
+#                       etiqueta_descripcion y descripcion. Hoy solo Monchis la usa.
 #  - slug ............. Dirección de la página (/proyectos/slug/). NO cambiar.
 # =============================================================================
 - slug: monchis
@@ -27,6 +29,13 @@
   menu: Direcciones
   title_html: Cómo rediseñamos la experiencia de direcciones para reducir entregas fallidas *sin agregar fricción* a la compra
   cover: illustration
+  # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
+  # resumen de la portada del caso. *texto* se destaca en rosa.
+  hero:
+    titulo: "El desafío no era guardar una dirección. *Era encontrar al usuario.*"
+    bajada: "En Paraguay, las direcciones suelen construirse a partir de referencias e intersecciones. Para Monchis, esto se traducía en demoras, entregas fallidas y reclamos."
+    etiqueta_descripcion: "El proyecto"
+    descripcion: "Rediseñamos la experiencia de direcciones en tres momentos del journey para mejorar la precisión sin agregar fricción a la compra."
 - slug: latam
   category: Aerolínea
   teaser: Vuelos, hoteles y paquetes en una landing, sin afectar vuelos.
