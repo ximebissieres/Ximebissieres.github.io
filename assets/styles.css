@@ -1228,3 +1228,52 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .cbrowser-dots i { width: 6px; height: 6px; }
   .cbrowser-url { height: 10px; }
 }
+
+/* ==========================================================================
+   Resumen ejecutivo editorial (.overview--editorial) · hoy LATAM
+   Un solo panel: etiqueta → idea clave → detalle. Separadores finos que no
+   tocan los bordes; Impacto con fondo rosa palo y cifra destacada.
+   ========================================================================== */
+.overview.overview--editorial {
+  gap: 0; overflow: hidden; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 22px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) { .overview.overview--editorial { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .overview.overview--editorial { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.overview--editorial > div { position: relative; background: transparent; padding: 22px 24px 24px; gap: 12px; }
+.overview--editorial > div::before { content: ""; position: absolute; background: var(--line); }
+/* Mobile: separador horizontal entre bloques */
+.overview--editorial > div + div::before { left: 24px; right: 24px; top: 0; height: 1px; }
+@media (min-width: 640px) {
+  .overview--editorial > div + div::before { content: none; }
+  .overview--editorial > div:nth-child(even)::before { content: ""; left: 0; top: 22px; bottom: 22px; width: 1px; height: auto; right: auto; }
+  .overview--editorial > div:nth-child(n+3)::after { content: ""; position: absolute; left: 24px; right: 24px; top: 0; height: 1px; background: var(--line); }
+}
+@media (min-width: 1000px) {
+  .overview--editorial > div:nth-child(n+3)::after { content: none; }
+  .overview--editorial > div + div::before { content: ""; left: 0; top: 22px; bottom: 22px; width: 1px; height: auto; right: auto; }
+}
+.overview--editorial h2 {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .7rem; font-weight: var(--w-semibold); letter-spacing: .14em; color: var(--muted);
+}
+.overview--editorial h2::before { content: ""; width: 14px; height: 1.5px; border-radius: 2px; background: var(--blush); }
+.overview--editorial p { font-size: .95rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.overview--editorial .ov-main { color: var(--ink); }
+.ov-lead {
+  display: block; margin-bottom: 4px;
+  font-family: var(--display); font-weight: var(--w-semibold); font-size: 1.08rem; line-height: 1.3;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.ov-kpi {
+  display: block; margin-bottom: 6px;
+  font-family: var(--display); font-weight: var(--w-black); font-size: clamp(1.75rem, 1.35rem + 1vw, 2.25rem);
+  line-height: 1; letter-spacing: -0.035em; color: var(--ink);
+}
+/* Impacto: destacado con rosa palo */
+.overview--editorial .ov-impact { background: var(--bg-2); }
+.overview--editorial .ov-impact::before { content: none !important; }
+.overview--editorial .ov-impact h2 { color: var(--rose-ink); }
+.overview--editorial .ov-impact h2::before { background: var(--rose); }
+.overview--editorial .ov-impact p { color: color-mix(in srgb, var(--ink) 78%, var(--bg-2)); }
