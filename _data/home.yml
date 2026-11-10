@@ -77,17 +77,17 @@ proyectos:
 enfoque:
   etiqueta: "Mi enfoque"
   titulo: "Entender el problema. *Diseñar la solución.*"
-  bajada: "Investigo para descubrir oportunidades, conecto hallazgos con objetivos de negocio y participo en la definición de experiencias junto a equipos multidisciplinarios. El storytelling y el contenido atraviesan este proceso, aportando claridad y coherencia a cada interacción."
+  bajada: "Conecto investigación, negocio y diseño para resolver problemas en equipo. El storytelling atraviesa cada etapa del proceso."
   # Capacidades: "destacada: true" pinta la tarjeta en rosa con su "marca".
   capacidades:
     - nombre: "Research"
-      descripcion: "A través de entrevistas, observación y testeos, identifico necesidades, fricciones y oportunidades que orientan las decisiones de producto."
+      descripcion: "Investigo y testeo para detectar fricciones y oportunidades que orientan las decisiones del producto."
     - nombre: "Estrategia"
-      descripcion: "Colaboro con equipos y stakeholders para conectar hallazgos, definir prioridades y alinear las decisiones de producto con los objetivos del negocio."
+      descripcion: "Colaboro con stakeholders para conectar hallazgos con los objetivos del negocio."
     - nombre: "Diseño"
-      descripcion: "Transformo hallazgos en soluciones mediante arquitectura de información, definición de flujos, jerarquías y wireframes que simplifican la experiencia."
+      descripcion: "transformo hallzgos en flujos, jerarquías y wireframes que simplifican la experiencia."
     - nombre: "Diseño de contenido"
-      descripcion: "Integro storytelling, voz y tono y microcopy desde la definición de la experiencia, construyendo narrativas que conectan cada momento del viaje."
+      descripcion: "Integro storytelling y microcopy desde el inicio del proceso para construir narrativas que conecten con las necesidades."
       destacada: true
       marca: "Mi sello"
 
