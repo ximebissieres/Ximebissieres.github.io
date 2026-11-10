@@ -49,20 +49,21 @@ body_class: is-project
     {{ content }}
   </div>
 
-  <nav class="next-project" aria-label="Siguiente proyecto">
+  {%- comment -%} Navegación al siguiente caso: los datos salen de _data/projects.yml (company, name, cover, order). {%- endcomment -%}
+  {%- capture n_num %}0{{ n.order }}{% endcapture -%}
+  {%- capture n_total %}0{{ total }}{% endcapture -%}
+  <nav class="next-project" aria-label="Navegación entre proyectos">
     <div class="wrap">
       <a class="next-card" href="/proyectos/{{ n.slug }}/">
+        {% include project-media.html project=n size="thumb" %}
         <span class="next-text">
-          <span class="eyebrow">Siguiente proyecto · {{ n.order }} de {{ total }}</span>
+          <span class="next-label">Siguiente proyecto · {{ n_num | slice: -2, 2 }} de {{ n_total | slice: -2, 2 }}</span>
           <span class="next-title">{{ n.company }}</span>
           <span class="next-sub">{{ n.name }}</span>
-          <span class="pcard-cta">Ver proyecto <span class="arr">→</span></span>
         </span>
-        {% include project-media.html project=n size="next" %}
+        <span class="next-cta">Explorar proyecto <span class="arr" aria-hidden="true">→</span></span>
       </a>
-      <div class="next-links">
-        <a class="back" href="/#proyectos"><span class="arr" aria-hidden="true">←</span> Todos los proyectos</a>
-      </div>
+      <a class="back next-all" href="/#proyectos"><span class="arr" aria-hidden="true">←</span> Todos los proyectos</a>
     </div>
   </nav>
 </article>
