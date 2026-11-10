@@ -46,24 +46,24 @@ body_class: is-home
   </section>
 
   <div class="wrap">
-    <dl class="quick" data-reveal>
+    <dl class="quick">
       {%- for dato in h.datos_rapidos %}
-      <div><dt>{{ dato.etiqueta }}</dt><dd>{% include texto.html t=dato.texto %}</dd></div>
+      <div data-m style="--i:{{ forloop.index0 }}"><dt>{{ dato.etiqueta }}</dt><dd>{% include texto.html t=dato.texto %}</dd></div>
       {%- endfor %}
     </dl>
   </div>
 
   <!-- ---------------- 02 · Proyectos ---------------- -->
-  <section class="section projects-section" id="proyectos" aria-labelledby="proyectos-title">
+  <section class="section projects-section" id="proyectos" aria-labelledby="proyectos-title" data-m-tint>
     <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">{% include texto.html t=h.proyectos.etiqueta %}</p>
-        <h2 class="sec-title" id="proyectos-title">{% include texto.html t=h.proyectos.titulo %}</h2>
-        <p class="sec-note">{% include texto.html t=h.proyectos.bajada %}</p>
+      <header class="sec-head" data-m-drift="-10">
+        <p class="eyebrow" data-m>{% include texto.html t=h.proyectos.etiqueta %}</p>
+        <h2 class="sec-title" id="proyectos-title" data-m-split>{% include texto.html t=h.proyectos.titulo %}</h2>
+        <p class="sec-note" data-m>{% include texto.html t=h.proyectos.bajada %}</p>
       </header>
       <ol class="project-grid">
         {% for p in site.data.projects %}
-        <li>{% include project-card.html project=p %}</li>
+        <li data-m style="--i:{{ forloop.index0 }}">{% include project-card.html project=p %}</li>
         {% endfor %}
       </ol>
     </div>
@@ -72,14 +72,14 @@ body_class: is-home
   <!-- ---------------- 03 · Mi enfoque ---------------- -->
   <section class="home-section" id="enfoque" aria-labelledby="enfoque-title">
     <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">{% include texto.html t=h.enfoque.etiqueta %}</p>
-        <h2 class="sec-title" id="enfoque-title">{% include texto.html t=h.enfoque.titulo %}</h2>
-        <p class="sec-note">{% include texto.html t=h.enfoque.bajada %}</p>
+      <header class="sec-head" data-m-drift="-10">
+        <p class="eyebrow" data-m>{% include texto.html t=h.enfoque.etiqueta %}</p>
+        <h2 class="sec-title" id="enfoque-title" data-m-split>{% include texto.html t=h.enfoque.titulo %}</h2>
+        <p class="sec-note" data-m>{% include texto.html t=h.enfoque.bajada %}</p>
       </header>
       <ul class="skills-grid">
         {%- for c in h.enfoque.capacidades %}
-        <li class="skill{% if c.destacada %} skill-base{% endif %}"><span class="skill-dot" aria-hidden="true"></span>{% if c.destacada and c.marca %}<span class="skill-tag">{{ c.marca }}</span>{% endif %}<h3>{% include texto.html t=c.nombre %}</h3><p>{% include texto.html t=c.descripcion %}</p></li>
+        <li class="skill{% if c.destacada %} skill-base{% endif %}" data-m style="--i:{{ forloop.index0 }}"><span class="skill-dot" aria-hidden="true"></span>{% if c.destacada and c.marca %}<span class="skill-tag">{{ c.marca }}</span>{% endif %}<h3>{% include texto.html t=c.nombre %}</h3><p>{% include texto.html t=c.descripcion %}</p></li>
         {%- endfor %}
       </ul>
     </div>
@@ -88,24 +88,24 @@ body_class: is-home
   <!-- ---------------- 04 · Contacto y CV ---------------- -->
   {%- assign ct = h.contacto -%}
   {%- assign cv_file = site.static_files | where: "path", ct.cv_pdf | first -%}
-  <section class="home-section contact" id="contacto" aria-labelledby="contacto-title">
+  <section class="home-section contact" id="contacto" aria-labelledby="contacto-title" data-m-tint>
     <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">{% include texto.html t=ct.etiqueta %}</p>
-        <h2 class="sec-title" id="contacto-title">{% include texto.html t=ct.titulo %}</h2>
-        <p class="sec-note">{% include texto.html t=ct.bajada %}</p>
+      <header class="sec-head" data-m-drift="-10">
+        <p class="eyebrow" data-m>{% include texto.html t=ct.etiqueta %}</p>
+        <h2 class="sec-title" id="contacto-title" data-m-split>{% include texto.html t=ct.titulo %}</h2>
+        <p class="sec-note" data-m>{% include texto.html t=ct.bajada %}</p>
       </header>
       <div class="contact-actions">
         {%- if ct.email and ct.email != "" %}
-        <a class="btn primary" href="mailto:{{ ct.email }}">{{ ct.boton_email }} <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn primary" data-m style="--i:0" href="mailto:{{ ct.email }}">{{ ct.boton_email }} <span class="arr" aria-hidden="true">→</span></a>
         {%- else %}
-        <button class="btn primary" type="button" data-copy="" data-msg-pending="{{ ct.mensaje_email_pendiente | escape }}" aria-describedby="copy-status">{{ ct.boton_email }} {% include texto.html t=ct.email_pendiente %}</button>
+        <button class="btn primary" data-m style="--i:0" type="button" data-copy="" data-msg-pending="{{ ct.mensaje_email_pendiente | escape }}" aria-describedby="copy-status">{{ ct.boton_email }} {% include texto.html t=ct.email_pendiente %}</button>
         {%- endif %}
-        <a class="btn" href="{% if cv_file %}{{ ct.cv_pdf }}{% else %}{{ ct.cv_enlace_alternativo }}{% endif %}" target="_blank" rel="noopener">{{ ct.boton_cv }} <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn" href="{% if cv_file %}{{ ct.cv_pdf }}{% else %}{{ ct.cv_enlace_alternativo }}{% endif %}" target="_blank" rel="noopener" data-m style="--i:1">{{ ct.boton_cv }} <span class="arr" aria-hidden="true">↗</span></a>
         {%- if ct.linkedin and ct.linkedin != "" %}
-        <a class="btn soft" href="{{ ct.linkedin }}" target="_blank" rel="noopener">{{ ct.boton_linkedin }} <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn soft" data-m style="--i:2" href="{{ ct.linkedin }}" target="_blank" rel="noopener">{{ ct.boton_linkedin }} <span class="arr" aria-hidden="true">↗</span></a>
         {%- else %}
-        <a class="btn soft" href="#" target="_blank" rel="noopener">{{ ct.boton_linkedin }} {% include texto.html t=ct.linkedin_pendiente %} <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn soft" data-m style="--i:2" href="#" target="_blank" rel="noopener">{{ ct.boton_linkedin }} {% include texto.html t=ct.linkedin_pendiente %} <span class="arr" aria-hidden="true">↗</span></a>
         {%- endif %}
       </div>
       <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
