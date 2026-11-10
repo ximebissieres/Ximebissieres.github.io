@@ -61,35 +61,35 @@ datos_rapidos:
   - etiqueta: "He trabajado en"
     texto: "itti, LATAM Airlines, Cencosud, Tenpo, Banco Ripley y más."
   - etiqueta: "Experiencia"
-    texto: "+6 años en equipos de producto"
+    texto: "+6 años en equipos de producto."
 
 
 # --- 02 · Proyectos (encabezado de la sección) --------------------------------
 # Las tarjetas de cada proyecto se editan en _data/projects.yml
 proyectos:
-  etiqueta: "Proyectos seleccionados"
-  titulo: "Cuatro proyectos, *cuatro formas* de diseñar producto"
-  bajada: "Cada caso abre su propia historia: el problema, mi rol, el proceso, las decisiones y los resultados."
-  tarjeta_ver_proyecto: "Ver proyecto"          # enlace que aparece en las tarjetas en celular
+  etiqueta: "Proyectos destacados"
+  titulo: "Cuatro proyectos, *cuatro formas* de diseñar un producto"
+  bajada: "Cada proyecto tiene un desafío diferente. Aquí comparto cómo abordo problemas reales, las decisiones que impulsé junto a mis equipos y lo que aprendimos en el camino."
+  tarjeta_ver_proyecto: "Conocer proyecto"          # enlace que aparece en las tarjetas en celular
 
 
 # --- 03 · Mi enfoque ----------------------------------------------------------
 enfoque:
   etiqueta: "Mi enfoque"
   titulo: "Entender el problema. *Diseñar la solución.*"
-  bajada: "Combino investigación, estrategia, diseño y contenido para crear productos digitales centrados en las personas y alineados con los objetivos del negocio."
+  bajada: "Investigo para descubrir oportunidades, conecto hallazgos con objetivos de negocio y participo en la definición de experiencias junto a equipos multidisciplinarios. El storytelling y el contenido atraviesan este proceso, aportando claridad y coherencia a cada interacción."
   # Capacidades: "destacada: true" pinta la tarjeta en rosa con su "marca".
   capacidades:
     - nombre: "Research"
-      descripcion: "Entrevistas, user personas, focus groups y testeos de guerrilla."
+      descripcion: "A través de entrevistas, observación y testeos, identifico necesidades, fricciones y oportunidades que orientan las decisiones de producto."
     - nombre: "Estrategia"
-      descripcion: "Workshops con stakeholders, priorización y working backwards."
+      descripcion: "Colaboro con equipos y stakeholders para conectar hallazgos, definir prioridades y alinear las decisiones de producto con los objetivos del negocio."
     - nombre: "Diseño"
-      descripcion: "Arquitectura de información, flujos, jerarquía y wireframes."
+      descripcion: "Transformo hallazgos en soluciones mediante arquitectura de información, definición de flujos, jerarquías y wireframes que simplifican la experiencia."
     - nombre: "Contenido"
-      descripcion: "Voz y tono, microcopy, sistemas de nomenclatura y accesibilidad."
+      descripcion: "Integro storytelling, voz y tono y microcopy desde la definición de la experiencia, construyendo narrativas que conectan cada momento del viaje."
       destacada: true
-      marca: "Mi base"
+      marca: "Mi sello"
 
 
 # --- 04 · Contacto y CV -------------------------------------------------------
