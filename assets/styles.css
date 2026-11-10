@@ -296,11 +296,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .hero .cta { grid-area: cta; margin-top: var(--s-5); }
 }
 
-/* Desktop: el hero ocupa el alto visible menos el header */
+/* Desktop: el hero mide lo que su contenido necesita (sin estirarse a toda la
+   pantalla), para que los proyectos asomen al primer scroll */
 @media (min-width: 980px) {
   .hero {
-    min-height: calc(100vh - var(--header-h));
-    min-height: calc(100svh - var(--header-h));
     display: grid; align-items: center;
     padding-block: clamp(var(--s-5), 5svh, var(--s-8));
   }
@@ -837,14 +836,8 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
    Desktop: una fila de cuatro cards, la sección completa cabe en el viewport.
    Tablet: 2 × 2. Mobile: lista de cards horizontales. */
 .projects-section { background: var(--bg-3); }
-.projects-section.section { padding-block: var(--section-y); }
-@media (min-width: 1100px) {
-  .projects-section {
-    min-height: calc(100vh - var(--header-h) - 16px);
-    min-height: calc(100svh - var(--header-h) - 16px);
-    display: grid; align-content: center;
-  }
-}
+.projects-section.section { padding-block: clamp(40px, 6svh, 64px) var(--section-y); }
+
 
 .project-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--grid-gap); grid-template-columns: 1fr; }
 @media (min-width: 640px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

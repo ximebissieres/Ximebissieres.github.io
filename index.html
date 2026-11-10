@@ -50,7 +50,23 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
     </dl>
   </div>
 
-  <!-- ---------------- 02 · Mi enfoque ---------------- -->
+  <!-- ---------------- 02 · Proyectos ---------------- -->
+  <section class="section projects-section" id="proyectos" aria-labelledby="proyectos-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">Proyectos seleccionados</p>
+        <h2 class="sec-title" id="proyectos-title">Cuatro proyectos, <em>cuatro formas</em> de diseñar producto</h2>
+        <p class="sec-note">Cada caso abre su propia historia: el problema, mi rol, el proceso, las decisiones y los resultados.</p>
+      </header>
+      <ol class="project-grid">
+        {% for p in site.data.projects %}
+        <li>{% include project-card.html project=p %}</li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ---------------- 03 · Mi enfoque ---------------- -->
   <section class="home-section" id="enfoque" aria-labelledby="enfoque-title">
     <div class="wrap">
       <header class="sec-head">
@@ -64,22 +80,6 @@ description: Ximena Bissieres, Product Designer especializada en contenido y sis
         <li class="skill"><span class="skill-dot" aria-hidden="true"></span><h3>Diseño</h3><p>Arquitectura de información, flujos, jerarquía y wireframes.</p></li>
         <li class="skill skill-base"><span class="skill-dot" aria-hidden="true"></span><span class="skill-tag">Mi base</span><h3>Contenido</h3><p>Voz y tono, microcopy, sistemas de nomenclatura y accesibilidad.</p></li>
       </ul>
-    </div>
-  </section>
-
-  <!-- ---------------- 03 · Proyectos ---------------- -->
-  <section class="section projects-section" id="proyectos" aria-labelledby="proyectos-title">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Proyectos seleccionados</p>
-        <h2 class="sec-title" id="proyectos-title">Cuatro proyectos, <em>cuatro formas</em> de diseñar producto</h2>
-        <p class="sec-note">Cada caso abre su propia historia: el problema, mi rol, el proceso, las decisiones y los resultados.</p>
-      </header>
-      <ol class="project-grid">
-        {% for p in site.data.projects %}
-        <li>{% include project-card.html project=p %}</li>
-        {% endfor %}
-      </ol>
     </div>
   </section>
 
