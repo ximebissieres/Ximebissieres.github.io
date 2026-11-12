@@ -1520,3 +1520,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .tip-evolution b { font-size: 1.1rem; }
 .status-list { margin-top: 8px; }
 .ctx-goals { display: grid; gap: 12px; }
+/* Panel de investigación con un número impar de ítems: el último ocupa todo el ancho */
+@media (min-width: 760px) {
+  .research-list > li:last-child:nth-child(odd) { grid-column: 1 / -1; border-left: 0; }
+}

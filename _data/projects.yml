@@ -34,8 +34,8 @@
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
-    titulo: "El último paso de la compra *también necesitaba rediseñarse.*"
-    bajada: "Rediseñamos el checkout de Monchis para simplificar decisiones, aclarar la entrega y los beneficios, y sumar nuevas funcionalidades sin agregar fricción al momento de pagar."
+    titulo: "Rediseñar el checkout para cerrar ventas, *no para volver a empezar.*"
+    bajada: "El checkout de Monchis tenía que resolver tres cosas en una sola vista: confirmar que la dirección tuviera cobertura, mostrar con claridad cupones y beneficios, y sumar la propina. Todo sin frenar el impulso de compra."
     etiqueta_descripcion: "El principio"
     descripcion: "El checkout debía ayudar a finalizar la compra, no hacer que el usuario volviera a empezar."
     # Composición visual del hero: componente real + elementos cartográficos.

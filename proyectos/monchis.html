@@ -15,9 +15,9 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
   propinas (en desarrollo, no publicada) están confirmados.
 {%- endcomment -%}
 <section class="overview" aria-label="Resumen del caso">
-  <div><h2>El problema</h2><p>El checkout tenía fricciones de navegación, jerarquía y visibilidad en la información necesaria para finalizar la compra.</p></div>
-  <div><h2>Mi rol</h2><p>Product Designer. Arquitectura de información, flujos, decisiones de producto, diseño de contenido, colaboración multidisciplinaria y validación.</p></div>
-  <div><h2>Proceso</h2><p>Análisis del problema, investigación, criterios de diseño, diseño colaborativo, iteración y validación.</p></div>
+  <div><h2>El problema</h2><p>Un paso crítico para la conversión con fricciones de jerarquía y confianza: la dirección no se confirmaba, los cupones eran montos sin contexto y no había espacio para la propina.</p></div>
+  <div><h2>Mi rol</h2><p>Product Designer con foco en contenido. <b>Producto y flujos:</b> límites del checkout, reglas de cobertura y priorización del alcance. <b>Contenido:</b> arquitectura narrativa, orden de lectura y microcopy de validación.</p></div>
+  <div><h2>Proceso</h2><p>Discovery con Service Design, priorización del PRD, criterios de diseño, flujos, iteración y validación.</p></div>
   <div><h2>Impacto</h2><p>Flujo de cupones en producción. Propinas diseñadas, testeadas y en desarrollo, sin publicar. Las métricas aún no están verificadas.</p></div>
 </section>
 
@@ -27,7 +27,7 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
     <section class="chapter" id="contexto" data-title="Contexto y problema">
       <header class="chapter-head"><p class="eyebrow">Contexto y problema</p><h2 class="chapter-title">El momento en que <em>se confirma la compra</em></h2></header>
-      <p class="lead">En el checkout, la persona ya eligió qué comprar. Solo necesita la información suficiente para confirmar su decisión. Para el equipo de producto, era también uno de los puntos donde se perdían órdenes.</p>
+      <p class="lead">En el checkout se cruzaban tres tensiones: la velocidad de compra, la validación de cobertura de la dirección y las nuevas apuestas del negocio, como cupones y propinas. La persona ya eligió qué comprar; si el último paso la hace dudar o volver atrás, el pedido se pierde. Para el equipo de producto, era uno de los puntos donde se perdían órdenes.</p>
       <div class="ctx-goals">
         <p class="eyebrow">Fricciones identificadas en el PRD</p>
         <ul>
@@ -50,10 +50,14 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
       <dl class="role-grid">
         <div><dt>Cargo</dt><dd>Product Designer</dd></div>
         <div><dt>Equipo</dt><dd>Producto, Negocio, Service Design, UX/UI, Content Design y Desarrollo</dd></div>
-        <div class="wide"><dt>Qué hice</dt><dd>Identificación de problemas, análisis de hallazgos, arquitectura de información, flujos y wireframes, evaluación de alternativas, reglas y casos de uso, storytelling y contenido, y validación con el equipo</dd></div>
+        <div class="wide"><dt>Producto y flujos</dt><dd>Definí los límites del checkout, las reglas de corrección de la dirección y los criterios para priorizar el alcance del PRD junto a Producto</dd></div>
+        <div class="wide"><dt>Contenido</dt><dd>Diseñé la arquitectura narrativa de la pantalla, el orden de lectura y las reglas de contenido para cupones, avisos de ubicación y estados de cobertura</dd></div>
       </dl>
       <ul class="authors">
-        <li><span>Proteger el propósito del checkout y limitar las ediciones</span><span class="who pm">Mi propuesta, consensuada con Producto</span></li>
+        <li><span>Proteger el foco del checkout y limitar las ediciones</span><span class="who pm">Mi propuesta, consensuada con Producto</span></li>
+        <li><span>Narrativa y orden de lectura del checkout</span><span class="who">Mi propuesta</span></li>
+        <li><span>Reglas de contenido para cupones y estados de cobertura</span><span class="who">Mi propuesta</span></li>
+        <li><span>Priorización del alcance del PRD</span><span class="who pm">Junto a Producto</span></li>
         <li><span>Radio dinámico de 50 m para ajustar el pin</span><span class="who team">Equipo: Diseño, Producto y Desarrollo</span></li>
         <li><span>Discovery de propinas</span><span class="who team">Service Design</span></li>
         <li><span>Iteración de propinas</span><span class="who team">Equipo de diseño, a partir del discovery</span></li>
@@ -62,42 +66,32 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
     </section>
 
     <section class="chapter" id="investigacion" data-title="Investigación">
-      <header class="chapter-head"><p class="eyebrow">Investigación y discovery</p><h2 class="chapter-title">La investigación <em>cambió decisiones</em></h2></header>
-      <p class="lead">Tres frentes alimentaron el checkout. En cada uno, la investigación definió qué información necesitaba la persona antes de pagar.</p>
+      <header class="chapter-head"><p class="eyebrow">Investigación y discovery</p><h2 class="chapter-title">Tres hallazgos que redefinieron <em>qué mostrar antes de pagar</em></h2></header>
+      <p class="lead">Cada hallazgo se tradujo en una pregunta concreta: qué tenía que ver la persona en el checkout para no abandonar ni tener que contactar a soporte.</p>
       <ol class="research-list">
         <li>
           <p class="eyebrow">Direcciones</p>
-          <h3>Encontrar a la persona</h3>
+          <h3>Sin una dirección confiable, no hay entrega</h3>
           <dl>
-            <div><dt>Qué sabíamos</dt><dd>El discovery de direcciones, liderado por Service Design, mostró que los repartidores tenían problemas para localizar a las personas. Combinó entrevistas, observación a repartidores, pedidos en terreno y análisis de reclamos al Contact Center.</dd></div>
-            <div><dt>Mi aporte</dt><dd>Identifiqué qué datos necesitábamos para dimensionar el problema y apoyé el análisis.</dd></div>
-            <div class="rl-found"><dt>Cómo influyó</dt><dd>Confirmar la dirección pasó a ser parte del checkout, no solo del registro.</dd></div>
-          </dl>
-        </li>
-        <li>
-          <p class="eyebrow">Propinas</p>
-          <h3>Revisar la primera propuesta</h3>
-          <dl>
-            <div><dt>Qué sabíamos</dt><dd>La app no permitía dar propina y el PRD pedía sumarla con una sugerencia.</dd></div>
-            <div><dt>Cómo</dt><dd>Service Design realizó un discovery sobre la experiencia de propinas.</dd></div>
-            <div class="rl-found"><dt>Cómo influyó</dt><dd>Sus hallazgos nos llevaron a revisar la primera propuesta e iterarla. <a class="link-arrow" href="#decisiones">Ver la decisión</a></dd></div>
+            <div><dt>Hallazgo</dt><dd>Los repartidores tenían problemas para localizar a las personas, y las direcciones imprecisas o equivocadas terminaban en reclamos al Contact Center.</dd></div>
+            <div><dt>Cómo lo supimos</dt><dd>Discovery liderado por Service Design: entrevistas, observación a repartidores, pedidos en terreno y análisis de reclamos. Yo identifiqué qué datos necesitábamos para dimensionar el problema.</dd></div>
+            <div class="rl-found"><dt>Qué necesitaba ver la persona</dt><dd>Su dirección y su punto en el mapa antes de pagar, con una forma acotada de corregirlos.</dd></div>
           </dl>
         </li>
         <li>
           <p class="eyebrow">Cupones</p>
-          <h3>Hacer visibles los beneficios</h3>
+          <h3>Un monto sin contexto no se lee como beneficio</h3>
           <dl>
-            <div><dt>Qué sabíamos</dt><dd>Había reclamos por falta de claridad sobre las condiciones de los beneficios.</dd></div>
-            <div><dt>Qué observamos</dt><dd>En el checkout anterior, los cupones eran montos sin contexto: no decían qué eran ni cuándo aplicaban.</dd></div>
-            <div class="rl-found"><dt>Cómo influyó</dt><dd>El cupón necesitaba nombre, condiciones y su efecto visible en el total.</dd></div>
+            <div><dt>Hallazgo</dt><dd>Había reclamos por falta de claridad sobre las condiciones de los beneficios. En el checkout anterior, los cupones eran montos sin nombre ni condiciones.</dd></div>
+            <div class="rl-found"><dt>Qué necesitaba ver la persona</dt><dd>Qué beneficio es, cuándo aplica y cuánto baja el total, antes de confirmar el pago.</dd></div>
           </dl>
         </li>
         <li>
-          <p class="eyebrow">Negocio</p>
-          <h3>Conversión y propuesta de valor</h3>
+          <p class="eyebrow">Propinas</p>
+          <h3>La primera hipótesis no alcanzaba</h3>
           <dl>
-            <div><dt>Qué sabíamos</dt><dd>El checkout no aprovechaba la oportunidad de comunicar ahorros y beneficios antes de pagar.</dd></div>
-            <div class="rl-found"><dt>Cómo influyó</dt><dd>Cada sección debía tener una intención definida y guiar a la persona hacia el pedido.</dd></div>
+            <div><dt>Hallazgo</dt><dd>El discovery de Service Design sobre la experiencia de propinas cuestionó la propuesta inicial que pedía el PRD.</dd></div>
+            <div class="rl-found"><dt>Cómo influyó</dt><dd>Revisamos la propuesta antes de desarrollarla, en vez de implementar la hipótesis tal como venía. <a class="link-arrow" href="#decisiones">Ver la decisión</a></dd></div>
           </dl>
         </li>
       </ol>
@@ -120,19 +114,19 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
         <div class="decision">
           <span class="d-num" aria-hidden="true">01</span>
-          <div class="d-head"><span class="who pm">Mi propuesta, consensuada con Producto</span><h3>Proteger el propósito del checkout</h3></div>
+          <div class="d-head"><span class="who pm">Mi propuesta, consensuada con Producto</span><h3>Proteger el propósito del checkout <em>y priorizar el alcance</em></h3></div>
           <div class="d-body">
             <div class="versus">
               <div class="alt"><span class="eyebrow">La alternativa en discusión</span><p>Que el checkout permitiera editar todo: productos, una dirección libre, delivery o retiro y otros detalles.</p></div>
               <div class="mine"><span class="eyebrow">Lo que argumenté</span><p>La persona ya tomó muchas decisiones en el camino. Convertir el checkout en otra etapa de configuración agrega fricción justo antes de pagar. Pero también es la última oportunidad de evitar un pedido cancelado por la dirección.</p></div>
             </div>
-            <p><b>El riesgo:</b> que el último paso se volviera un espacio de exploración y la persona terminara empezando de nuevo. Para equilibrar ambas cosas propuse:</p>
-            <ul>
-              <li>Revisar la información relevante y corregir solo lo crítico.</li>
-              <li>Dejar fuera las ediciones extensas.</li>
-              <li>Un botón de finalizar siempre visible, habilitado solo cuando está toda la información necesaria.</li>
+            <p>El PRD sumaba requerimientos de negocio, pago, direcciones y beneficios en una sola pantalla. Para no sobrecargarla, priorizamos el alcance con Producto según su efecto en la compra:</p>
+            <ul class="authors">
+              <li><span>Validación de cobertura de la dirección y claridad en cupones</span><span class="who">Prioridad 1 · Bloqueantes de conversión y operación</span></li>
+              <li><span>Propinas, iteradas en paralelo tras el discovery</span><span class="who pm">Prioridad 2 · Apuesta de negocio</span></li>
+              <li><span>Edición libre del carrito o cambio de modalidad en el último paso</span><span class="who team">Descartado · Fricción cognitiva</span></li>
             </ul>
-            <p>Lo discutimos con los Product Managers y lo adoptamos como criterio para el resto del diseño.</p>
+            <p>El resto del diseño siguió el mismo criterio: revisar la información relevante, corregir solo lo crítico y mantener visible un botón de finalizar, habilitado solo cuando está toda la información necesaria. Lo discutimos con los Product Managers y lo adoptamos como regla para todo el checkout.</p>
             <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Ediciones extensas en el último paso</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Un checkout enfocado en confirmar y pagar</p></div></div>
             <p class="d-status"><b>Estado</b> Criterio adoptado</p>
           </div>
@@ -140,7 +134,7 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
         <div class="decision">
           <span class="d-num" aria-hidden="true">02</span>
-          <div class="d-head"><span class="who team">Diseño, Producto y Desarrollo</span><h3>Direcciones: dar control <em>sin romper el flujo</em></h3></div>
+          <div class="d-head"><span class="who team">Reglas: Diseño, Producto y Desarrollo · Contenido: mi propuesta</span><h3>Direcciones: dar control <em>sin romper el flujo</em></h3></div>
           <div class="d-body">
             <p>La persona tenía que poder corregir la entrega sin que el pedido quedara fuera de cobertura. Definimos mecanismos acotados:</p>
             <ul>
@@ -173,6 +167,7 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
               </div>
               <figcaption class="fig-cap"><b>Esquema ilustrativo</b> de la regla del radio dinámico, no a escala.</figcaption>
             </figure>
+            <div class="card"><p class="eyebrow">El rol del contenido</p><p>Las reglas solo funcionan si se entienden. Una ubicación distinta a la dirección no siempre es un error: puede ser un pedido para otra persona o para cuando llegue a casa. Por eso definí que los avisos pregunten en lugar de acusar, ofrezcan la corrección en el mismo mensaje y, cuando hay un bloqueo por cobertura, expliquen siempre el motivo.</p></div>
             <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Algunas personas ignorarían el aviso</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>No perder pedidos válidos</p></div></div>
             <p class="d-status"><b>Estado</b> Diseñado y estimado con Desarrollo</p>
           </div>
@@ -180,9 +175,13 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
         <div class="decision">
           <span class="d-num" aria-hidden="true">03</span>
-          <div class="d-head"><span class="who team">Equipo</span><h3>Cupones: comunicar valor <em>con claridad</em></h3></div>
+          <div class="d-head"><span class="who">Contenido: mi propuesta · Flujo: con el equipo</span><h3>Cupones: pasar de un monto confuso <em>a un beneficio que incentiva el pago</em></h3></div>
           <div class="d-body">
-            <p>Un cupón sin nombre ni condiciones no transmite valor y genera reclamos. Organizamos el flujo para que el beneficio se entendiera antes de pagar:</p>
+            <div class="versus">
+              <div class="alt"><span class="eyebrow">Antes</span><p>Un monto sin contexto: no decía qué beneficio era, cuándo aplicaba ni cómo cambiaba el total.</p></div>
+              <div class="mine"><span class="eyebrow">Lo que definí</span><p>Una jerarquía de lectura para la tarjeta: primero el nombre del beneficio, después sus condiciones y, al final, su impacto visible en el total.</p></div>
+            </div>
+            <p>El objetivo era que el cupón se entendiera antes de pagar y reducir los reclamos por condiciones poco claras. Con el equipo llevamos esa jerarquía al flujo:</p>
             <ul>
               <li>Una tarjeta de cupones dentro del checkout que recalcula el pedido al aplicar uno.</li>
               <li>Una pantalla de cupones con validación de cada cupón.</li>
@@ -194,17 +193,17 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
         <div class="decision">
           <span class="d-num" aria-hidden="true">04</span>
-          <div class="d-head"><span class="who team">Equipo de diseño, a partir del discovery de Service Design</span><h3>Propinas: iterar <em>a partir de evidencia</em></h3></div>
+          <div class="d-head"><span class="who team">Equipo de diseño, a partir del discovery de Service Design</span><h3>Propinas: cuestionar la hipótesis del PRD <em>antes de desarrollarla</em></h3></div>
           <div class="d-body">
-            <p>La primera propuesta partió de lo que pedía el PRD. El discovery de Service Design nos hizo revisarla antes de desarrollarla.</p>
+            <p>El PRD traía la solución casi resuelta. La decisión fue no implementarla tal como venía: cuando el discovery de Service Design cuestionó la hipótesis, volvimos a diseñar antes de desarrollar.</p>
             <ol class="timeline tip-evolution">
               <li><b>Primera propuesta</b><p>Porcentaje del pedido, monto libre y una sugerencia, con una confirmación si se pagaba sin propina. La hipótesis: sugerir un monto facilitaría dar propina.</p></li>
               <li><b>Discovery</b><p>Service Design investigó la experiencia de propinas. Sus hallazgos cuestionaron la primera propuesta.</p></li>
               <li><b>Iteración</b><p>Rediseñamos la propuesta a partir de esos hallazgos.</p></li>
               <li><b>Testeo</b><p>Validamos aspectos de la experiencia mediante testeos.</p></li>
-              <li><b>Desarrollo</b><p>La solución entró en desarrollo. El proyecto se interrumpió antes de publicarla.</p></li>
+              <li><b>Desarrollo</b><p>La solución entró en desarrollo. No llegó a publicarse: Monchis cerró su operación antes del lanzamiento.</p></li>
             </ol>
-            <p class="d-status is-dev"><b>Estado</b> Diseñada, testeada y en desarrollo · No publicada</p>
+            <p class="d-status is-dev"><b>Estado</b> Diseñada, testeada y en desarrollo · No llegó a publicarse</p>
           </div>
         </div>
       </div>
@@ -212,15 +211,15 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
     <section class="chapter" id="solucion" data-title="Solución">
       <header class="chapter-head"><p class="eyebrow">Solución</p><h2 class="chapter-title">Un checkout que cuenta <em>una historia</em></h2></header>
-      <p class="lead">Ordenamos el checkout en el recorrido que proponía el PRD, dirección, pago y revisión final, para que cada sección tuviera una intención clara.</p>
+      <p class="lead">Ordené la pantalla como una conversación: cada bloque responde la pregunta que la persona se hace antes de pagar, en el orden en que se la hace.</p>
       <div class="split">
         <div class="stack">
-          <div class="ui-quote"><span class="eyebrow">La historia del checkout</span>¿Todo listo para hacer tu pedido? Confirma tu dirección, elige tu método de pago y finaliza. Si quieres, también puedes revisar el detalle de tu pedido.</div>
-          <p><b>Jerarquía final</b></p>
+          <div class="ui-quote"><span class="eyebrow">La historia del checkout</span>¿Todo listo para hacer tu pedido? Confirmá tu dirección, elegí tu método de pago y finalizá. Si querés, también podés revisar el detalle de tu pedido.</div>
+          <p><b>Arquitectura narrativa</b></p>
           <ol class="plain-list">
-            <li><b>Entrega:</b> mapa, dirección o punto de retiro, tiempo estimado y acciones limitadas para corregir</li>
-            <li><b>Pago y beneficios:</b> método de pago y cupones</li>
-            <li><b>Resumen del pedido:</b> productos e importes</li>
+            <li><b>¿Va a llegar bien? → Entrega.</b> Mapa, dirección y ajuste acotado del pin primero, porque sin cobertura no hay pedido.</li>
+            <li><b>¿Cuánto y cómo pago? → Pago y beneficios.</b> Método de pago y cupones, con su valor visible antes del total.</li>
+            <li><b>¿Está todo lo que pedí? → Resumen del pedido.</b> Una revisión secundaria, para confirmar sin volver a empezar.</li>
           </ol>
         </div>
         <figure class="fig">
@@ -233,6 +232,13 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
           </div>
           <figcaption class="fig-cap"><b>Esquema ilustrativo</b> de la jerarquía final. No es la pantalla real.</figcaption>
         </figure>
+      </div>
+      <h3 class="sub-title">Reglas de contenido <em>para los estados críticos</em></h3>
+      <div class="cards two">
+        <div class="card outline"><p class="eyebrow">Confirmación de dirección</p><h3>La dirección y el mapa, antes que cualquier otra cosa</h3><p>Corregir solo lo crítico, sin salir del checkout.</p></div>
+        <div class="card outline"><p class="eyebrow">Ubicación distinta a la dirección</p><h3>Preguntar, no acusar</h3><p>Ofrecer el cambio en el mismo mensaje y dejar seguir si el pedido es válido.</p></div>
+        <div class="card outline"><p class="eyebrow">Sin cobertura</p><h3>Explicar el motivo de cada bloqueo</h3><p>Decir por qué no se puede avanzar y qué hacer para continuar.</p></div>
+        <div class="card outline"><p class="eyebrow">Cupón aplicado</p><h3>Nombrar el beneficio y mostrar su efecto</h3><p>Que el ahorro se vea en el total antes de confirmar.</p></div>
       </div>
       <ul class="authors status-list" aria-label="Estado de cada parte del checkout">
         <li><span>Entrega: dirección visible, mapa y ajuste del pin</span><span class="who team">Diseñado</span></li>

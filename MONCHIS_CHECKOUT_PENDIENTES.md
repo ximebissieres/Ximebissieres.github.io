@@ -10,7 +10,7 @@ Cuando tengas un dato confirmado, edítalo en `proyectos/monchis.html` (contenid
 | Funcionalidad | Estado | Fuente |
 |---|---|---|
 | Cupones | En producción | Confirmado por Ximena |
-| Propinas | Diseñada, testeada, en desarrollo; no publicada (el proyecto se interrumpió) | Confirmado por Ximena |
+| Propinas | Diseñada, testeada, en desarrollo; no publicada porque Monchis cerró su operación antes del lanzamiento (en la web: "Monchis cerró su operación antes del lanzamiento") | Confirmado por Ximena |
 | Direcciones en el checkout | Diseñado y estimado (PRD: "Datos de entrega", 1 ½ sprint). Alcance publicado **sin confirmar** | PRD Checkout |
 | Checkout general | Diseñado y estimado (PRD: 8,75 sprints). Alcance publicado **sin confirmar** | PRD Checkout |
 
@@ -44,7 +44,10 @@ En la web, todo lo no confirmado aparece como "Diseñado"; no se afirma que est�
 | M6 | **Link de Figma publicable** | Un link de Figma con acceso de lectura y sin datos sensibles | Aprendizajes (botón "Ver flujos en Figma", hoy retirado) | Permitir revisar los flujos | Figma |
 | M7 | **Autoría del flujo de cupones** | Quién diseñó qué en cupones | Decisión 03 (hoy dice "Equipo") | Precisar tu contribución | Equipo de diseño |
 | M8 | **N.º de entrevistas y observaciones (direcciones)** | Cantidad real del discovery de direcciones | Investigación (Direcciones) | Dimensionar el research | Service Design |
+| M10 | **Microcopy final de los estados críticos** | Textos finales (en voseo) de: confirmación de dirección, ubicación distinta a la dirección, sin cobertura y cupón aplicado | Solución ("Reglas de contenido para los estados críticos") | Citar ejemplos reales de microcopy, no solo las reglas | Figma / textos entregados por Ximena |
 | M9 | **Contradicción en el caso anterior** | El caso de direcciones decía que "el checkout ni siquiera mostraba la dirección", pero la pantalla "AS IS" del PRD sí la muestra. Se quitó esa afirmación | Contexto | Confirmar cómo era el checkout anterior | Ximena / equipo |
+
+> **Registro:** el copy de la app va en voseo rioplatense (la app es paraguaya): "Confirmá", "elegí", "querés". El relato del caso mantiene la voz del portafolio.
 
 ## Fuera de alcance (no se tocó, requiere decisión)
 
