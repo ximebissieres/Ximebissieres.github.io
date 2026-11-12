@@ -1486,3 +1486,21 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .validation-note { max-width: 40rem; font-size: .95rem; color: var(--muted); }
 .learning-note { max-width: 44rem; color: var(--muted); text-wrap: pretty; }
 @media (max-width: 759px) { .details-row .shot:last-child { max-width: 22rem; } }
+
+/* ==========================================================================
+   Monchis · evidencias reales (captura móvil, ticket y panel de comercios)
+   ========================================================================== */
+.shot-frame img[width] { height: auto; }
+.shot-frame[style*="aspect-ratio"] img[width] { height: 100%; }
+.shot-phone .shot-frame, .shot-ticket .shot-frame { box-shadow: 0 24px 48px -32px rgba(41, 38, 43, .35); }
+.shot-phone { max-width: 18rem; }
+.shot-phone .shot-frame { border-radius: 24px; }
+@media (min-width: 760px) {
+  .shot-phone { max-width: none; grid-template-columns: minmax(0, 17rem) minmax(0, 22rem); column-gap: 28px; align-items: end; }
+}
+.ops-grid { display: grid; gap: 28px; align-items: start; }
+.ops-grid .shot-ticket { max-width: 18rem; }
+@media (min-width: 760px) {
+  .ops-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); gap: 32px; }
+  .ops-grid .shot-ticket { max-width: none; }
+}
