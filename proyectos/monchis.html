@@ -234,15 +234,83 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
       <header class="chapter-head"><p class="eyebrow">Validación e impacto</p><h2 class="chapter-title">El diseño no terminó <em>en la primera propuesta</em>.</h2></header>
       <p class="lead">La investigación y la validación nos permitieron revisar decisiones y mejorar la experiencia antes de avanzar con su implementación.</p>
 
-      <h3 class="sub-title">Propinas: validar, aprender <em>e iterar</em></h3>
-      <ol class="timeline tip-evolution">
-        <li><b>Primera propuesta</b><p>Porcentaje del pedido, monto libre y una sugerencia, con confirmación para continuar sin propina.</p></li>
-        <li><b>Discovery de Service Design</b><p>Service Design investigó los montos, el momento de dar propina, la voluntariedad y la confianza en que llegara al repartidor. Sus hallazgos cuestionaron la primera propuesta.</p></li>
-        <li><b>Decisiones e iteraciones</b><p>Usé esos hallazgos para revisar el diseño junto al equipo.</p></li>
-        <li><b>Testeos</b><p>Se testeó la experiencia iterada, lo que permitió identificar nuevas mejoras.</p></li>
-        <li><b>Ajustes</b><p>Incorporamos las mejoras identificadas en los testeos.</p></li>
-        <li><b>En desarrollo</b><p>La versión ajustada entró en desarrollo. No llegó a producción: Monchis cerró su operación antes del lanzamiento.</p></li>
+      <h3 class="sub-title">Propinas: sugerir <em>sin quitar el control</em>.</h3>
+      <p class="tip-intro">El discovery de Service Design cuestionó nuestra primera propuesta. Sus hallazgos nos llevaron a replantear los montos, el lenguaje y la transparencia de la experiencia. Después, un requerimiento comercial nos enfrentó a una nueva decisión: cómo sugerir una propina sin que pasara inadvertida.</p>
+
+      <ol class="tip-versions" aria-label="Evolución de la propuesta de propinas">
+        <li>
+          <p class="tv-label"><span>01</span> Propuesta testeada</p>
+          <div class="tv-phone"><img src="/assets/img/monchis-propinas-v1.webp" alt="Primera propuesta de propinas: título «Agradecé a tu delivery con una propina», opciones de 0 %, 5 % y 10 % con su equivalente en guaraníes, botón para otro monto y el mensaje «¡Tu driver se queda con el 100 % que le dejes!»" width="805" height="1770" loading="lazy" decoding="async"></div>
+          <p class="tv-note">Usada en el discovery de Service Design.</p>
+        </li>
+        <li>
+          <p class="tv-label"><span>02</span> Iteración desde el discovery</p>
+          <div class="tv-phone"><img src="/assets/img/monchis-propinas-v2.webp" alt="Primera iteración: tarjeta «Valorá el esfuerzo de tu repartidor» con la bajada «Tu propina va directo a su bolsillo» y montos de Gs. 2.000, 3.000 y 5.000, ubicada después de métodos de pago y cupones" width="910" height="2000" loading="lazy" decoding="async"></div>
+          <p class="tv-note">Montos en guaraníes, después de pagos y cupones.</p>
+        </li>
+        <li>
+          <p class="tv-label"><span>03</span> Ajuste por requerimiento de negocio</p>
+          <div class="tv-phone">
+            <img src="/assets/img/monchis-propinas-v3.webp" alt="Iteración final: la tarjeta de propinas aparece antes de los métodos de pago, con «Gs. 0» como primera opción y Gs. 2.000 preseleccionado con la etiqueta «Sugerida»" width="923" height="2000" loading="lazy" decoding="async">
+            <span class="tv-pin" style="left:61.5%;top:44.4%" aria-hidden="true">A</span>
+            <span class="tv-pin" style="left:0;top:39.6%" aria-hidden="true">B</span>
+            <span class="tv-pin" style="left:100%;top:26%" aria-hidden="true">C</span>
+          </div>
+          <p class="tv-note">Versión entregada a desarrollo.</p>
+        </li>
       </ol>
+
+      <ol class="findings tip-decisions">
+        <li>
+          <div class="f-meta">
+            <p class="f-topic"><span>01</span> Montos</p>
+            <dl><div><dt>Evidencia</dt><dd>Discovery de Service Design</dd></div><div><dt>Definido con</dt><dd>PM y Service Design</dd></div></dl>
+          </div>
+          <div class="f-body">
+            <h3>De porcentajes a montos comprensibles.</h3>
+            <p>En el discovery, las personas prefirieron montos concretos antes que porcentajes. Reemplazamos los porcentajes por cantidades en guaraníes, fáciles de entender sin hacer cálculos.</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-meta">
+            <p class="f-topic"><span>02</span> Contenido</p>
+            <dl><div><dt>Objetivo</dt><dd>Dar significado a la decisión</dd></div></dl>
+          </div>
+          <div class="f-body">
+            <h3>Poner en valor el trabajo del repartidor.</h3>
+            <p>La propina tenía que leerse como un reconocimiento al servicio, no como un cobro adicional. Cambiar el encuadre del mensaje buscaba despertar empatía con quien hace la entrega.</p>
+            <p class="f-question"><span>Antes → Después</span>«Agradecé a tu delivery con una propina» → «Valorá el esfuerzo de tu repartidor»</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-meta">
+            <p class="f-topic"><span>03</span> Confianza</p>
+            <dl><div><dt>Evidencia</dt><dd>Discovery de Service Design</dd></div></dl>
+          </div>
+          <div class="f-body">
+            <h3>Generar confianza sin prometer de más.</h3>
+            <p>Había desconfianza sobre si el dinero llegaría al repartidor, y algunas personas cuestionaban dar propina si ya pagaban el envío. La primera propuesta afirmaba que el repartidor recibía el 100 %, algo que podía leerse como un monto neto sin considerar sus obligaciones tributarias. Elegimos explicar el destino del dinero de forma cercana y precisa.</p>
+            <p class="f-question"><span>Antes → Después</span>«¡Tu driver se queda con el 100 % que le dejes!» → «Tu propina va directo a su bolsillo»</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-meta">
+            <p class="f-topic"><span>04</span> Negocio y autonomía</p>
+            <dl><div><dt>Tensión</dt><dd>Requerimiento comercial de un monto preseleccionado</dd></div></dl>
+          </div>
+          <div class="f-body">
+            <h3>Sugerir sin que la propina pase inadvertida.</h3>
+            <p>Negocio pidió mantener un monto sugerido preseleccionado. El riesgo era que alguien finalizara su compra sin advertir que estaba sumando una propina. Para reducirlo, tomamos tres decisiones:</p>
+            <ol class="plain-list" type="A">
+              <li><b>Hacer explícita la sugerencia.</b> La etiqueta «Sugerida» señala qué opción aparece preseleccionada.</li>
+              <li><b>Facilitar no dar propina.</b> «Gs. 0» pasó a ser la primera opción, fácil de encontrar y elegir.</li>
+              <li><b>Hacerla visible antes de confirmar.</b> Reordenamos la jerarquía del checkout para que la propina apareciera en la primera vista, antes del método de pago, incluso si la persona llegaba a «Finalizar pedido» sin hacer scroll.</li>
+            </ol>
+            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Una propina sin preselección</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Una sugerencia visible y fácil de cambiar</p></div></div>
+          </div>
+        </li>
+      </ol>
+      <p class="d-status is-dev"><b>Estado</b> La propuesta final fue entregada a desarrollo, pero no llegó a producción debido a la interrupción de la operación de Monchis.</p>
 
       <h3 class="sub-title">Impacto: qué medir <em>y cómo leerlo</em></h3>
       <div class="cards two">
