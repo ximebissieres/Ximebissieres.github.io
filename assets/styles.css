@@ -1643,3 +1643,11 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .asis-screen img { display: block; width: 100%; height: auto; border-radius: 32px; }
 .anatomy--phone .eyebrow { font-size: .7rem; letter-spacing: .14em; color: var(--rose-ink); }
 .ctx-question { margin-top: 8px; }
+/* Fricciones del checkout anterior: señaladas en la pantalla vs. ausentes */
+.asis-notes { gap: 14px; }
+.asis-notes li.is-absent::before { background: transparent; color: var(--rose-ink); border: 1.5px dashed var(--rose); box-sizing: border-box; }
+.asis-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: -4px; font-size: .78rem; color: var(--muted); }
+.asis-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.asis-legend span::before { content: ""; width: 10px; height: 10px; border-radius: 50%; box-sizing: border-box; }
+.asis-legend .lg-on::before { background: var(--ink); }
+.asis-legend .lg-off::before { border: 1.5px dashed var(--rose); }
