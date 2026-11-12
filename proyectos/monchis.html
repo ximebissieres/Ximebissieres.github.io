@@ -137,15 +137,15 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
           <span class="d-num" aria-hidden="true">01</span>
           <div class="d-head"><p class="eyebrow">Arquitectura y foco en la compra</p><h3>Priorizar la compra, <em>no multiplicar decisiones</em>.</h3></div>
           <div class="d-body">
-            <p>El checkout debía adaptarse a envíos, retiros y pedidos agendados, pero no podía convertirse en una nueva etapa de configuración. Propuse proteger su propósito: revisar la información relevante, corregir solo lo crítico y finalizar la compra. Lo discutimos con los Product Managers y lo adoptamos como criterio.</p>
+            <p>Cada pedido combinaba una modalidad, envío a domicilio o retiro en el local, y un momento, inmediato o agendado. No todas las funcionalidades aplicaban a todos los escenarios, así que el checkout tenía que mostrar la información y las acciones de cada pedido sin convertirse en una nueva etapa de configuración.</p>
+            <p>Propuse proteger su propósito: revisar lo relevante, corregir solo lo crítico y finalizar la compra. Lo discutimos con los Product Managers y lo adoptamos como criterio.</p>
             <div class="ctx-goals">
               <p class="eyebrow">Qué decidimos</p>
               <ul>
-                <li>Priorizar la información de entrega.</li>
-                <li>Mantener accesibles los métodos de pago.</li>
-                <li>Organizar beneficios y resumen del pedido.</li>
-                <li>Evitar ediciones extensas que desviaran del pago.</li>
+                <li>Ordenar la información por prioridad: entrega, pago y beneficios, resumen.</li>
                 <li>Mantener visibles el total y «Finalizar pedido» con un footer fijo durante el scroll.</li>
+                <li>Mostrar solo lo que corresponde al escenario de cada pedido.</li>
+                <li>Evitar ediciones extensas que desviaran del pago.</li>
               </ul>
             </div>
             <p>El orden de lectura sigue las preguntas que la persona se hace antes de pagar: ¿va a llegar bien?, ¿cuánto y cómo pago?, ¿está todo lo que pedí?</p>
@@ -217,18 +217,14 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
         <div class="decision">
           <span class="d-num" aria-hidden="true">04</span>
-          <div class="d-head"><p class="eyebrow">Propinas</p><h3>Diseñar una <em>primera propuesta</em> de propinas.</h3></div>
+          <div class="d-head"><p class="eyebrow">Propinas</p><h3>Propinas: reconocer el servicio <em>sin complicar la compra</em>.</h3></div>
           <div class="d-body">
-            <p>La app no permitía dar propina al repartidor. La primera propuesta partió del requerimiento del PRD:</p>
-            <div class="ctx-goals">
-              <ul>
-                <li>Un porcentaje del pedido.</li>
-                <li>Un monto libre.</li>
-                <li>Una sugerencia de propina.</li>
-                <li>Una confirmación para continuar sin propina.</li>
-              </ul>
-            </div>
-            <p>La hipótesis era que sugerir un monto facilitaría dar propina. Antes de desarrollarla, había que ponerla a prueba.</p>
+            <p>Incorporar propinas no era solo sumar una opción al checkout. El negocio buscaba fortalecer la propuesta de valor para los repartidores, con un ingreso que fuera íntegramente para ellos, y permitir que los usuarios reconocieran su servicio. El desafío de diseño era integrar esa decisión de forma voluntaria, clara y coherente con las condiciones de cada pedido.</p>
+            <p><b>Solo cuando correspondía.</b> El alcance del PRD limitaba la propina a pedidos con envío a domicilio, logística Monchis y pago con tarjeta. En retiros, logística propia del comercio o pagos en efectivo, QR o POS no aplicaba: la interfaz debía responder a las condiciones de la orden, no mostrar la opción siempre.</p>
+            <p><b>Elegir un monto sin pensarlo de más.</b> El alcance contemplaba montos sugeridos, un selector de monto reutilizable y límites según el valor del pedido, con cifras que todavía estaban por definir.</p>
+            <p><b>Una decisión voluntaria.</b> La propina tenía que entenderse como una elección libre, sin competir con «Finalizar pedido» ni hacer sentir obligada a la persona.</p>
+            <p>La primera propuesta para el checkout partió del requerimiento inicial: un porcentaje del pedido, un monto libre, una sugerencia y una confirmación para continuar sin propina. La hipótesis era que sugerir un monto facilitaría dar propina.</p>
+            <p>El checkout era uno de los cinco puntos donde el producto contemplaba la propina, antes y después de la compra; este caso se centra en él. Antes de desarrollarla, había que ponerla a prueba.</p>
           </div>
         </div>
       </div>

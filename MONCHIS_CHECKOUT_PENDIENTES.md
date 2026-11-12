@@ -33,6 +33,18 @@ En la web, todo lo no confirmado aparece como "Diseñado"; no se afirma que est�
 
 Videos: verticales, con portada (poster), controles, sin autoplay simultáneo, con alternativa visual y respetando prefers-reduced-motion.
 
+## Afirmaciones de la sección 03 por validar con pantallas reales
+
+| Afirmación publicada | Bloque | Qué verificar |
+|---|---|---|
+| "Mostrar solo lo que corresponde al escenario de cada pedido" | 01 Arquitectura | Que las variantes (envío, retiro, agendado) efectivamente ocultan o cambian bloques (hoy se infiere de las 3 pantallas del hero) |
+| Orden de prioridad "entrega, pago y beneficios, resumen" | 01 Arquitectura | Que coincide con el orden real del checkout en Figma |
+| La primera propuesta de propinas = porcentaje + monto libre + sugerencia + confirmación sin propina | 04 Propinas | Que esos cuatro elementos estaban en la primera versión diseñada (hoy viene del PRD de checkout) |
+| Montos sugeridos, selector reutilizable y límites según el valor del pedido | 04 Propinas | Se presentan como alcance del PRD de propinas, no como primera propuesta. Confirmar a qué versión pertenecen |
+| La propina no compite con «Finalizar pedido» | 04 Propinas | Se presenta como necesidad, no como resultado. Mostrar en 04 si la validación lo confirmó |
+
+Notas del PRD de propinas: el equipo de diseño figura como dos personas; el caso no atribuye a Ximena el diseño de los cinco puntos de entrada. Los datos de Pedidos Ya son referencia externa y no se publican. Montos y umbral siguen "a definir": no se publican cifras.
+
 ## Prioridad ALTA
 
 | # | Pendiente | Qué necesito | Sección | Qué permitiría afirmar | Dónde buscarlo |
