@@ -1524,3 +1524,64 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (min-width: 760px) {
   .research-list > li:last-child:nth-child(odd) { grid-column: 1 / -1; border-left: 0; }
 }
+
+/* ==========================================================================
+   Portada con pantallas reales (.cscreens) · hoy Monchis (checkout)
+   Panel rosa muy suave con hasta tres teléfonos: la pantalla protagonista al
+   centro y dos variantes un poco más bajas y detrás. Cada pantalla conserva
+   su proporción: se ve la primera vista del teléfono (390 × 844) y el resto
+   queda bajo el borde del panel. Sin JS o con movimiento reducido: estático.
+   ========================================================================== */
+.cscreens { margin: 0; background: var(--bg-3); aspect-ratio: 16 / 7.2; }
+.cs-phone {
+  --x: 50%; --w: 20.5%;
+  position: absolute; left: calc(var(--x) - var(--w) / 2); top: 10%; width: var(--w);
+  padding: 6px; border-radius: 34px; background: var(--ink);
+  box-shadow: inset 0 0 0 1.5px #4A454D, 0 26px 50px -30px rgba(41, 38, 43, .45);
+}
+.cs-screen { aspect-ratio: 390 / 844; overflow: hidden; border-radius: 28px; background: var(--surface); }
+.cs-screen img { display: block; width: 100%; height: auto; }
+.cs-tag {
+  position: absolute; left: 50%; bottom: calc(100% + 12px); translate: -50% 0; white-space: nowrap;
+  font-size: .68rem; font-weight: var(--w-semibold); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--rose-ink); background: var(--bg); padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line);
+}
+.cs-1 { z-index: 2; }
+.cs-2, .cs-3 { --w: 17.5%; z-index: 1; top: 19%; box-shadow: inset 0 0 0 1.5px #4A454D, 0 18px 36px -28px rgba(41, 38, 43, .35); }
+.cs-2 { --x: 29%; }
+.cs-3 { --x: 71%; }
+.cs-2 .cs-screen, .cs-3 .cs-screen { border-radius: 24px; }
+/* Parallax muy sutil: las variantes suben un poco al salir la portada */
+@media (prefers-reduced-motion: no-preference) {
+  .cs-2, .cs-3 { transform: translateY(calc(var(--shift, 0) * -28px)); }
+  .case-hero--story > .eyebrow { animation: cb-in .8s var(--ease) both; }
+  .case-hero--story .case-title { animation: cb-in .9s .08s var(--ease) both; }
+  .case-hero--story .case-intro { animation: cb-in .9s .2s var(--ease) both; }
+  .cs-1 { animation: cb-window 1.1s .3s var(--ease) both; }
+  .cs-2 { animation: cb-window 1.1s .45s var(--ease) both; }
+  .cs-3 { animation: cb-window 1.1s .55s var(--ease) both; }
+}
+@media (max-width: 899px) {
+  .cscreens { aspect-ratio: 4 / 3; }
+  .cs-1 { --w: 30%; top: 12%; }
+  .cs-2, .cs-3 { --w: 25%; top: 22%; }
+  .cs-2 { --x: 22%; }
+  .cs-3 { --x: 78%; }
+}
+/* Mobile: solo la pantalla protagonista */
+@media (max-width: 600px) {
+  .cscreens { aspect-ratio: 4 / 4.2; }
+  .cs-2, .cs-3 { display: none; }
+  .cs-1 { --w: 62%; top: 13%; border-radius: 30px; }
+  .cs-1 .cs-screen { border-radius: 24px; }
+  .cs-tag { font-size: .62rem; }
+}
+/* Portada narrativa sin bloque lateral: título y bajada en dos columnas en desktop,
+   para equilibrar el ancho y que las pantallas asomen en la primera vista */
+@media (min-width: 1100px) {
+  .case-hero--story:not(:has(.case-brief)) { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(32px, 4vw, 64px); align-items: end; }
+  .case-hero--story:not(:has(.case-brief)) > .eyebrow { grid-column: 1 / -1; }
+  .case-hero--story:not(:has(.case-brief)) .case-intro { display: block; margin-top: 0; padding-bottom: .35em; }
+  .case-hero--story:not(:has(.case-brief)) .case-title { max-width: none; font-size: clamp(2.4rem, 1.1rem + 2.7vw, 3.6rem); }
+  .case-hero--story:not(:has(.case-brief)) .case-lede { font-size: clamp(1.1rem, .95rem + .35vw, 1.25rem); }
+}

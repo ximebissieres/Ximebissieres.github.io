@@ -34,20 +34,27 @@
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
-    titulo: "Rediseñar el checkout para cerrar ventas, *no para volver a empezar.*"
-    bajada: "El checkout de Monchis tenía que resolver tres cosas en una sola vista: confirmar que la dirección tuviera cobertura, mostrar con claridad cupones y beneficios, y sumar la propina. Todo sin frenar el impulso de compra."
-    etiqueta_descripcion: "El principio"
-    descripcion: "El checkout debía ayudar a finalizar la compra, no hacer que el usuario volviera a empezar."
-    # Composición visual del hero: componente real + elementos cartográficos.
-    visual:
-      imagen: "/assets/img/monchis-punto-exacto.webp"
-      imagen_alt: "Componente de mapa de Monchis: un pin rojo sobre calles y el botón «Elegí el punto exacto de entrega»"
-      ancho: 1444            # tamaño real del componente (no cambiar si no cambias la imagen)
-      alto: 468
-      pin_x: 52.5            # posición del pin dentro del componente, en %
-      pin_y: 32
-      etiqueta_componente: "Componente original · Figma"
-      etiqueta_referencias: "Referencias e intersecciones"
+    titulo: "Hacer simple la compra, incluso cuando *la operación no lo era.*"
+    bajada: "Rediseñamos el checkout de Monchis para responder a distintas modalidades de entrega, operaciones logísticas y pedidos agendados, manteniendo la claridad y el foco en finalizar la compra."
+    # Bloque lateral opcional: para mostrarlo, agrega etiqueta_descripcion y descripcion.
+    # Pantallas reales de la portada (máximo 3). La primera es la protagonista.
+    # ancho / alto: tamaño real de cada imagen (no cambiar si no cambias la imagen).
+    pantallas:
+      - imagen: "/assets/img/monchis-checkout-envio.webp"
+        alt: "Checkout de Monchis con envío a domicilio: mapa para elegir el punto exacto de entrega, dirección, aviso «¡Estás lejos de esta ubicación! ¿Es para alguien más?», tiempo estimado e instrucciones para el repartidor"
+        etiqueta: "Envío · logística Monchis"
+        ancho: 455
+        alto: 2000
+      - imagen: "/assets/img/monchis-checkout-retiro.webp"
+        alt: "Checkout de Monchis con retiro en el local: ubicación del comercio, aviso «Recordá retirar tu pedido cuando esté listo» y tiempo de retiro"
+        etiqueta: "Retiro en el local"
+        ancho: 595
+        alto: 2000
+      - imagen: "/assets/img/monchis-checkout-agendado.webp"
+        alt: "Checkout de Monchis con pedido agendado: dirección de entrega y franja programada para el lunes 18 de octubre de 8:00 a 9:00 h"
+        etiqueta: "Pedido agendado"
+        ancho: 413
+        alto: 2000
 - slug: latam
   category: Aerolínea
   teaser: Vuelos, hoteles y paquetes en una landing, sin afectar vuelos.
