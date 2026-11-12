@@ -35,14 +35,14 @@
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
     titulo: "Hacer simple la compra, incluso cuando *la operación no lo era.*"
-    bajada: "Rediseñamos el checkout de Monchis para responder a distintas modalidades de entrega, operaciones logísticas y pedidos agendados, manteniendo la claridad y el foco en finalizar la compra."
+    bajada: "Rediseñamos el checkout de Monchis para adaptarse a distintas modalidades de entrega y pedidos agendados, simplificando decisiones y manteniendo el foco en finalizar la compra."
     # Bloque lateral opcional: para mostrarlo, agrega etiqueta_descripcion y descripcion.
     # Pantallas reales de la portada (máximo 3). La primera es la protagonista.
     # ancho / alto: tamaño real de cada imagen (no cambiar si no cambias la imagen).
     pantallas:
       - imagen: "/assets/img/monchis-checkout-envio.webp"
         alt: "Checkout de Monchis con envío a domicilio: mapa para elegir el punto exacto de entrega, dirección, aviso «¡Estás lejos de esta ubicación! ¿Es para alguien más?», tiempo estimado e instrucciones para el repartidor"
-        etiqueta: "Envío · logística Monchis"
+        etiqueta: "Envío a domicilio"
         ancho: 455
         alto: 2000
       - imagen: "/assets/img/monchis-checkout-retiro.webp"
