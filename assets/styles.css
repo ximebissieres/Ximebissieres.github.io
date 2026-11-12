@@ -1720,3 +1720,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .tip-decisions .plain-list li::marker { color: var(--rose-ink); font-weight: var(--w-semibold); }
 .tip-decisions .tradeoff { margin-top: 4px; }
 .tv-label { min-height: 2.9em; }
+/* Monchis · Aprendizajes: secuencia de experimentación compacta */
+.experiment-steps { margin-top: 4px; }
+.experiment-steps b { font-size: 1.15rem; }
+.experiment-steps p { font-size: .95rem; line-height: 1.55; text-wrap: pretty; }
