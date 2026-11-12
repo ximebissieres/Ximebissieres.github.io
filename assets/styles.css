@@ -1651,3 +1651,29 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .asis-legend span::before { content: ""; width: 10px; height: 10px; border-radius: 50%; box-sizing: border-box; }
 .asis-legend .lg-on::before { background: var(--ink); }
 .asis-legend .lg-off::before { border: 1.5px dashed var(--rose); }
+
+/* ==========================================================================
+   Monchis · transición Contexto → Investigación y hallazgos editoriales
+   ========================================================================== */
+/* La pregunta de diseño enlaza con Investigación: sin línea divisoria ni doble espacio */
+.chapter:has(.ctx-question) { padding-bottom: clamp(28px, 3.5vw, 44px); }
+.chapter:has(.ctx-question) + .chapter { border-top: 0; padding-top: clamp(28px, 3.5vw, 44px); }
+
+/* Hallazgos: metadatos discretos a la izquierda, hallazgo protagonista a la derecha */
+.findings { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.findings > li { display: grid; gap: 12px; padding-block: clamp(20px, 2.6vw, 30px); border-bottom: 1px solid var(--line); }
+@media (min-width: 900px) { .findings > li { grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); column-gap: 40px; } }
+.f-meta { display: grid; gap: 10px; align-content: start; }
+.f-topic { font-size: .72rem; font-weight: var(--w-semibold); letter-spacing: .14em; text-transform: uppercase; color: var(--rose-ink); }
+.f-topic span { color: var(--muted); margin-right: 6px; font-variant-numeric: tabular-nums; }
+.f-meta dl { margin: 0; display: grid; gap: 8px; }
+.f-meta dt { font-size: .68rem; font-weight: var(--w-semibold); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.f-meta dd { margin: 2px 0 0; font-size: .85rem; line-height: 1.45; color: var(--muted); text-wrap: pretty; }
+.f-body { display: grid; gap: 10px; align-content: start; max-width: 42rem; }
+.f-body h3 { font-family: var(--display); font-weight: var(--w-semibold); font-size: clamp(1.2rem, 1.05rem + .5vw, 1.45rem); line-height: 1.25; letter-spacing: -0.015em; text-wrap: balance; }
+.f-body > p:not(.f-question) { font-size: .98rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.f-question { display: grid; gap: 4px; margin-top: 4px; padding-left: 14px; border-left: 2px solid var(--blush); font-size: 1.02rem; line-height: 1.45; color: var(--ink); font-weight: var(--w-medium); }
+.f-question span { font-size: .68rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); }
+@media (max-width: 899px) {
+  .f-meta dl { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); column-gap: 20px; }
+}
