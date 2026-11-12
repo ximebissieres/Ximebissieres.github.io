@@ -26,26 +26,63 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
   <div class="chapters">
 
     <section class="chapter" id="contexto" data-title="Contexto y problema">
-      <header class="chapter-head"><p class="eyebrow">Contexto y problema</p><h2 class="chapter-title">El momento en que <em>se confirma la compra</em></h2></header>
-      <p class="lead">En el checkout se cruzaban tres tensiones: la velocidad de compra, la validación de cobertura de la dirección y las nuevas apuestas del negocio, como cupones y propinas. La persona ya eligió qué comprar; si el último paso la hace dudar o volver atrás, el pedido se pierde. Para el equipo de producto, era uno de los puntos donde se perdían órdenes.</p>
-      <div class="ctx-goals">
-        <p class="eyebrow">Fricciones identificadas en el PRD</p>
-        <ul>
-          <li>Una interfaz confusa.</li>
-          <li>Un proceso de pago largo y complicado.</li>
-          <li>No se podía confirmar la dirección ni dejar indicaciones de entrega.</li>
-          <li>Poca claridad sobre los métodos de pago.</li>
-          <li>Reclamos por falta de claridad sobre las condiciones de los beneficios.</li>
-          <li>No había forma de dar propina al repartidor.</li>
-        </ul>
-      </div>
-      <div class="split phone-split">
-        <div class="stack">
-          <p class="statement"><span class="eyebrow">Pregunta de diseño</span>¿Cómo entregamos la información y las acciones necesarias para finalizar una compra <em>sin generar nuevas distracciones</em>?</p>
-          <p>En el checkout anterior, los cupones aparecían solo como montos, sin nombre ni condiciones, y no había espacio para la propina ni para las indicaciones de entrega.</p>
+      <header class="chapter-head"><p class="eyebrow">Contexto y problema</p><h2 class="chapter-title">Una misma etapa, <em>distintos escenarios de compra</em>.</h2></header>
+      <p class="lead">El checkout concentraba decisiones críticas antes de confirmar un pedido: dónde y cuándo recibirlo, cómo pagar y qué beneficios aplicar. La experiencia anterior presentaba fricciones de claridad y jerarquía, mientras el producto debía responder a diferentes modalidades de compra sin complicar el pago.</p>
+
+      <ol class="research-list tensions" aria-label="Tensiones de diseño">
+        <li><p class="eyebrow">Variabilidad</p><p>Envíos, retiros y pedidos agendados requerían información y acciones diferentes.</p></li>
+        <li><p class="eyebrow">Claridad</p><p>La experiencia debía facilitar la revisión de direcciones, pagos, costos y beneficios.</p></li>
+        <li><p class="eyebrow">Conversión</p><p>Era necesario incorporar nuevas capacidades sin distraer al usuario de finalizar la compra.</p></li>
+      </ol>
+
+      <figure class="flowmap">
+        <ol class="fm-phases">
+          <li><b>Previo al checkout</b><span>Carrito de compra</span></li>
+          <li class="is-scope"><b>Checkout</b><span>Alcance de este caso</span></li>
+          <li><b>Post-checkout</b><span>Pago, seguimiento y calificación</span></li>
+        </ol>
+        <div class="fm-body">
+          <div class="fm-scenarios">
+            <p class="eyebrow">Cada pedido combina</p>
+            <div class="fm-axis"><span class="fm-label">Modalidad</span><span class="chip">Envío a domicilio</span><span class="chip">Retiro en el local</span></div>
+            <div class="fm-axis"><span class="fm-label">Momento</span><span class="chip">Inmediato</span><span class="chip">Agendado</span></div>
+          </div>
+          <div class="fm-modules">
+            <p class="eyebrow">Información y decisiones a organizar</p>
+            <ul>
+              <li><b>Dirección e indicaciones</b><span>Elegir una dirección guardada, agregar una nueva y dejar instrucciones de entrega.</span></li>
+              <li><b>Método de pago</b><span>Usar el método por defecto o agregar una tarjeta u otro método.</span></li>
+              <li><b>Cupones y beneficios</b><span>Ingresar o elegir un cupón, validarlo y ver el descuento aplicado.</span></li>
+              <li><b>Propina</b><span>Montos porcentuales o fijos, propina personalizada e información de contexto.</span></li>
+              <li><b>Resumen de costos</b><span>Productos, envío y beneficios aplicados.</span></li>
+              <li><b>Confirmación</b><span>Confirmar la orden y pasar al pago.</span></li>
+            </ul>
+          </div>
         </div>
-        {% include media.html src="/assets/img/monchis-checkout-anterior.webp" width="947" height="2048" class="shot-phone" alt="Checkout anterior de Monchis, «Pagar y pedir»: dirección arriba, detalle de costos, método de pago, cupones mostrados solo como montos, datos de facturación y botón Finalizar orden. Datos personales anonimizados." caption="Checkout anterior a la iniciativa. Datos anonimizados." %}
+        <figcaption class="fig-cap"><b>Síntesis del user flow del proyecto.</b> No es un recorrido lineal: cada pedido combina estos elementos según su escenario. Muestra el alcance de diseño, no lo que llegó a producción.</figcaption>
+      </figure>
+
+      <div class="anatomy anatomy--phone">
+        <figure class="asis-phone">
+          <div class="asis-screen">
+            <img src="/assets/img/monchis-checkout-anterior.webp" alt="Checkout anterior de Monchis, «Pagar y pedir»: dirección arriba, detalle de costos, método de pago, cupones mostrados solo como montos, datos de facturación y botón Finalizar orden" width="947" height="2048" loading="lazy" decoding="async">
+            <span class="pin" style="left:99%;top:13.8%" aria-hidden="true">1</span>
+            <span class="pin" style="left:99%;top:27%" aria-hidden="true">2</span>
+            <span class="pin" style="left:99%;top:55.4%" aria-hidden="true">3</span>
+          </div>
+          <figcaption class="fig-cap">Checkout anterior a la iniciativa.</figcaption>
+        </figure>
+        <div class="stack">
+          <p class="eyebrow">Fricciones del checkout anterior</p>
+          <ol class="anatomy-notes">
+            <li><h3>La dirección, solo como texto</h3><p>Sin mapa para confirmar el punto exacto ni espacio para indicaciones de entrega.</p></li>
+            <li><h3>Sin propina</h3><p>El detalle del pedido no la contemplaba: no había forma de dársela al repartidor.</p></li>
+            <li><h3>Cupones sin contexto</h3><p>Se mostraban solo como montos, sin nombre ni condiciones.</p></li>
+          </ol>
+        </div>
       </div>
+
+      <p class="statement ctx-question"><span class="eyebrow">Pregunta de diseño</span>¿Cómo mostrar lo necesario en cada escenario <em>sin sumar fricción al momento de pagar</em>?</p>
       <h3 class="sub-title">Equipo y mi rol</h3>
       <dl class="role-grid">
         <div><dt>Cargo</dt><dd>Product Designer</dd></div>
