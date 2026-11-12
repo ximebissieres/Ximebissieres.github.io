@@ -18,19 +18,30 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
   <nav class="toc" aria-label="Etapas del caso"><p class="eyebrow">En este caso</p><ol></ol></nav>
   <div class="chapters">
 
-    <section class="chapter" id="contexto" data-title="Contexto">
-      <header class="chapter-head"><p class="eyebrow">Contexto</p><h2 class="chapter-title">Tener una dirección no garantizaba <em>ser encontrado</em></h2></header>
-      <p class="lead">Los repartidores no encontraban a los clientes, incluso hablando por WhatsApp. Eso generaba demoras, pedidos no entregados, reclamos al Contact Center y cancelaciones de operaciones.</p>
+    <section class="chapter" id="contexto" data-title="Contexto e investigación">
+      <header class="chapter-head"><p class="eyebrow">Contexto e investigación</p><h2 class="chapter-title">Tener una dirección no garantizaba <em>ser encontrado</em></h2></header>
+      <p class="lead">En Paraguay, muchas direcciones se describen con referencias e intersecciones. Los repartidores no encontraban a los clientes, incluso hablando por WhatsApp, y eso generaba demoras, pedidos no entregados, reclamos al Contact Center y cancelaciones.</p>
       <div class="cards two">
         <div class="card"><p class="eyebrow">Causa 1</p><h3>Direcciones imprecisas</h3><p>El registro era un formulario de calle, intersección y número, sin mapa ni geolocalización.</p></div>
         <div class="card"><p class="eyebrow">Causa 2</p><h3>Direcciones equivocadas</h3><p>Personas que pedían desde otro lugar y olvidaban cambiar su dirección. Cambiarla exigía ir al menú lateral, y el checkout ni siquiera la mostraba.</p></div>
       </div>
       <p class="statement"><span class="eyebrow">La restricción</span>La dirección define qué comercios están disponibles. Cambiarla sin control podía dejar un pedido fuera de cobertura.</p>
       {% include media.html caption="Mensajes de WhatsApp anonimizados entre cliente y repartidor, o una dirección real con referencias ambiguas, junto al volumen de reclamos por dirección." ratio="16 / 8" %}
+      <h3 class="sub-title">Cómo lo investigamos</h3>
+      <div class="split wide-left">
+        <div class="prose">
+          <p>La investigación la lideró Service Design, con Product Design y Content Design <mark class="tbd">[N entrevistas y observaciones]</mark>.</p>
+          <ul class="methods" aria-label="Métodos">
+            <li>Entrevistas a usuarios</li><li>Observación a repartidores</li><li>Pedidos en terreno en Paraguay</li><li>Análisis de motivos de reclamo</li>
+          </ul>
+        </div>
+        <div class="card"><p class="eyebrow">Mi aporte</p><p class="ink">Identificar qué datos necesitábamos para dimensionar el problema y apoyar el análisis.</p></div>
+      </div>
+      <p class="big-quote">El encuentro físico entre repartidor y cliente era mucho más complejo de lo que suponíamos.</p>
     </section>
 
-    <section class="chapter" id="rol" data-title="Mi rol">
-      <header class="chapter-head"><p class="eyebrow">Mi rol</p><h2 class="chapter-title">Qué hice y <em>qué fue del equipo</em></h2></header>
+    <section class="chapter" id="estrategia" data-title="Mi rol y estrategia">
+      <header class="chapter-head"><p class="eyebrow">Mi rol y estrategia</p><h2 class="chapter-title">Una estrategia <em>en tres momentos</em></h2></header>
       <dl class="role-grid">
         <div><dt>Cargo</dt><dd>UX Writer / Content Designer</dd></div>
         <div><dt>Equipo</dt><dd>Service Design, Product Design, Content Design, Product Managers y Desarrollo</dd></div>
@@ -44,26 +55,8 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
         <li><span>Radio dinámico de 50 m</span><span class="who team">Equipo: Diseño, Producto y Desarrollo</span></li>
         <li><span>Research y hallazgos</span><span class="who team">Liderado por Service Design, con mi apoyo</span></li>
       </ul>
-    </section>
-
-    <section class="chapter" id="investigacion" data-title="Investigación">
-      <header class="chapter-head"><p class="eyebrow">Investigación</p><h2 class="chapter-title">El encuentro físico era más complejo <em>de lo que suponíamos</em></h2></header>
-      <div class="split wide-left">
-        <div class="prose">
-          <p>La investigación la lideró Service Design, con Product Design y Content Design <mark class="tbd">[N entrevistas y observaciones]</mark>.</p>
-          <ul class="methods" aria-label="Métodos">
-            <li>Entrevistas a usuarios</li><li>Observación a repartidores</li><li>Pedidos en terreno en Paraguay</li><li>Análisis de motivos de reclamo</li>
-          </ul>
-        </div>
-        <div class="card"><p class="eyebrow">Mi aporte</p><p class="ink">Identificar qué datos necesitábamos para dimensionar el problema y apoyar el análisis.</p></div>
-      </div>
-      <p class="big-quote">El encuentro físico entre repartidor y cliente era mucho más complejo de lo que suponíamos.</p>
-      {% include media.html caption="Journey del pedido con los puntos donde falla la dirección." ratio="16 / 8" %}
-    </section>
-
-    <section class="chapter" id="proceso" data-title="Proceso">
-      <header class="chapter-head"><p class="eyebrow">Proceso</p><h2 class="chapter-title">La dirección <em>no era</em> un problema de onboarding</h2></header>
-      <p class="lead">La dirección afectaba el descubrimiento de comercios, la compra, el checkout y la entrega. En vez de rediseñarlo todo de una vez, el equipo dividió el trabajo en tres iniciativas que se lanzaron por etapas.</p>
+      <h3 class="sub-title">Por qué tres iniciativas</h3>
+      <p class="lead">La dirección no era un problema de onboarding: afectaba el descubrimiento de comercios, la compra, el checkout y la entrega. En vez de rediseñarlo todo de una vez, el equipo dividió el trabajo en tres iniciativas que se lanzaron por etapas.</p>
       <div class="journey" data-state="despues">
         <div class="seg" role="group" aria-label="Comparar el journey">
           <span class="thumb" aria-hidden="true"></span>
@@ -82,11 +75,10 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
             <div class="st despues"><span class="eyebrow">Después</span><p>Mapa visible, ajuste del pin y cambio entre direcciones guardadas con cobertura</p></div></li>
         </ol>
       </div>
-      {% include media.html caption="Journey horizontal con capturas antes y después en cada momento." ratio="16 / 8" %}
     </section>
 
-    <section class="chapter" id="decisiones" data-title="Decisiones de diseño">
-      <header class="chapter-head"><p class="eyebrow">Decisiones de diseño</p><h2 class="chapter-title">Cuatro decisiones <em>y sus trade-offs</em></h2></header>
+    <section class="chapter" id="decisiones" data-title="Decisiones clave">
+      <header class="chapter-head"><p class="eyebrow">Decisiones clave</p><h2 class="chapter-title">Cuatro decisiones <em>y sus trade-offs</em></h2></header>
       <div class="decisions">
 
         <div class="decision">
@@ -95,7 +87,7 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
           <div class="d-body">
             <p>El texto solo no bastaba en un país donde las direcciones se describen con referencias. Propuse agregar campos de referencia y un mapa para ajustar el punto de entrega.</p>
             <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Más pasos en el registro</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Una ubicación precisa</p></div></div>
-            <p><mark class="tbd">[cómo mantuvieron el flujo corto, por ejemplo campos opcionales o el pin precargado]</mark></p>
+            <p><b>Cómo mantuvimos el flujo corto:</b> el pin aparece precargado con la ubicación del GPS y los campos de referencia son opcionales, con ejemplos locales como placeholder. <mark class="tbd">[ajustar el detalle técnico: precarga del pin, qué campos son opcionales y textos de ejemplo]</mark></p>
             {% include media.html caption="Formulario antes y después, lado a lado." ratio="16 / 8" %}
           </div>
         </div>
@@ -109,7 +101,8 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
               <div class="mine"><span class="eyebrow">Lo que propuse</span><p>Un aviso amable en la home que pregunta si el pedido es para alguien más y ofrece cambiar la dirección en un toque.</p></div>
             </div>
             <p>La distancia no siempre significa un error. Hay casos legítimos, como pedir antes de llegar a casa o enviar comida a otra persona. Bloquear habría castigado a esas personas y costado ventas.</p>
-            <div class="ui-quote"><span class="eyebrow">Aviso en la home</span><mark class="tbd">[texto final del aviso y por qué elegiste esas palabras]</mark></div>
+            <div class="ui-quote"><span class="eyebrow">Aviso en la home · copy final</span><mark class="tbd">[texto exacto del aviso]</mark></div>
+            <div class="card"><p class="eyebrow">Por qué este tono</p><p>El aviso tenía que validar la intención de la persona, no corregirla. Por eso pregunta en lugar de afirmar un error, no bloquea el pedido y deja el cambio a un toque, sin sonar acusatorio. <mark class="tbd">[por qué elegiste esas palabras]</mark></p></div>
             <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Algunas personas ignorarían el aviso</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>No perder pedidos válidos</p></div></div>
           </div>
         </div>
@@ -168,6 +161,7 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
 
     <section class="chapter" id="solucion" data-title="Solución">
       <header class="chapter-head"><p class="eyebrow">Solución</p><h2 class="chapter-title">Un checkout que cuenta <em>una historia</em></h2></header>
+      <p class="lead">El checkout reúne las decisiones anteriores en el último paso antes de pagar: la entrega sube al primer bloque, con el mapa y el pin ajustable dentro de la cobertura, y el aviso de ubicación aparece solo cuando hace falta.</p>
       <div class="split">
         <div class="stack">
           <div class="ui-quote"><span class="eyebrow">La historia del checkout</span>¿Todo listo para hacer tu pedido? Confirma tu dirección, elige tu método de pago y finaliza. Si quieres, también puedes revisar el detalle de tu pedido.</div>
@@ -192,18 +186,15 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
       {% include media.html caption="Benchmark de checkouts convencionales junto al de Monchis: la entrega sube al primer bloque." ratio="16 / 8" %}
     </section>
 
-    <section class="chapter" id="resultados" data-title="Resultados">
-      <header class="chapter-head"><p class="eyebrow">Resultados</p><h2 class="chapter-title">Después del lanzamiento</h2></header>
+    <section class="chapter" id="impacto" data-title="Impacto y aprendizajes">
+      <header class="chapter-head"><p class="eyebrow">Impacto y aprendizajes</p><h2 class="chapter-title">Después <em>del lanzamiento</em></h2></header>
       <p class="lead">Tras el lanzamiento se hizo seguimiento y se observó una baja en:</p>
       <div class="metrics">
         <div class="metric"><p>Reclamos al Contact Center por direcciones</p><span class="val"><mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></span><p class="fig-cap">en <mark class="tbd">[periodo]</mark></p></div>
         <div class="metric"><p>Pedidos no entregados por dirección</p><span class="val"><mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></span></div>
         <div class="metric"><p>Tiempo de entrega</p><span class="val"><mark class="tbd">[antes]</mark> → <mark class="tbd">[después]</mark></span></div>
       </div>
-    </section>
-
-    <section class="chapter" id="aprendizajes" data-title="Aprendizajes">
-      <header class="chapter-head"><p class="eyebrow">Aprendizajes</p><h2 class="chapter-title">Lo que haría distinto: probar <em>antes</em> de lanzar</h2></header>
+      <h3 class="sub-title">Lo que haría distinto: probar <em>antes</em> de lanzar</h3>
       <p class="lead">No hicimos pruebas de usabilidad antes de lanzar; validamos con Product Managers y con Desarrollo. Con más tiempo habría probado tres cosas:</p>
       <div class="cards">
         <div class="card outline"><p class="eyebrow">Probaría</p><h3>Si las personas entienden cómo mover el pin en el mapa</h3></div>
