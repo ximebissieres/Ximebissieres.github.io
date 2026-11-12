@@ -34,7 +34,7 @@
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
-    titulo: "Hacer simple la compra, incluso cuando *la operación no lo era.*"
+    titulo: "Hacer simple la compra, incluso cuando *la operación no lo era*"
     bajada: "Rediseñamos el checkout de Monchis para adaptarse a distintas modalidades de entrega y pedidos agendados, simplificando decisiones y manteniendo el foco en finalizar la compra."
     # Bloque lateral opcional: para mostrarlo, agrega etiqueta_descripcion y descripcion.
     # Pantallas reales de la portada (máximo 3). La primera es la protagonista.
@@ -64,7 +64,7 @@
   sector: Aerolínea · Web
   name: Landing multiproducto
   menu: Landing multiproducto
-  title_html: De una landing de vuelos a una experiencia *multiproducto*.
+  title_html: De una landing de vuelos a una experiencia *multiproducto*
   cover: /assets/img/latam-landing.webp
   cover_alt: Landing de ofertas de LATAM rediseñada, con destinos y precios destacados
   cover_position: 50% 0%
