@@ -1494,7 +1494,16 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .shot-frame[style*="aspect-ratio"] img[width] { height: 100%; }
 .shot-phone .shot-frame, .shot-ticket .shot-frame { box-shadow: 0 24px 48px -32px rgba(41, 38, 43, .35); }
 .shot-phone { max-width: 18rem; }
-.shot-phone .shot-frame { border-radius: 24px; }
+/* Mockup de teléfono en CSS: marco grafito, esquinas de dispositivo e isla superior */
+.shot-phone .shot-frame {
+  position: relative; padding: 9px; background: var(--ink); border: 0; border-radius: 46px;
+  box-shadow: inset 0 0 0 1.5px #4A454D, 0 0 0 1px color-mix(in srgb, var(--ink) 20%, transparent), 0 30px 60px -30px rgba(41, 38, 43, .5);
+}
+.shot-phone .shot-frame img { border-radius: 37px; }
+.shot-phone .shot-frame::after {
+  content: ""; position: absolute; left: 50%; top: calc(9px + 1.5%); transform: translateX(-50%);
+  width: 26%; height: 3%; border-radius: 999px; background: #0E0D0F;
+}
 @media (min-width: 760px) {
   .shot-phone { max-width: none; grid-template-columns: minmax(0, 17rem) minmax(0, 22rem); column-gap: 28px; align-items: end; }
 }
