@@ -1507,5 +1507,16 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (min-width: 760px) {
   .shot-phone { max-width: none; grid-template-columns: minmax(0, 17rem) minmax(0, 22rem); column-gap: 28px; align-items: end; }
 }
-.delivery-friction { align-items: center; }
-.delivery-friction .shot-phone { max-width: 17rem; justify-self: center; grid-template-columns: none; }
+.phone-split { align-items: center; }
+.phone-split .shot-phone { max-width: 17rem; justify-self: center; grid-template-columns: none; }
+
+/* Monchis · checkout: estado de cada decisión, evolución de propinas y lista de estados */
+.d-status { display: inline-flex; align-items: center; gap: 10px; font-size: .85rem; color: var(--muted); }
+.d-status b { font-size: .7rem; font-weight: var(--w-semibold); letter-spacing: .14em; text-transform: uppercase; color: var(--rose-ink); }
+.d-status::before { content: ""; order: -1; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--muted); }
+.d-status.is-live::before { background: var(--rose); border-color: var(--rose); }
+.d-status.is-dev::before { border-color: var(--rose); border-style: dashed; }
+.d-body .timeline.tip-evolution { padding-left: 0; gap: 0; }
+.tip-evolution b { font-size: 1.1rem; }
+.status-list { margin-top: 8px; }
+.ctx-goals { display: grid; gap: 12px; }

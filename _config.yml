@@ -9,5 +9,6 @@ exclude:
   - README.md
   - GUIA-DE-CONTENIDO.md
   - LATAM_PENDIENTES.md
+  - MONCHIS_CHECKOUT_PENDIENTES.md
   - Gemfile
   - Gemfile.lock

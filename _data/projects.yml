@@ -34,10 +34,10 @@
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
-    titulo: "El desafío no era guardar una dirección. *Era encontrar al usuario.*"
-    bajada: "En Paraguay, las direcciones suelen construirse a partir de referencias e intersecciones. Para Monchis, esto se traducía en demoras, entregas fallidas y reclamos."
-    etiqueta_descripcion: "El proyecto"
-    descripcion: "Rediseñamos la experiencia de direcciones en tres momentos del journey para mejorar la precisión sin agregar fricción a la compra."
+    titulo: "El último paso de la compra *también necesitaba rediseñarse.*"
+    bajada: "Rediseñamos el checkout de Monchis para simplificar decisiones, aclarar la entrega y los beneficios, y sumar nuevas funcionalidades sin agregar fricción al momento de pagar."
+    etiqueta_descripcion: "El principio"
+    descripcion: "El checkout debía ayudar a finalizar la compra, no hacer que el usuario volviera a empezar."
     # Composición visual del hero: componente real + elementos cartográficos.
     visual:
       imagen: "/assets/img/monchis-punto-exacto.webp"
