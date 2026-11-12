@@ -1677,3 +1677,17 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (max-width: 899px) {
   .f-meta dl { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); column-gap: 20px; }
 }
+
+/* Monchis · 03 y 04: bloques de solución sin etiquetas de autoría y esquema secundario */
+.d-head > .eyebrow { font-size: .7rem; letter-spacing: .14em; color: var(--rose-ink); }
+.d-body .ctx-goals ul { margin: 0; padding: 0; }
+.fig-secondary { max-width: 30rem; }
+.timeline.tip-evolution { padding-left: 0; }
+/* Variante compacta: el número ocupa solo las filas reales y los bloques se separan con un filete */
+.decisions--compact { gap: 0; }
+.decisions--compact > .decision { padding-block: clamp(28px, 3.5vw, 44px); }
+.decisions--compact > .decision + .decision { border-top: 1px solid var(--line); }
+.decisions--compact > .decision:first-child { padding-top: 8px; }
+.decisions--compact > .decision:last-child { padding-bottom: 0; }
+@media (min-width: 980px) { .decisions--compact > .decision > .d-num { grid-row: span 2; } }
+.decisions--compact .d-num { font-size: clamp(3rem, 5.5vw, 4.5rem); }

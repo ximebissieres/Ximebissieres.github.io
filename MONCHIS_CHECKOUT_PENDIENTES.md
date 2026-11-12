@@ -18,6 +18,21 @@ En la web, todo lo no confirmado aparece como "Diseñado"; no se afirma que est�
 
 ---
 
+## Recursos visuales por incorporar (y dónde van)
+
+| Recurso | Dónde se incorpora | Qué demuestra |
+|---|---|---|
+| Video 1 · Checkout completo | 03 · Bloque 01 (Arquitectura y foco en la compra), después de "Qué decidimos" | Arquitectura, jerarquía de bloques y footer fijo durante el scroll |
+| Video 2 · Dirección | 03 · Bloque 02 (Direcciones), antes del esquema del radio (que pasa a segundo plano o se retira) | Ajuste del pin dentro del radio y validaciones de cobertura |
+| Video 3 · Cupones | 03 · Bloque 03 (Cupones), después de "Qué decidimos" | Selección, condiciones y aplicación del beneficio |
+| Pantallas de la primera propuesta de propinas | 03 · Bloque 04 (Propinas) | Punto de partida antes del discovery |
+| Versión de propinas post discovery + versión ajustada post testeo | 04 · "Propinas: validar, aprender e iterar", como comparación compacta junto a los pasos 3 y 5 | Qué cambió y por qué |
+| Evidencia de los testeos de propinas | 04 · paso 4 de la cronología | Qué se testeó y qué mejoras surgieron |
+| Métricas de cupones | 04 · tarjeta "Cupones" | Uso, aplicaciones exitosas, errores y reclamos |
+| Métricas de direcciones | 04 · tarjeta "Direcciones" | Reclamos, contactos, pedidos no entregados/cancelados y tiempos, separando lo atribuible al checkout |
+
+Videos: verticales, con portada (poster), controles, sin autoplay simultáneo, con alternativa visual y respetando prefers-reduced-motion.
+
 ## Prioridad ALTA
 
 | # | Pendiente | Qué necesito | Sección | Qué permitiría afirmar | Dónde buscarlo |
