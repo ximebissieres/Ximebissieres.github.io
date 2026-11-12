@@ -23,13 +23,13 @@
 # =============================================================================
 - slug: monchis
   category: Delivery App
-  teaser: Menos entregas fallidas, sin agregar fricción a la compra.
+  teaser: Un checkout que ayuda a finalizar la compra, sin sumar fricción.
   order: 1
   company: Monchis
   sector: Delivery App · Paraguay
-  name: Rediseño de direcciones
-  menu: Direcciones
-  title_html: Cómo rediseñamos la experiencia de direcciones para reducir entregas fallidas *sin agregar fricción* a la compra
+  name: Rediseño del checkout
+  menu: Checkout
+  title_html: Cómo rediseñamos el checkout para dar claridad y control *sin agregar fricción* a la compra
   cover: illustration
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.

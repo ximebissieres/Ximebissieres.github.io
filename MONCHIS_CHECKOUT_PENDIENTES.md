@@ -48,7 +48,7 @@ En la web, todo lo no confirmado aparece como "Diseñado"; no se afirma que est�
 
 ## Fuera de alcance (no se tocó, requiere decisión)
 
-- **Tarjeta de la Home y menú:** siguen diciendo "Rediseño de direcciones" (`_data/projects.yml` → `name`, `menu`, `teaser`) porque la instrucción fue no cambiar la Home. Si quieres que la tarjeta diga "Rediseño del checkout", hay que cambiar esos tres campos. También aparece en la tarjeta de "Siguiente proyecto" al final de Paris.
+- **Tarjeta de la Home y menú:** actualizados a "Rediseño del checkout" (`name`, `menu`, `teaser`). La ilustración de la tarjeta sigue siendo el mapa (`cover: illustration`) hasta tener una pantalla real del checkout (A1).
 - **Imagen de portada:** el hero sigue usando el componente de mapa (`monchis-punto-exacto.webp`) hasta tener una pantalla real del checkout (A1).
 - **Imagen `monchis-whatsapp-ejemplo.webp`:** ya no se usa en el caso (era contexto del enfoque de direcciones). Sigue en el repo, anonimizada.
 - **Historial de GitHub:** el repositorio es público y sus versiones anteriores todavía contienen las imágenes originales sin anonimizar (WhatsApp, ticket, Vendor Tool). Borrarlas requiere reescribir el historial.
