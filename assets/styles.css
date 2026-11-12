@@ -1532,14 +1532,14 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
    su proporción: se ve la primera vista del teléfono (390 × 844) y el resto
    queda bajo el borde del panel. Sin JS o con movimiento reducido: estático.
    ========================================================================== */
-.cscreens { margin: 0; background: var(--bg-3); aspect-ratio: 16 / 7.2; }
+.cscreens { margin: 0; background: var(--bg-3); aspect-ratio: 16 / 7.6; }
 .cs-phone {
-  --x: 50%; --w: 20.5%;
-  position: absolute; left: calc(var(--x) - var(--w) / 2); top: 10%; width: var(--w);
+  --x: 50%; --w: 18.6%;
+  position: absolute; left: calc(var(--x) - var(--w) / 2); top: 9%; width: var(--w);
   padding: 6px; border-radius: 34px; background: var(--ink);
   box-shadow: inset 0 0 0 1.5px #4A454D, 0 26px 50px -30px rgba(41, 38, 43, .45);
 }
-.cs-screen { aspect-ratio: 390 / 844; overflow: hidden; border-radius: 28px; background: var(--surface); }
+.cs-screen { overflow: hidden; border-radius: 28px; background: var(--surface); }
 .cs-screen img { display: block; width: 100%; height: auto; }
 .cs-tag {
   position: absolute; left: 50%; bottom: calc(100% + 12px); translate: -50% 0; white-space: nowrap;
@@ -1547,7 +1547,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   color: var(--rose-ink); background: var(--bg); padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line);
 }
 .cs-1 { z-index: 2; }
-.cs-2, .cs-3 { --w: 17.5%; z-index: 1; top: 19%; box-shadow: inset 0 0 0 1.5px #4A454D, 0 18px 36px -28px rgba(41, 38, 43, .35); }
+.cs-2, .cs-3 { --w: 15.6%; z-index: 1; top: 17%; box-shadow: inset 0 0 0 1.5px #4A454D, 0 18px 36px -28px rgba(41, 38, 43, .35); }
 .cs-2 { --x: 29%; }
 .cs-3 { --x: 71%; }
 .cs-2 .cs-screen, .cs-3 .cs-screen { border-radius: 24px; }
@@ -1563,16 +1563,16 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 }
 @media (max-width: 899px) {
   .cscreens { aspect-ratio: 4 / 3; }
-  .cs-1 { --w: 30%; top: 12%; }
-  .cs-2, .cs-3 { --w: 25%; top: 22%; }
+  .cs-1 { --w: 29%; top: 10%; }
+  .cs-2, .cs-3 { --w: 24%; top: 19%; }
   .cs-2 { --x: 22%; }
   .cs-3 { --x: 78%; }
 }
 /* Mobile: solo la pantalla protagonista */
 @media (max-width: 600px) {
-  .cscreens { aspect-ratio: 4 / 4.2; }
+  .cscreens { aspect-ratio: 4 / 5.3; }
   .cs-2, .cs-3 { display: none; }
-  .cs-1 { --w: 62%; top: 13%; border-radius: 30px; }
+  .cs-1 { --w: 48%; top: 12%; border-radius: 30px; }
   .cs-1 .cs-screen { border-radius: 24px; }
   .cs-tag { font-size: .62rem; }
 }

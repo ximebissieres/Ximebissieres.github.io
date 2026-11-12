@@ -41,20 +41,21 @@
     # ancho / alto: tamaño real de cada imagen (no cambiar si no cambias la imagen).
     pantallas:
       - imagen: "/assets/img/monchis-checkout-envio.webp"
-        alt: "Checkout de Monchis con envío a domicilio: mapa para elegir el punto exacto de entrega, dirección, aviso «¡Estás lejos de esta ubicación! ¿Es para alguien más?», tiempo estimado e instrucciones para el repartidor"
+        alt: "Checkout de Monchis con envío a domicilio: mapa para elegir el punto exacto de entrega, dirección, tiempo estimado de 30 a 60 minutos, detalle del pedido, método de pago y footer fijo con el total y el botón Finalizar pedido"
         etiqueta: "Envío a domicilio"
-        ancho: 455
+        ancho: 923
         alto: 2000
       - imagen: "/assets/img/monchis-checkout-retiro.webp"
-        alt: "Checkout de Monchis con retiro en el local: ubicación del comercio, aviso «Recordá retirar tu pedido cuando esté listo» y tiempo de retiro"
+        alt: "Checkout de Monchis con retiro en el local: ubicación del comercio, aviso «Recordá retirar tu pedido cuando esté listo», tiempo de retiro, método de pago y footer fijo con el total y el botón Finalizar pedido"
         etiqueta: "Retiro en el local"
-        ancho: 595
+        ancho: 923
         alto: 2000
       - imagen: "/assets/img/monchis-checkout-agendado.webp"
-        alt: "Checkout de Monchis con pedido agendado: dirección de entrega y franja programada para el lunes 18 de octubre de 8:00 a 9:00 h"
+        alt: "Checkout de Monchis con pedido agendado para el lunes 18 de octubre de 8:00 a 9:00 h, método de pago y footer fijo con el total y el botón Finalizar pedido"
         etiqueta: "Pedido agendado"
-        ancho: 413
+        ancho: 923
         alto: 2000
+
 - slug: latam
   category: Aerolínea
   teaser: Vuelos, hoteles y paquetes en una landing, sin afectar vuelos.
