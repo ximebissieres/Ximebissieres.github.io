@@ -20,13 +20,19 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
 
     <section class="chapter" id="contexto" data-title="Contexto e investigación">
       <header class="chapter-head"><p class="eyebrow">Contexto e investigación</p><h2 class="chapter-title">Tener una dirección no garantizaba <em>ser encontrado</em></h2></header>
-      <p class="lead">En Paraguay, muchas direcciones se describen con referencias e intersecciones. Los repartidores no encontraban a los clientes, incluso hablando por WhatsApp, y eso generaba demoras, pedidos no entregados, reclamos al Contact Center y cancelaciones.</p>
+      <p class="lead">En Paraguay, muchas direcciones se describen con referencias e intersecciones. Los repartidores no encontraban a los clientes, y eso generaba demoras, pedidos no entregados, reclamos al Contact Center y cancelaciones.</p>
       <div class="cards two">
         <div class="card"><p class="eyebrow">Causa 1</p><h3>Direcciones imprecisas</h3><p>El registro era un formulario de calle, intersección y número, sin mapa ni geolocalización.</p></div>
         <div class="card"><p class="eyebrow">Causa 2</p><h3>Direcciones equivocadas</h3><p>Personas que pedían desde otro lugar y olvidaban cambiar su dirección. Cambiarla exigía ir al menú lateral, y el checkout ni siquiera la mostraba.</p></div>
       </div>
       <p class="statement"><span class="eyebrow">La restricción</span>La dirección define qué comercios están disponibles. Cambiarla sin control podía dejar un pedido fuera de cobertura.</p>
-      {% include media.html src="/assets/img/monchis-whatsapp-evidencia.webp" width="849" height="1851" class="shot-phone" alt="Chat de WhatsApp entre repartidor y cliente: una llamada de 40 segundos, mensajes pidiendo la ubicación, un enlace reenviado de Google Maps y una foto de la fachada de una casa con un pin rojo sobre el portón" caption="Evidencia real del problema: sin referencias ni pin exacto en la app, el repartidor y el cliente terminaban coordinando por llamada, enlaces externos de Maps y fotos de la fachada por WhatsApp." %}
+      <div class="split delivery-friction">
+        <div class="stack">
+          <p class="statement"><span class="eyebrow">En la entrega</span>Una dirección guardada no siempre bastaba para <em>encontrarse</em>.</p>
+          <p>Cuando el repartidor no ubicaba a la persona, ambos tenían que coordinarse por fuera de la app: llamadas, mensajes, ubicaciones compartidas y referencias adicionales.</p>
+        </div>
+        {% include media.html src="/assets/img/monchis-whatsapp-ejemplo.webp" width="849" height="1851" class="shot-phone" alt="Ejemplo de chat de WhatsApp entre repartidor y cliente, con datos anonimizados: una llamada, mensajes pidiendo la ubicación, un enlace de Google Maps y una foto difuminada" caption="Ejemplo de la coordinación adicional que podía requerirse para concretar una entrega. Datos anonimizados." %}
+      </div>
       <h3 class="sub-title">Cómo lo investigamos</h3>
       <div class="split wide-left">
         <div class="prose">
@@ -161,7 +167,7 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
 
     <section class="chapter" id="solucion" data-title="Solución">
       <header class="chapter-head"><p class="eyebrow">Solución</p><h2 class="chapter-title">Un checkout que cuenta <em>una historia</em></h2></header>
-      <p class="lead">El checkout reúne las decisiones anteriores en el último paso antes de pagar: la entrega sube al primer bloque, con el mapa y el pin ajustable dentro de la cobertura, y el aviso de ubicación aparece solo cuando hace falta.</p>
+      <p class="lead">La solución se desplegó en los tres momentos del journey: onboarding y direcciones, home y checkout. En el checkout convergen las decisiones anteriores, justo antes de pagar: la entrega sube al primer bloque, con el mapa y el pin ajustable dentro de la cobertura, y el aviso de ubicación aparece solo cuando hace falta.</p>
       <div class="split">
         <div class="stack">
           <div class="ui-quote"><span class="eyebrow">La historia del checkout</span>¿Todo listo para hacer tu pedido? Confirma tu dirección, elige tu método de pago y finaliza. Si quieres, también puedes revisar el detalle de tu pedido.</div>
@@ -184,12 +190,6 @@ summary: 'En Paraguay, muchas direcciones se dan con referencias e interseccione
         </figure>
       </div>
       {% include media.html caption="Benchmark de checkouts convencionales junto al de Monchis: la entrega sube al primer bloque." ratio="16 / 8" %}
-      <h3 class="sub-title">Más allá de la app: llevar la referencia <em>a la operación del local</em></h3>
-      <p class="lead">El dato de la dirección y sus referencias también tenía que llegar a los puntos de contacto del comercio. Muchos locales operan con repartidores propios, así que la referencia debía verse en el ticket impreso y en el panel de órdenes, no solo en la app.</p>
-      <div class="ops-grid">
-        {% include media.html src="/assets/img/monchis-ticket-referencia.webp" width="723" height="2000" ratio="723 / 1010" position="50% 0%" class="shot-ticket" alt="Ticket impreso de Monchis con datos del cliente, código QR de pago online y la dirección con referencias: Médicos del Chaco esquina Dr. Carlos Centurión 234, dúplex con muralla amarilla, favor esperar en portería" caption="Ticket impreso en el comercio: las referencias ingresadas por el usuario llegan directamente al comprobante físico del pedido." %}
-        {% include media.html src="/assets/img/monchis-vendor-tool.webp" width="2000" height="1057" alt="Gestor de órdenes de Vendor Tool: tarjeta de un pedido delivery pendiente con datos del cliente, la referencia «Casa blanca con portón grande color gris, tiene número en el medio mismo», el enlace Ver mapa y el total" caption="Panel de comercios (Vendor Tool): rediseño de la tarjeta de orden mostrando las indicaciones y acceso al mapa para locales con flota propia (listo para desarrollo, pendiente de salida a producción)." %}
-      </div>
     </section>
 
     <section class="chapter" id="impacto" data-title="Impacto y aprendizajes">
