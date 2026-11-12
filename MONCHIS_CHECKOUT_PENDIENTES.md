@@ -22,7 +22,7 @@ En la web, todo lo no confirmado aparece como "Diseñado"; no se afirma que est�
 
 | # | Pendiente | Qué necesito | Sección | Qué permitiría afirmar | Dónde buscarlo |
 |---|---|---|---|---|---|
-| A1 | **Checkout completo antes/después** | Recibidas 3 variantes del checkout nuevo (envío a domicilio, retiro en el local, pedido agendado), usadas en la portada y anonimizadas. Falta confirmar qué variantes llegaron a producción. La logística propia del comercio queda fuera del caso: sus diferencias están en el post order, no en el checkout | Portada, Solución | Mostrar la solución con pantallas reales en vez del esquema ilustrativo | Figma del proyecto (link "FIGMA" del PRD Checkout) |
+| A1 | **Checkout completo antes/después** | Recibidas 3 variantes del checkout nuevo (envío a domicilio, retiro en el local, pedido agendado), usadas en la portada sin modificaciones (datos ficticios de Figma). Falta confirmar qué variantes llegaron a producción. La logística propia del comercio queda fuera del caso: sus diferencias están en el post order, no en el checkout | Portada, Solución | Mostrar la solución con pantallas reales en vez del esquema ilustrativo | Figma del proyecto (link "FIGMA" del PRD Checkout) |
 | A2 | **Iteraciones de propinas** | Wireframes de la primera propuesta y de la versión iterada | Decisión 04 (evolución de propinas) | Mostrar visualmente qué cambió y por qué | Figma / archivos del equipo de diseño |
 | A3 | **Hallazgos del discovery de Service Design** | Informe o síntesis original de propinas | Investigación (Propinas) y Decisión 04 | Explicar qué hallazgos cuestionaron la primera propuesta | Service Design, Drive/Notion del equipo |
 | A4 | **Testeos de propinas** | Método, n.º de participantes, tareas y resultados | Decisión 04 y Validación e impacto | Decir qué validamos y qué aprendimos en los testeos | Service Design / equipo de diseño |
@@ -52,7 +52,7 @@ En la web, todo lo no confirmado aparece como "Diseñado"; no se afirma que est�
 ## Fuera de alcance (no se tocó, requiere decisión)
 
 - **Tarjeta de la Home y menú:** actualizados a "Rediseño del checkout" (`name`, `menu`, `teaser`). La ilustración de la tarjeta sigue siendo el mapa (`cover: illustration`) hasta tener una pantalla real del checkout (A1).
-- **Imagen de portada:** ahora usa 3 pantallas reales del checkout (`hero.pantallas` en `_data/projects.yml`). Se taparon dirección particular, dígitos de tarjeta y razón social. El nombre del comercio (McDonald's) se mantiene tal como está en el diseño.
+- **Imagen de portada:** usa 3 pantallas reales del checkout (`hero.pantallas` en `_data/projects.yml`), exportadas de Figma y publicadas sin modificaciones. Las capturas de Figma contienen datos ficticios: solo se anonimizan si Ximena lo pide expresamente.
 - **Imagen `monchis-whatsapp-ejemplo.webp`:** ya no se usa en el caso (era contexto del enfoque de direcciones). Sigue en el repo, anonimizada.
 - **Historial de GitHub:** el repositorio es público y sus versiones anteriores todavía contienen las imágenes originales sin anonimizar (WhatsApp, ticket, Vendor Tool). Borrarlas requiere reescribir el historial.
 
