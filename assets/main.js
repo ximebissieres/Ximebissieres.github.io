@@ -262,3 +262,54 @@
     }
   }
 })();
+
+/* ---------- Caso: explorador de fricciones ([data-explorer]) ----------
+   Pestañas accesibles (clic, tap, flechas, Inicio/Fin). Sin JS se ven todos
+   los paneles uno debajo del otro. Sin autoplay. */
+(function () {
+  var ex = document.querySelector('[data-explorer]');
+  if (!ex) return;
+  var tabs = Array.prototype.slice.call(ex.querySelectorAll('[role="tab"]'));
+  var panels = Array.prototype.slice.call(ex.querySelectorAll('[role="tabpanel"]'));
+  var hls = Array.prototype.slice.call(ex.querySelectorAll('.ex-hl'));
+  var pins = Array.prototype.slice.call(ex.querySelectorAll('.ex-pin'));
+  var count = ex.querySelector('.ex-count b');
+  var nav = ex.querySelector('.ex-nav');
+  var cur = 0;
+  ex.classList.add('is-ready');
+  if (nav) nav.removeAttribute('aria-hidden');
+  ex.querySelectorAll('.ex-nav button').forEach(function (b) { b.removeAttribute('tabindex'); });
+  function show(i, focus) {
+    cur = (i + tabs.length) % tabs.length;
+    var key = tabs[cur].getAttribute('data-go');
+    tabs.forEach(function (t, j) {
+      var on = j === cur;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      panels[j].hidden = !on;
+    });
+    hls.forEach(function (h) { h.classList.toggle('is-on', h.getAttribute('data-for') === key); });
+    pins.forEach(function (p) { var on = p.getAttribute('data-go') === key; p.classList.toggle('is-on', on); p.setAttribute('aria-pressed', String(on)); });
+    ex.classList.toggle('is-absent', tabs[cur].classList.contains('is-absent'));
+    if (count) count.textContent = String(cur + 1);
+    var bar = tabs[cur].parentNode, t = tabs[cur];
+    if (bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: t.offsetLeft - bar.offsetLeft - 8, behavior: 'smooth' });
+    if (focus) tabs[cur].focus();
+  }
+  function idx(key) { for (var k = 0; k < tabs.length; k++) if (tabs[k].getAttribute('data-go') === key) return k; return 0; }
+  tabs.forEach(function (t, j) {
+    t.addEventListener('click', function () { show(j); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key;
+      if (k === 'ArrowRight' || k === 'ArrowDown') { e.preventDefault(); show(cur + 1, true); }
+      else if (k === 'ArrowLeft' || k === 'ArrowUp') { e.preventDefault(); show(cur - 1, true); }
+      else if (k === 'Home') { e.preventDefault(); show(0, true); }
+      else if (k === 'End') { e.preventDefault(); show(tabs.length - 1, true); }
+    });
+  });
+  pins.forEach(function (p) { p.addEventListener('click', function () { show(idx(p.getAttribute('data-go'))); }); });
+  var prev = ex.querySelector('.ex-prev'), next = ex.querySelector('.ex-next');
+  if (prev) prev.addEventListener('click', function () { show(cur - 1); });
+  if (next) next.addEventListener('click', function () { show(cur + 1); });
+  show(0);
+})();

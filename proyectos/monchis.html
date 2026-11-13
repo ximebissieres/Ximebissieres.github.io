@@ -25,61 +25,98 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
   <nav class="toc" aria-label="Etapas del caso"><p class="eyebrow">En este caso</p><ol></ol></nav>
   <div class="chapters">
 
-    <section class="chapter" id="desafio" data-title="El desafío y su evidencia">
+    <section class="chapter chapter--explorer" id="desafio" data-title="El desafío y su evidencia">
       <header class="chapter-head"><p class="eyebrow">El desafío y su evidencia</p><h2 class="chapter-title">El último paso de la compra <em>dejaba preguntas abiertas</em></h2></header>
-      <p class="lead">El checkout era el último paso antes de confirmar una compra, pero todavía dejaba preguntas sin resolver: dónde llegaría el pedido, cuándo y con qué productos, cuánto terminaría pagando la persona y qué beneficios podía usar. A esas fricciones se sumaba una nueva necesidad de negocio: incorporar propinas para los repartidores.</p>
+      <p class="ex-intro">Antes de confirmar un pedido, el checkout anterior dejaba dudas sin resolver, y el negocio necesitaba sumar propinas. Explora cada fricción y la evidencia que la respalda.</p>
 
-      <div class="anatomy anatomy--phone">
-        <figure class="asis-phone">
-          <div class="asis-screen">
+      <div class="explorer" data-explorer>
+        <figure class="ex-visual">
+          <div class="ex-phone">
             <img src="/assets/img/monchis-checkout-anterior.webp" alt="Checkout anterior de Monchis, «Pagar y pedir»: dirección arriba, detalle de costos, método de pago, cupones mostrados solo como montos, datos de facturación y botón Finalizar orden" width="947" height="2048" loading="lazy" decoding="async">
-            <span class="pin" style="left:99%;top:13.8%" aria-hidden="true">1</span>
-            <span class="pin" style="left:99%;top:27%" aria-hidden="true">3</span>
-            <span class="pin" style="left:99%;top:55.4%" aria-hidden="true">4</span>
+            <span class="ex-hl" data-for="1" style="left:8%;top:12%;width:84%;height:9.4%" aria-hidden="true"></span>
+            <span class="ex-hl" data-for="3" style="left:8%;top:21.6%;width:84%;height:16.6%" aria-hidden="true"></span>
+            <span class="ex-hl" data-for="4" style="left:8%;top:49.4%;width:85%;height:13.4%" aria-hidden="true"></span>
+            <button type="button" class="ex-pin" data-go="1" style="top:16.7%" aria-label="Ver fricción 1: dirección sin precisión">1</button>
+            <button type="button" class="ex-pin" data-go="3" style="top:30%" aria-label="Ver fricción 3: resumen de costos poco claro">3</button>
+            <button type="button" class="ex-pin" data-go="4" style="top:57.6%" aria-label="Ver fricción 4: cupones sin contexto">4</button>
           </div>
-          <figcaption class="fig-cap">Checkout anterior a la iniciativa.</figcaption>
+          <figcaption class="fig-cap ex-cap">Checkout anterior a la iniciativa. <span class="ex-absent-note">Lo que falta no se puede señalar: no existía en esta pantalla.</span></figcaption>
         </figure>
-        <div class="stack">
-          <p class="eyebrow">Fricciones del checkout anterior</p>
-          <p class="asis-legend"><span class="lg-on">Señalada en la pantalla</span><span class="lg-off">No existía en la pantalla</span></p>
-          <ol class="anatomy-notes asis-notes">
-            <li><h3>Dirección sin precisión</h3><p>No había mapa para confirmar el punto exacto ni espacio para indicaciones de entrega.</p></li>
-            <li class="is-absent"><h3>Información del pedido incompleta</h3><p>No se mostraba el detalle de los productos ni el tiempo estimado de entrega.</p></li>
-            <li><h3>Resumen de costos poco claro</h3><p>Los montos aparecían sin suficiente contexto para comprender los cobros.</p></li>
-            <li><h3>Cupones sin contexto</h3><p>Los descuentos se mostraban como montos, sin nombre ni condiciones visibles.</p></li>
-            <li class="is-absent"><h3>Sin opción de propina</h3><p>El usuario no podía agregar una propina para el repartidor.</p></li>
-          </ol>
+
+        <div class="ex-side">
+          <div class="ex-tabs" role="tablist" aria-label="Fricciones del checkout anterior">
+            <button type="button" role="tab" id="ex-tab-1" aria-controls="ex-p-1" aria-selected="true" data-go="1"><span>1</span>Dirección</button>
+            <button type="button" role="tab" id="ex-tab-2" aria-controls="ex-p-2" aria-selected="false" tabindex="-1" data-go="2" class="is-absent"><span>2</span>Pedido</button>
+            <button type="button" role="tab" id="ex-tab-3" aria-controls="ex-p-3" aria-selected="false" tabindex="-1" data-go="3"><span>3</span>Costos</button>
+            <button type="button" role="tab" id="ex-tab-4" aria-controls="ex-p-4" aria-selected="false" tabindex="-1" data-go="4"><span>4</span>Cupones</button>
+            <button type="button" role="tab" id="ex-tab-5" aria-controls="ex-p-5" aria-selected="false" tabindex="-1" data-go="5" class="is-absent"><span>5</span>Propinas</button>
+          </div>
+
+          <div class="ex-panels">
+            <section class="ex-panel" role="tabpanel" id="ex-p-1" aria-labelledby="ex-tab-1" tabindex="0">
+              <p class="ex-kicker">01 · Dirección sin precisión</p>
+              <h3>Una dirección guardada no siempre bastaba para encontrar a la persona</h3>
+              <div class="ex-ev">
+                <div class="ex-ev-text">
+                  <p>En Paraguay, muchas indicaciones de entrega se construyen con cruces y referencias del entorno. Cuando la información no alcanzaba, repartidor y cliente se coordinaban fuera de Monchis, con llamadas, WhatsApp y ubicaciones compartidas.</p>
+                  <dl class="ex-goals">
+                    <div><dt>5 %</dt><dd>Contact rate de CX por errores de dirección</dd></div>
+                    <div><dt>98 %</dt><dd>Entregas exitosas al primer intento</dd></div>
+                  </dl>
+                  <p class="ex-src">Objetivos definidos en el PRD de direcciones, no resultados. Contexto operativo, sin discovery formal.</p>
+                </div>
+                <figure class="ex-chat">
+                  <img src="/assets/img/monchis-whatsapp-ejemplo.webp" alt="Chat de WhatsApp entre repartidor y cliente, con datos anonimizados: una llamada, mensajes pidiendo la ubicación, un enlace de Google Maps y una foto difuminada de la fachada" width="849" height="1851" loading="lazy" decoding="async">
+                  <figcaption>Coordinación fuera de la app. Evidencia de contexto, datos anonimizados.</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="ex-panel" role="tabpanel" id="ex-p-2" aria-labelledby="ex-tab-2" tabindex="0">
+              <p class="ex-kicker">02 · Información del pedido incompleta <span class="ex-flag">No existía</span></p>
+              <h3>Antes de pagar, la persona necesitaba confirmar qué recibiría y cuándo</h3>
+              <p>El checkout anterior no mostraba el detalle de los productos ni el tiempo estimado de entrega. La única forma de revisarlo era salir del último paso.</p>
+              <p class="ex-src">Checkout anterior y PRD de checkout.</p>
+            </section>
+
+            <section class="ex-panel" role="tabpanel" id="ex-p-3" aria-labelledby="ex-tab-3" tabindex="0">
+              <p class="ex-kicker">03 · Resumen de costos poco claro</p>
+              <h3>El checkout mostraba importes, pero no ofrecía suficiente contexto para comprender todos los cobros</h3>
+              <p>Subtotal, delivery y costo de servicio aparecían como cifras sueltas, sin explicar qué incluía cada una ni cómo se llegaba al total.</p>
+              <p class="ex-src">Checkout anterior y PRD de checkout, que pedía transparencia sobre productos, envío y beneficios.</p>
+            </section>
+
+            <section class="ex-panel" role="tabpanel" id="ex-p-4" aria-labelledby="ex-tab-4" tabindex="0">
+              <p class="ex-kicker">04 · Cupones sin contexto</p>
+              <h3>El descuento existía, pero su valor y sus condiciones no siempre eran comprensibles</h3>
+              <ul class="ex-list">
+                <li>La configuración del beneficio no era visible desde el inicio.</li>
+                <li>Las restricciones, como compra mínima o comercios participantes, se descubrían tarde, a veces recién en el checkout.</li>
+                <li>Algunos nombres de cupones eran técnicos y difíciles de interpretar.</li>
+              </ul>
+              <p class="ex-src">Warnings del discovery de Service Design sobre el módulo de cupones para Vendors, usado como insumo para la experiencia de compra.</p>
+            </section>
+
+            <section class="ex-panel" role="tabpanel" id="ex-p-5" aria-labelledby="ex-tab-5" tabindex="0">
+              <p class="ex-kicker">05 · Sin opción de propina <span class="ex-flag">No existía</span></p>
+              <h3>El negocio necesitaba incorporar propinas sin agregar fricción ni comprometer la autonomía del usuario</h3>
+              <p>La propina buscaba fortalecer la propuesta de valor para los repartidores. Era una decisión nueva en una pantalla que ya tenía mucha información.</p>
+              <p class="ex-src">PRD de propinas. La evolución de la propuesta se cuenta en Validación e impacto.</p>
+            </section>
+          </div>
+
+          <div class="ex-nav" aria-hidden="true">
+            <button type="button" class="ex-prev" tabindex="-1">← Anterior</button>
+            <span class="ex-count"><b>1</b> de 5</span>
+            <button type="button" class="ex-next" tabindex="-1">Siguiente →</button>
+          </div>
         </div>
       </div>
 
-      <h3 class="sub-title">Por qué <em>importaban</em></h3>
-      <div class="ev-main">
-        <div class="ev-text">
-          <p class="ev-topic">Direcciones</p>
-          <h3>Una dirección guardada no siempre bastaba para encontrar a la persona</h3>
-          <p>En Paraguay, muchas indicaciones de entrega se construyen con cruces y referencias del entorno. Cuando la información era imprecisa, repartidor y cliente se coordinaban fuera de Monchis, con llamadas, WhatsApp, fotos y ubicaciones compartidas. Eso se traducía en contactos a soporte, entregas fallidas, cancelaciones y costos.</p>
-          <div class="addr-goals">
-            <p class="addr-goals-label">Objetivos definidos en el PRD</p>
-            <dl>
-              <div><dt>5 %</dt><dd>Contact rate de CX por errores de dirección</dd></div>
-              <div><dt>98 %</dt><dd>Entregas exitosas al primer intento</dd></div>
-            </dl>
-            <p class="addr-goals-note">Metas de la iniciativa de direcciones, no resultados.</p>
-          </div>
-          <p class="ev-src">PRD de rediseño de direcciones y contexto operativo, sin discovery formal. Participé en el análisis del contexto.</p>
-        </div>
-        <figure class="addr-chat">
-          <img src="/assets/img/monchis-whatsapp-ejemplo.webp" alt="Chat de WhatsApp entre repartidor y cliente, con datos anonimizados: una llamada, mensajes pidiendo la ubicación, un enlace de Google Maps y una foto difuminada de la fachada" width="849" height="1851" loading="lazy" decoding="async">
-          <figcaption>La coordinación seguía fuera de Monchis. Evidencia de contexto, datos anonimizados.</figcaption>
-        </figure>
+      <div class="ex-close">
+        <p>No se trataba de sumar toda esta información al checkout, sino de decidir qué necesitaba ver y hacer cada persona para <em>completar su compra con confianza</em>.</p>
+        <a class="link-arrow" href="#decisiones">Explorar las decisiones de diseño</a>
       </div>
-      <ol class="research-list tensions evidence-trio" aria-label="Más evidencia">
-        <li><p class="eyebrow">Pedido y pago</p><p>No era fácil confirmar qué incluía el pedido, cuándo llegaría ni cómo se componía el total: información esencial para pagar con confianza.</p><p class="ev-src">Checkout anterior y PRD de checkout.</p></li>
-        <li><p class="eyebrow">Cupones</p><p>Las condiciones eran poco visibles, los nombres difíciles de interpretar y algunas restricciones se descubrían recién en el checkout.</p><p class="ev-src">Discovery de Service Design para Vendors, usado como insumo.</p></li>
-        <li><p class="eyebrow">Propinas</p><p>El negocio necesitaba sumar propinas para los repartidores: una decisión nueva en una pantalla que ya tenía mucha información.</p><p class="ev-src">PRD de propinas; luego, discovery de Service Design.</p></li>
-      </ol>
-
-      <p class="statement ctx-question"><span class="eyebrow">El desafío</span>No se trataba de sumar toda esta información al checkout, sino de decidir qué necesitaba ver y hacer cada persona para <em>completar su compra con confianza</em>.</p>
     </section>
 
     <section class="chapter" id="decisiones" data-title="De la evidencia a las decisiones">
