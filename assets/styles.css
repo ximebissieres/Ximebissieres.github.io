@@ -2015,3 +2015,10 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .tip-cmp .d-status::before { display: inline-block; vertical-align: middle; margin-right: 8px; }
 .tip-cmp .d-status b { margin-right: 6px; }
 @media (max-width: 599px) { .tip-cmp-screens { gap: 22px; } .tip-cmp-screens .tv-phone { width: 37vw; } }
+
+/* Monchis · 02: criterios apilados (texto arriba, evidencia a todo el ancho) */
+@media (min-width: 900px) { .crit.crit--stack { grid-template-columns: 1fr; gap: 20px; } }
+.crit--stack .crit-text { max-width: 44rem; }
+.crit-visual.is-three { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+@media (max-width: 699px) { .crit-visual.is-three { grid-template-columns: 1fr; max-width: 22rem; margin-inline: auto; } }
+.crit.tip-cmp { border-top: 1px solid var(--line); padding-top: clamp(24px, 3vw, 36px); gap: 20px; }
