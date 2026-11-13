@@ -95,11 +95,26 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
         <li>
           <div class="f-meta">
             <p class="f-topic"><span>01</span> Direcciones</p>
-            <dl><div><dt>Fuente</dt><dd>Service Design + Operaciones</dd></div><div><dt>Participación</dt><dd>Liderado por Service Design. Participé en la comprensión del contexto operativo y el análisis del problema.</dd></div></dl>
+            <dl><div><dt>Fuente</dt><dd>PRD de rediseño de direcciones + contexto operativo</dd></div><div><dt>Participación</dt><dd>Participé en la comprensión del contexto operativo y el análisis del problema.</dd></div></dl>
           </div>
           <div class="f-body">
-            <h3>Una dirección guardada no garantizaba una entrega precisa</h3>
-            <p>Los repartidores tenían dificultades para encontrar a los usuarios y las ubicaciones imprecisas generaban reclamos y gestiones adicionales.</p>
+            <h3>Una dirección guardada no siempre era una dirección fácil de encontrar</h3>
+            <p>En Paraguay, las referencias y los cruces de calles forman parte de muchas indicaciones de entrega. Cuando la información no alcanzaba, encontrar al usuario podía requerir llamadas, mensajes y ubicaciones compartidas. El PRD identificaba los errores de dirección como una fuente de contactos a soporte, entregas fallidas y costos operativos.</p>
+            <div class="addr-evidence">
+              <figure class="addr-chat">
+                <img src="/assets/img/monchis-whatsapp-ejemplo.webp" alt="Chat de WhatsApp entre repartidor y cliente, con datos anonimizados: una llamada, mensajes pidiendo la ubicación, un enlace de Google Maps y una foto difuminada de la fachada" width="849" height="1851" loading="lazy" decoding="async">
+                <figcaption>Cuando la dirección no era suficiente, la coordinación continuaba fuera de Monchis con mensajes, referencias y ubicaciones compartidas. Datos anonimizados.</figcaption>
+              </figure>
+              <div class="addr-goals">
+                <p class="addr-goals-label">Objetivos definidos en el PRD</p>
+                <dl>
+                  <div><dt>5 %</dt><dd>Contact rate de CX por errores de dirección, como mínimo histórico</dd></div>
+                  <div><dt>98 %</dt><dd>Entregas exitosas al primer intento, sin reintentos por dirección</dd></div>
+                  <div><dt>−30 %</dt><dd>Tiempo de carga o selección de la dirección</dd></div>
+                </dl>
+                <p class="addr-goals-note">Son metas de la iniciativa de direcciones, no resultados.</p>
+              </div>
+            </div>
             <p class="f-question"><span>Pregunta que abrió</span>¿Cómo ayudar a confirmar el destino antes de pagar?</p>
           </div>
         </li>
@@ -155,21 +170,21 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
         <div class="decision">
           <span class="d-num" aria-hidden="true">02</span>
-          <div class="d-head"><p class="eyebrow">Direcciones</p><h3>Corregir la dirección <em>sin comprometer la cobertura</em></h3></div>
+          <div class="d-head"><p class="eyebrow">Direcciones</p><h3>Confirmar el destino <em>sin volver a empezar</em></h3></div>
           <div class="d-body">
-            <p>El problema no terminaba al guardar una dirección: había que ayudar a confirmar que el pedido llegaría al lugar correcto.</p>
+            <p>El checkout era la última oportunidad para comprobar que el pedido llegaría al lugar correcto: un error ahí se convertía en un problema operativo después de la compra. Decidimos dar visibilidad a la dirección y permitir correcciones relevantes, pero sin transformar el último paso en una nueva etapa de configuración, el mismo criterio que guió todo el checkout.</p>
+            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Modificar libremente la dirección en el último paso</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Corregir lo crítico sin volver a configurar el pedido</p></div></div>
             <div class="ctx-goals">
               <p class="eyebrow">Qué decidimos</p>
               <ul>
-                <li>Dar visibilidad a la ubicación seleccionada.</li>
-                <li>Permitir revisar la dirección en un mapa.</li>
-                <li>Facilitar ajustes acotados del pin.</li>
-                <li>Mantener las restricciones de cobertura.</li>
-                <li>Permitir cambios de dirección cuando correspondiera.</li>
-                <li>Comunicar con claridad errores y restricciones.</li>
+                <li><b>Dirección visible.</b> Saber dónde se recibe el pedido antes de confirmarlo.</li>
+                <li><b>Mapa y ajuste del pin.</b> Revisar el punto de entrega y corregirlo sin cambiar toda la dirección.</li>
+                <li><b>Cambio con cobertura.</b> Elegir otra dirección válida, sin avanzar con destinos fuera de la zona del comercio.</li>
+                <li><b>Alertas contextuales.</b> Avisar si la ubicación actual no coincide con la dirección, sabiendo que el pedido puede ser para otra persona.</li>
+                <li><b>Restricciones explicadas.</b> Decir por qué una dirección sin cobertura no puede usarse. En los mensajes, definí que los avisos pregunten en lugar de acusar.</li>
               </ul>
             </div>
-            <p>Para el pin definimos un radio máximo de ajuste de 50 metros, que se reduce cerca del límite de cobertura del comercio. En los mensajes, definí que los avisos pregunten en lugar de acusar y expliquen siempre el motivo de una restricción.</p>
+            <p>El ajuste del pin tiene un radio máximo de 50 metros, que se reduce cerca del límite de cobertura del comercio.</p>
             <figure class="fig fig-secondary">
               <div class="card outline diagram">
                 <svg viewBox="0 0 600 300" role="img" aria-labelledby="radio-t">
@@ -192,7 +207,6 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
               </div>
               <figcaption class="fig-cap"><b>Esquema ilustrativo</b> de la regla del radio dinámico, no a escala.</figcaption>
             </figure>
-            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Mover el pin libremente</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Corregir errores relevantes sin invalidar el pedido</p></div></div>
           </div>
         </div>
 
