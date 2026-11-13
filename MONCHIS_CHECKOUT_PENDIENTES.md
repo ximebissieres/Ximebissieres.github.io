@@ -56,6 +56,12 @@ Conectado con decisiones verificables en las pantallas:
 Fuera del alcance del checkout: cupones agnósticos al método de pago y deselección al cambiar de método (no visible en las pantallas), notificaciones push, Retool/Admin 2, edición de cupones activos, topes de presupuesto, reportes y conexión con Braze.
 Pendiente: el entregable de entrevistas con usuarios que Service mencionaba (no recibido); pantalla de detalle de condiciones (ícono «!» sin pantalla).
 
+## Direcciones · pantallas de Figma incorporadas (sección 03)
+
+Publicadas sin modificar: punto de entrega dentro del límite, punto de entrega fuera del límite («Te alejaste del punto de entrega», Cambiar deshabilitado) y «Mis direcciones» (solo direcciones con cobertura).
+Afirmaciones que vienen de las reglas del flujo y no se ven en las capturas: el máximo de 50 m y su reducción cerca del límite de cobertura, el orden por cercanía al comercio y el componente de aviso compartido con la Home. Confirmar con la especificación o el video del prototipo.
+El esquema ilustrativo del radio se retiró del caso (lo reemplazan las pantallas). Estado de producción de estos comportamientos: sin confirmar.
+
 ## Prioridad ALTA
 
 | # | Pendiente | Qué necesito | Sección | Qué permitiría afirmar | Dónde buscarlo |

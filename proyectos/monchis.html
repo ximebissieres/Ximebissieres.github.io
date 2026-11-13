@@ -173,40 +173,39 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
           <div class="d-head"><p class="eyebrow">Direcciones</p><h3>Confirmar el destino <em>sin volver a empezar</em></h3></div>
           <div class="d-body">
             <p>El checkout era la última oportunidad para comprobar que el pedido llegaría al lugar correcto: un error ahí se convertía en un problema operativo después de la compra. Decidimos dar visibilidad a la dirección y permitir correcciones relevantes, pero sin transformar el último paso en una nueva etapa de configuración, el mismo criterio que guió todo el checkout.</p>
-            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Modificar libremente la dirección en el último paso</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Corregir lo crítico sin volver a configurar el pedido</p></div></div>
-            <div class="ctx-goals">
-              <p class="eyebrow">Qué decidimos</p>
-              <ul>
-                <li><b>Dirección visible.</b> Saber dónde se recibe el pedido antes de confirmarlo.</li>
-                <li><b>Mapa y ajuste del pin.</b> Revisar el punto de entrega y corregirlo sin cambiar toda la dirección.</li>
-                <li><b>Cambio con cobertura.</b> Elegir otra dirección válida, sin avanzar con destinos fuera de la zona del comercio.</li>
-                <li><b>Alertas contextuales.</b> Avisar si la ubicación actual no coincide con la dirección, sabiendo que el pedido puede ser para otra persona.</li>
-                <li><b>Restricciones explicadas.</b> Decir por qué una dirección sin cobertura no puede usarse. En los mensajes, definí que los avisos pregunten en lugar de acusar.</li>
-              </ul>
-            </div>
-            <p>El ajuste del pin tiene un radio máximo de 50 metros, que se reduce cerca del límite de cobertura del comercio.</p>
-            <figure class="fig fig-secondary">
-              <div class="card outline diagram">
-                <svg viewBox="0 0 600 300" role="img" aria-labelledby="radio-t">
-                  <title id="radio-t">Esquema: el radio de 50 metros se reduce cerca del límite de cobertura</title>
-                  <rect x="0" y="0" width="600" height="300" style="fill:#FFFCFA"/>
-                  <path d="M440 -10 A 330 330 0 0 1 440 310 L 620 310 L 620 -10 Z" style="fill:#F3E4E7;fill-opacity:.6"/>
-                  <path d="M440 -10 A 330 330 0 0 1 440 310" style="fill:none;stroke:#A66B7B;stroke-width:1.5;stroke-dasharray:6 7"/>
-                  <text x="580" y="34" text-anchor="end" style="font:500 13px 'Inter',sans-serif;fill:#8E5767">Fuera de cobertura</text>
-                  <text x="440" y="290" text-anchor="end" style="font:500 13px 'Inter',sans-serif;fill:#8E5767">Límite de cobertura del comercio</text>
-                  <circle cx="170" cy="150" r="70" style="fill:#D8A7B1;fill-opacity:.4;stroke:#A66B7B;stroke-width:1.5"/>
-                  <circle cx="170" cy="150" r="5" style="fill:#29262B"/>
-                  <line x1="170" y1="150" x2="240" y2="150" style="stroke:#29262B;stroke-width:1"/>
-                  <text x="205" y="142" text-anchor="middle" style="font:500 13px 'Inter',sans-serif;fill:#29262B">50 m</text>
-                  <text x="170" y="250" text-anchor="middle" style="font:400 14px 'Inter',sans-serif;fill:#29262B">Radio máximo</text>
-                  <circle cx="420" cy="150" r="32" style="fill:#D8A7B1;fill-opacity:.4;stroke:#A66B7B;stroke-width:1.5"/>
-                  <circle cx="420" cy="150" r="5" style="fill:#29262B"/>
-                  <text x="380" y="214" text-anchor="middle" style="font:400 14px 'Inter',sans-serif;fill:#29262B">Cerca del límite,</text>
-                  <text x="380" y="232" text-anchor="middle" style="font:400 14px 'Inter',sans-serif;fill:#29262B">el radio se reduce</text>
-                </svg>
+            <div class="dir-fix">
+              <h4 class="dir-title">Dos formas de corregir, <em>sin poner en riesgo la entrega</em></h4>
+              <p>Distinguimos entre ajustar el punto exacto de entrega y cambiar la dirección del pedido. Cada acción tiene reglas diferentes, pero ambas permiten corregir información relevante sin comprometer la cobertura ni interrumpir la compra.</p>
+
+              <div class="dir-step">
+                <p class="dir-label"><span>A</span> Ajustar el punto de entrega</p>
+                <div class="coupon-pair dir-pair">
+                  <figure><div class="cp-screen"><img src="/assets/img/monchis-direcciones-pin-inicial.webp" alt="Pantalla «Punto de entrega»: mapa con el pin centrado, el globo «Tu pedido va a llegar a» con la dirección, el aviso «Movete en el mapa para cambiar tu punto de entrega» y el botón Cambiar habilitado" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Dentro del límite, el globo confirma a dónde llegará el pedido y «Cambiar» se habilita.</figcaption></figure>
+                  <figure><div class="cp-screen"><img src="/assets/img/monchis-direcciones-pin-ajustado.webp" alt="Pantalla «Punto de entrega» con el pin alejado: el aviso «Te alejaste del punto de entrega. Mové el mapa a tu dirección para continuar» y el botón Cambiar deshabilitado" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Si el punto se aleja demasiado, el aviso pide volver y «Cambiar» se desactiva.</figcaption></figure>
+                </div>
+                <ul class="dir-notes">
+                  <li>El pin queda centrado mientras la persona desplaza el mapa para revisar el punto exacto.</li>
+                  <li>Mover el pin no equivale a cambiar la dirección guardada: corrige el punto, no el destino.</li>
+                  <li>El ajuste tiene un máximo de 50 metros, que se reduce cerca del límite de cobertura del comercio.</li>
+                </ul>
               </div>
-              <figcaption class="fig-cap"><b>Esquema ilustrativo</b> de la regla del radio dinámico, no a escala.</figcaption>
-            </figure>
+
+              <div class="dir-step dir-step--split">
+                <figure><div class="cp-screen"><img src="/assets/img/monchis-direcciones-cambiar.webp" alt="Pantalla «Mis direcciones» con el aviso «Direcciones disponibles: solo podés elegir entre tus direcciones guardadas con cobertura para este local» y cuatro direcciones guardadas para seleccionar" width="923" height="2000" loading="lazy" decoding="async"></div></figure>
+                <div class="stack">
+                  <p class="dir-label"><span>B</span> Cambiar de dirección</p>
+                  <ul class="dir-notes">
+                    <li>Solo aparecen las direcciones guardadas que tienen cobertura para el comercio del pedido.</li>
+                    <li>Se ordenan por cercanía al comercio.</li>
+                    <li>La persona elige una alternativa válida sin volver a etapas anteriores de la compra.</li>
+                    <li>El aviso usa un componente compartido con la Home.</li>
+                  </ul>
+                  <p class="dir-aside">No es una edición libre de la dirección: es elegir otro destino que el comercio puede atender.</p>
+                </div>
+              </div>
+            </div>
+            <p>Si la ubicación actual no coincide con la dirección elegida, un aviso lo señala sin bloquear, porque el pedido puede ser para otra persona. En los mensajes, definí que los avisos pregunten en lugar de acusar y expliquen siempre el motivo de una restricción.</p>
+            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Cambios que invaliden el pedido</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Libertad para corregir lo necesario</p></div></div>
           </div>
         </div>
 
