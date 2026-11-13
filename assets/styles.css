@@ -1968,3 +1968,50 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .learn-next { display: grid; gap: 12px; max-width: 44rem; }
 .learn-next p { line-height: 1.6; color: var(--muted); text-wrap: pretty; }
 .learn-next .learn-close { margin-top: 6px; font-family: var(--display); font-weight: var(--w-semibold); font-size: clamp(1.05rem, .95rem + .4vw, 1.25rem); color: var(--ink); }
+
+/* Monchis · 02 Propinas: antes y después interactivo */
+.tip-cmp { display: grid; gap: 18px; padding-top: clamp(24px, 3vw, 36px); border-top: 1px solid var(--line); }
+.tip-cmp-head { display: grid; gap: 8px; max-width: 44rem; }
+.tip-cmp-head .sub-title { margin-top: 0; }
+.tip-cmp-head p { font-size: .95rem; line-height: 1.55; color: var(--muted); }
+.tip-cmp-body { display: grid; gap: 24px; align-items: center; padding: clamp(16px, 2.4vw, 28px); border-radius: 24px; background: var(--bg-3); }
+@media (min-width: 980px) { .tip-cmp-body { grid-template-columns: auto minmax(0, 1fr); gap: 36px; } }
+.tip-cmp-screens { display: grid; grid-template-columns: repeat(2, auto); gap: clamp(14px, 3vw, 30px); justify-content: center; }
+.tip-cmp-screens figure { margin: 0; display: grid; gap: 10px; justify-items: center; }
+.tip-cmp-screens .tv-label { min-height: 0; }
+.tip-cmp-screens .tv-label.is-final { color: var(--ink); }
+.tip-cmp-screens .tv-phone { width: min(15rem, calc((100svh - 260px) * 923 / 2000)); min-width: 9.5rem; max-width: none; }
+.cmp-pin { position: absolute; transform: translate(-50%, -50%); width: 28px; height: 28px; border-radius: 50%; border: 0; display: grid; place-items: center; cursor: pointer;
+  background: var(--surface); color: var(--ink); font: var(--w-semibold) .78rem/1 var(--sans); box-shadow: 0 0 0 1.5px var(--line), 0 4px 10px -4px rgba(41, 38, 43, .3); transition: background-color .25s var(--ease), color .25s var(--ease), transform .25s var(--ease); }
+.cmp-pin.is-on { background: var(--rose); color: #fff; box-shadow: 0 0 0 4px color-mix(in srgb, var(--blush) 60%, var(--bg)); transform: translate(-50%, -50%) scale(1.08); }
+.cmp-pin:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+.tip-cmp-side { display: grid; gap: 14px; align-content: center; min-width: 0; }
+.tip-cmp-tabs { display: grid; gap: 4px; }
+.no-js .tip-cmp-tabs { display: none; }
+.tip-cmp-tabs [role="tab"] { display: flex; align-items: center; gap: 10px; text-align: left; padding: 9px 12px; border: 0; border-radius: 12px; background: transparent; font: var(--w-medium) .92rem/1.3 var(--sans); color: var(--muted); cursor: pointer; transition: background-color .25s var(--ease), color .25s var(--ease); }
+.tip-cmp-tabs [role="tab"] span { font-size: .72rem; font-weight: var(--w-semibold); color: var(--rose-ink); font-variant-numeric: tabular-nums; }
+.tip-cmp-tabs [role="tab"][aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+.tip-cmp-tabs [role="tab"]:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.tip-cmp-panels { display: grid; }
+.no-js .tip-cmp-panels { gap: 14px; }
+.tip-cmp-panel { display: grid; gap: 8px; padding: 14px 16px; border-radius: 16px; background: var(--surface); }
+.tip-cmp-panel[hidden] { display: none; }
+.tip-cmp.is-ready .tip-cmp-panel:not([hidden]) { animation: ex-in .3s var(--ease) both; }
+.tip-cmp-panel p, .tip-cmp-panel li { font-size: .92rem; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+.tip-cmp-panel b { color: var(--ink); font-weight: var(--w-semibold); }
+.tip-cmp-panel li::marker { color: var(--rose-ink); font-weight: var(--w-semibold); }
+.tip-cmp .d-status { font-size: .8rem; }
+@media (max-width: 979px) {
+  .tip-cmp-tabs { display: flex; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .tip-cmp-tabs [role="tab"] { flex: 0 0 auto; white-space: nowrap; }
+}
+@media (max-width: 599px) {
+  .tip-cmp-screens .tv-phone { width: 42vw; min-width: 0; padding: 5px; border-radius: 24px; }
+  .tip-cmp-screens .tv-phone img { border-radius: 19px; }
+  .cmp-pin { width: 24px; height: 24px; font-size: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) { .tip-cmp.is-ready .tip-cmp-panel:not([hidden]) { animation: none; } }
+.tip-cmp .d-status { display: block; line-height: 1.5; }
+.tip-cmp .d-status::before { display: inline-block; vertical-align: middle; margin-right: 8px; }
+.tip-cmp .d-status b { margin-right: 6px; }
+@media (max-width: 599px) { .tip-cmp-screens { gap: 22px; } .tip-cmp-screens .tv-phone { width: 37vw; } }

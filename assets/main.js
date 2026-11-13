@@ -325,6 +325,8 @@
     function show(i, focus) {
       cur = (i + tabs.length) % tabs.length;
       tabs.forEach(function (t, j) { var on = j === cur; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; panels[j].hidden = !on; });
+      var k = tabs[cur].getAttribute('data-k');
+      if (k) box.querySelectorAll('.cmp-pin').forEach(function (pn) { var on = pn.getAttribute('data-k') === k; pn.classList.toggle('is-on', on); pn.setAttribute('aria-pressed', String(on)); });
       if (focus) tabs[cur].focus();
     }
     tabs.forEach(function (t, j) {
@@ -335,6 +337,9 @@
         else if (e.key === 'Home') { e.preventDefault(); show(0, true); }
         else if (e.key === 'End') { e.preventDefault(); show(tabs.length - 1, true); }
       });
+    });
+    box.querySelectorAll('.cmp-pin').forEach(function (pn) {
+      pn.addEventListener('click', function () { for (var j = 0; j < tabs.length; j++) if (tabs[j].getAttribute('data-k') === pn.getAttribute('data-k')) show(j); });
     });
     show(0);
   });
