@@ -121,113 +121,46 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
     <section class="chapter" id="decisiones" data-title="De la evidencia a las decisiones">
       <header class="chapter-head"><p class="eyebrow">De la evidencia a las decisiones</p><h2 class="chapter-title">Cuatro decisiones <em>para el nuevo checkout</em></h2></header>
-      <div class="decisions decisions--compact">
-
-        <div class="decision">
-          <span class="d-num" aria-hidden="true">01</span>
-          <div class="d-head"><p class="eyebrow">Arquitectura</p><h3>Priorizar la compra, <em>no multiplicar decisiones</em></h3></div>
-          <div class="d-body">
-            <p>El checkout debía adaptarse a envíos, retiros, pedidos inmediatos y agendados sin convertirse en una nueva etapa de configuración. Propuse proteger su propósito: revisar lo relevante, corregir solo lo crítico y finalizar la compra. Lo discutimos y consensuamos con los Product Managers.</p>
-            <div class="anatomy anatomy--phone">
-              <figure class="asis-phone">
-                <div class="asis-screen">
-                  <img src="/assets/img/monchis-checkout-envio.webp" alt="Checkout rediseñado con envío a domicilio: mapa y dirección arriba, tiempo estimado, detalle del pedido, método de pago y footer fijo con el total y el botón Finalizar pedido" width="923" height="2000" loading="lazy" decoding="async">
-                  <span class="pin" style="left:99%;top:37%" aria-hidden="true">1</span>
-                  <span class="pin" style="left:99%;top:55%" aria-hidden="true">2</span>
-                  <span class="pin" style="left:99%;top:67.5%" aria-hidden="true">3</span>
-                  <span class="pin" style="left:0;top:91.5%" aria-hidden="true">4</span>
-                </div>
-                <figcaption class="fig-cap">Checkout con envío a domicilio.</figcaption>
-              </figure>
-              <div class="stack">
-                <ol class="anatomy-notes">
-                  <li><h3>La entrega, primero</h3><p>Dirección y punto exacto antes que cualquier otra cosa.</p></li>
-                  <li><h3>Cuándo y qué</h3><p>Tiempo estimado y detalle del pedido a un toque.</p></li>
-                  <li><h3>Pago y beneficios juntos</h3><p>Método de pago y cupones en un mismo bloque.</p></li>
-                  <li><h3>Footer fijo</h3><p>Total y «Finalizar pedido» visibles durante todo el scroll.</p></li>
-                </ol>
-                <p class="dir-aside">La jerarquía cambia con el escenario: en retiro se muestra el local y el tiempo de retiro; en pedidos agendados, la franja programada.</p>
-              </div>
-            </div>
-            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Reconfigurar la compra en el último paso</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Correcciones relevantes sin perder el foco en pagar</p></div></div>
+      <div class="sols">
+        <article class="sol" data-switch>
+          <div class="sol-text">
+            <p class="sol-eyebrow"><span>01</span> Arquitectura</p>
+            <h3>Priorizar la compra, <em>no multiplicar decisiones</em></h3>
+            <p class="sol-idea">Propuse que el checkout sirviera para revisar, corregir solo lo crítico y pagar; lo consensuamos con los PM. La información cambia según el escenario.</p>
+            <p class="sol-trade"><span>Cedimos</span> Reconfigurar la compra en el último paso<br><span>Ganamos</span> Foco en pagar en cualquier escenario</p>
           </div>
-        </div>
+          <div class="sol-stage"><div class="sol-tabs" role="tablist" aria-label="arq"><button type="button" role="tab" id="arq-t0" aria-controls="arq-p0" aria-selected="true">Envío a domicilio</button><button type="button" role="tab" id="arq-t1" aria-controls="arq-p1" aria-selected="false" tabindex="-1">Retiro en el local</button><button type="button" role="tab" id="arq-t2" aria-controls="arq-p2" aria-selected="false" tabindex="-1">Pedido agendado</button></div><div class="sol-panels"><div class="sol-panel" role="tabpanel" id="arq-p0" aria-labelledby="arq-t0"><div class="sol-phone"><img src="/assets/img/monchis-checkout-envio.webp" alt="Checkout con envío a domicilio: mapa y dirección, «Recibís en 30 - 60 minutos», detalle del pedido, método de pago y footer fijo con el total y Finalizar pedido" width="923" height="2000" loading="lazy" decoding="async"><span class="pin" style="left:99%;top:38%" aria-hidden="true">1</span><span class="pin" style="left:99%;top:47%" aria-hidden="true">2</span><span class="pin" style="left:0;top:91.5%" aria-hidden="true">3</span></div><ol class="sol-notes"><li><b>Dirección y punto exacto</b> primero, con mapa.</li><li><b>Cuándo llega</b> tiempo estimado de entrega.</li><li><b>Footer fijo</b> total y «Finalizar pedido» siempre visibles.</li></ol></div><div class="sol-panel" role="tabpanel" id="arq-p1" aria-labelledby="arq-t1"><div class="sol-phone"><img src="/assets/img/monchis-checkout-retiro.webp" alt="Checkout con retiro en el local: ubicación del comercio, aviso «Recordá retirar tu pedido cuando esté listo», «Retirá tu pedido en 20 minutos» y footer fijo" width="923" height="2000" loading="lazy" decoding="async"><span class="pin" style="left:99%;top:43.5%" aria-hidden="true">1</span><span class="pin" style="left:99%;top:50%" aria-hidden="true">2</span><span class="pin" style="left:0;top:91.5%" aria-hidden="true">3</span></div><ol class="sol-notes"><li><b>Aviso de retiro</b> en lugar de una dirección de entrega.</li><li><b>Tiempo y distancia</b> al local, sin instrucciones para el repartidor.</li><li><b>Footer fijo</b> el mismo en todos los escenarios.</li></ol></div><div class="sol-panel" role="tabpanel" id="arq-p2" aria-labelledby="arq-t2"><div class="sol-phone"><img src="/assets/img/monchis-checkout-agendado.webp" alt="Checkout con pedido agendado: dirección, «Programado para el lunes 18 de octubre, 8:00 - 9:00 h», detalle del pedido y footer fijo" width="923" height="2000" loading="lazy" decoding="async"><span class="pin" style="left:99%;top:37%" aria-hidden="true">1</span><span class="pin" style="left:99%;top:48%" aria-hidden="true">2</span><span class="pin" style="left:0;top:91.5%" aria-hidden="true">3</span></div><ol class="sol-notes"><li><b>Dirección de entrega</b> igual que en un envío.</li><li><b>Franja programada</b> reemplaza el tiempo estimado.</li><li><b>Footer fijo</b> el mismo en todos los escenarios.</li></ol></div></div></div>
+        </article>
 
-        <div class="decision">
-          <span class="d-num" aria-hidden="true">02</span>
-          <div class="d-head"><p class="eyebrow">Direcciones</p><h3>Confirmar el destino <em>sin volver a empezar</em></h3></div>
-          <div class="d-body">
-            <p>El checkout era la última oportunidad para evitar que una dirección incorrecta se volviera un problema después de pagar. Pero cambiar libremente los datos podía invalidar la cobertura o sacar a la persona del flujo. Por eso separamos dos formas de corregir.</p>
-            <div class="dir-step">
-              <p class="dir-label"><span>A</span> Ajustar el punto exacto</p>
-                <div class="coupon-pair dir-pair">
-                  <figure><div class="cp-screen"><img src="/assets/img/monchis-direcciones-pin-inicial.webp" alt="Pantalla «Punto de entrega»: mapa con el pin centrado, el globo «Tu pedido va a llegar a» con la dirección, el aviso «Movete en el mapa para cambiar tu punto de entrega» y el botón Cambiar habilitado" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Dentro del límite, el globo confirma a dónde llegará el pedido y «Cambiar» se habilita.</figcaption></figure>
-                  <figure><div class="cp-screen"><img src="/assets/img/monchis-direcciones-pin-ajustado.webp" alt="Pantalla «Punto de entrega» con el pin alejado: el aviso «Te alejaste del punto de entrega. Mové el mapa a tu dirección para continuar» y el botón Cambiar deshabilitado" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Si el punto se aleja demasiado, el aviso pide volver y «Cambiar» se desactiva.</figcaption></figure>
-                </div>
-              <ul class="dir-notes">
-                <li>El pin queda centrado mientras la persona mueve el mapa; corrige el punto, no la dirección guardada.</li>
-                <li>El movimiento está acotado por reglas de cobertura.</li>
-              </ul>
-            </div>
-            <div class="dir-step dir-step--split">
-                              <figure><div class="cp-screen"><img src="/assets/img/monchis-direcciones-cambiar.webp" alt="Pantalla «Mis direcciones» con el aviso «Direcciones disponibles: solo podés elegir entre tus direcciones guardadas con cobertura para este local» y cuatro direcciones guardadas para seleccionar" width="923" height="2000" loading="lazy" decoding="async"></div></figure>
-              <div class="stack">
-                <p class="dir-label"><span>B</span> Cambiar de dirección</p>
-                <ul class="dir-notes">
-                  <li>Solo aparecen direcciones guardadas con cobertura para el comercio.</li>
-                  <li>Se ordenan por cercanía.</li>
-                  <li>La persona sigue dentro del proceso de compra.</li>
-                </ul>
-                <p class="dir-aside">En los avisos, definí que pregunten en lugar de acusar y expliquen el motivo de cada restricción.</p>
-              </div>
-            </div>
-            <div class="tradeoff"><div class="give"><span class="eyebrow">Cedimos</span><p>Cambios que pongan en riesgo la entrega</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Ganamos</span><p>Control para corregir lo necesario</p></div></div>
+        <article class="sol sol--wide" data-switch>
+          <div class="sol-text">
+            <p class="sol-eyebrow"><span>02</span> Direcciones</p>
+            <h3>Confirmar el destino <em>sin volver a empezar</em></h3>
+            <p class="sol-idea">Separamos dos formas de corregir: ajustar el punto exacto o elegir otra dirección guardada. En los avisos, definí que pregunten en lugar de acusar.</p>
+            <p class="sol-trade"><span>Cedimos</span> Cambios que pongan en riesgo la entrega<br><span>Ganamos</span> Control para corregir lo necesario</p>
           </div>
-        </div>
+          <div class="sol-stage"><div class="sol-tabs" role="tablist" aria-label="dir"><button type="button" role="tab" id="dir-t0" aria-controls="dir-p0" aria-selected="true">A · Ajustar el punto</button><button type="button" role="tab" id="dir-t1" aria-controls="dir-p1" aria-selected="false" tabindex="-1">B · Cambiar de dirección</button></div><div class="sol-panels"><div class="sol-panel is-pair" role="tabpanel" id="dir-p0" aria-labelledby="dir-t0"><div class="sol-pair"><figure><div class="sol-phone"><img src="/assets/img/monchis-direcciones-pin-inicial.webp" alt="Punto de entrega dentro del límite: el globo «Tu pedido va a llegar a» y el botón Cambiar habilitado" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption><b>Dentro del límite.</b> El pin queda centrado y «Cambiar» se habilita.</figcaption></figure><figure><div class="sol-phone"><img src="/assets/img/monchis-direcciones-pin-ajustado.webp" alt="Punto de entrega fuera del límite: aviso «Te alejaste del punto de entrega» y Cambiar deshabilitado" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption><b>Fuera del límite.</b> Un aviso pide volver; el ajuste está acotado por la cobertura.</figcaption></figure></div></div><div class="sol-panel" role="tabpanel" id="dir-p1" aria-labelledby="dir-t1"><div class="sol-phone"><img src="/assets/img/monchis-direcciones-cambiar.webp" alt="Mis direcciones: aviso «Solo podés elegir entre tus direcciones guardadas con cobertura para este local» y cuatro direcciones" width="923" height="2000" loading="lazy" decoding="async"><span class="pin" style="left:99%;top:23%" aria-hidden="true">1</span><span class="pin" style="left:0;top:34.5%" aria-hidden="true">2</span></div><ol class="sol-notes"><li><b>Solo con cobertura</b> para el comercio del pedido.</li><li><b>Ordenadas por cercanía</b> sin salir de la compra.</li></ol></div></div></div>
+        </article>
 
-        <div class="decision">
-          <span class="d-num" aria-hidden="true">03</span>
-          <div class="d-head"><p class="eyebrow">Cupones</p><h3>Del descuento <em>a un beneficio comprensible</em></h3></div>
-          <div class="d-body">
-            <p>Los beneficios estaban disponibles, pero necesitaban más contexto para entenderse y usarse bien. El rediseño integral de cupones y su backoffice quedaba fuera de alcance, así que aprovechamos el checkout para empezar a resolver las fricciones de comprensión que había detectado Service Design.</p>
-            <div class="anatomy anatomy--phone coupon-anatomy">
-              <figure class="asis-phone">
-                <div class="asis-screen">
-                  <img src="/assets/img/monchis-cupones-listado.webp" alt="Pantalla Cupones: campo para ingresar y validar un código, cupón «Envío gratis» de Monchis activo, cupón «Gs. 8.000 de descuento» de McDonald's disponible y un tercer cupón atenuado con la etiqueta «No aplica para este pedido». Cada cupón muestra compra mínima, vigencia y uso exclusivo en locales adheridos" width="923" height="2000" loading="lazy" decoding="async">
-                  <span class="pin" style="left:0;top:19.7%" aria-hidden="true">1</span>
-                  <span class="pin" style="left:99%;top:28.6%" aria-hidden="true">2</span>
-                  <span class="pin" style="left:99%;top:35.5%" aria-hidden="true">3</span>
-                  <span class="pin" style="left:0;top:69%" aria-hidden="true">4</span>
-                </div>
-                <figcaption class="fig-cap">Listado de cupones, al que se llega desde el pago.</figcaption>
-              </figure>
-              <div class="stack">
-                <p class="eyebrow">Qué decidimos</p>
-                <ol class="anatomy-notes">
-                  <li><h3>Usar un cupón sin vueltas</h3><p>Ingresar un código o activar un cupón disponible con un toque.</p></li>
-                  <li><h3>Qué beneficio es</h3><p>El nombre del beneficio, su valor y el comercio que lo ofrece, en lugar de un monto aislado.</p></li>
-                  <li><h3>Condiciones a la vista</h3><p>Compra mínima, vigencia y locales adheridos en cada cupón, antes de confirmar el pago.</p></li>
-                  <li><h3>Lo que no aplica</h3><p>Los cupones que no sirven para el pedido se atenúan y se marcan «No aplica para este pedido».</p></li>
-                </ol>
-              </div>
-            </div>
-            <div class="coupon-pair">
-              <figure><div class="cp-screen"><img src="/assets/img/monchis-cupones-checkout.webp" alt="Sección «¿Cómo querés pagar?» del checkout con tarjeta de crédito y la fila Cupones: «Tenés 2 cupones disponibles» con el botón Activar" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Entrada desde el pago.</figcaption></figure>
-              <figure><div class="cp-screen"><img src="/assets/img/monchis-cupones-aplicados.webp" alt="Sección de pago del checkout con los cupones activados como etiquetas «Envío gratis» y «Gs. 10.000», cada una con opción para quitarla" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Beneficios activados.</figcaption></figure>
-            </div>
-            <p class="dir-aside">El descuento activado queda a la vista en el pago y como línea propia en el resumen del pedido.</p>
-            <div class="tradeoff"><div class="give"><span class="eyebrow">Dejamos fuera</span><p>El rediseño completo de cupones y su backoffice</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Abordamos</span><p>Cómo se entienden y aplican los beneficios en el checkout</p></div></div>
+        <article class="sol" data-switch>
+          <div class="sol-text">
+            <p class="sol-eyebrow"><span>03</span> Cupones</p>
+            <h3>Del descuento <em>a un beneficio comprensible</em></h3>
+            <p class="sol-idea">Sin rediseñar todo el sistema de cupones, usamos los warnings de Service Design para que cada beneficio se entienda antes de pagar. Llegó a producción.</p>
+            <p class="sol-trade"><span>Dejamos fuera</span> El rediseño completo de cupones y su backoffice<br><span>Abordamos</span> Beneficios comprensibles en el checkout</p>
           </div>
-        </div>
+          <div class="sol-stage"><div class="sol-tabs" role="tablist" aria-label="cup"><button type="button" role="tab" id="cup-t0" aria-controls="cup-p0" aria-selected="true">1 · Disponibles</button><button type="button" role="tab" id="cup-t1" aria-controls="cup-p1" aria-selected="false" tabindex="-1">2 · Elegir</button><button type="button" role="tab" id="cup-t2" aria-controls="cup-p2" aria-selected="false" tabindex="-1">3 · Aplicados</button></div><div class="sol-panels"><div class="sol-panel" role="tabpanel" id="cup-p0" aria-labelledby="cup-t0"><div class="sol-phone"><img src="/assets/img/monchis-cupones-checkout.webp" alt="Sección de pago del checkout con la fila Cupones: «Tenés 2 cupones disponibles» y el botón Activar" width="923" height="2000" loading="lazy" decoding="async"><span class="pin" style="left:99%;top:72%" aria-hidden="true">1</span></div><ol class="sol-notes"><li><b>Desde el pago</b> el checkout avisa cuántos cupones hay disponibles.</li></ol></div><div class="sol-panel" role="tabpanel" id="cup-p1" aria-labelledby="cup-t1"><div class="sol-phone"><img src="/assets/img/monchis-cupones-listado.webp" alt="Listado de cupones: campo para validar un código, cupones con nombre, comercio, compra mínima y vigencia, y uno atenuado con «No aplica para este pedido»" width="923" height="2000" loading="lazy" decoding="async"><span class="pin" style="left:0;top:19.7%" aria-hidden="true">1</span><span class="pin" style="left:99%;top:28.6%" aria-hidden="true">2</span><span class="pin" style="left:99%;top:35.5%" aria-hidden="true">3</span><span class="pin" style="left:0;top:69%" aria-hidden="true">4</span></div><ol class="sol-notes"><li><b>Código o un toque</b> para activar un cupón.</li><li><b>Qué beneficio es</b> nombre, valor y comercio.</li><li><b>Condiciones a la vista</b> compra mínima, vigencia y locales.</li><li><b>Lo que no aplica</b> se atenúa y se indica.</li></ol></div><div class="sol-panel" role="tabpanel" id="cup-p2" aria-labelledby="cup-t2"><div class="sol-phone"><img src="/assets/img/monchis-cupones-aplicados.webp" alt="Sección de pago con los cupones activados como etiquetas «Envío gratis» y «Gs. 10.000», cada una con opción para quitarla" width="923" height="2000" loading="lazy" decoding="async"><span class="pin" style="left:99%;top:78%" aria-hidden="true">1</span></div><ol class="sol-notes"><li><b>Beneficios activados</b> a la vista y fáciles de quitar; el descuento suma una línea en el resumen.</li></ol></div></div></div>
+        </article>
 
-        <div class="decision">
-          <span class="d-num" aria-hidden="true">04</span>
-          <div class="d-head"><p class="eyebrow">Propinas</p><h3>Reconocer el servicio <em>sin complicar la compra</em></h3></div>
-          <div class="d-body">
-            <p>El negocio quería sumar propinas para fortalecer la propuesta de valor de los repartidores. El reto era ofrecerlas sin que compitieran con el pago ni se sintieran obligatorias, y solo cuando correspondía: el PRD las limitaba a envíos con logística Monchis pagados con tarjeta.</p>
-            <p>Diseñamos una primera propuesta con porcentajes del pedido y la opción de elegir otro monto. Durante su discovery, Service Design la cuestionó, y ese aprendizaje nos llevó a revisarla y a enfrentar una nueva tensión con negocio.</p>
+        <article class="sol sol--static">
+          <div class="sol-text">
+            <p class="sol-eyebrow"><span>04</span> Propinas</p>
+            <h3>Reconocer el servicio <em>sin complicar la compra</em></h3>
+            <p class="sol-idea">El negocio quería sumar propinas para los repartidores, solo en envíos con logística Monchis pagados con tarjeta. La primera propuesta usaba porcentajes y la opción de otro monto.</p>
+            <a class="link-arrow" href="#impacto">Ver cómo evolucionó con el discovery</a>
           </div>
-        </div>
+          <div class="sol-stage"><figure class="sol-fig"><div class="sol-phone"><img src="/assets/img/monchis-propinas-v1.webp" alt="Primera propuesta de propinas: «Agradecé a tu delivery con una propina», opciones de 0 %, 5 % y 10 % y botón para otro monto" width="805" height="1770" loading="lazy" decoding="async"></div><figcaption>Primera propuesta, antes del discovery de Service Design.</figcaption></figure></div>
+        </article>
       </div>
     </section>
 

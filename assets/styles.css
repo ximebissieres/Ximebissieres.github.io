@@ -1858,3 +1858,60 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 }
 @media (prefers-reduced-motion: reduce) { .explorer.is-ready .ex-panel:not([hidden]) { animation: none; } }
 .ex-panel[hidden] { display: none; }
+
+/* ==========================================================================
+   Monchis · 02 Decisiones visual first: un escenario por decisión
+   ========================================================================== */
+.sols { display: grid; }
+.sol { display: grid; gap: 20px; align-items: center; padding-block: clamp(28px, 3.5vw, 44px); }
+.sol + .sol { border-top: 1px solid var(--line); }
+.sol:first-child { padding-top: 4px; }
+@media (min-width: 900px) { .sol { grid-template-columns: minmax(0, 15.5rem) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); } }
+.sol-text { display: grid; gap: 12px; align-content: center; }
+.sol-eyebrow { font-size: .72rem; font-weight: var(--w-semibold); letter-spacing: .14em; text-transform: uppercase; color: var(--rose-ink); }
+.sol-eyebrow span { color: var(--muted); margin-right: 4px; }
+.sol h3 { font-family: var(--display); font-weight: var(--w-bold); font-size: clamp(1.35rem, 1.1rem + .9vw, 1.8rem); line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
+.sol h3 em { color: var(--rose); }
+.sol-idea { font-size: .95rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.sol-trade { font-size: .88rem; line-height: 1.6; color: var(--ink); padding-left: 12px; border-left: 2px solid var(--blush); }
+.sol-trade span { display: inline-block; min-width: 5.6rem; font-size: .66rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.sol-trade span:nth-of-type(2) { color: var(--rose-ink); }
+
+/* Escenario: fondo rosa muy suave, control segmentado y pantallas grandes */
+.sol-stage { display: grid; gap: 18px; justify-items: center; padding: clamp(16px, 2.4vw, 28px); border-radius: 26px; background: var(--bg-3); min-width: 0; }
+.sol-tabs { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); max-width: 100%; }
+.no-js .sol-tabs { display: none; }
+.sol-tabs [role="tab"] { border: 0; border-radius: 999px; padding: 8px 14px; background: transparent; font: var(--w-medium) .86rem/1 var(--sans); color: var(--muted); cursor: pointer; white-space: nowrap; transition: background-color .25s var(--ease), color .25s var(--ease); }
+.sol-tabs [role="tab"][aria-selected="true"] { background: var(--ink); color: var(--bg); }
+.sol-tabs [role="tab"]:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.sol-panels { display: grid; width: 100%; }
+.no-js .sol-panels { gap: 24px; }
+.sol-panel { display: grid; gap: 20px 28px; justify-content: center; align-items: center; }
+@media (min-width: 700px) { .sol-panel:not(.is-pair) { grid-template-columns: auto minmax(0, 15rem); } }
+.sol-panel[hidden] { display: none; }
+.sol.is-ready .sol-panel:not([hidden]) { animation: ex-in .35s var(--ease) both; }
+.sol-phone { position: relative; width: min(17.5rem, calc((100svh - 220px) * 923 / 2000)); min-width: 13rem; padding: 7px; border-radius: 36px; background: var(--ink); box-shadow: inset 0 0 0 1.5px #4A454D, 0 26px 50px -32px rgba(41, 38, 43, .45); }
+.sol-phone img { display: block; width: 100%; height: auto; border-radius: 29px; }
+.sol-notes { list-style: none; margin: 0; padding: 0; counter-reset: sn; display: grid; gap: 14px; }
+.sol-notes li { counter-increment: sn; position: relative; padding-left: 38px; font-size: .92rem; line-height: 1.45; color: var(--muted); }
+.sol-notes li::before { content: counter(sn); position: absolute; left: 0; top: -2px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--bg); font: var(--w-semibold) .75rem/1 var(--sans); }
+.sol-notes b { display: block; color: var(--ink); font-weight: var(--w-semibold); }
+.sol-pair { display: grid; grid-template-columns: repeat(2, auto); gap: clamp(16px, 3vw, 36px); justify-content: center; }
+.sol-pair figure, .sol-fig { margin: 0; display: grid; gap: 10px; justify-items: center; }
+.sol-pair figcaption, .sol-fig figcaption { max-width: 15rem; font-size: .85rem; line-height: 1.45; color: var(--muted); text-align: center; }
+.sol-pair figcaption b { color: var(--ink); }
+.sol-pair .sol-phone { width: min(15.5rem, calc((100svh - 260px) * 923 / 2000)); }
+.sol--static .sol-phone { width: min(14rem, calc((100svh - 240px) * 805 / 1770)); }
+.sol--static .link-arrow { justify-self: start; }
+@media (max-width: 699px) {
+  .sol-pair { grid-template-columns: 1fr; }
+  .sol-phone, .sol-pair .sol-phone { width: min(16.5rem, 78vw); }
+  .sol-tabs [role="tab"] { padding: 8px 11px; font-size: .8rem; }
+  .sol-notes { max-width: 20rem; }
+}
+@media (prefers-reduced-motion: reduce) { .sol.is-ready .sol-panel:not([hidden]) { animation: none; } }
+.sol-phone .pin {
+  position: absolute; transform: translate(-50%, -50%); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--ink); color: var(--bg); font: var(--w-semibold) .8rem/1 var(--sans);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--blush) 70%, transparent);
+}

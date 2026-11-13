@@ -313,3 +313,29 @@
   if (next) next.addEventListener('click', function () { show(cur + 1); });
   show(0);
 })();
+
+/* ---------- Caso: escenarios visuales con pestañas ([data-switch]) ---------- */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-switch]'), function (box) {
+    var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+    var panels = Array.prototype.slice.call(box.querySelectorAll('[role="tabpanel"]'));
+    if (!tabs.length) return;
+    box.classList.add('is-ready');
+    var cur = 0;
+    function show(i, focus) {
+      cur = (i + tabs.length) % tabs.length;
+      tabs.forEach(function (t, j) { var on = j === cur; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; panels[j].hidden = !on; });
+      if (focus) tabs[cur].focus();
+    }
+    tabs.forEach(function (t, j) {
+      t.addEventListener('click', function () { show(j); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); show(cur + 1, true); }
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(cur - 1, true); }
+        else if (e.key === 'Home') { e.preventDefault(); show(0, true); }
+        else if (e.key === 'End') { e.preventDefault(); show(tabs.length - 1, true); }
+      });
+    });
+    show(0);
+  });
+})();
