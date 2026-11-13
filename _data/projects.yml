@@ -34,8 +34,8 @@
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
-    titulo: "Hacer simple la compra, incluso cuando *la operación no lo era*"
-    bajada: "Rediseñamos el checkout de Monchis para adaptarse a distintas modalidades de entrega y pedidos agendados, simplificando decisiones y manteniendo el foco en finalizar la compra."
+    titulo: "Un checkout para confirmar, *no para volver a empezar*"
+    bajada: "En Monchis, los pedidos podían ser con envío a domicilio, retiro en el local o agendados. Rediseñar el checkout implicaba adaptarlo a cada escenario, simplificar decisiones y mantener el foco en finalizar el pedido."
     # Bloque lateral opcional: para mostrarlo, agrega etiqueta_descripcion y descripcion.
     # Pantallas reales de la portada (máximo 3). La primera es la protagonista.
     # ancho / alto: tamaño real de cada imagen (no cambiar si no cambias la imagen).

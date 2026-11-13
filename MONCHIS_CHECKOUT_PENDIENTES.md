@@ -62,6 +62,12 @@ Publicadas sin modificar: punto de entrega dentro del límite, punto de entrega 
 Afirmaciones que vienen de las reglas del flujo y no se ven en las capturas: el máximo de 50 m y su reducción cerca del límite de cobertura, el orden por cercanía al comercio y el componente de aviso compartido con la Home. Confirmar con la especificación o el video del prototipo.
 El esquema ilustrativo del radio se retiró del caso (lo reemplazan las pantallas). Estado de producción de estos comportamientos: sin confirmar.
 
+## Estructura final del caso (narrativa de 5 secciones)
+
+01 El desafío · 02 Las decisiones · 03 La propuesta · 04 Validación e impacto · 05 Aprendizajes.
+Video del flujo completo: va en «03 · La propuesta», dentro del escenario (`.sol--full`), reemplazando o acompañando el selector Envío / Retiro / Agendado. Recorrido sugerido: entrega → pago y cupones → propinas (marcada como no publicada) → resumen → footer fijo.
+Resultados cuantitativos de direcciones y cupones: se suman en las dos columnas de «04 · Validación e impacto» solo si están verificados.
+
 ## Prioridad ALTA
 
 | # | Pendiente | Qué necesito | Sección | Qué permitiría afirmar | Dónde buscarlo |
