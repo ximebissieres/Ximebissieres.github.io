@@ -1591,7 +1591,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
    ========================================================================== */
 /* Tres tensiones en una fila (mismo panel editorial que Investigación) */
 .research-list.tensions > li { gap: 6px; }
-.research-list.tensions p:not(.eyebrow) { font-size: 1rem; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+.research-list.tensions p:not(.eyebrow):not(.ev-src) { font-size: 1rem; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
 @media (min-width: 760px) {
   .research-list.tensions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .research-list.tensions > li:nth-child(n) { border-top: 0; border-left: 0; grid-column: auto; }
@@ -1766,3 +1766,20 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .dir-pair figure, .dir-step--split figure { max-width: 17rem; width: 100%; justify-self: center; }
 }
 @media (max-width: 759px) { .dir-step--split .stack { order: -1; } }
+
+/* ==========================================================================
+   Monchis · 01 El desafío y su evidencia (evidencia integrada y compacta)
+   ========================================================================== */
+.ev-main { display: grid; gap: 20px; align-items: start; padding: clamp(18px, 2.4vw, 26px); border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
+@media (min-width: 760px) { .ev-main { grid-template-columns: minmax(0, 1fr) minmax(0, 11.5rem); gap: 32px; } }
+.ev-text { display: grid; gap: 12px; align-content: start; }
+.ev-topic { font-size: .72rem; font-weight: var(--w-semibold); letter-spacing: .14em; text-transform: uppercase; color: var(--rose-ink); }
+.ev-text h3 { font-family: var(--display); font-weight: var(--w-semibold); font-size: clamp(1.15rem, 1.02rem + .45vw, 1.35rem); line-height: 1.25; letter-spacing: -0.015em; text-wrap: balance; }
+.ev-text > p:not(.ev-topic):not(.ev-src) { font-size: .98rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.ev-src { font-size: .78rem; line-height: 1.45; color: var(--muted); }
+.ev-main .addr-chat { max-width: 11.5rem; justify-self: center; }
+.ev-main .addr-goals dl { grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); column-gap: 20px; }
+.evidence-trio > li { gap: 8px; }
+.evidence-trio .ev-src { margin-top: auto; padding-top: 4px; }
+.impact-cards { margin-top: 8px; }
+.research-list.tensions p.ev-src { font-size: .78rem; line-height: 1.45; color: var(--muted); }
