@@ -45,6 +45,17 @@ Videos: verticales, con portada (poster), controles, sin autoplay simultáneo, c
 
 Notas del PRD de propinas: el equipo de diseño figura como dos personas; el caso no atribuye a Ximena el diseño de los cinco puntos de entrada. Los datos de Pedidos Ya son referencia externa y no se publican. Montos y umbral siguen "a definir": no se publican cifras.
 
+## Cupones · relación entre el discovery de Service Design (Vendors, 2026) y el checkout
+
+Conectado con decisiones verificables en las pantallas:
+- Restricciones descubiertas tarde (mínimo, comercio no participante) → condiciones en cada cupón (compra mínima, vigencia, locales adheridos) y estado «No aplica para este pedido».
+- Configuración del beneficio poco visible en la UI → nombre del beneficio, valor y comercio en cada cupón.
+- Nombres técnicos confusos → la UI muestra nombres legibles; el sistema de doble nombre (técnico/amigable) es de backoffice y queda fuera.
+- Copiar y pegar códigos → la UI permite activar cupones disponibles con un botón y mantiene la validación de códigos. No se afirma auto-aplicación.
+
+Fuera del alcance del checkout: cupones agnósticos al método de pago y deselección al cambiar de método (no visible en las pantallas), notificaciones push, Retool/Admin 2, edición de cupones activos, topes de presupuesto, reportes y conexión con Braze.
+Pendiente: el entregable de entrevistas con usuarios que Service mencionaba (no recibido); pantalla de detalle de condiciones (ícono «!» sin pantalla).
+
 ## Prioridad ALTA
 
 | # | Pendiente | Qué necesito | Sección | Qué permitiría afirmar | Dónde buscarlo |

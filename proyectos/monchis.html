@@ -121,11 +121,11 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
         <li>
           <div class="f-meta">
             <p class="f-topic"><span>02</span> Cupones</p>
-            <dl><div><dt>Fuente</dt><dd>Experiencia anterior + reclamos</dd></div><div><dt>Alcance</dt><dd>Análisis del checkout anterior y de los reclamos; no fue una investigación formal.</dd></div></dl>
+            <dl><div><dt>Fuente</dt><dd>Discovery de Service Design sobre el módulo de cupones para Vendors (2026)</dd></div><div><dt>Alcance</dt><dd>Investigación centrada en el backoffice; tomamos los hallazgos que también afectaban la compra.</dd></div></dl>
           </div>
           <div class="f-body">
-            <h3>Mostrar un descuento no significaba explicar su beneficio</h3>
-            <p>Los montos aparecían sin suficiente contexto sobre las condiciones de uso, dificultando comprender el beneficio real.</p>
+            <h3>El descuento existía, pero sus condiciones no siempre eran claras</h3>
+            <p>El discovery de Service Design sobre la gestión de cupones identificó fricciones que también llegaban a la experiencia de compra: condiciones poco visibles, nombres difíciles de interpretar y restricciones que las personas descubrían tarde, a veces recién en el checkout.</p>
             <p class="f-question"><span>Pregunta que abrió</span>¿Cómo hacer comprensible el ahorro antes de confirmar el pago?</p>
           </div>
         </li>
@@ -212,20 +212,37 @@ summary: 'Rediseñamos el checkout de Monchis para simplificar decisiones, aclar
 
         <div class="decision">
           <span class="d-num" aria-hidden="true">03</span>
-          <div class="d-head"><p class="eyebrow">Cupones</p><h3>Hacer comprensible el beneficio <em>antes de pagar</em></h3></div>
+          <div class="d-head"><p class="eyebrow">Cupones</p><h3>Cupones: del descuento <em>a un beneficio comprensible</em></h3></div>
           <div class="d-body">
-            <p>El checkout anterior mostraba descuentos sin suficiente información. Necesitábamos que las personas entendieran qué beneficio usaban, bajo qué condiciones y cómo cambiaba el total.</p>
-            <div class="ctx-goals">
-              <p class="eyebrow">Qué decidimos</p>
-              <ul>
-                <li>Dar claridad sobre los cupones disponibles.</li>
-                <li>Comunicar las condiciones del beneficio.</li>
-                <li>Facilitar la selección y la validación.</li>
-                <li>Reflejar el descuento en el resumen.</li>
-                <li>Mantener la información integrada al checkout.</li>
-              </ul>
+            <p>El rediseño completo de cupones estaba fuera del alcance, pero aprovechamos la iniciativa de checkout para abordar fricciones que había identificado Service Design. El objetivo era que cada persona entendiera qué beneficio tenía, bajo qué condiciones podía usarlo y cómo afectaba su compra.</p>
+            <div class="tradeoff"><div class="give"><span class="eyebrow">Dejamos fuera</span><p>Rediseñar todo el sistema de cupones y su backoffice</p></div><span class="pivot" aria-hidden="true">⇄</span><div class="gain"><span class="eyebrow">Abordamos</span><p>Cómo se entienden y aplican los beneficios en el checkout</p></div></div>
+            <div class="anatomy anatomy--phone coupon-anatomy">
+              <figure class="asis-phone">
+                <div class="asis-screen">
+                  <img src="/assets/img/monchis-cupones-listado.webp" alt="Pantalla Cupones: campo para ingresar y validar un código, cupón «Envío gratis» de Monchis activo, cupón «Gs. 8.000 de descuento» de McDonald's disponible y un tercer cupón atenuado con la etiqueta «No aplica para este pedido». Cada cupón muestra compra mínima, vigencia y uso exclusivo en locales adheridos" width="923" height="2000" loading="lazy" decoding="async">
+                  <span class="pin" style="left:0;top:19.7%" aria-hidden="true">1</span>
+                  <span class="pin" style="left:99%;top:28.6%" aria-hidden="true">2</span>
+                  <span class="pin" style="left:99%;top:35.5%" aria-hidden="true">3</span>
+                  <span class="pin" style="left:0;top:69%" aria-hidden="true">4</span>
+                </div>
+                <figcaption class="fig-cap">Listado de cupones, al que se llega desde el pago.</figcaption>
+              </figure>
+              <div class="stack">
+                <p class="eyebrow">Qué decidimos</p>
+                <ol class="anatomy-notes">
+                  <li><h3>Usar un cupón sin vueltas</h3><p>Ingresar un código o activar un cupón disponible con un toque.</p></li>
+                  <li><h3>Qué beneficio es</h3><p>El nombre del beneficio, su valor y el comercio que lo ofrece, en lugar de un monto aislado.</p></li>
+                  <li><h3>Condiciones a la vista</h3><p>Compra mínima, vigencia y locales adheridos en cada cupón, antes de confirmar el pago.</p></li>
+                  <li><h3>Lo que no aplica</h3><p>Los cupones que no sirven para el pedido se atenúan y se marcan «No aplica para este pedido».</p></li>
+                </ol>
+              </div>
             </div>
-            <p>Cada cupón sigue un orden de lectura: primero el nombre del beneficio, después sus condiciones y, al final, su efecto en el total. El flujo de cupones llegó a producción.</p>
+            <p><b>Conectar el beneficio con el pago.</b> El acceso a cupones vive en la sección de pago, los beneficios activados quedan a la vista dentro del checkout y el descuento aparece como una línea propia en el resumen del pedido.</p>
+            <div class="coupon-pair">
+              <figure><div class="cp-screen"><img src="/assets/img/monchis-cupones-checkout.webp" alt="Sección «¿Cómo querés pagar?» del checkout con tarjeta de crédito y la fila Cupones: «Tenés 2 cupones disponibles» con el botón Activar" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Entrada desde el pago.</figcaption></figure>
+              <figure><div class="cp-screen"><img src="/assets/img/monchis-cupones-aplicados.webp" alt="Sección de pago del checkout con los cupones activados como etiquetas «Envío gratis» y «Gs. 10.000», cada una con opción para quitarla" width="923" height="2000" loading="lazy" decoding="async"></div><figcaption class="fig-cap">Beneficios activados.</figcaption></figure>
+            </div>
+            <p class="d-status is-live"><b>Estado</b> El flujo de cupones llegó a producción.</p>
           </div>
         </div>
 

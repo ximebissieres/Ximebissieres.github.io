@@ -1738,3 +1738,12 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .addr-goals dt { font-family: var(--display); font-weight: var(--w-semibold); font-size: 1.25rem; color: var(--ink); font-variant-numeric: tabular-nums; }
 .addr-goals dd { margin: 0; font-size: .85rem; line-height: 1.45; color: var(--muted); }
 .addr-goals-note { font-size: .78rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+
+/* Monchis · 03 Cupones: listado anotado y pantallas de pago */
+.coupon-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 13rem)); gap: 20px; }
+.coupon-pair figure { margin: 0; display: grid; gap: 8px; }
+.cp-screen { padding: 6px; border-radius: 30px; background: var(--ink); box-shadow: inset 0 0 0 1.5px #4A454D, 0 18px 36px -28px rgba(41, 38, 43, .4); }
+.cp-screen img { display: block; width: 100%; height: auto; border-radius: 24px; }
+@media (max-width: 420px) { .coupon-pair { gap: 12px; } }
+@media (min-width: 900px) { .coupon-anatomy { grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); gap: 40px; } }
+.coupon-anatomy .asis-phone { max-width: 20rem; }
