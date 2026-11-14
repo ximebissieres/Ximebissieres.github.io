@@ -364,3 +364,19 @@
     var x = dlg.querySelector('[data-video-close]'); if (x) x.addEventListener('click', close);
   });
 })();
+
+/* ---------- Caso: video integrado con botón de reproducción propio ----------
+   Sin JS se ven los controles nativos. Con JS se ocultan hasta que la persona
+   pulsa reproducir; nunca hay autoplay. */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-vi-video]'), function (v) {
+    var btn = v.parentNode.querySelector('[data-vi-play]');
+    if (!btn) return;
+    v.controls = false; btn.hidden = false;
+    btn.addEventListener('click', function () {
+      v.controls = true; btn.hidden = true;
+      var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+      v.focus({ preventScroll: true });
+    });
+  });
+})();

@@ -180,20 +180,17 @@ summary: 'En Monchis, los pedidos podían ser con envío a domicilio, retiro en 
       {% assign mp = site.data.projects | where: "slug", "monchis" | first %}
       <div class="prop-stage">
         {% include case-screens.html project=mp inline=true %}
-        <div class="video-cta">
-          <p><span class="video-cta-label">Recorrido del checkout</span>Así se adapta el checkout a distintos escenarios sin perder el foco en finalizar el pedido.</p>
-          <a class="video-cta-btn" href="/assets/video/monchis-checkout-v7.mp4" data-video-open="checkout-video" aria-haspopup="dialog"><span class="vc-play" aria-hidden="true"></span>Ver recorrido completo</a>
-        </div>
+        <figure class="video-inline">
+          <figcaption><span class="video-cta-label">Recorrido del checkout</span>Así se adapta el checkout a distintos escenarios sin perder el foco en finalizar el pedido.</figcaption>
+          <div class="vi-frame">
+            <video controls playsinline preload="none" data-vi-video poster="/assets/img/monchis-checkout-video-poster.webp" width="1920" height="1080" aria-label="Recorrido completo del checkout de Monchis">
+              <source src="/assets/video/monchis-checkout-v7.mp4" type="video/mp4">
+              Tu navegador no puede reproducir el video. <a href="/assets/video/monchis-checkout-v7.mp4">Descárgalo aquí</a>.
+            </video>
+            <button type="button" class="vi-play" data-vi-play hidden aria-label="Reproducir el recorrido del checkout"><span aria-hidden="true"></span>Ver recorrido</button>
+          </div>
+        </figure>
       </div>
-      <dialog class="video-modal" id="checkout-video" aria-label="Recorrido completo del checkout de Monchis">
-        <div class="vm-inner">
-          <button type="button" class="vm-close" data-video-close aria-label="Cerrar video">×</button>
-          <video controls playsinline preload="none" poster="/assets/img/monchis-checkout-video-poster.webp" width="1920" height="1080">
-            <source src="/assets/video/monchis-checkout-v7.mp4" type="video/mp4">
-            Tu navegador no puede reproducir el video. <a href="/assets/video/monchis-checkout-v7.mp4">Descárgalo aquí</a>.
-          </video>
-        </div>
-      </dialog>
     </section>
 
     <section class="chapter" id="impacto" data-title="Validación e impacto">
