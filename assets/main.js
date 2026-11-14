@@ -344,3 +344,23 @@
     show(0);
   });
 })();
+
+/* ---------- Caso: video en modal ([data-video-open]) ----------
+   Se abre solo al hacer clic, no se reproduce solo, se pausa al cerrar y
+   devuelve el foco al botón. Escape cierra (comportamiento nativo de <dialog>). */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-video-open]'), function (btn) {
+    var dlg = document.getElementById(btn.getAttribute('data-video-open'));
+    if (!dlg || typeof dlg.showModal !== 'function') return;
+    var video = dlg.querySelector('video');
+    function close() { if (video) video.pause(); if (dlg.open) dlg.close(); }
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      dlg.showModal();
+      var c = dlg.querySelector('[data-video-close]'); if (c) c.focus();
+    });
+    dlg.addEventListener('close', function () { if (video) video.pause(); btn.focus({ preventScroll: true }); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+    var x = dlg.querySelector('[data-video-close]'); if (x) x.addEventListener('click', close);
+  });
+})();
