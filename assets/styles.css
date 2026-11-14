@@ -2437,3 +2437,15 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .co-t { font-size: .74rem; }
 @media (prefers-reduced-motion: reduce) { .crit-carousel.is-ready .crits { transition: none; } }
 @media (min-width: 1100px) { .co-stage { padding-bottom: 6px; } .co-side { margin-bottom: -3%; } }
+
+/* Monchis · 02: misma estructura en las tres diapositivas — número, título y bajada
+   siempre en la misma posición arriba; la evidencia visual debajo */
+.crit-carousel.is-ready .crits > .crit,
+.crit-carousel.is-ready .crits > .crit.crit--split { grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; align-content: start; }
+.crit-carousel .crits > .crit > .crit-text { max-width: 46rem; align-content: start; }
+.clar-body { display: grid; gap: 20px; align-items: center; }
+@media (min-width: 900px) { .clar-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(24px, 3.5vw, 48px); } }
+.clar-body .clar-list { margin-top: 0; }
+.chapters:has(#desafio) .crit-carousel.is-ready .crits > .crit { padding: 0; }
+.clar-body .clar-stage { height: clamp(360px, 32vw, 440px); }
+.crit-carousel .crit-visual.is-play .comp { width: min(44%, 16rem); }
