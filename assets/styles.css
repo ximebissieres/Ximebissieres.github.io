@@ -2129,3 +2129,10 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .prop-video .pv-play { position: relative; left: auto; top: auto; bottom: auto; transform: none; margin-top: clamp(-36px, -2.4vw, -16px); }
 @media (hover: hover) { .prop-video .pv-play:hover { transform: scale(1.04); } }
 .prop-video .pv-player { width: 100%; padding-bottom: 0; }
+
+/* Monchis · 01 El desafío: pantalla y card centradas entre sí, sin números */
+@media (min-width: 900px) { .explorer { align-items: center; } .ex-side { align-content: center; } }
+.ex-tabs [role="tab"] { padding: 9px 16px; }
+.ex-fr li { gap: 8px; }
+.ex-fr li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink); flex: none; }
+.ex-fr li.is-absent::before { background: transparent; border: 1.5px dashed var(--rose); box-sizing: border-box; width: 10px; height: 10px; }
