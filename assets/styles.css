@@ -2110,3 +2110,22 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .vi-play[hidden] { display: none; }
 @media (max-width: 599px) { .vi-play { padding: 7px 14px 7px 7px; font-size: .82rem; gap: 8px; } .vi-play span { width: 30px; height: 30px; } .vi-play span::after { left: 12px; top: 9px; border-width: 6px 0 6px 9px; } }
 @media (prefers-reduced-motion: reduce) { .vi-play { transition: none; } }
+
+/* Monchis · 03 La propuesta: las tres pantallas son la portada del video */
+.prop-video { position: relative; }
+.prop-video .pv-play { top: auto; bottom: clamp(18px, 3vw, 32px); transform: translateX(-50%); }
+@media (hover: hover) { .prop-video .pv-play:hover { transform: translateX(-50%) scale(1.04); } }
+.prop-video .cscreens--inline { transition: opacity .3s var(--ease); }
+.no-js .prop-video .pv-play { display: none; }
+.pv-player { padding: clamp(16px, 2.4vw, 28px); }
+.pv-player[hidden] { display: none; }
+.pv-player video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 18px; background: var(--surface); box-shadow: 0 0 0 1px color-mix(in srgb, var(--blush) 35%, transparent), 0 30px 60px -36px rgba(41, 38, 43, .45); }
+.prop-video.is-playing .cscreens--inline, .prop-video.is-playing .pv-play { display: none; }
+.pv-nojs { padding: 0 24px 24px; text-align: center; }
+@media (min-width: 900px) { .prop-video .cscreens--inline .cs-1 { top: 12%; } .prop-video .cscreens--inline .cs-2, .prop-video .cscreens--inline .cs-3 { top: 18.1%; } }
+@media (max-width: 600px) { .prop-video .cscreens--inline { aspect-ratio: 4 / 5.2; } .prop-video .cscreens--inline .cs-1 { top: 13%; } }
+.prop-video { display: grid; justify-items: center; padding-bottom: clamp(20px, 3vw, 32px); }
+.prop-video .cscreens--inline { width: 100%; }
+.prop-video .pv-play { position: relative; left: auto; top: auto; bottom: auto; transform: none; margin-top: clamp(-36px, -2.4vw, -16px); }
+@media (hover: hover) { .prop-video .pv-play:hover { transform: scale(1.04); } }
+.prop-video .pv-player { width: 100%; padding-bottom: 0; }

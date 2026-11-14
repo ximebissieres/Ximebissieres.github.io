@@ -178,18 +178,16 @@ summary: 'En Monchis, los pedidos podían ser con envío a domicilio, retiro en 
       <header class="chapter-head"><p class="eyebrow">La propuesta</p><h2 class="chapter-title">Una experiencia, <em>distintos escenarios</em></h2></header>
       <p class="lead">El nuevo checkout reunió en un mismo flujo la entrega, el detalle del pedido, los métodos de pago, los beneficios y las acciones para confirmarlo. Su estructura se adaptaba a envíos, retiros y pedidos agendados: cada bloque con un propósito, confirmar el pedido sin volver a empezar.</p>
       {% assign mp = site.data.projects | where: "slug", "monchis" | first %}
-      <div class="prop-stage">
+      <div class="prop-stage prop-video" data-poster-video>
         {% include case-screens.html project=mp inline=true %}
-        <figure class="video-inline">
-          <figcaption><span class="video-cta-label">Recorrido del checkout</span>Así se adapta el checkout a distintos escenarios sin perder el foco en finalizar el pedido.</figcaption>
-          <div class="vi-frame">
-            <video controls playsinline preload="none" data-vi-video poster="/assets/img/monchis-checkout-video-poster.webp" width="1920" height="1080" aria-label="Recorrido completo del checkout de Monchis">
-              <source src="/assets/video/monchis-checkout-v7.mp4" type="video/mp4">
-              Tu navegador no puede reproducir el video. <a href="/assets/video/monchis-checkout-v7.mp4">Descárgalo aquí</a>.
-            </video>
-            <button type="button" class="vi-play" data-vi-play hidden aria-label="Reproducir el recorrido del checkout"><span aria-hidden="true"></span>Ver recorrido</button>
-          </div>
-        </figure>
+        <button type="button" class="vi-play pv-play" data-pv-play aria-label="Reproducir el recorrido completo del checkout"><span aria-hidden="true"></span>Ver recorrido completo</button>
+        <div class="pv-player" hidden>
+          <video controls playsinline preload="none" width="1920" height="1080" aria-label="Recorrido completo del checkout de Monchis">
+            <source src="/assets/video/monchis-checkout-v7.mp4" type="video/mp4">
+            Tu navegador no puede reproducir el video. <a href="/assets/video/monchis-checkout-v7.mp4">Descárgalo aquí</a>.
+          </video>
+        </div>
+        <noscript><p class="pv-nojs"><a href="/assets/video/monchis-checkout-v7.mp4">Ver el recorrido completo del checkout</a></p></noscript>
       </div>
     </section>
 

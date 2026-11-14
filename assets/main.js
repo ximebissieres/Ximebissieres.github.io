@@ -365,16 +365,17 @@
   });
 })();
 
-/* ---------- Caso: video integrado con botón de reproducción propio ----------
-   Sin JS se ven los controles nativos. Con JS se ocultan hasta que la persona
-   pulsa reproducir; nunca hay autoplay. */
+/* ---------- Caso: las pantallas del TO BE como portada del video ([data-poster-video]) ----------
+   Al pulsar reproducir, la composición se reemplaza por el video en el mismo panel.
+   Nunca hay autoplay. Sin JS queda un enlace al video. */
 (function () {
-  Array.prototype.forEach.call(document.querySelectorAll('[data-vi-video]'), function (v) {
-    var btn = v.parentNode.querySelector('[data-vi-play]');
-    if (!btn) return;
-    v.controls = false; btn.hidden = false;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-poster-video]'), function (box) {
+    var btn = box.querySelector('[data-pv-play]'), player = box.querySelector('.pv-player');
+    if (!btn || !player) return;
+    var v = player.querySelector('video');
     btn.addEventListener('click', function () {
-      v.controls = true; btn.hidden = true;
+      box.classList.add('is-playing');
+      player.hidden = false;
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
       v.focus({ preventScroll: true });
     });
