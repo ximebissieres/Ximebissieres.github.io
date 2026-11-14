@@ -2194,3 +2194,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 /* Monchis · 01: «Checkout as is» con el mismo chip que «Contexto real» */
 .ex-visual { gap: 0; }
 .ex-visual .ex-cap { position: relative; z-index: 2; max-width: none; margin-top: -14px; white-space: nowrap; padding: 4px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); font-size: .64rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); text-align: center; }
+/* Negocio: la propina no existía; el As is se muestra sin atenuar */
+.explorer.is-absent .ex-dim { display: none; }
