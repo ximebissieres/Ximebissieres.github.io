@@ -2048,3 +2048,26 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .chapters:has(#desafio) .crit:last-child { padding-bottom: 0; }
 .chapters:has(#desafio) .impact-pair { margin-top: calc(var(--div-air) - 28px); padding-top: var(--div-air); }
 .chapters:has(#desafio) .impact-pair > div > .d-status { margin-top: -3px; }
+
+/* Monchis · 05 Aprendizajes: cierre editorial liviano */
+.lessons { display: grid; gap: clamp(24px, 3vw, 36px); }
+.lessons-lead { display: grid; gap: 12px; max-width: 46rem; }
+.lessons-quote { font-family: var(--display); font-weight: var(--w-semibold); font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2.2rem); line-height: 1.18; letter-spacing: -0.02em; color: var(--ink); text-wrap: balance; }
+.lessons-quote em { color: var(--rose); }
+.lessons-sub { font-size: 1.05rem; line-height: 1.55; color: var(--muted); max-width: 38rem; text-wrap: pretty; }
+.lessons-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+@media (min-width: 760px) { .lessons-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); } }
+.lessons-list li { position: relative; display: grid; gap: 6px; align-content: start; padding-top: 16px; }
+.lessons-list li::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line); }
+.lessons-list li::after { content: ""; position: absolute; left: 0; top: 0; height: 2px; width: 28px; background: var(--blush); transition: width .5s var(--ease), background-color .3s var(--ease); }
+.ls-n { font-size: .72rem; font-weight: var(--w-semibold); letter-spacing: .12em; color: var(--rose-ink); font-variant-numeric: tabular-nums; transition: color .3s var(--ease); }
+.lessons-list h3 { font-family: var(--display); font-weight: var(--w-semibold); font-size: 1.12rem; line-height: 1.3; letter-spacing: -0.01em; color: var(--ink); transition: color .3s var(--ease), transform .4s var(--ease); }
+.lessons-list p { font-size: .94rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+@media (hover: hover) {
+  .lessons-list li:hover::after { width: 100%; background: var(--rose); }
+  .lessons-list li:hover h3 { color: var(--rose-ink); transform: translateX(3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lessons-list li::after, .lessons-list h3 { transition: none; }
+  .lessons-list li:hover h3 { transform: none; }
+}
