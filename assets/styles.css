@@ -2196,3 +2196,33 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .ex-visual .ex-cap { position: relative; z-index: 2; max-width: none; margin-top: -14px; white-space: nowrap; padding: 4px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); font-size: .64rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); text-align: center; }
 /* Negocio: la propina no existía; el As is se muestra sin atenuar */
 .explorer.is-absent .ex-dim { display: none; }
+
+/* Monchis · 02 Dar control: composición «juguetona» con tarjetas inclinadas */
+.crit-visual.is-play { display: flex; justify-content: center; align-items: flex-start; gap: 0; padding: clamp(28px, 3.5vw, 44px) clamp(16px, 3vw, 36px) clamp(36px, 4vw, 52px); overflow: hidden; }
+.is-play .comp { position: relative; width: min(46%, 17.5rem); flex: none; transition: transform .5s var(--ease); }
+.is-play .comp:first-child { transform: rotate(-5deg) translateY(10px); z-index: 1; }
+.is-play .comp:last-child { transform: rotate(4deg) translateY(34px); margin-left: -3%; z-index: 2; }
+.is-play .comp img { border-radius: 20px; box-shadow: 0 0 0 1px var(--line), 0 30px 50px -28px rgba(41, 38, 43, .45); }
+.is-play .comp figcaption { position: absolute; left: 50%; bottom: -12px; transform: translateX(-50%); white-space: nowrap; padding: 4px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); font-size: .64rem; font-weight: var(--w-semibold); letter-spacing: .1em; text-transform: uppercase; color: var(--rose-ink); }
+@media (hover: hover) {
+  .is-play .comp:hover { z-index: 3; }
+  .is-play .comp:first-child:hover { transform: rotate(-2deg) translateY(2px) scale(1.02); }
+  .is-play .comp:last-child:hover { transform: rotate(1.5deg) translateY(26px) scale(1.02); }
+}
+@media (max-width: 599px) {
+  .crit-visual.is-play { padding: 24px 10px 44px; }
+  .is-play .comp { width: 50%; }
+  .is-play .comp figcaption { font-size: .55rem; letter-spacing: .06em; padding: 3px 7px; }
+}
+@media (prefers-reduced-motion: reduce) { .is-play .comp { transition: none; } }
+.is-play .comp { width: min(48%, 19rem); }
+.is-play .comp figcaption { bottom: auto; top: -13px; }
+.crit-visual.is-play { padding-top: clamp(36px, 4vw, 52px); }
+@media (max-width: 599px) {
+  .is-play .comp figcaption { white-space: normal; width: max-content; max-width: 92%; text-align: center; line-height: 1.25; top: -16px; }
+  .crit-visual.is-play { padding-top: 40px; }
+}
+@media (max-width: 599px) {
+  .is-play .comp figcaption { top: auto; bottom: -38px; }
+  .crit-visual.is-play { padding: 22px 10px 64px; }
+}
