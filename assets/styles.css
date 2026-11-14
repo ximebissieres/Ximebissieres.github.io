@@ -2024,3 +2024,12 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .crit.tip-cmp { border-top: 1px solid var(--line); padding-top: clamp(24px, 3vw, 36px); gap: 20px; }
 /* Composición del hero reutilizada en «La propuesta»: sin animación de entrada */
 .cscreens--inline .cs-phone { animation: none !important; transform: none !important; }
+/* «La propuesta»: teléfonos más grandes y centrados verticalmente en el panel */
+@media (min-width: 900px) {
+  .cscreens--inline { aspect-ratio: 16 / 10; }
+  .cscreens--inline .cs-1 { --w: 23%; top: 15%; }
+  .cscreens--inline .cs-2, .cscreens--inline .cs-3 { --w: 19.5%; top: 21.1%; }
+  .cscreens--inline .cs-2 { --x: 27%; }
+  .cscreens--inline .cs-3 { --x: 73%; }
+}
+@media (max-width: 600px) { .cscreens--inline .cs-1 { top: 16.6%; } }
