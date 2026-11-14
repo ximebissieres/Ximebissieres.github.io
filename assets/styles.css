@@ -2038,4 +2038,13 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .impact-note { max-width: 46rem; padding: 12px 16px; border-radius: 14px; background: var(--bg-3); font-size: .88rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
 .impact-note b { display: block; margin-bottom: 2px; font-size: .7rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); }
 /* 04 · Impacto: la línea inferior encuadra los bloques con el mismo aire que la superior */
-.chapter#impacto { padding-bottom: 26px; }
+
+/* Monchis · mismo aire arriba y abajo de todas las líneas divisoras */
+.chapters:has(#desafio) { --div-air: clamp(32px, 4vw, 48px); }
+.chapters:has(#desafio) > .chapter { padding-block: var(--div-air); }
+.chapters:has(#desafio) > .chapter:first-child { padding-top: 8px; }
+.chapters:has(#desafio) .crit { padding-block: var(--div-air); }
+.chapters:has(#desafio) .crit:first-child { padding-top: 4px; }
+.chapters:has(#desafio) .crit:last-child { padding-bottom: 0; }
+.chapters:has(#desafio) .impact-pair { margin-top: calc(var(--div-air) - 28px); padding-top: var(--div-air); }
+.chapters:has(#desafio) .impact-pair > div > .d-status { margin-top: -3px; }
