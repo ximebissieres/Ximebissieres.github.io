@@ -2278,3 +2278,42 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .is-stage figcaption { font-size: .62rem; padding: 4px 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .is-stage figure { transition: none; } }
+
+/* Monchis · 02 Dar claridad: texto con lista numerada + pantallas en diagonal */
+.crit.crit--split { align-items: center; }
+@media (min-width: 900px) { .crit.crit--split { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(28px, 4vw, 56px); } }
+.clar-list { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 14px; }
+.clar-list li { display: grid; gap: 3px; font-size: .92rem; line-height: 1.5; color: var(--muted); text-wrap: pretty; cursor: default; }
+.clar-list b { font-family: var(--display); font-weight: var(--w-semibold); font-size: 1.02rem; color: var(--ink); transition: color .3s var(--ease); }
+.clar-list b span { color: var(--rose); }
+.clar-stage { position: relative; height: clamp(420px, 40vw, 540px); border-radius: 24px; overflow: hidden; background: var(--ink); }
+.clar-ph { position: absolute; margin: 0; width: 46%; padding: 5px; border-radius: 30px; background: #F3EEF0; box-shadow: inset 0 0 0 1.5px #CFC6CA, 0 30px 50px -20px rgba(0, 0, 0, .55); transform: translate(-50%, -50%) rotate(-30deg); transition: opacity .35s var(--ease), filter .35s var(--ease); }
+.clar-ph img { display: block; width: 100%; height: auto; border-radius: 25px; }
+.clar-ph[data-k="1"] { left: 17%; top: 64%; }
+.clar-ph[data-k="2"] { left: 50%; top: 40%; }
+.clar-ph[data-k="3"] { left: 84%; top: 62%; }
+@media (hover: hover) {
+  .crit--split:has(.clar-list li:hover) .clar-ph { opacity: .45; filter: saturate(.6); }
+  .crit--split:has(.clar-list li[data-k="1"]:hover) .clar-ph[data-k="1"],
+  .crit--split:has(.clar-list li[data-k="2"]:hover) .clar-ph[data-k="2"],
+  .crit--split:has(.clar-list li[data-k="3"]:hover) .clar-ph[data-k="3"] { opacity: 1; filter: none; }
+  .clar-list li:hover b { color: var(--rose-ink); }
+}
+@media (max-width: 899px) { .clar-stage { height: min(110vw, 460px); } .clar-ph { width: 50%; } }
+@media (prefers-reduced-motion: reduce) { .clar-ph { transition: none; } }
+/* Las tres pantallas en carriles paralelos, como en la referencia (sin pisarse) */
+.clar-ph { width: 40%; }
+.clar-ph[data-k="1"] { left: 13%; top: 63%; }
+.clar-ph[data-k="2"] { left: 53%; top: 52%; }
+.clar-ph[data-k="3"] { left: 91%; top: 27%; }
+@media (max-width: 899px) { .clar-ph { width: 42%; } }
+.clar-ph { width: 35%; }
+.clar-ph[data-k="1"] { left: 17%; top: 61%; }
+.clar-ph[data-k="2"] { left: 51%; top: 52%; }
+.clar-ph[data-k="3"] { left: 84%; top: 34%; }
+@media (max-width: 899px) { .clar-ph { width: 36%; } }
+.clar-ph[data-k="1"] { left: 17%; top: 62%; }
+.clar-ph[data-k="2"] { left: 49%; top: 53%; }
+.clar-ph[data-k="3"] { left: 80%; top: 37%; }
+@media (max-width: 899px) { .clar-stage { height: min(96vw, 440px); } .clar-ph { width: 40%; } }
+@media (max-width: 899px) { .clar-ph { width: 34%; } }
