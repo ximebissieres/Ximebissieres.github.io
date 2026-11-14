@@ -2255,3 +2255,6 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .is-fan .comp:nth-child(2) { width: 30%; }
   .is-fan .comp:nth-child(3) { margin-left: 0; width: 26%; }
 }
+/* Operación: captura de WhatsApp sin mockup de teléfono (se mantiene la pill) */
+.ex-chat-phone { padding: 0; background: none; border-radius: 18px; box-shadow: 0 0 0 1px var(--line), 0 22px 40px -28px rgba(41, 38, 43, .35); overflow: hidden; }
+.ex-chat-phone img { border-radius: 0; }
