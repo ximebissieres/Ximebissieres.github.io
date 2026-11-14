@@ -2258,3 +2258,23 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 /* Operación: captura de WhatsApp sin mockup de teléfono (se mantiene la pill) */
 .ex-chat-phone { padding: 0; background: none; border-radius: 18px; box-shadow: 0 0 0 1px var(--line), 0 22px 40px -28px rgba(41, 38, 43, .35); overflow: hidden; }
 .ex-chat-phone img { border-radius: 0; }
+
+/* Monchis · 02 Dar claridad: escena con la pantalla de cupones al centro y
+   dos recortes flotando a distinta altura (variante distinta al bloque 01) */
+.crit-visual.is-stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; gap: clamp(14px, 2.4vw, 32px); padding: clamp(28px, 3.5vw, 44px) clamp(18px, 3vw, 40px) clamp(40px, 4vw, 52px); background: radial-gradient(120% 90% at 50% 0%, var(--bg-2) 0%, var(--bg-3) 60%); }
+.is-stage figure { margin: 0; position: relative; display: grid; justify-items: center; gap: 12px; transition: transform .5s var(--ease); }
+.is-stage .st-card img { display: block; width: 100%; height: auto; border-radius: 18px; background: var(--surface); box-shadow: 0 0 0 1px var(--line), 0 26px 46px -26px rgba(41, 38, 43, .42); }
+.is-stage .st-pago { align-self: end; }
+.is-stage .st-resumen { align-self: start; }
+.st-screen { padding: 7px; border-radius: 34px; background: var(--ink); box-shadow: inset 0 0 0 1.5px #4A454D, 0 34px 60px -30px rgba(41, 38, 43, .5); }
+.st-screen img { display: block; width: 100%; height: auto; border-radius: 27px; }
+.is-stage figcaption { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: .7rem; font-weight: var(--w-semibold); color: var(--ink); white-space: nowrap; }
+.is-stage figcaption::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--rose); }
+@media (hover: hover) { .is-stage figure:hover { transform: translateY(-6px); } }
+@media (max-width: 699px) {
+  .crit-visual.is-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 24px 14px 28px; gap: 18px 12px; }
+  .is-stage .st-phone { grid-column: 1 / -1; order: -1; width: 78%; justify-self: center; }
+  .is-stage .st-pago, .is-stage .st-resumen { align-self: start; }
+  .is-stage figcaption { font-size: .62rem; padding: 4px 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .is-stage figure { transition: none; } }
