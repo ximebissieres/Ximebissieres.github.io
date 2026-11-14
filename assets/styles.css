@@ -2152,3 +2152,9 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (max-width: 899px) { .ex-bracket { left: calc(100% + 6px); width: 8px; } }
 @media (prefers-reduced-motion: reduce) { .ex-bracket { transition: none; } }
 .ex-bracket { background: transparent; }
+
+/* Monchis · 01: las tres cards comparten la misma celda y el mismo alto,
+   así las pestañas y la card no se desplazan al cambiar de estado */
+.explorer.is-ready .ex-panels { display: grid; }
+.explorer.is-ready .ex-panel { grid-area: 1 / 1; align-self: stretch; }
+.explorer.is-ready .ex-panel[hidden] { display: grid; visibility: hidden; }
