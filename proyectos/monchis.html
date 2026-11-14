@@ -32,10 +32,21 @@ summary: 'En Monchis, los pedidos podían ser con envío a domicilio, retiro en 
       <div class="explorer" data-explorer>
         <figure class="ex-visual">
           <div class="ex-phone">
-            <img src="/assets/img/monchis-checkout-anterior.webp" alt="Checkout anterior de Monchis, «Pagar y pedir»: dirección arriba, detalle de costos, método de pago, cupones mostrados solo como montos, datos de facturación y botón Finalizar orden" width="947" height="2048" loading="lazy" decoding="async">
-            <span class="ex-hl" data-for="op" style="left:8%;top:12%;width:84%;height:9.4%" aria-hidden="true"></span>
-            <span class="ex-hl" data-for="exp" style="left:8%;top:21.6%;width:84%;height:16.6%" aria-hidden="true"></span>
-            <span class="ex-hl" data-for="exp" style="left:8%;top:49.4%;width:85%;height:13.4%" aria-hidden="true"></span>
+            <div class="ex-screen">
+              <img src="/assets/img/monchis-checkout-anterior.webp" alt="Checkout anterior de Monchis, «Pagar y pedir»: dirección arriba, detalle de costos, método de pago, cupones mostrados solo como montos, datos de facturación y botón Finalizar orden" width="947" height="2048" loading="lazy" decoding="async">
+              <svg class="ex-dim" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <defs><mask id="ex-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                  <rect x="0" y="0" width="100" height="100" fill="#fff"/>
+                  <rect class="ex-hl" data-for="op" x="4" y="10.6" width="92" height="9.7" rx="2" fill="#000"/>
+                  <rect class="ex-hl" data-for="exp" x="4" y="20.9" width="92" height="17.2" rx="2" fill="#000"/>
+                  <rect class="ex-hl" data-for="exp" x="4" y="49.2" width="92" height="14.2" rx="2" fill="#000"/>
+                </mask></defs>
+                <rect x="0" y="0" width="100" height="100" fill="#FFFCFA" fill-opacity=".72" mask="url(#ex-mask)"/>
+              </svg>
+            </div>
+            <span class="ex-hl ex-bracket" data-for="op" style="top:12%;height:9.4%" aria-hidden="true"></span>
+            <span class="ex-hl ex-bracket" data-for="exp" style="top:21.6%;height:16.6%" aria-hidden="true"></span>
+            <span class="ex-hl ex-bracket" data-for="exp" style="top:49.4%;height:13.4%" aria-hidden="true"></span>
           </div>
           <figcaption class="fig-cap ex-cap">As is</figcaption>
         </figure>

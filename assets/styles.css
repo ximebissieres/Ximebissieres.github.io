@@ -2136,3 +2136,19 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .ex-fr li { gap: 8px; }
 .ex-fr li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink); flex: none; }
 .ex-fr li.is-absent::before { background: transparent; border: 1.5px dashed var(--rose); box-sizing: border-box; width: 10px; height: 10px; }
+
+/* Monchis · 01 As is: el área relevante queda nítida y el resto se atenúa;
+   una llave fuera del teléfono señala la zona. Nada se dibuja sobre el texto. */
+.ex-screen { position: relative; border-radius: 30px; overflow: hidden; }
+.ex-screen img { border-radius: 0; }
+.ex-dim { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.ex-dim .ex-hl { display: none; }
+.ex-dim .ex-hl.is-on { display: inline; }
+.ex-phone > .ex-hl:not(.ex-bracket) { display: none; }
+.ex-bracket { position: absolute; left: calc(100% + 8px); width: 10px; border: 2px solid var(--rose); border-left: 0; border-radius: 0 8px 8px 0; opacity: 0; transition: opacity .3s var(--ease); pointer-events: none; }
+.ex-bracket::after { content: ""; position: absolute; left: 100%; top: 50%; width: 8px; height: 2px; background: var(--rose); }
+.ex-bracket.is-on { opacity: 1; }
+.explorer.is-absent .ex-phone img { filter: none; }
+@media (max-width: 899px) { .ex-bracket { left: calc(100% + 6px); width: 8px; } }
+@media (prefers-reduced-motion: reduce) { .ex-bracket { transition: none; } }
+.ex-bracket { background: transparent; }
