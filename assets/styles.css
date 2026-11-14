@@ -2317,3 +2317,9 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .clar-ph[data-k="3"] { left: 80%; top: 37%; }
 @media (max-width: 899px) { .clar-stage { height: min(96vw, 440px); } .clar-ph { width: 40%; } }
 @media (max-width: 899px) { .clar-ph { width: 34%; } }
+/* Dar claridad: las tres pantallas en una fila ordenada, misma distancia y alineación, girada en bloque */
+.clar-row { position: absolute; left: 50%; top: 50%; width: 112%; display: flex; align-items: flex-start; gap: 7%; transform: translate(-50%, -50%) rotate(-30deg); }
+.clar-row .clar-ph { position: relative; left: auto !important; top: auto !important; width: auto; flex: 1 1 0; transform: none; }
+.clar-row .clar-ph img { aspect-ratio: 923 / 2000; object-fit: cover; object-position: top; }
+@media (max-width: 899px) { .clar-row .clar-ph { width: auto; } }
+.clar-row { width: 100%; gap: 6%; }
