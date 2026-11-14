@@ -2373,7 +2373,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 }
 .co-status { margin-top: 2px; }
 /* Mobile: teléfono arriba con marcadores numerados y anotaciones como lista */
-@media (max-width: 899px) {
+@media (max-width: 1099px) {
   .co-stage { grid-template-columns: 1fr; gap: 28px; }
   .co-arrow { justify-self: center; transform: rotate(90deg); }
   .co-side { aspect-ratio: auto; display: grid; justify-items: center; gap: 14px; }
@@ -2389,7 +2389,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .co-status { display: block; line-height: 1.5; }
 .co-status::before { display: inline-block; vertical-align: middle; margin-right: 8px; }
 .co-status b { margin-right: 6px; }
-@media (max-width: 899px) {
+@media (max-width: 1099px) {
   .co-stage { gap: 22px; }
   .co-side { grid-template-columns: minmax(0, 42%) minmax(0, 1fr); justify-items: stretch; align-items: center; column-gap: 14px; row-gap: 10px; }
   .co-head { grid-column: 1 / -1; justify-self: start; }
@@ -2426,3 +2426,14 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 }
 @media (max-width: 699px) and (prefers-reduced-motion: reduce) { .crit-carousel.is-ready .crits { transition: none; } }
 @media (max-width: 699px) { .crit-carousel.is-ready .crits > .crit { align-self: flex-start; } }
+
+/* Monchis · 02: carrusel minimalista; cada diapositiva con su alto, la pista lo anima */
+.crit-carousel.is-ready .crits { align-items: flex-start; border-radius: 0; transition: height .45s cubic-bezier(.22, .8, .2, 1); }
+.crit-carousel.is-ready .crits > .crit { align-self: flex-start; padding: 0; border: 0; border-radius: 0; background: none; align-content: start; }
+.crit-carousel.is-ready .crits > .crit.crit--split { align-items: center; }
+.crit-carousel.is-ready .cc-nav { margin-bottom: 20px; }
+.crit-carousel + .crit-close { margin-top: clamp(28px, 3.5vw, 40px); }
+.co b { font-size: .84rem; }
+.co-t { font-size: .74rem; }
+@media (prefers-reduced-motion: reduce) { .crit-carousel.is-ready .crits { transition: none; } }
+@media (min-width: 1100px) { .co-stage { padding-bottom: 6px; } .co-side { margin-bottom: -3%; } }

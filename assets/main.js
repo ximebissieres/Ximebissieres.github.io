@@ -395,8 +395,7 @@
     var cur = 0, track = box.querySelector('.crits');
     var narrow = window.matchMedia('(max-width: 699px)');
     function fit() {
-      if (narrow.matches) track.style.height = slides[cur].offsetHeight + 'px';
-      else track.style.height = '';
+      track.style.height = slides[cur].offsetHeight + 'px';
     }
     window.addEventListener('resize', fit);
     window.addEventListener('load', fit);
