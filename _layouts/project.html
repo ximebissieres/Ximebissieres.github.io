@@ -41,7 +41,9 @@ body_class: is-project
       <p class="case-summary">{{ page.summary }}</p>
     </header>
     {%- endif %}
-    {%- if p.hero and p.hero.pantallas %}
+    {%- if p.hero and p.hero.ocultar_imagen %}
+    {%- comment -%} Portada sin imagen (hero.ocultar_imagen: true en _data/projects.yml) {%- endcomment -%}
+    {%- elsif p.hero and p.hero.pantallas %}
     {% include case-screens.html project=p %}
     {%- elsif p.hero and p.hero.visual %}
     {% include case-visual.html project=p %}
