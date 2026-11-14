@@ -2401,3 +2401,28 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .co-dot { width: 17px; height: 17px; line-height: 17px; font-size: .58rem; }
   .co-n { width: 17px; height: 17px; font-size: .56rem; }
 }
+
+/* Monchis · 02: carrusel como una pista horizontal; tarjetas de igual alto, contenido centrado */
+.crit-carousel.is-ready .crits { display: flex; align-items: stretch; gap: 24px; overflow: hidden; border-radius: 28px; }
+.crit-carousel.is-ready .crits > .crit {
+  grid-area: auto; flex: 0 0 100%; min-width: 0; box-sizing: border-box; visibility: visible;
+  padding: clamp(20px, 3vw, 36px); border: 1px solid var(--line); border-radius: 28px; background: var(--surface);
+  align-content: center; align-items: center;
+  transform: translateX(calc(var(--i, 0) * (-100% - 24px)));
+  transition: transform .55s cubic-bezier(.22, .8, .2, 1), opacity .4s var(--ease);
+}
+.crit-carousel.is-ready .crits > .crit:not(.is-current) { opacity: .35; }
+.crit-carousel.is-ready .crits > .crit.is-current { animation: none; }
+.crit-carousel.is-ready .crits > .crit.crit--split, .crit-carousel.is-ready .crits > .crit--tips { align-items: center; }
+.crit-carousel.is-ready .cc-nav { margin-bottom: 14px; }
+.crit-carousel + .crit-close { margin-top: clamp(24px, 3vw, 32px); }
+@media (max-width: 599px) { .crit-carousel.is-ready .crits > .crit { padding: 18px 14px; border-radius: 22px; } }
+@media (prefers-reduced-motion: reduce) { .crit-carousel.is-ready .crits > .crit { transition: none; } }
+.crit-carousel, .crit-carousel .crits { min-width: 0; max-width: 100%; }
+/* Celular: cada tarjeta con su propio alto (la pista anima la altura) para no dejar grandes vacíos */
+@media (max-width: 699px) {
+  .crit-carousel.is-ready .crits { align-items: flex-start; transition: height .45s cubic-bezier(.22, .8, .2, 1); }
+  .crit-carousel.is-ready .crits > .crit { align-content: start; }
+}
+@media (max-width: 699px) and (prefers-reduced-motion: reduce) { .crit-carousel.is-ready .crits { transition: none; } }
+@media (max-width: 699px) { .crit-carousel.is-ready .crits > .crit { align-self: flex-start; } }

@@ -392,10 +392,19 @@
     var slides = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
     if (!tabs.length || slides.some(function (x) { return !x; })) return;
     box.classList.add('is-ready');
-    var cur = 0;
+    var cur = 0, track = box.querySelector('.crits');
+    var narrow = window.matchMedia('(max-width: 699px)');
+    function fit() {
+      if (narrow.matches) track.style.height = slides[cur].offsetHeight + 'px';
+      else track.style.height = '';
+    }
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
     function show(i, focus) {
       cur = (i + tabs.length) % tabs.length;
-      tabs.forEach(function (t, j) { var on = j === cur; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; slides[j].hidden = !on; slides[j].classList.toggle('is-current', on); });
+      tabs.forEach(function (t, j) { var on = j === cur; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; slides[j].hidden = false; slides[j].inert = !on; slides[j].setAttribute('aria-hidden', String(!on)); slides[j].classList.toggle('is-current', on); });
+      track.style.setProperty('--i', cur);
+      fit();
       if (focus) tabs[cur].focus();
     }
     tabs.forEach(function (t, j) {
@@ -410,7 +419,7 @@
     var prev = box.querySelector('.cc-prev'), next = box.querySelector('.cc-next');
     if (prev) prev.addEventListener('click', function () { show(cur - 1); });
     if (next) next.addEventListener('click', function () { show(cur + 1); });
-    var x0 = null, y0 = null, track = box.querySelector('.crits');
+    var x0 = null, y0 = null;
     track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
     track.addEventListener('touchend', function (e) {
       if (x0 === null) return;
