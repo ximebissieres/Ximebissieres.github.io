@@ -2022,3 +2022,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .crit-visual.is-three { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
 @media (max-width: 699px) { .crit-visual.is-three { grid-template-columns: 1fr; max-width: 22rem; margin-inline: auto; } }
 .crit.tip-cmp { border-top: 1px solid var(--line); padding-top: clamp(24px, 3vw, 36px); gap: 20px; }
+/* Composición del hero reutilizada en «La propuesta»: sin animación de entrada */
+.cscreens--inline .cs-phone { animation: none !important; transform: none !important; }

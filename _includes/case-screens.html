@@ -2,14 +2,15 @@
   Portada de caso con pantallas reales del producto (hoy: Monchis · checkout).
   Datos: _data/projects.yml → hero.pantallas. La primera pantalla es la
   protagonista (al centro); las siguientes son complementarias (a los lados).
-  En mobile solo se ve la protagonista. Parámetro: project.
+  En mobile solo se ve la protagonista. Parámetros: project, inline (para
+  reutilizarla dentro del caso, sin transición de página ni parallax).
 {%- endcomment -%}
 {%- assign p = include.project -%}
-<figure class="pmedia pmedia-hero cscreens" style="view-transition-name: media-{{ p.slug }}" data-scroll-shift>
+<figure class="pmedia pmedia-hero cscreens{% if include.inline %} cscreens--inline{% endif %}"{% unless include.inline %} style="view-transition-name: media-{{ p.slug }}" data-scroll-shift{% endunless %}>
   {%- for s in p.hero.pantallas %}
   <div class="cs-phone cs-{{ forloop.index }}">
     <span class="cs-tag">{{ s.etiqueta }}</span>
-    <div class="cs-screen"><img src="{{ s.imagen }}" alt="{{ s.alt | escape }}" width="{{ s.ancho }}" height="{{ s.alto }}" decoding="async"{% if forloop.first %} fetchpriority="high"{% endif %}></div>
+    <div class="cs-screen"><img src="{{ s.imagen }}" alt="{{ s.alt | escape }}" width="{{ s.ancho }}" height="{{ s.alto }}" decoding="async"{% if include.inline %} loading="lazy"{% elsif forloop.first %} fetchpriority="high"{% endif %}></div>
   </div>
   {%- endfor %}
 </figure>
