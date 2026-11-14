@@ -2033,3 +2033,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .cscreens--inline .cs-3 { --x: 73%; }
 }
 @media (max-width: 600px) { .cscreens--inline .cs-1 { top: 16.6%; } }
+/* 04 · Impacto: sin línea inferior; propinas como nota secundaria de cierre */
+.impact-pair { border-bottom: 0; padding-bottom: 4px; }
+.impact-note { max-width: 46rem; padding: 12px 16px; border-radius: 14px; background: var(--bg-3); font-size: .88rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.impact-note b { display: block; margin-bottom: 2px; font-size: .7rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); }
