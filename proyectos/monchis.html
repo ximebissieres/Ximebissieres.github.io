@@ -99,8 +99,20 @@ summary: 'En Monchis, los pedidos podían ser con envío a domicilio, retiro en 
     <section class="chapter" id="decisiones" data-title="Las decisiones">
       <header class="chapter-head"><p class="eyebrow">Las decisiones</p><h2 class="chapter-title">Priorizar el cierre del pedido, <em>no multiplicar decisiones</em></h2></header>
       <p class="lead">La persona ya había tomado las principales decisiones de su pedido. En este último paso necesitaba revisar lo importante, corregir lo crítico y pagar. Defendí ese enfoque junto a Producto y lo tradujimos en tres criterios.</p>
+      <div class="crit-carousel" data-carousel aria-roledescription="carrusel" aria-label="Criterios de diseño">
+        <div class="cc-nav">
+          <div class="cc-tabs" role="tablist" aria-label="Criterios">
+            <button type="button" role="tab" id="cc-t1" aria-controls="cc-s1" aria-selected="true"><span>01</span>Dar control</button>
+            <button type="button" role="tab" id="cc-t2" aria-controls="cc-s2" aria-selected="false" tabindex="-1"><span>02</span>Dar claridad</button>
+            <button type="button" role="tab" id="cc-t3" aria-controls="cc-s3" aria-selected="false" tabindex="-1"><span>03</span>Propinas</button>
+          </div>
+          <div class="cc-arrows">
+            <button type="button" class="cc-prev" aria-label="Criterio anterior">←</button>
+            <button type="button" class="cc-next" aria-label="Criterio siguiente">→</button>
+          </div>
+        </div>
       <div class="crits">
-        <article class="crit">
+        <article class="crit" id="cc-s1" role="tabpanel" aria-labelledby="cc-t1" aria-roledescription="diapositiva">
           <div class="crit-text">
             <p class="crit-n">01</p>
             <h3>Dar control, <em>pero con límites</em></h3>
@@ -111,7 +123,7 @@ summary: 'En Monchis, los pedidos podían ser con envío a domicilio, retiro en 
             <figure class="comp"><img src="/assets/img/monchis-componente-direcciones.webp" alt="Recorte de la pantalla Mis direcciones: encabezado, aviso «Solo podés elegir entre tus direcciones guardadas con cobertura para este local» y tres direcciones guardadas" width="923" height="1135" loading="lazy" decoding="async"><figcaption>Solo direcciones con cobertura</figcaption></figure>
           </div>
         </article>
-        <article class="crit crit--split">
+        <article class="crit crit--split" id="cc-s2" role="tabpanel" aria-labelledby="cc-t2" aria-roledescription="diapositiva">
           <div class="crit-text">
             <p class="crit-n">02</p>
             <h3>Dar claridad <em>sin perder el foco</em></h3>
@@ -130,7 +142,7 @@ summary: 'En Monchis, los pedidos podían ser con envío a domicilio, retiro en 
             </div>
           </div>
         </article>
-        <article class="crit crit--stack tip-cmp" data-switch>
+        <article class="crit crit--stack tip-cmp" id="cc-s3" role="tabpanel" aria-labelledby="cc-t3" aria-roledescription="diapositiva" data-switch>
           <div class="crit-text">
             <p class="crit-n">03</p>
             <h3>Propinas: sugerir <em>sin quitar el control</em></h3>
@@ -174,6 +186,7 @@ summary: 'En Monchis, los pedidos podían ser con envío a domicilio, retiro en 
           </div>
         </div>
         </article>
+      </div>
       </div>
       <p class="crit-close">Mostrar lo necesario, en el momento adecuado, <em>sin alejar a la persona de finalizar su pedido</em>.</p>
     </section>

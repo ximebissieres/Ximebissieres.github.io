@@ -2323,3 +2323,24 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .clar-row .clar-ph img { aspect-ratio: 923 / 2000; object-fit: cover; object-position: top; }
 @media (max-width: 899px) { .clar-row .clar-ph { width: auto; } }
 .clar-row { width: 100%; gap: 6%; }
+
+/* Monchis · 02: los tres criterios en un carrusel de alto constante */
+.cc-nav { display: none; }
+.crit-carousel.is-ready .cc-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+.cc-tabs { display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.cc-tabs [role="tab"] { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font: var(--w-medium) .88rem/1 var(--sans); cursor: pointer; white-space: nowrap; transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease); }
+.cc-tabs [role="tab"] span { font-size: .72rem; font-weight: var(--w-semibold); color: var(--rose); }
+.cc-tabs [role="tab"][aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.cc-tabs [role="tab"][aria-selected="true"] span { color: var(--blush); }
+.cc-tabs [role="tab"]:focus-visible, .cc-arrows button:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.cc-arrows { display: flex; gap: 6px; flex: none; }
+.cc-arrows button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 400 1rem/1 var(--sans); cursor: pointer; transition: border-color .25s var(--ease), background-color .25s var(--ease); }
+@media (hover: hover) { .cc-arrows button:hover { border-color: var(--blush); background: var(--bg-3); } }
+.crit-carousel.is-ready .crits { display: grid; }
+.crit-carousel.is-ready .crits > .crit { grid-area: 1 / 1; border-top: 0; padding-block: 20px 0; align-self: stretch; }
+.crit-carousel.is-ready .crits > .crit[hidden] { display: grid; visibility: hidden; }
+.crit-carousel.is-ready .crits > .crit.is-current { animation: ex-in .35s var(--ease) both; }
+.crit-carousel.is-ready .crit.tip-cmp { border-top: 0; }
+@media (max-width: 599px) { .cc-arrows { display: none; } .cc-tabs [role="tab"] { padding: 8px 11px; font-size: .82rem; } }
+@media (prefers-reduced-motion: reduce) { .crit-carousel.is-ready .crits > .crit.is-current { animation: none; } }
+.crit-carousel.is-ready .crits > .crit { align-content: start; align-items: start; }

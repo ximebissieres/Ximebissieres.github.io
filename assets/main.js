@@ -381,3 +381,42 @@
     });
   });
 })();
+
+/* ---------- Caso: carrusel de criterios ([data-carousel]) ----------
+   Selección manual (pestañas, flechas, teclado y deslizamiento táctil).
+   Todas las diapositivas ocupan la misma celda: el alto es el de la más alta,
+   así el carrusel no salta al cambiar. Sin JS se ven una debajo de la otra. */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-carousel]'), function (box) {
+    var tabs = Array.prototype.slice.call(box.querySelectorAll('.cc-tabs [role="tab"]'));
+    var slides = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    if (!tabs.length || slides.some(function (x) { return !x; })) return;
+    box.classList.add('is-ready');
+    var cur = 0;
+    function show(i, focus) {
+      cur = (i + tabs.length) % tabs.length;
+      tabs.forEach(function (t, j) { var on = j === cur; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; slides[j].hidden = !on; slides[j].classList.toggle('is-current', on); });
+      if (focus) tabs[cur].focus();
+    }
+    tabs.forEach(function (t, j) {
+      t.addEventListener('click', function () { show(j); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); show(cur + 1, true); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); show(cur - 1, true); }
+        else if (e.key === 'Home') { e.preventDefault(); show(0, true); }
+        else if (e.key === 'End') { e.preventDefault(); show(tabs.length - 1, true); }
+      });
+    });
+    var prev = box.querySelector('.cc-prev'), next = box.querySelector('.cc-next');
+    if (prev) prev.addEventListener('click', function () { show(cur - 1); });
+    if (next) next.addEventListener('click', function () { show(cur + 1); });
+    var x0 = null, y0 = null, track = box.querySelector('.crits');
+    track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && !e.target.closest('.ex-tabs, .tip-cmp-tabs, .sol-tabs')) show(cur + (dx < 0 ? 1 : -1));
+    });
+    show(0);
+  });
+})();
