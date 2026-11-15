@@ -40,6 +40,13 @@
   hero:
     titulo: "Un checkout para confirmar, *no para volver a empezar*"
     bajada: "En Monchis, los pedidos podían ser con envío a domicilio, retiro en el local o agendados. Rediseñar el checkout implicaba adaptarlo a cada escenario, simplificar decisiones y mantener el foco en finalizar el pedido."
+    # Imagen que reemplaza a la bajada (la bajada queda guardada arriba y vuelve
+    # a mostrarse si borras este bloque). Provisoria: checkout as is.
+    imagen:
+      src: "/assets/img/monchis-checkout-anterior.webp"
+      alt: "Checkout anterior de Monchis, «Pagar y pedir»"
+      ancho: 947
+      alto: 2048
     # Bloque lateral opcional: para mostrarlo, agrega etiqueta_descripcion y descripcion.
     # Pantallas reales de la portada (máximo 3). La primera es la protagonista.
     # ancho / alto: tamaño real de cada imagen (no cambiar si no cambias la imagen).
