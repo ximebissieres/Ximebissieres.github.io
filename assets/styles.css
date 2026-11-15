@@ -2525,3 +2525,10 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (max-width: 1099px) {
   .case-hero--story:not(:has(.case-brief)) .case-title { white-space: nowrap; font-size: min(3.6rem, calc((100vw - 40px) / 12)); }
 }
+/* Hero Monchis: la composición recupera su tamaño anterior (6/11 del ancho útil),
+   aunque el título ocupe más; si hace falta, sobresale hacia el margen derecho. */
+@media (min-width: 1100px) {
+  .case-hero--story:not(:has(.case-brief)) .case-intro { justify-self: start; }
+  .case-hero--story:not(:has(.case-brief)) { container-type: inline-size; }
+  .case-hero--story:not(:has(.case-brief)) .hero-comp { width: calc((100cqw - clamp(32px, 4vw, 64px)) * 6 / 11); max-width: none; }
+}
