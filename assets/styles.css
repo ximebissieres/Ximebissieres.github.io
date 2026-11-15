@@ -2542,3 +2542,6 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .ex-visual .ex-title { margin: 0 0 14px; font-size: .74rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); text-align: center; }
 /* Monchis · El desafío: más aire entre la bajada y el explorador */
 .chapter--explorer .explorer { margin-top: clamp(28px, 4vw - 25px, 31px); }
+/* Monchis · El desafío: título sobre las pestañas, mismo estilo que el del mockup */
+.ex-side .ex-title--side { margin: 0 0 14px; font-family: var(--sans); font-size: .74rem; line-height: 1.3; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); text-align: left; }
+@media (min-width: 900px) { .chapter--explorer .explorer { align-items: start; } .chapter--explorer .ex-side { align-content: start; } }
