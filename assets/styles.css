@@ -2807,3 +2807,6 @@ em, .em, i { color: inherit; }
 }
 .overview p, .overview--editorial p, .overview--editorial .ov-impact p { margin-top: 10px; font-size: 1.04rem; line-height: 1.45; color: var(--ink); text-wrap: pretty; }
 .overview .ov-lead { display: inline; margin: 0; font: inherit; letter-spacing: inherit; }
+
+/* Casos: los H3 no llevan trazo de pincel (texto normal, sin destacar) */
+.case h3 em { padding: 0; margin: 0; background: none !important; animation: none !important; color: inherit !important; }

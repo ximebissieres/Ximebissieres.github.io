@@ -481,7 +481,7 @@
    El <head> marca html.brush-js solo si hay IntersectionObserver y no se pidió reducir movimiento. */
 (function () {
   if (!document.documentElement.classList.contains('brush-js')) return;
-  var ems = Array.prototype.slice.call(document.querySelectorAll('.case :is(h1, h2, h3, h4) em'));
+  var ems = Array.prototype.slice.call(document.querySelectorAll('.case :is(h1, h2, h4) em'));
   if (!ems.length) return;
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
