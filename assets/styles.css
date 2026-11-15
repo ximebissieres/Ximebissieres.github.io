@@ -2875,3 +2875,20 @@ html.brush-js .imp-kpi .imp-num { transition: background-size 1s var(--ease) cal
 .imp-note-title { align-items: flex-start; }
 .imp-note-dot { margin-top: .18em; }
 .imp-val { display: inline-block; text-align: right; }
+
+/* Impacto v2: sin líneas divisorias arriba, flecha de tendencia junto a cada cifra,
+   y las tarjetas suben bajo la aclaración */
+.chapter--impact .imp-metrics { border-top: 0; padding-top: 0; margin-top: calc(var(--imp-gap) - 28px); }
+.chapter--impact .imp-more { border-top: 0; padding-top: 0; margin-top: calc(var(--imp-gap) - 28px); }
+.chapter--impact .imp-cards { margin-top: 0; }
+.imp-num { display: flex; align-items: center; gap: .1em; background: none; padding: 0; margin-left: 0; }
+.imp-fig {
+  display: inline-flex; align-items: baseline; gap: .04em;
+  padding: 0 .08em; background: var(--brush-svg) 0 88% / 100% 34% no-repeat;
+}
+.imp-arrow { flex: none; display: grid; place-items: center; width: .42em; height: .42em; margin-top: .06em; }
+.imp-arrow svg { width: 100%; height: 100%; fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+html.brush-js .imp-kpi:not(.in) .imp-num { background-size: auto; }
+html.brush-js .imp-kpi:not(.in) .imp-fig { background-size: 0% 34%; }
+html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) calc(var(--d, 0) * 90ms + .35s); }
+.imp-num { gap: .02em; }
