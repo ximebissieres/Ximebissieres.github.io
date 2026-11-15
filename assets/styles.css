@@ -2704,3 +2704,16 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .site-footer a { color: inherit; }
 .site-footer a:hover { color: var(--bg); }
 .site-footer em { color: var(--blush); }
+
+/* ---------- Contacto: fondo negro como el pie, con textos y botones de buen contraste ---------- */
+.contact, .motion .contact { background: var(--ink); }
+.contact .eyebrow { color: var(--blush); }
+.contact .sec-title { color: var(--bg); }
+.contact .sec-title em { color: var(--blush); }
+.contact .sec-note { color: color-mix(in srgb, var(--bg) 72%, var(--ink)); }
+.contact .btn.primary { --btn-bg: var(--bg); --btn-fg: var(--ink); --btn-bd: var(--bg); --btn-fill: var(--brush); --btn-fg-hover: var(--ink); }
+.contact .btn.soft { --btn-bg: transparent; --btn-fg: var(--bg); --btn-bd: color-mix(in srgb, var(--bg) 30%, var(--ink)); --btn-fill: var(--brush); --btn-fg-hover: var(--ink); }
+.contact .btn:focus-visible { outline: 2px solid var(--blush); outline-offset: 3px; }
+/* En la home, una línea fina separa el contacto del pie (ambos en negro) */
+.is-home .site-footer .wrap { padding-top: 0; background: linear-gradient(color-mix(in srgb, var(--bg) 14%, var(--ink)), color-mix(in srgb, var(--bg) 14%, var(--ink))) top / 100% 1px no-repeat; background-origin: content-box; background-clip: content-box; }
+.is-home .site-footer .wrap > span { padding-top: 24px; }
