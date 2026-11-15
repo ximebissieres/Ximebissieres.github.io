@@ -43,7 +43,7 @@
     # Imagen que reemplaza a la bajada (la bajada queda guardada arriba y vuelve
     # a mostrarse si borras este bloque). Mockup de iPhone con fondo transparente.
     imagen:
-      src: "/assets/img/monchis-hero-mockup.webp"
+      src: "/assets/img/monchis-hero-mockup-v2.webp"
       alt: "Nuevo checkout de Monchis en un iPhone: detalle del pedido, instrucciones para el repartidor, método de pago con reintegro, cupones aplicados y propina"
       ancho: 1019
       alto: 2096
