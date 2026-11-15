@@ -41,7 +41,7 @@ menu:
 # --- 01 · Hero: presentación --------------------------------------------------
 hero:
   etiqueta: "Ximena Bissieres · Product Designer & AI Prototyper"   # pastilla sobre el título
-  titulo: "Transformo desafíos de negocio // en experiencias donde *el diseño, // el contenido y la IA trabajan juntos*"   # *texto* = subrayado rosa · " // " = salto de línea (solo en computador)   # *texto* = subrayado rosa · " // " = salto de línea (solo en computador)
+  titulo: "Transformo desafíos de negocio // en experiencias donde *el diseño, // el contenido y la IA trabajan juntos*"   # *texto* = subrayado rosa · " // " = salto de línea (solo en computador)
   bajada: "Identifico oportunidades y transformo problemas complejos en experiencias digitales claras y accesibles, conectando las necesidades de las personas con los objetivos del negocio."
   boton_principal: "Revisar proyectos"
   boton_secundario: "Contacto"
