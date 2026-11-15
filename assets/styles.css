@@ -2558,3 +2558,10 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 /* Monchis · Propinas: los mockups ya traen su marco de iPhone */
 .co-phone { padding: 0; border-radius: 0; background: none; box-shadow: none; }
 .co-phone img { border-radius: 0; filter: drop-shadow(0 18px 24px rgba(41, 38, 43, .14)); }
+
+/* Monchis · Propinas: títulos de los mockups a 14 px del teléfono (como «Checkout as is"),
+   ambos en rosa, y todos los marcadores en el mismo rosa */
+.co-head, .co-before .co-head, .co-after .co-head { color: var(--rose-ink); letter-spacing: .12em; font-size: .74rem; }
+.co-before .co-dot, .co-before .co-n { background: var(--rose); }
+@media (min-width: 1100px) { .co-head { top: 12%; transform: translateY(calc(-100% - 14px)); } }
+@media (max-width: 1099px) { .co-side { row-gap: 14px; } .co-side .co-phone { align-self: start; } }
