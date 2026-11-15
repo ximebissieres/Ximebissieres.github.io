@@ -26,7 +26,9 @@ body_class: is-home
           <p class="hero-kicker"><span>{% include texto.html t=h.hero.etiqueta %}</span></p>
           {%- capture titulo %}{% include texto.html t=h.hero.titulo %}{% endcapture %}
           <h1 class="hero-title" id="hero-title">{{ titulo | strip | replace: " // ", ' <br class="hb">' }}</h1>
+          {%- if h.hero.bajada != "" %}
           <p class="hero-lede">{% include texto.html t=h.hero.bajada %}</p>
+          {%- endif %}
           <div class="cta">
             <a class="btn primary" href="#proyectos">{{ h.hero.boton_principal }} <span class="arr" aria-hidden="true">→</span></a>
             <a class="btn soft" href="#contacto">{{ h.hero.boton_secundario }}</a>
