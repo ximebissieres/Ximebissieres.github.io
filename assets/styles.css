@@ -2565,3 +2565,8 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .co-before .co-dot, .co-before .co-n { background: var(--rose); }
 @media (min-width: 1100px) { .co-head { top: 12%; transform: translateY(calc(-100% - 14px)); } }
 @media (max-width: 1099px) { .co-side { row-gap: 14px; } .co-side .co-phone { align-self: start; } }
+/* Monchis · Propinas: mockups 15 % más grandes (40 % → 46 % del lado; móvil 42 % → 48 %) */
+.co-phone { width: 46%; }
+@media (max-width: 1099px) { .co-side { grid-template-columns: minmax(0, 48%) minmax(0, 1fr); } .co-phone { width: 100%; } }
+@media (min-width: 1100px) { .co-before .co-head { left: 50%; width: 46%; } .co-after .co-head { left: 4%; width: 46%; } }
+@media (min-width: 1100px) { .crit--tips .co-stage { padding-bottom: 28px; } }
