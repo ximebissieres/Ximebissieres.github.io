@@ -83,9 +83,9 @@ proyectos:
 
 # --- 03 · Mi enfoque ----------------------------------------------------------
 enfoque:
-  etiqueta: "Mi enfoque"
-  titulo: "Entender el problema. *Diseñar la solución.*"
-  bajada: "Conecto investigación, negocio y diseño para resolver problemas en equipo. El storytelling atraviesa cada etapa del proceso."
+  etiqueta: "Antes de la primera pantalla"
+  titulo: "Entender el problema. *Diseñar la solución*"   # *texto* = subrayado rosa
+  bajada: "Las buenas soluciones empiezan con buenas preguntas. Investigo, conecto perspectivas y transformo lo aprendido en experiencias que responden a necesidades reales de las personas usuarias y del negocio."
   # Capacidades: "destacada: true" pinta la tarjeta en rosa con su "marca".
   capacidades:
     - nombre: "Research"

@@ -2720,3 +2720,16 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 /* Pie: «Hecho con ♥» — corazón en el rosa del trazo de pincel */
 .foot-made { display: inline-flex; align-items: center; gap: .35em; flex-wrap: wrap; }
 .site-footer .heart { width: 1.05em; height: 1.05em; fill: var(--brush); flex: none; transform: translateY(.04em); }
+
+/* Mi enfoque: trama de puntos del hero, título en negro y trazo de pincel animado */
+.enfoque-section { position: relative; isolation: isolate; }
+.enfoque-section::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(rgba(41, 38, 43, .11) 1px, transparent 1.3px); background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent); mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent); }
+.enfoque-section .sec-title em { font-style: normal; color: inherit; padding: 0 .1em; margin: 0 -.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  background: var(--brush-svg) 0 58% / 100% 72% no-repeat; }
+.motion .enfoque-section .sec-title[data-m-split] em { background-size: 0% 72%; }
+.motion .enfoque-section .sec-title[data-m-split].m-in em { animation: m-brush .95s var(--m-ease, var(--ease)) .5s both; }
+@media (prefers-reduced-motion: reduce) {
+  .motion .enfoque-section .sec-title[data-m-split] em, .motion .enfoque-section .sec-title[data-m-split].m-in em { animation: none; background-size: 100% 72%; }
+}
