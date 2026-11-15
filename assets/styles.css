@@ -2810,3 +2810,8 @@ em, .em, i { color: inherit; }
 
 /* Casos: los H3 no llevan trazo de pincel (texto normal, sin destacar) */
 .case h3 em { padding: 0; margin: 0; background: none !important; animation: none !important; color: inherit !important; }
+
+/* Monchis · El desafío: tabs Operación / Experiencia / Negocio en mono */
+#desafio .ex-tabs [role="tab"] { font-family: var(--mono); font-weight: 500; letter-spacing: .02em; font-size: .84rem; }
+@media (max-width: 599px) { #desafio .ex-tabs [role="tab"] { font-size: .74rem; letter-spacing: 0; } }
+@media (max-width: 374px) { #desafio .ex-tabs [role="tab"] { font-size: .66rem; gap: 4px; padding-inline: 4px; } }
