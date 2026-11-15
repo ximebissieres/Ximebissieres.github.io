@@ -2449,3 +2449,16 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .chapters:has(#desafio) .crit-carousel.is-ready .crits > .crit { padding: 0; }
 .clar-body .clar-stage { height: clamp(360px, 32vw, 440px); }
 .crit-carousel .crit-visual.is-play .comp { width: min(44%, 16rem); }
+
+/* Monchis: títulos y párrafos de sección a todo el ancho */
+.chapters:has(#desafio) .chapter-head,
+.chapters:has(#desafio) .chapter-head .lead,
+.chapters:has(#desafio) .ex-intro,
+.chapters:has(#desafio) .crit-carousel .crits > .crit > .crit-text,
+.chapters:has(#desafio) .crit--stack .crit-text,
+.chapters:has(#desafio) .crit-close,
+.chapters:has(#desafio) .impact-note,
+.chapters:has(#desafio) .lessons-lead,
+.chapters:has(#desafio) .lessons-sub,
+.chapters:has(#desafio) .lead,
+.chapters:has(#desafio) .tip-intro { max-width: none; }
