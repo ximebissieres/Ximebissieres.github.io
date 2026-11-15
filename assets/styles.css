@@ -2675,3 +2675,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .m-link:hover .m-txt, .m-link.is-active .m-txt { background-size: 100% 96%; }
 /* Proyectos destacados: mismo fondo que el hero de la home (sin la trama de puntos) */
 .projects-section, .motion .projects-section { background: var(--bg); }
+/* Hero: el botón «Revisar proyectos» se rellena con el rosa del trazo de pincel */
+.hero .btn.primary { --btn-fill: var(--brush); --btn-fg-hover: var(--ink); }
