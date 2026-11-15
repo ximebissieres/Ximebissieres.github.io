@@ -2971,3 +2971,6 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 @media (max-width: 599px) { .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp { width: 33%; } .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp:last-child { width: 42%; } }
 /* Monchis · El desafío: la bajada usa el mismo estilo que las demás bajadas (.lead) */
 #desafio .ex-intro { font-size: var(--fs-lead); line-height: 1.6; font-weight: var(--w-regular); letter-spacing: -0.006em; color: var(--ink); }
+/* Monchis · Las decisiones: los párrafos de cada tab con el mismo tamaño y color que las bajadas */
+#decisiones .crit-text p { font-size: var(--fs-lead); line-height: 1.6; font-weight: var(--w-regular); letter-spacing: -0.006em; color: var(--ink); }
+#decisiones .crit-text p strong { font-weight: var(--w-bold); }
