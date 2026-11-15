@@ -2958,3 +2958,14 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .next-cta-t { padding: .5em .75em; margin: -.5em -.3em; background-size: 100% 100%; background-position: 0 50%; }
 .next-project .next-all { font-size: 1rem; }
 @media (max-width: 639px) { .next-card--v2 .next-cta { font-size: 1rem; margin-left: .3em; } .next-project .next-all { font-size: .92rem; } }
+/* Las decisiones · tres recortes en abanico (Dar control) */
+.crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp { width: min(34%, 13.5rem); }
+.is-play:has(.comp:nth-child(3)) .comp:nth-child(2) { transform: rotate(-1deg) translateY(22px); margin-left: -4%; z-index: 2; }
+.is-play:has(.comp:nth-child(3)) .comp:last-child { transform: rotate(4deg) translateY(40px); margin-left: -4%; z-index: 3; }
+@media (hover: hover) {
+  .is-play:has(.comp:nth-child(3)) .comp:nth-child(2):hover { transform: rotate(0deg) translateY(14px) scale(1.02); z-index: 4; }
+  .is-play:has(.comp:nth-child(3)) .comp:last-child:hover { transform: rotate(1.5deg) translateY(32px) scale(1.02); z-index: 4; }
+}
+@media (max-width: 599px) { .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp { width: 36%; } }
+.crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp:last-child { width: min(42%, 17rem); }
+@media (max-width: 599px) { .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp { width: 33%; } .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp:last-child { width: 42%; } }
