@@ -2642,3 +2642,4 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   font: 500 clamp(.9rem, .75rem + .45vw, 1.2rem)/1.1 var(--sans); letter-spacing: 0; color: var(--ink); }
 .hero-sticker b { box-shadow: 0 0 0 1.5px #E39CAA, 0 0 0 4px rgba(255, 238, 242, .9); }
 .hero-sticker span { box-shadow: 0 0 0 3px rgba(255, 238, 242, .9); }
+.hero-sticker b { transform: translateY(-8px); }
