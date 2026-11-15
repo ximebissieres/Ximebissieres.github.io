@@ -2896,3 +2896,6 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .imp-cards .imp-eyebrow { margin: 0; font: 400 .78rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
 .imp-cards .imp-card--label { gap: 10px; }
 .imp-cards .imp-card--label p { font-size: 1.04rem; line-height: 1.45; color: var(--ink); }
+/* Monchis · El desafío › Operación: etiqueta de la lista en mono, como los eyebrows */
+.ex-kicker--mono { margin-top: 6px; font: 500 .74rem/1.3 var(--mono); letter-spacing: .04em; color: var(--ink); }
+.ex-op-text .ex-list { margin-top: -2px; }
