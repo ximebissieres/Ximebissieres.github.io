@@ -2967,7 +2967,10 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
   .is-play:has(.comp:nth-child(3)) .comp:last-child:hover { transform: rotate(1.5deg) translateY(32px) scale(1.02); z-index: 4; }
 }
 @media (max-width: 599px) { .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp { width: 36%; } }
-.crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp:last-child { width: min(42%, 17rem); }
-@media (max-width: 599px) { .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp { width: 33%; } .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp:last-child { width: 42%; } }
+.crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp:nth-child(2) { width: min(42%, 17rem); }
+@media (max-width: 599px) { .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp { width: 33%; } .crit-carousel .crit-visual.is-play:has(.comp:nth-child(3)) .comp:nth-child(2) { width: 42%; } }
 /* Monchis · El desafío: la bajada usa el mismo estilo que las demás bajadas (.lead) */
 #desafio .ex-intro { font-size: var(--fs-lead); line-height: 1.6; font-weight: var(--w-regular); letter-spacing: -0.006em; color: var(--ink); }
+/* Dar control: el alert (al centro) queda al frente para que se lea completo */
+.is-play:has(.comp:nth-child(3)) .comp:nth-child(2) { z-index: 3; }
+.is-play:has(.comp:nth-child(3)) .comp:last-child { z-index: 2; margin-left: -2%; }
