@@ -2905,3 +2905,7 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 /* Monchis · Evidencia del problema: esquinas más rectas, aspecto más tecnológico */
 #desafio .ex-panel { border-radius: 10px; border-top-left-radius: 0; }
 #desafio .ex-tabs [role="tab"] { border-radius: 8px 8px 0 0; }
+/* Monchis · Las decisiones: pills Dar control / Dar claridad / Transparencia en mono */
+.cc-tabs [role="tab"] { font-family: var(--mono); font-weight: 500; letter-spacing: .02em; }
+@media (max-width: 599px) { .cc-tabs [role="tab"] { font-size: .72rem; letter-spacing: 0; padding: 8px 10px; gap: 6px; } }
+@media (max-width: 599px) { .cc-tabs { flex-wrap: wrap; overflow: visible; } }
