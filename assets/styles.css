@@ -2974,3 +2974,5 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 /* Dar control: el alert (al centro) queda al frente para que se lea completo */
 .is-play:has(.comp:nth-child(3)) .comp:nth-child(2) { z-index: 3; }
 .is-play:has(.comp:nth-child(3)) .comp:last-child { z-index: 2; margin-left: -2%; }
+/* Impacto: cifras sin trazo de pincel */
+.imp-fig, html.brush-js .imp-kpi .imp-fig, html.brush-js .imp-kpi:not(.in) .imp-fig { background: none; }
