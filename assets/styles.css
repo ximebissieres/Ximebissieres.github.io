@@ -2492,3 +2492,14 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .case-lede-img { aspect-ratio: auto; overflow: visible; border-radius: 0; background: none; padding: 0; justify-items: center; align-items: center; }
 .case-lede-img img { width: min(62vw, 15rem); border-radius: 0; box-shadow: none; filter: drop-shadow(0 28px 40px rgba(41, 38, 43, .22)); }
 @media (min-width: 1100px) { .case-lede-img img { width: min(100%, 16.5rem); } }
+
+/* Hero narrativo: epígrafe pegado al título; el par queda centrado verticalmente
+   respecto del mockup, y todo el hero sube */
+.case-hero--story { padding-top: clamp(8px, 1.4vw, 16px); }
+.case-hero--story > .eyebrow { margin-bottom: 14px; }
+@media (min-width: 1100px) {
+  .case-hero--story:not(:has(.case-brief)) { grid-template-rows: 1fr auto auto 1fr; align-items: start; }
+  .case-hero--story:not(:has(.case-brief)) > .eyebrow { grid-column: 1; grid-row: 2; }
+  .case-hero--story:not(:has(.case-brief)) .case-title { grid-column: 1; grid-row: 3; }
+  .case-hero--story:not(:has(.case-brief)) .case-intro { grid-column: 2; grid-row: 1 / -1; align-self: center; padding-bottom: 0; }
+}
