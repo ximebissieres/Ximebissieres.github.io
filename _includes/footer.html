@@ -1,7 +1,9 @@
 {%- comment -%} Pie de página. Textos: _data/home.yml → pie {%- endcomment -%}
 <footer class="site-footer">
   <div class="wrap">
-    <span>{% include texto.html t=site.data.home.pie.izquierda %}</span>
+    {%- capture corazon %}<svg class="heart" viewBox="0 0 24 24" role="img" aria-label="amor"><path d="M12 20.6s-7.6-4.6-9.4-9.3C1.4 8 3.4 4.6 6.9 4.4c2.1-.1 3.7 1 5.1 2.9 1.4-1.9 3-3 5.1-2.9 3.5.2 5.5 3.6 4.3 6.9-1.8 4.7-9.4 9.3-9.4 9.3Z"/></svg>{% endcapture -%}
+    {%- capture pie_izq %}{% include texto.html t=site.data.home.pie.izquierda %}{% endcapture %}
+    <span class="foot-made">{{ pie_izq | replace: "♥", corazon }}</span>
     <span>{% include texto.html t=site.data.home.pie.derecha %}</span>
   </div>
 </footer>

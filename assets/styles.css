@@ -2717,3 +2717,6 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 /* En la home, una línea fina separa el contacto del pie (ambos en negro) */
 .is-home .site-footer .wrap { padding-top: 0; background: linear-gradient(color-mix(in srgb, var(--bg) 14%, var(--ink)), color-mix(in srgb, var(--bg) 14%, var(--ink))) top / 100% 1px no-repeat; background-origin: content-box; background-clip: content-box; }
 .is-home .site-footer .wrap > span { padding-top: 24px; }
+/* Pie: «Hecho con ♥» — corazón en el rosa del trazo de pincel */
+.foot-made { display: inline-flex; align-items: center; gap: .35em; flex-wrap: wrap; }
+.site-footer .heart { width: 1.05em; height: 1.05em; fill: var(--brush); flex: none; transform: translateY(.04em); }
