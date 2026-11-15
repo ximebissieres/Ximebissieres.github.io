@@ -13,6 +13,8 @@
 #  - cover ............ Imagen de la tarjeta y la portada ("illustration" = dibujo de Monchis)
 #  - cover_alt ........ Descripción de la imagen para lectores de pantalla
 #  - cover_position ... Encuadre de la imagen (horizontal vertical), ej. "50% 0%" = arriba
+#  - card_cover ....... (Opcional) Imagen solo para la tarjeta de la home y "Siguiente proyecto".
+#                       Si no existe, se usa cover. card_cover_alt: su descripción.
 #  - order ............ Orden y número (01, 02…). Si reordenas, cambia también el orden
 #                       de los bloques en este archivo.
 #  - hero ............. (Opcional) Portada narrativa del caso: titulo, bajada,
@@ -30,9 +32,9 @@
   name: Rediseño del checkout
   menu: Checkout
   title_html: Cómo rediseñamos el checkout para dar claridad y control *sin agregar fricción* a la compra
-  cover: /assets/img/monchis-portada.webp
-  cover_alt: Logo de Monchis sobre fondo rojo
-  cover_position: 50% 50%
+  cover: illustration
+  card_cover: /assets/img/monchis-portada.webp
+  card_cover_alt: Logo de Monchis sobre fondo rojo
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
@@ -72,6 +74,8 @@
   cover: /assets/img/latam-landing.webp
   cover_alt: Landing de ofertas de LATAM rediseñada, con destinos y precios destacados
   cover_position: 50% 0%
+  card_cover: /assets/img/latam-logo.webp
+  card_cover_alt: Logo de LATAM Airlines sobre fondo azul oscuro
   hero_layout: navegador   # portada del caso: captura dentro de una ventana de navegador
 - slug: santa-isabel
   category: Supermercado
@@ -85,6 +89,8 @@
   cover: /assets/img/santa-isabel-propuesta.webp
   cover_alt: Pantallas de la propuesta de la app de Santa Isabel, desde el acceso hasta el pago
   cover_position: 50% 50%
+  card_cover: /assets/img/santa-isabel-logo.webp
+  card_cover_alt: Logo de Santa Isabel sobre fondo rojo
 - slug: paris
   category: Sellers
   teaser: Un manual de voz y tono que cualquier equipo puede aplicar.
@@ -97,3 +103,5 @@
   cover: /assets/img/paris-portada.webp
   cover_alt: Portada de Paris Marketplace
   cover_position: 50% 50%
+  card_cover: /assets/img/paris-logo.webp
+  card_cover_alt: Logo de Paris sobre fondo azul
