@@ -41,12 +41,12 @@
     titulo: "Un checkout para confirmar, *no para volver a empezar*"
     bajada: "En Monchis, los pedidos podían ser con envío a domicilio, retiro en el local o agendados. Rediseñar el checkout implicaba adaptarlo a cada escenario, simplificar decisiones y mantener el foco en finalizar el pedido."
     # Imagen que reemplaza a la bajada (la bajada queda guardada arriba y vuelve
-    # a mostrarse si borras este bloque). Provisoria: checkout to be (envío a domicilio).
+    # a mostrarse si borras este bloque). Mockup de iPhone con fondo transparente.
     imagen:
-      src: "/assets/img/monchis-checkout-envio.webp"
-      alt: "Nuevo checkout de Monchis para envío a domicilio: punto exacto de entrega, información de entrega y métodos de pago"
-      ancho: 923
-      alto: 2000
+      src: "/assets/img/monchis-hero-mockup.webp"
+      alt: "Nuevo checkout de Monchis en un iPhone: detalle del pedido, instrucciones para el repartidor, método de pago con reintegro, cupones aplicados y propina"
+      ancho: 1019
+      alto: 2096
     # Bloque lateral opcional: para mostrarlo, agrega etiqueta_descripcion y descripcion.
     # Pantallas reales de la portada (máximo 3). La primera es la protagonista.
     # ancho / alto: tamaño real de cada imagen (no cambiar si no cambias la imagen).
