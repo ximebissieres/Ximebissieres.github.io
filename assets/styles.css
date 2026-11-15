@@ -2902,3 +2902,6 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 /* El desafío › listas: viñeta punteada + aviso «no existía» (como el diseño anterior de .ex-fr) */
 .ex-list li.is-absent::before { background: transparent; border: 1.5px dashed var(--rose); box-sizing: border-box; width: 10px; height: 10px; top: .5em; left: -1.5px; }
 .ex-list li.is-absent span { margin-left: 4px; white-space: nowrap; font-size: .68rem; font-weight: var(--w-semibold); letter-spacing: .08em; text-transform: uppercase; color: var(--rose-ink); }
+/* Monchis · Evidencia del problema: esquinas más rectas, aspecto más tecnológico */
+#desafio .ex-panel { border-radius: 10px; border-top-left-radius: 0; }
+#desafio .ex-tabs [role="tab"] { border-radius: 8px 8px 0 0; }
