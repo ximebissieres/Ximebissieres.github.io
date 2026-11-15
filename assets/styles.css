@@ -2644,3 +2644,4 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .hero-sticker span { box-shadow: 0 0 0 3px rgba(255, 238, 242, .9); }
 .hero-sticker b { transform: translateY(-8px); }
 .hero-sticker b { z-index: 3; }
+@media (min-width: 980px) { .hero--v2 .hero-title { font-size: min(calc(3.85vw - 6px), 2.95rem); } }
