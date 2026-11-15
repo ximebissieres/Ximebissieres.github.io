@@ -2554,3 +2554,7 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .crit-visual.is-trio { display: flex; justify-content: center; align-items: flex-start; gap: clamp(8px, 2.4vw, 32px); padding: clamp(28px, 3.5vw, 44px) clamp(12px, 3vw, 36px); }
 .crit-visual.is-trio .trio-ph { margin: 0; flex: 0 1 13.5rem; min-width: 0; }
 .crit-visual.is-trio img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 24px rgba(41, 38, 43, .14)); }
+
+/* Monchis · Propinas: los mockups ya traen su marco de iPhone */
+.co-phone { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+.co-phone img { border-radius: 0; filter: drop-shadow(0 18px 24px rgba(41, 38, 43, .14)); }
