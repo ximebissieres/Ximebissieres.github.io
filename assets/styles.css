@@ -2909,3 +2909,52 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .cc-tabs [role="tab"] { font-family: var(--mono); font-weight: 500; letter-spacing: .02em; }
 @media (max-width: 599px) { .cc-tabs [role="tab"] { font-size: .72rem; letter-spacing: 0; padding: 8px 10px; gap: 6px; } }
 @media (max-width: 599px) { .cc-tabs { flex-wrap: wrap; overflow: visible; } }
+
+/* ==========================================================================
+   Casos · Siguiente proyecto (v2): fondo punteado como el hero de la home,
+   tarjeta blanca con logo, separador fino, epígrafe mono con punto rosa
+   y «Explorar» sobre el trazo de pincel.
+   ========================================================================== */
+.next-project { position: relative; isolation: isolate; padding-block: clamp(72px, 10vw, 140px) clamp(56px, 8vw, 110px); }
+.next-project::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(rgba(41, 38, 43, .11) 1px, transparent 1.3px); background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(transparent, #000 22%, #000 82%, transparent); mask-image: linear-gradient(transparent, #000 22%, #000 82%, transparent); }
+.next-project .wrap { gap: 22px; }
+.next-card.next-card--v2 {
+  grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 0; align-items: center;
+  padding: 16px clamp(20px, 2.4vw, 32px) 16px 16px; border-radius: 18px;
+  background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  box-shadow: 0 18px 40px -26px rgba(41, 38, 43, .28), 0 1px 2px rgba(41, 38, 43, .04);
+  transition: box-shadow .35s var(--ease), transform .35s var(--ease), border-color .35s var(--ease);
+}
+.next-card--v2 .pmedia-thumb { width: clamp(150px, 12vw, 186px); aspect-ratio: 7 / 6; border-radius: 12px; border: 0; }
+.next-card--v2 .pmedia-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.next-sep { width: 1px; height: 38px; margin-inline: clamp(18px, 2vw, 30px); background: var(--line); }
+.next-card--v2 .next-text { gap: 4px; }
+.next-card--v2 .next-label { display: inline-flex; align-items: center; gap: 12px; font: 400 .82rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
+.next-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--brush); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brush) 35%, transparent), 0 0 10px 2px color-mix(in srgb, var(--brush) 70%, transparent); }
+.next-card--v2 .next-title { font-family: var(--display); font-weight: var(--w-bold); font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.1rem); line-height: 1.1; letter-spacing: -0.02em; }
+.next-card--v2 .next-sub { font-size: clamp(1rem, .95rem + .3vw, 1.2rem); color: var(--muted); }
+.next-card--v2 .next-cta { margin-left: 16px; font-size: 1.08rem; font-weight: var(--w-medium); }
+.next-cta-t { display: inline-flex; align-items: center; gap: 8px; padding: .3em .55em; margin: -.3em -.2em;
+  background: var(--brush-svg) 0 55% / 100% 80% no-repeat; }
+.next-card--v2:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.next-project .next-all { justify-self: start; font: 400 .92rem/1.3 var(--mono); color: var(--ink); }
+@media (hover: hover) {
+  .next-card.next-card--v2:hover { background: var(--surface); border-color: color-mix(in srgb, var(--ink) 26%, transparent); transform: translateY(-2px); box-shadow: 0 24px 48px -26px rgba(41, 38, 43, .34), 0 1px 2px rgba(41, 38, 43, .04); }
+  @media (prefers-reduced-motion: no-preference) {
+    .next-dot { animation: next-pulse 2.4s ease-in-out infinite; }
+  }
+}
+@keyframes next-pulse { 50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--brush) 20%, transparent), 0 0 14px 3px color-mix(in srgb, var(--brush) 55%, transparent); } }
+@media (max-width: 639px) {
+  .next-card.next-card--v2 { grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; row-gap: 12px; padding: 14px; }
+  .next-card--v2 .pmedia-thumb { grid-row: span 2; width: 92px; aspect-ratio: 1; border-radius: 10px; }
+  .next-sep { display: none; }
+  .next-card--v2 .next-label { font-size: .68rem; gap: 8px; }
+  .next-card--v2 .next-cta { grid-column: 2; justify-self: start; margin-left: .2em; font-size: .98rem; }
+}
+.next-card--v2 .next-cta { font-size: 1.15rem; }
+.next-cta-t { padding: .5em .75em; margin: -.5em -.3em; background-size: 100% 100%; background-position: 0 50%; }
+.next-project .next-all { font-size: 1rem; }
+@media (max-width: 639px) { .next-card--v2 .next-cta { font-size: 1rem; margin-left: .3em; } .next-project .next-all { font-size: .92rem; } }

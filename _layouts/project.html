@@ -69,14 +69,15 @@ body_class: is-project
   {%- capture n_total %}0{{ total }}{% endcapture -%}
   <nav class="next-project" aria-label="Navegación entre proyectos">
     <div class="wrap">
-      <a class="next-card" href="/proyectos/{{ n.slug }}/">
+      <a class="next-card next-card--v2" href="/proyectos/{{ n.slug }}/">
         {% include project-media.html project=n size="thumb" %}
+        <span class="next-sep" aria-hidden="true"></span>
         <span class="next-text">
-          <span class="next-label">Siguiente proyecto · {{ n_num | slice: -2, 2 }} de {{ n_total | slice: -2, 2 }}</span>
+          <span class="next-label">{{ n_num | slice: -2, 2 }} // Siguiente proyecto <span class="next-dot" aria-hidden="true"></span></span>
           <span class="next-title">{{ n.company }}</span>
           <span class="next-sub">{{ n.name }}</span>
         </span>
-        <span class="next-cta">Explorar proyecto <span class="arr" aria-hidden="true">→</span></span>
+        <span class="next-cta"><span class="next-cta-t">Explorar <span class="arr" aria-hidden="true">→</span></span></span>
       </a>
       <a class="back next-all" href="/#proyectos"><span class="arr" aria-hidden="true">←</span> Todos los proyectos</a>
     </div>
