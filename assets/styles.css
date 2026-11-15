@@ -2657,3 +2657,19 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .nav-link:hover::after, .nav-link:focus-visible::after, .nav-link.is-active::after { transform: translateY(-46%) scaleX(1); }
 .nav-link:hover, .nav-link.is-active { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .nav-link::after { transition: none; } }
+
+/* Trazo de pincel también en el desplegable de proyectos y en el menú móvil (todas las páginas) */
+.menu-item b, .m-project b, .m-link .m-txt {
+  padding: 0 .12em; margin: 0 -.12em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  background: var(--brush-svg) left 62% / 0% 80% no-repeat; transition: background-size .45s var(--ease);
+}
+.menu-item:hover b, .menu-item:focus-visible b, .menu-item[aria-current="page"] b,
+.m-project:hover b, .m-project[aria-current="page"] b,
+.m-link:hover .m-txt, .m-link.is-active .m-txt { background-size: 100% 80%; }
+.menu-item[aria-current="page"], .menu-item:hover, .menu-item:focus-visible { background: var(--bg-3); }
+@media (prefers-reduced-motion: reduce) { .menu-item b, .m-project b, .m-link .m-txt { transition: none; } }
+.menu-text b { justify-self: start; }
+.menu-item b, .m-project b, .m-link .m-txt { background-position: left 60%; }
+.menu-item:hover b, .menu-item:focus-visible b, .menu-item[aria-current="page"] b,
+.m-project:hover b, .m-project[aria-current="page"] b,
+.m-link:hover .m-txt, .m-link.is-active .m-txt { background-size: 100% 96%; }

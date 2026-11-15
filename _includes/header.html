@@ -44,7 +44,7 @@
 
   <div class="mobile-menu" id="mobile-menu" hidden>
     <nav class="wrap" aria-label="{{ m.nombre_menu_movil_lector | escape }}">
-      <a class="m-link" href="/">{{ m.inicio }}</a>
+      <a class="m-link{% if page.url == '/' %} is-active{% endif %}" href="/"{% if page.url == '/' %} aria-current="page"{% endif %}><span class="m-txt">{{ m.inicio }}</span></a>
       <p class="m-group eyebrow">{{ m.proyectos }}</p>
       <ul class="m-projects">
         {% for p in site.data.projects %}
@@ -52,8 +52,8 @@
         {% endfor %}
       </ul>
       <a class="m-link m-all" href="/#proyectos">{{ m.ver_todos_los_proyectos }}</a>
-      <a class="m-link" href="/#enfoque">{{ m.enfoque }}</a>
-      <a class="m-link" href="/#contacto">{{ m.contacto }}</a>
+      <a class="m-link" href="/#enfoque"><span class="m-txt">{{ m.enfoque }}</span></a>
+      <a class="m-link" href="/#contacto"><span class="m-txt">{{ m.contacto }}</span></a>
     </nav>
   </div>
 </header>
