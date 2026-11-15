@@ -442,3 +442,28 @@
     show(0);
   });
 })();
+
+/* ---------- Hero: capas que se mueven sutilmente con el cursor ([data-parallax]) ----------
+   Solo con puntero fino y sin "reducir movimiento". El valor se suaviza con rAF. */
+(function () {
+  var box = document.querySelector('[data-parallax]');
+  if (!box) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var tx = 0, ty = 0, x = 0, y = 0, raf = 0;
+  function tick() {
+    x += (tx - x) * 0.08; y += (ty - y) * 0.08;
+    box.style.setProperty('--mx', x.toFixed(3)); box.style.setProperty('--my', y.toFixed(3));
+    raf = (Math.abs(tx - x) > 0.001 || Math.abs(ty - y) > 0.001) ? requestAnimationFrame(tick) : 0;
+  }
+  function go() { if (!raf) raf = requestAnimationFrame(tick); }
+  window.addEventListener('pointermove', function (e) {
+    var r = box.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    tx = Math.max(-1, Math.min(1, (e.clientX - cx) / (innerWidth / 2)));
+    ty = Math.max(-1, Math.min(1, (e.clientY - cy) / (innerHeight / 2)));
+    go();
+  }, { passive: true });
+  document.documentElement.addEventListener('pointerleave', function () { tx = 0; ty = 0; go(); });
+})();

@@ -16,7 +16,9 @@ body_class: is-project
       <p class="eyebrow">{{ p.company }} · {{ p.sector }}</p>
       <h1 class="case-title" id="case-title">{% include texto.html t=p.hero.titulo %}</h1>
       <div class="case-intro">
-        {%- if p.hero.imagen %}
+        {%- if p.hero.composicion %}
+        {% include hero-composicion.html c=p.hero.composicion %}
+        {%- elsif p.hero.imagen %}
         {%- comment -%} Imagen en lugar de la bajada (hero.imagen en _data/projects.yml) {%- endcomment -%}
         <figure class="case-lede-img">
           <img src="{{ p.hero.imagen.src }}" alt="{{ p.hero.imagen.alt | escape }}" width="{{ p.hero.imagen.ancho }}" height="{{ p.hero.imagen.alto }}" decoding="async" fetchpriority="high">

@@ -1,0 +1,11 @@
+{%- comment -%}
+  Composición por capas del hero (hero.composicion en _data/projects.yml).
+  Cada capa se posiciona en % del lienzo y se desplaza con el cursor según "prof".
+{%- endcomment -%}
+{%- assign c = include.c -%}
+<figure class="case-lede-img hero-comp" data-parallax role="img" aria-label="{{ c.alt | escape }}" style="aspect-ratio: {{ c.ancho }} / {{ c.alto }}">
+  {%- for l in c.capas %}
+  <img class="hc-layer" src="{{ l.src }}" alt="" width="{{ l.ancho }}" height="{{ l.alto }}" decoding="async"{% if forloop.first %} fetchpriority="high"{% endif %}
+       style="left: {{ l.x | times: 100.0 | divided_by: c.ancho }}%; top: {{ l.y | times: 100.0 | divided_by: c.alto }}%; width: {{ l.ancho | times: 100.0 | divided_by: c.ancho }}%; --d: {{ l.prof }}">
+  {%- endfor %}
+</figure>
