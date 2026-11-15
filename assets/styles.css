@@ -2686,3 +2686,12 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .eyebrow, .eyebrow[class] { font-family: var(--mono) !important; font-weight: 400; letter-spacing: .04em; }
 .pcard-kicker, .overview h2 { font-family: var(--mono) !important; font-weight: 500; letter-spacing: .04em; }
 .eyebrow, .eyebrow[class] { font-weight: 500; }
+
+/* Proyectos destacados: el trazo de pincel se pinta de izquierda a derecha cuando
+   las palabras del título terminan de subir (mismo ritmo que la sección) */
+.motion .projects-section .sec-title[data-m-split] em { background-size: 0% 72%; }
+.motion .projects-section .sec-title[data-m-split].m-in em { animation: m-brush .95s var(--m-ease, var(--ease)) .62s both; }
+@keyframes m-brush { from { background-size: 0% 72%; } to { background-size: 100% 72%; } }
+@media (prefers-reduced-motion: reduce) {
+  .motion .projects-section .sec-title[data-m-split] em, .motion .projects-section .sec-title[data-m-split].m-in em { animation: none; background-size: 100% 72%; }
+}
