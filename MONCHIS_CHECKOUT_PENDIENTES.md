@@ -64,9 +64,9 @@ El esquema ilustrativo del radio se retiró del caso (lo reemplazan las pantalla
 
 ## Estructura final del caso (narrativa de 5 secciones)
 
-01 El desafío · 02 Las decisiones · 03 La propuesta · 04 Validación e impacto · 05 Aprendizajes.
+01 El desafío · 02 Las decisiones · 03 La propuesta · 04 Impacto · 05 Aprendizajes.
 Video del flujo completo: va en «03 · La propuesta», dentro del escenario (`.sol--full`), reemplazando o acompañando el selector Envío / Retiro / Agendado. Recorrido sugerido: entrega → pago y cupones → propinas (marcada como no publicada) → resumen → footer fijo.
-Resultados cuantitativos de direcciones y cupones: se suman en las dos columnas de «04 · Validación e impacto» solo si están verificados.
+Resultados cuantitativos de direcciones y cupones: se suman en las dos columnas de «04 · Impacto» solo si están verificados.
 
 ## Prioridad ALTA
 
