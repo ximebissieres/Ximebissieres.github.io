@@ -2547,3 +2547,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (min-width: 900px) { .chapter--explorer .explorer { align-items: start; } .chapter--explorer .ex-side { align-content: start; } }
 /* Monchis · Operación: el texto arranca arriba, como en Experiencia y Negocio */
 .ex-panel--op { align-items: start; }
+/* Monchis · El desafío: 24 px más de aire sobre la frase de cierre */
+.chapter--explorer .ex-close { margin-top: 24px; }
