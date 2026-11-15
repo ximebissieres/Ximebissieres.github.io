@@ -2632,3 +2632,4 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .hero--v2 .hero-title { text-wrap: wrap; }
 @media (min-width: 980px) { .hero--v2 .hero-title { font-size: min(calc(4vw - 6px), 3.05rem); } }
 @media (max-width: 979px) { .hero-title br.hb { display: none; } }
+.hero--v2 .hero-kicker { padding-left: 14px; }

@@ -23,7 +23,7 @@ body_class: is-home
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="hero-kicker"><span class="dot" aria-hidden="true"></span><span>{% include texto.html t=h.hero.etiqueta %}</span></p>
+          <p class="hero-kicker"><span>{% include texto.html t=h.hero.etiqueta %}</span></p>
           {%- capture titulo %}{% include texto.html t=h.hero.titulo %}{% endcapture %}
           <h1 class="hero-title" id="hero-title">{{ titulo | strip | replace: " // ", ' <br class="hb">' }}</h1>
           <p class="hero-lede">{% include texto.html t=h.hero.bajada %}</p>
