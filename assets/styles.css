@@ -2874,3 +2874,4 @@ html.brush-js .imp-kpi .imp-num { transition: background-size 1s var(--ease) cal
 .chapter--impact .imp-cards h4 { margin-bottom: 0; }
 .imp-note-title { align-items: flex-start; }
 .imp-note-dot { margin-top: .18em; }
+.imp-val { display: inline-block; text-align: right; }

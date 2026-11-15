@@ -492,3 +492,37 @@
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.6 });
   ems.forEach(function (em) { io.observe(em); });
 })();
+
+/* ---------- Casos: las cifras de impacto suben desde 0 al entrar en pantalla ----------
+   Sin JS o con "reducir movimiento" se ve la cifra final. El lector de pantalla lee
+   siempre el valor final (texto .sr-only); el contador va con aria-hidden. */
+(function () {
+  var vals = Array.prototype.slice.call(document.querySelectorAll('.imp-val[data-count]'));
+  if (!vals.length || !('IntersectionObserver' in window) || !window.requestAnimationFrame) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  vals.forEach(function (el) {
+    el.style.minWidth = el.getBoundingClientRect().width + 'px'; // ancho final: el % no se mueve
+    el.textContent = '0';
+  });
+  function run(el) {
+    var end = parseFloat(el.getAttribute('data-count')) || 0;
+    var dur = Math.min(1100, 600 + end * 5), t0 = null;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur);
+      var e = 1 - Math.pow(1 - k, 3); // ease-out: rápido al inicio, frena al final
+      el.textContent = String(Math.round(end * e));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target, d = parseFloat(getComputedStyle(el.closest('.imp-kpi') || el).getPropertyValue('--d')) || 0;
+      setTimeout(function () { run(el); }, 150 + d * 120);
+      io.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.5 });
+  vals.forEach(function (el) { io.observe(el); });
+})();
