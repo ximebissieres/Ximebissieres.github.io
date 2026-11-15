@@ -2503,3 +2503,9 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .case-hero--story:not(:has(.case-brief)) .case-title { grid-column: 1; grid-row: 3; }
   .case-hero--story:not(:has(.case-brief)) .case-intro { grid-column: 2; grid-row: 1 / -1; align-self: center; padding-bottom: 0; }
 }
+/* Hero Monchis: composición horizontal (teléfono + componentes) con sombras propias */
+.case-lede-img img { width: 100%; max-width: 40rem; filter: none; }
+@media (min-width: 1100px) {
+  .case-hero--story:not(:has(.case-brief)) { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+  .case-lede-img img { width: 100%; }
+}
