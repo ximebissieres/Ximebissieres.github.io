@@ -2532,3 +2532,9 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
   .case-hero--story:not(:has(.case-brief)) { container-type: inline-size; }
   .case-hero--story:not(:has(.case-brief)) .hero-comp { width: calc((100cqw - clamp(32px, 4vw, 64px)) * 6 / 11); max-width: none; }
 }
+
+/* Monchis · El desafío: el AS IS ya trae su propio mockup de iPhone (fondo transparente) */
+.ex-phone { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+.ex-phone .ex-screen { border-radius: 0; overflow: visible; }
+.ex-phone img { border-radius: 0; filter: drop-shadow(0 22px 30px rgba(41, 38, 43, .16)); }
+@media (min-width: 900px) { .ex-phone { max-width: min(16.5rem, calc((100svh - 230px) * 542 / 1116)); } }
