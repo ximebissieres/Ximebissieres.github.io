@@ -2545,3 +2545,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 /* Monchis · El desafío: título sobre las pestañas, mismo estilo que el del mockup */
 .ex-side .ex-title--side { margin: 0 0 14px; font-family: var(--sans); font-size: .74rem; line-height: 1.3; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); text-align: left; }
 @media (min-width: 900px) { .chapter--explorer .explorer { align-items: start; } .chapter--explorer .ex-side { align-content: start; } }
+/* Monchis · Operación: el texto arranca arriba, como en Experiencia y Negocio */
+.ex-panel--op { align-items: start; }
