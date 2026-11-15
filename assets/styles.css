@@ -2755,3 +2755,5 @@ html.brush-js .case em:not(.b-in) { background-size: 0% 72%; }
 html.brush-js .case em.b-in { animation: m-brush .95s var(--ease) var(--b-delay, .15s) both; }
 .case .case-title em { --b-delay: .75s; }
 .case em { color: inherit !important; }
+/* Casos: el trazo de pincel queda solo en los títulos (h1–h4); el resto de destacados, texto normal */
+.case em:not(:is(h1, h2, h3, h4) em) { padding: 0; margin: 0; background: none !important; animation: none !important; }
