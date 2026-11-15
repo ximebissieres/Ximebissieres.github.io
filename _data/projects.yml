@@ -59,8 +59,8 @@
     # Para volver a mostrar la imagen de la portada, borra la línea siguiente o cámbiala a false.
     ocultar_imagen: true
     pantallas:
-      - imagen: "/assets/img/monchis-checkout-envio.webp"
-        alt: "Checkout de Monchis con envío a domicilio: mapa para elegir el punto exacto de entrega, dirección, tiempo estimado de 30 a 60 minutos, detalle del pedido, método de pago y footer fijo con el total y el botón Finalizar pedido"
+      - imagen: "/assets/img/monchis-checkout-envio-v2.webp"
+        alt: "Checkout de Monchis con envío a domicilio: mapa para elegir el punto exacto de entrega, dirección, tiempo estimado de 30 a 60 minutos, detalle del pedido, propina sugerida de Gs. 2.000, inicio de ¿Cómo querés pagar? y footer fijo con el total y el botón Finalizar pedido"
         etiqueta: "Envío a domicilio"
         ancho: 923
         alto: 2000
