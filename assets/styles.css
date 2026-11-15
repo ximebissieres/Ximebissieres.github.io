@@ -2815,3 +2815,62 @@ em, .em, i { color: inherit; }
 #desafio .ex-tabs [role="tab"] { font-family: var(--mono); font-weight: 500; letter-spacing: .02em; font-size: .84rem; }
 @media (max-width: 599px) { #desafio .ex-tabs [role="tab"] { font-size: .74rem; letter-spacing: 0; } }
 @media (max-width: 374px) { #desafio .ex-tabs [role="tab"] { font-size: .66rem; gap: 4px; padding-inline: 4px; } }
+
+/* ==========================================================================
+   Monchis · 04 Impacto: métricas protagonistas → otros resultados → nota de
+   estado (propinas). Cifras grandes con el trazo de pincel; tarjetas iguales
+   a las de datos rápidos; separadores finos entre bloques.
+   ========================================================================== */
+.chapter--impact { --imp-gap: clamp(32px, 4.5vw, 56px); }
+.chapter--impact > .lead { margin-top: 0; }
+
+/* Métricas */
+.imp-metrics { margin-top: var(--imp-gap); padding-top: var(--imp-gap); border-top: 1px solid var(--line); }
+.imp-kpis { display: grid; gap: 28px; margin: 0; }
+@media (min-width: 720px) {
+  .imp-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+  .imp-kpi + .imp-kpi { border-left: 1px solid var(--line); padding-left: clamp(28px, 4vw, 56px); }
+  .imp-kpi:first-child { padding-right: clamp(28px, 4vw, 56px); }
+}
+@media (max-width: 719px) { .imp-kpi + .imp-kpi { padding-top: 28px; border-top: 1px solid var(--line); } }
+.imp-kpi { display: grid; gap: 14px; align-content: start; margin: 0; min-width: 0; }
+.imp-num {
+  justify-self: start; display: inline-flex; align-items: baseline; gap: .04em;
+  font-family: var(--display); font-weight: var(--w-black); font-size: clamp(4.5rem, 3rem + 6vw, 8.5rem);
+  line-height: .9; letter-spacing: -0.045em; color: var(--ink); font-variant-numeric: tabular-nums;
+  padding: 0 .08em; margin-left: -.08em;
+  background: var(--brush-svg) 0 88% / 100% 34% no-repeat;
+}
+.imp-num small { font-size: .5em; font-weight: var(--w-bold); letter-spacing: -0.02em; }
+.imp-kpi dd { margin: 0; max-width: 24rem; font-size: 1.12rem; line-height: 1.45; color: var(--ink); text-wrap: pretty; }
+html.brush-js .imp-kpi:not(.in) .imp-num { background-size: 0% 34%; }
+html.brush-js .imp-kpi .imp-num { transition: background-size 1s var(--ease) calc(var(--d, 0) * 90ms + .35s); }
+.imp-src {
+  margin-top: 28px; max-width: 46rem; padding-left: 14px; border-left: 2px solid var(--blush);
+  font-size: .92rem; line-height: 1.55; color: var(--muted); text-wrap: pretty;
+}
+
+/* Otros resultados */
+.imp-more { margin-top: var(--imp-gap); padding-top: var(--imp-gap); border-top: 1px solid var(--line); }
+.imp-more-title { font-family: var(--display); font-weight: var(--w-semibold); font-size: var(--step-1); line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); }
+.imp-cards { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+@media (min-width: 900px) { .imp-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.imp-cards li {
+  display: grid; gap: 8px; align-content: start; padding: 18px 20px 20px; border-radius: 14px;
+  background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+}
+.imp-n { font: 400 .78rem/1.3 var(--mono); letter-spacing: .04em; color: var(--ink); }
+.imp-cards h4 { margin-top: 2px; font-family: var(--display); font-weight: var(--w-semibold); font-size: 1.04rem; line-height: 1.3; letter-spacing: -0.005em; color: var(--ink); }
+.imp-cards p { font-size: .94rem; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+
+/* Nota de estado: propinas */
+.imp-note { margin-top: var(--imp-gap); padding: 18px 20px; border-radius: 14px; background: var(--bg-3); max-width: none; }
+.imp-note-title { display: flex; align-items: center; gap: 10px; font: 500 .78rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
+.imp-note-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; border: 1.5px dashed var(--ink); box-sizing: border-box; opacity: .55; }
+.imp-note p:not(.imp-note-title) { margin-top: 8px; max-width: 52rem; font-size: .92rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+/* El capítulo ya separa sus hijos con gap (28px): los bloques suman solo lo que falta */
+.chapter--impact { --imp-gap: clamp(32px, 4vw, 48px); }
+.chapter--impact .imp-metrics, .chapter--impact .imp-more, .chapter--impact .imp-note { margin-top: calc(var(--imp-gap) - 28px); }
+.chapter--impact .imp-cards h4 { margin-bottom: 0; }
+.imp-note-title { align-items: flex-start; }
+.imp-note-dot { margin-top: .18em; }
