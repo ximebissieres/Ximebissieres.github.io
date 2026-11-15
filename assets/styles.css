@@ -2695,3 +2695,12 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (prefers-reduced-motion: reduce) {
   .motion .projects-section .sec-title[data-m-split] em, .motion .projects-section .sec-title[data-m-split].m-in em { animation: none; background-size: 100% 72%; }
 }
+
+/* ---------- Pie de página: fondo negro (el mismo carbón de los títulos) ---------- */
+.site-footer { background: var(--ink); color: color-mix(in srgb, var(--bg) 78%, var(--ink)); }
+.site-footer .wrap, .is-home .site-footer .wrap, .is-project .site-footer .wrap { padding-block: 28px 32px; background: none; }
+.is-home .site-footer .wrap > span { padding-top: 0; }
+.site-footer span:last-child { color: var(--blush); }
+.site-footer a { color: inherit; }
+.site-footer a:hover { color: var(--bg); }
+.site-footer em { color: var(--blush); }
