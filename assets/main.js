@@ -493,7 +493,7 @@
   ems.forEach(function (em) { io.observe(em); });
 })();
 
-/* ---------- Casos: las cifras de impacto suben desde 0 al entrar en pantalla ----------
+/* ---------- Casos: las cifras de impacto cuentan hasta su valor al entrar en pantalla ----------
    Sin JS o con "reducir movimiento" se ve la cifra final. El lector de pantalla lee
    siempre el valor final (texto .sr-only); el contador va con aria-hidden. */
 (function () {
@@ -501,27 +501,31 @@
   if (!vals.length || !('IntersectionObserver' in window) || !window.requestAnimationFrame) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   vals.forEach(function (el) {
-    el.style.minWidth = el.getBoundingClientRect().width + 'px'; // ancho final: el % no se mueve
-    el.textContent = '0';
+    // Ancho fijo = el mayor entre la cifra inicial y la final: el % no se mueve
+    var wEnd = el.getBoundingClientRect().width;
+    el._wEnd = wEnd;
+    el.textContent = el.getAttribute('data-from') || '0';
+    el.style.minWidth = Math.max(wEnd, el.getBoundingClientRect().width) + 'px';
   });
   function run(el) {
     var end = parseFloat(el.getAttribute('data-count')) || 0;
-    var dur = Math.min(1100, 600 + end * 5), t0 = null;
+    var from = parseFloat(el.getAttribute('data-from')) || 0; // 93 → 5 baja; 0 → 98 sube
+    var dur = 1100, t0 = null; // misma duración para todas: terminan juntas
     function step(t) {
       if (t0 === null) t0 = t;
       var k = Math.min(1, (t - t0) / dur);
       var e = 1 - Math.pow(1 - k, 3); // ease-out: rápido al inicio, frena al final
-      el.textContent = String(Math.round(end * e));
+      el.textContent = String(Math.round(from + (end - from) * e));
       if (k < 1) requestAnimationFrame(step);
+      else { el.style.transition = 'min-width .45s cubic-bezier(.2, .7, .15, 1)'; el.style.minWidth = el._wEnd + 'px'; } // 93 → 5: el ancho se ajusta suave al final
     }
     requestAnimationFrame(step);
   }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
-      var el = e.target, d = parseFloat(getComputedStyle(el.closest('.imp-kpi') || el).getPropertyValue('--d')) || 0;
-      setTimeout(function () { run(el); }, 150 + d * 120);
-      io.unobserve(el);
+      // Todas las cifras arrancan a la vez para terminar al mismo tiempo
+      vals.forEach(function (v) { if (!v._run) { v._run = true; io.unobserve(v); setTimeout(function () { run(v); }, 150); } });
     });
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.5 });
   vals.forEach(function (el) { io.observe(el); });
