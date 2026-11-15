@@ -2633,3 +2633,12 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 @media (min-width: 980px) { .hero--v2 .hero-title { font-size: min(calc(4vw - 6px), 3.05rem); } }
 @media (max-width: 979px) { .hero-title br.hb { display: none; } }
 .hero--v2 .hero-kicker { padding-left: 14px; }
+
+/* Hero · sticker «Vibe / Coding + UX»: Vibe centrado sobre la pastilla, como la referencia */
+.hero-sticker { justify-items: center; transform: rotate(-8deg); filter: drop-shadow(0 10px 14px rgba(41, 38, 43, .18)); }
+.hero-sticker b { position: relative; z-index: 1; padding: 3px 12px 6px; border-radius: 16px; background: #EDB2BD; box-shadow: 0 0 0 1.5px #E39CAA, 0 0 0 4px color-mix(in srgb, var(--surface) 75%, transparent);
+  font: 800 clamp(1.5rem, 1.1rem + 1.2vw, 2.25rem)/1 var(--display); letter-spacing: -0.02em; color: var(--ink); }
+.hero-sticker span { position: relative; z-index: 2; margin-top: -8px; padding: 6px 18px 7px; border-radius: 999px; background: #F6C6CE; border: 1.5px solid #E39CAA; box-shadow: 0 0 0 3px color-mix(in srgb, var(--surface) 70%, transparent);
+  font: 500 clamp(.9rem, .75rem + .45vw, 1.2rem)/1.1 var(--sans); letter-spacing: 0; color: var(--ink); }
+.hero-sticker b { box-shadow: 0 0 0 1.5px #E39CAA, 0 0 0 4px rgba(255, 238, 242, .9); }
+.hero-sticker span { box-shadow: 0 0 0 3px rgba(255, 238, 242, .9); }
