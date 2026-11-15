@@ -45,14 +45,14 @@
     # sutilmente con el cursor. x, y, ancho: posición en px dentro del lienzo
     # (ancho × alto). prof: cuánto se mueve la capa (negativo = sentido opuesto).
     composicion:
-      ancho: 1392
+      ancho: 1659
       alto: 1158
       alt: "Nuevo checkout de Monchis en un iPhone, con tres componentes destacados: propina sugerida, método de pago con cupones aplicados y resumen del pedido con descuentos y total a pagar"
       capas:
-        - { src: "/assets/img/monchis-hero-telefono.webp", x: 406, y: 20, ancho: 543, alto: 1118, prof: -6 }
-        - { src: "/assets/img/monchis-hero-resumen.webp", x: 755, y: 379, ancho: 617, alto: 660, prof: 16 }
-        - { src: "/assets/img/monchis-hero-pago.webp", x: 20, y: 448, ancho: 573, alto: 521, prof: 20 }
-        - { src: "/assets/img/monchis-hero-propina.webp", x: 74, y: 148, ancho: 487, alto: 287, prof: 26 }
+        - { src: "/assets/img/monchis-hero-telefono.webp", x: 671, y: 20, ancho: 543, alto: 1118, prof: -6 }
+        - { src: "/assets/img/monchis-hero-resumen.webp", x: 1022, y: 373, ancho: 617, alto: 660, prof: 16 }
+        - { src: "/assets/img/monchis-hero-pago.webp", x: 263, y: 388, ancho: 573, alto: 521, prof: 20 }
+        - { src: "/assets/img/monchis-hero-propina.webp", x: 20, y: 138, ancho: 487, alto: 287, prof: 26 }
     # Bloque lateral opcional: para mostrarlo, agrega etiqueta_descripcion y descripcion.
     # Pantallas reales de la portada (máximo 3). La primera es la protagonista.
     # ancho / alto: tamaño real de cada imagen (no cambiar si no cambias la imagen).
