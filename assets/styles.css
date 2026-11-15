@@ -2480,3 +2480,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .prop-video.is-playing .pv-play { opacity: 0; transform: scale(.9); pointer-events: none; }
 .prop-video.is-playing .pv-player { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .prop-video .cscreens--inline, .prop-video .pv-play, .prop-video .pv-player { transition: opacity .2s linear; transform: none !important; filter: none !important; } }
+/* El video queda centrado en la caja: mismo aire arriba y abajo */
+.prop-video .pv-player { padding: 0 clamp(16px, 2.4vw, 28px); }
