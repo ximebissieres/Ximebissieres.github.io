@@ -30,7 +30,9 @@
   name: Rediseño del checkout
   menu: Checkout
   title_html: Cómo rediseñamos el checkout para dar claridad y control *sin agregar fricción* a la compra
-  cover: illustration
+  cover: /assets/img/monchis-portada.webp
+  cover_alt: Logo de Monchis sobre fondo rojo
+  cover_position: 50% 50%
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
