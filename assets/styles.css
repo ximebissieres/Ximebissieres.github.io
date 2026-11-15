@@ -2514,3 +2514,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .hero-comp { position: relative; width: 100%; max-width: 44rem; justify-self: center; display: block; padding: 0; overflow: visible; }
 .hero-comp .hc-layer { position: absolute; height: auto; max-width: none; border-radius: 0; box-shadow: none; filter: none;
   transform: translate3d(calc(var(--mx, 0) * var(--d) * 1px), calc(var(--my, 0) * var(--d) * 1px), 0); will-change: transform; }
+/* Hero Monchis: título 15 % más ancho (5 → 5,75 de 11 partes) */
+@media (min-width: 1100px) { .case-hero--story:not(:has(.case-brief)) { grid-template-columns: minmax(0, 5.75fr) minmax(0, 5.25fr); } }
