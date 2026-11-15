@@ -2673,3 +2673,5 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .menu-item:hover b, .menu-item:focus-visible b, .menu-item[aria-current="page"] b,
 .m-project:hover b, .m-project[aria-current="page"] b,
 .m-link:hover .m-txt, .m-link.is-active .m-txt { background-size: 100% 96%; }
+/* Proyectos destacados: mismo fondo que el hero de la home (sin la trama de puntos) */
+.projects-section, .motion .projects-section { background: var(--bg); }
