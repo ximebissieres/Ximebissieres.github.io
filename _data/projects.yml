@@ -69,8 +69,8 @@
         etiqueta: "Retiro en el local"
         ancho: 923
         alto: 2000
-      - imagen: "/assets/img/monchis-checkout-agendado.webp"
-        alt: "Checkout de Monchis con pedido agendado para el lunes 18 de octubre de 8:00 a 9:00 h, método de pago y footer fijo con el total y el botón Finalizar pedido"
+      - imagen: "/assets/img/monchis-checkout-agendado-v2.webp"
+        alt: "Checkout de Monchis con pedido agendado para el lunes 18 de octubre de 8:00 a 9:00 h: mapa para elegir el punto exacto de entrega, dirección, detalle del pedido, propina sugerida de Gs. 2.000 y footer fijo con el total y el botón Finalizar pedido"
         etiqueta: "Pedido agendado"
         ancho: 923
         alto: 2000
