@@ -2757,3 +2757,9 @@ html.brush-js .case em.b-in { animation: m-brush .95s var(--ease) var(--b-delay,
 .case em { color: inherit !important; }
 /* Casos: el trazo de pincel queda solo en los títulos (h1–h4); el resto de destacados, texto normal */
 .case em:not(:is(h1, h2, h3, h4) em) { padding: 0; margin: 0; background: none !important; animation: none !important; }
+
+/* Casos · índice lateral: la sección activa también lleva el trazo de pincel (se pinta al activarse) */
+.toc .toc-t { padding: 0 .14em; margin: 0 -.14em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  background: var(--brush-svg) left 60% / 0% 92% no-repeat; transition: background-size .5s var(--ease); }
+.toc a.is-active .toc-t { background-size: 100% 92%; }
+@media (prefers-reduced-motion: reduce) { .toc .toc-t { transition: none; } }

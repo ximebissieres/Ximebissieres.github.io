@@ -102,7 +102,7 @@
       var li = document.createElement('li');
       var a = document.createElement('a');
       a.href = '#' + ch.id;
-      a.innerHTML = '<span class="toc-n">' + String(i + 1).padStart(2, '0') + '</span>' + (ch.getAttribute('data-title') || '');
+      a.innerHTML = '<span class="toc-n">' + String(i + 1).padStart(2, '0') + '</span><span class="toc-t">' + (ch.getAttribute('data-title') || '') + '</span>';
       li.appendChild(a);
       if (toc) toc.appendChild(li);
       return a;
