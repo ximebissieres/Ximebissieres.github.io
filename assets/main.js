@@ -107,19 +107,28 @@
       if (toc) toc.appendChild(li);
       return a;
     });
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          var i = chapters.indexOf(e.target);
-          tocLinks.forEach(function (a, j) {
-            a.classList.toggle('is-active', j === i);
-            if (j === i) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current');
-          });
-        });
-      }, { rootMargin: '-30% 0px -60% 0px' });
-      chapters.forEach(function (c) { io.observe(c); });
-    }
+    // La sección activa se decide por scroll: la última cuyo inicio ya cruzó
+    // el 35% de la ventana. Arriba del todo (portada) no hay ninguna activa,
+    // así el trazo de «El desafío» también se pinta recién al hacer scroll.
+    var tocActive = -2, tocTicking = false;
+    var updateToc = function () {
+      tocTicking = false;
+      var line = window.innerHeight * 0.35, cur = -1;
+      if (window.scrollY > 0) {
+        chapters.forEach(function (c, i) { if (c.getBoundingClientRect().top <= line) cur = i; });
+      }
+      if (cur === tocActive) return;
+      tocActive = cur;
+      tocLinks.forEach(function (a, j) {
+        a.classList.toggle('is-active', j === cur);
+        if (j === cur) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current');
+      });
+    };
+    var queueToc = function () { if (!tocTicking) { tocTicking = true; requestAnimationFrame(updateToc); } };
+    window.addEventListener('scroll', queueToc, { passive: true });
+    window.addEventListener('resize', queueToc);
+    window.addEventListener('load', queueToc);
+    updateToc();
   }
 
   /* ---------- Portada de caso: la captura se desliza dentro de la ventana ----------
