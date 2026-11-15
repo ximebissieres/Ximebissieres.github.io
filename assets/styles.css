@@ -2541,4 +2541,4 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 /* Monchis · El desafío: título del mockup, centrado sobre el teléfono */
 .ex-visual .ex-title { margin: 0 0 14px; font-size: .74rem; font-weight: var(--w-semibold); letter-spacing: .12em; text-transform: uppercase; color: var(--rose-ink); text-align: center; }
 /* Monchis · El desafío: más aire entre la bajada y el explorador */
-.chapter--explorer .explorer { margin-top: clamp(28px, 4vw, 56px); }
+.chapter--explorer .explorer { margin-top: clamp(28px, 4vw - 25px, 31px); }
