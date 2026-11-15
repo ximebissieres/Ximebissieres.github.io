@@ -77,7 +77,7 @@ datos_rapidos:
 proyectos:
   etiqueta: "Proyectos destacados"
   titulo: "Cada proyecto tiene *una historia que contar*"   # *texto* = subrayado rosa
-  bajada: "Cada proyecto tiene un desafío diferente. Aquí comparto cómo abordo problemas reales, las decisiones que impulsé junto a mis equipos y lo que aprendimos en el camino."
+  bajada: "Diferentes desafíos, decisiones y aprendizajes que reflejan mi forma de entender problemas y transformarlos en experiencias digitales."
   tarjeta_ver_proyecto: "Conocer proyecto"          # enlace que aparece en las tarjetas en celular
 
 
