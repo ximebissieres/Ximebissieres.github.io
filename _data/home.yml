@@ -76,7 +76,7 @@ datos_rapidos:
 # Las tarjetas de cada proyecto se editan en _data/projects.yml
 proyectos:
   etiqueta: "Proyectos destacados"
-  titulo: "Cuatro proyectos, *cuatro formas* de diseñar un producto"
+  titulo: "Cada proyecto tiene *una historia que contar*"   # *texto* = subrayado rosa
   bajada: "Cada proyecto tiene un desafío diferente. Aquí comparto cómo abordo problemas reales, las decisiones que impulsé junto a mis equipos y lo que aprendimos en el camino."
   tarjeta_ver_proyecto: "Conocer proyecto"          # enlace que aparece en las tarjetas en celular
 

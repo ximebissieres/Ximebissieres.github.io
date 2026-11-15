@@ -2677,3 +2677,12 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .projects-section, .motion .projects-section { background: var(--bg); }
 /* Hero: el botón «Revisar proyectos» se rellena con el rosa del trazo de pincel */
 .hero .btn.primary { --btn-fill: var(--brush); --btn-fg-hover: var(--ink); }
+
+/* Proyectos destacados: el destacado del título usa el trazo de pincel (no texto rosa) */
+.projects-section .sec-title em { font-style: normal; color: inherit; padding: 0 .1em; margin: 0 -.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  background: var(--brush-svg) 0 58% / 100% 72% no-repeat; }
+
+/* Epígrafes: misma tipografía monoespaciada que la pastilla del hero */
+.eyebrow, .eyebrow[class] { font-family: var(--mono) !important; font-weight: 400; letter-spacing: .04em; }
+.pcard-kicker, .overview h2 { font-family: var(--mono) !important; font-weight: 500; letter-spacing: .04em; }
+.eyebrow, .eyebrow[class] { font-weight: 500; }
