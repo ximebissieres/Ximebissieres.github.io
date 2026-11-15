@@ -373,19 +373,25 @@
   Array.prototype.forEach.call(document.querySelectorAll('[data-poster-video]'), function (box) {
     var btn = box.querySelector('[data-pv-play]'), player = box.querySelector('.pv-player');
     if (!btn || !player) return;
-    var v = player.querySelector('video');
+    var v = player.querySelector('video'), hideT;
     btn.addEventListener('click', function () {
-      box.classList.add('is-playing');
+      clearTimeout(hideT);
       player.hidden = false;
+      void player.offsetWidth; // fuerza el estado inicial para que el fundido se vea
+      box.classList.add('is-playing');
+      btn.tabIndex = -1;
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
       v.focus({ preventScroll: true });
     });
     // Al terminar, vuelve a la portada (mockup atenuado + botón) y rebobina.
     v.addEventListener('ended', function () {
-      player.hidden = true;
       box.classList.remove('is-playing');
-      try { v.currentTime = 0; } catch (e) {}
+      btn.tabIndex = 0;
       btn.focus({ preventScroll: true });
+      hideT = setTimeout(function () {
+        player.hidden = true;
+        try { v.currentTime = 0; } catch (e) {}
+      }, 750);
     });
   });
 })();

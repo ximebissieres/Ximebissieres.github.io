@@ -2120,7 +2120,6 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .pv-player { padding: clamp(16px, 2.4vw, 28px); }
 .pv-player[hidden] { display: none; }
 .pv-player video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 18px; background: var(--surface); box-shadow: 0 0 0 1px color-mix(in srgb, var(--blush) 35%, transparent), 0 30px 60px -36px rgba(41, 38, 43, .45); }
-.prop-video.is-playing .cscreens--inline, .prop-video.is-playing .pv-play { display: none; }
 .pv-nojs { padding: 0 24px 24px; text-align: center; }
 @media (min-width: 900px) { .prop-video .cscreens--inline .cs-1 { top: 12%; } .prop-video .cscreens--inline .cs-2, .prop-video .cscreens--inline .cs-3 { top: 18.1%; } }
 @media (max-width: 600px) { .prop-video .cscreens--inline { aspect-ratio: 4 / 5.2; } .prop-video .cscreens--inline .cs-1 { top: 13%; } }
@@ -2471,3 +2470,13 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .prop-video .pv-play { position: relative; z-index: 2; left: auto; top: auto; bottom: auto; margin: 0; transform: none; align-self: center; justify-self: center; }
 @media (hover: hover) { .prop-video .pv-play:hover { transform: scale(1.04); } }
 .prop-video .pv-player { align-self: center; }
+
+/* Monchis · La propuesta: transición suave portada ⇄ video (fundido cruzado + leve escala).
+   Ambos estados comparten la misma celda, así el bloque no cambia de alto de golpe. */
+.prop-video .cscreens--inline { transition: opacity .6s var(--ease), transform .7s var(--ease), filter .6s var(--ease); }
+.prop-video .pv-play { transition: opacity .35s var(--ease), transform .35s var(--ease); }
+.prop-video .pv-player { opacity: 0; transform: scale(.97); transition: opacity .6s var(--ease) .12s, transform .7s var(--ease) .12s; }
+.prop-video.is-playing .cscreens--inline { opacity: 0; transform: scale(1.03); filter: blur(4px); pointer-events: none; }
+.prop-video.is-playing .pv-play { opacity: 0; transform: scale(.9); pointer-events: none; }
+.prop-video.is-playing .pv-player { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .prop-video .cscreens--inline, .prop-video .pv-play, .prop-video .pv-player { transition: opacity .2s linear; transform: none !important; filter: none !important; } }
