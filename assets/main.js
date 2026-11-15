@@ -467,3 +467,19 @@
   }, { passive: true });
   document.documentElement.addEventListener('pointerleave', function () { tx = 0; ty = 0; go(); });
 })();
+
+/* ---------- Casos: el trazo de pincel de los destacados se pinta al entrar en pantalla ----------
+   El <head> marca html.brush-js solo si hay IntersectionObserver y no se pidió reducir movimiento. */
+(function () {
+  if (!document.documentElement.classList.contains('brush-js')) return;
+  var ems = Array.prototype.slice.call(document.querySelectorAll('.case em'));
+  if (!ems.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('b-in');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.6 });
+  ems.forEach(function (em) { io.observe(em); });
+})();

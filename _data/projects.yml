@@ -38,7 +38,7 @@
   # Hero narrativo del caso (opcional). Si existe, reemplaza el título y el
   # resumen de la portada del caso. *texto* se destaca en rosa.
   hero:
-    titulo: "Un checkout para pagar, *no para volver a empezar*"
+    titulo: "Un checkout para pagar, // *no para volver a empezar*"   # *texto* = subrayado rosa · " // " = salto de línea
     bajada: "En Monchis, los pedidos podían ser con envío a domicilio, retiro en el local o agendados. Rediseñar el checkout implicaba adaptarlo a cada escenario, simplificar decisiones y mantener el foco en finalizar el pedido."
     # Imagen que reemplaza a la bajada (la bajada queda guardada arriba y vuelve
     # a mostrarse si borras este bloque). Composición por capas que se mueve
