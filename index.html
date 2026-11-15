@@ -19,39 +19,42 @@ body_class: is-home
 </script>
 
   <!-- ---------------- 01 · Hero ---------------- -->
-  <section class="hero" id="inicio" aria-labelledby="hero-name">
-    <div class="hero-orb" aria-hidden="true"></div>
+  <section class="hero hero--v2" id="inicio" aria-labelledby="hero-title">
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="hero-kicker eyebrow"><span>{% include texto.html t=h.hero.etiqueta %}</span></p>
-          <h1 class="hero-name" id="hero-name">
-            <span class="line"><span>{{ h.hero.nombre_linea_1 }}</span></span>
-            <span class="line"><span><em>{{ h.hero.nombre_linea_2 }}</em></span></span>
-          </h1>
+          <p class="hero-kicker"><span class="dot" aria-hidden="true"></span><span>{% include texto.html t=h.hero.etiqueta %}</span></p>
+          {%- capture titulo %}{% include texto.html t=h.hero.titulo %}{% endcapture %}
+          <h1 class="hero-title" id="hero-title">{{ titulo | strip | replace: " // ", ' <br class="hb">' }}</h1>
           <p class="hero-lede">{% include texto.html t=h.hero.bajada %}</p>
           <div class="cta">
             <a class="btn primary" href="#proyectos">{{ h.hero.boton_principal }} <span class="arr" aria-hidden="true">→</span></a>
             <a class="btn soft" href="#contacto">{{ h.hero.boton_secundario }}</a>
           </div>
+          {%- if h.hero.herramientas %}
+          <ul class="hero-tools" aria-label="Herramientas">
+            {%- for t in h.hero.herramientas %}<li>{{ t }}</li>{%- endfor %}
+          </ul>
+          {%- endif %}
         </div>
         <figure class="hero-photo">
           <div class="portrait-frame">
             <span class="portrait-ph" aria-hidden="true">{{ h.hero.foto_iniciales }}</span>
             <img src="{{ h.hero.foto }}" alt="{{ h.hero.foto_descripcion | escape }}" width="1000" height="1777" decoding="async" fetchpriority="high" onerror="this.remove()">
           </div>
+          {%- if h.hero.sticker_linea_1 %}
+          <span class="hero-sticker" aria-hidden="true"><b>{{ h.hero.sticker_linea_1 }}</b><span>{{ h.hero.sticker_linea_2 }}</span></span>
+          {%- endif %}
         </figure>
       </div>
+
+      <dl class="quick quick--cards">
+        {%- for dato in h.datos_rapidos %}
+        <div data-m style="--i:{{ forloop.index0 }}"><dt><span>0{{ forloop.index }}</span> / {{ dato.etiqueta }}</dt><dd>{% include texto.html t=dato.texto %}</dd></div>
+        {%- endfor %}
+      </dl>
     </div>
   </section>
-
-  <div class="wrap">
-    <dl class="quick">
-      {%- for dato in h.datos_rapidos %}
-      <div data-m style="--i:{{ forloop.index0 }}"><dt>{{ dato.etiqueta }}</dt><dd>{% include texto.html t=dato.texto %}</dd></div>
-      {%- endfor %}
-    </dl>
-  </div>
 
   <!-- ---------------- 02 · Proyectos ---------------- -->
   <section class="section projects-section" id="proyectos" aria-labelledby="proyectos-title" data-m-tint>

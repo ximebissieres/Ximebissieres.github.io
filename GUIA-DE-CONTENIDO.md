@@ -71,10 +71,11 @@ Los proyectos del desplegable salen de `projects.yml` (campos `company` y `menu`
 
 | Texto | Campo |
 |---|---|
-| Etiqueta sobre el nombre ("Product Designer · Contenido y sistemas") | `etiqueta` |
-| Nombre (primera línea, gris) | `nombre_linea_1` |
-| Apellido (segunda línea, rosa) | `nombre_linea_2` |
-| Bajada bajo el nombre | `bajada` |
+| Pastilla sobre el título ("Ximena Bissieres · Product Designer & AI Prototyper") | `etiqueta` |
+| Título grande (lo que va entre `*asteriscos*` lleva el subrayado rosa; ` // ` marca un salto de línea en computador) | `titulo` |
+| Bajada bajo el título | `bajada` |
+| Etiquetas bajo los botones (Figma, Claude Code…) | `herramientas` |
+| Sticker sobre la foto (dos líneas) | `sticker_linea_1`, `sticker_linea_2` |
 | Botón principal ("Ver proyectos") | `boton_principal` |
 | Botón secundario ("Contacto") | `boton_secundario` |
 | Descripción de la foto (para lectores de pantalla) | `foto_descripcion` |

@@ -40,28 +40,34 @@ menu:
 
 # --- 01 · Hero: presentación --------------------------------------------------
 hero:
-  etiqueta: "Product Designer · Research & Content"
-  nombre_linea_1: "Ximena"
-  nombre_linea_2: "Bissieres"                   # esta línea va en rosa
+  etiqueta: "Ximena Bissieres · Product Designer & AI Prototyper"   # pastilla sobre el título
+  titulo: "Transformo problemas // complejos en *productos digitales // claros y potenciados con IA.*"   # *texto* = subrayado rosa · " // " = salto de línea (solo en computador)
   bajada: "Identifico oportunidades y transformo problemas complejos en experiencias digitales claras y accesibles, conectando las necesidades de las personas con los objetivos del negocio."
   boton_principal: "Revisar proyectos"
   boton_secundario: "Contacto"
   foto: "/assets/foto.jpg"                      # para cambiar la foto, sube otra con este nombre
   foto_descripcion: "Ximena Bissieres trabajando en su computador, sonriendo y con audífonos"
   foto_iniciales: "XB"                          # se ve solo si la foto no carga
+  herramientas:                                 # etiquetas bajo los botones
+    - "Figma"
+    - "Claude Code"
+    - "Design Systems"
+    - "Research"
+  sticker_linea_1: "Vibe"                       # sticker sobre la foto
+  sticker_linea_2: "Coding + UX"
 
 
 # --- Datos rápidos (fila bajo el hero) ---------------------------------------
 # Puedes agregar o quitar filas copiando o borrando un bloque "- etiqueta / texto".
 datos_rapidos:
   - etiqueta: "Especialidad"
-    texto: "Product Design con foco en research y contenido."
+    texto: "Product Design con foco en research, contenido e inteligencia artificial."
   - etiqueta: "Industrias"
-    texto: "Banca, Retail, Salud, aerolíneas y delivery."
-  - etiqueta: "He trabajado en"
-    texto: "itti, LATAM Airlines, Cencosud, Tenpo, Banco Ripley y más."
+    texto: "Banca, Retail, Salud, Aerolíneas y Delivery."
   - etiqueta: "Experiencia"
-    texto: "+6 años en equipos de producto."
+    texto: "+8 años en equipos de producto, LATAM Airlines, Cencosud, Monchis y más."
+  - etiqueta: "Enfoque"
+    texto: "Integración de IA y prototipado rápido para optimizar flujos de trabajo."
 
 
 # --- 02 · Proyectos (encabezado de la sección) --------------------------------
