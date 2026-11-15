@@ -366,7 +366,8 @@
 })();
 
 /* ---------- Caso: las pantallas del TO BE como portada del video ([data-poster-video]) ----------
-   Al pulsar reproducir, la composición se reemplaza por el video en el mismo panel.
+   Al pulsar reproducir, la composición se reemplaza por el video en el mismo panel;
+   al terminar, vuelve la portada.
    Nunca hay autoplay. Sin JS queda un enlace al video. */
 (function () {
   Array.prototype.forEach.call(document.querySelectorAll('[data-poster-video]'), function (box) {
@@ -378,6 +379,13 @@
       player.hidden = false;
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
       v.focus({ preventScroll: true });
+    });
+    // Al terminar, vuelve a la portada (mockup atenuado + botón) y rebobina.
+    v.addEventListener('ended', function () {
+      player.hidden = true;
+      box.classList.remove('is-playing');
+      try { v.currentTime = 0; } catch (e) {}
+      btn.focus({ preventScroll: true });
     });
   });
 })();

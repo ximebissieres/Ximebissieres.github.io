@@ -2462,3 +2462,12 @@ body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.65; f
 .chapters:has(#desafio) .lessons-sub,
 .chapters:has(#desafio) .lead,
 .chapters:has(#desafio) .tip-intro { max-width: none; }
+
+/* Monchis · La propuesta: mockup atenuado como portada, botón centrado encima.
+   Al terminar el video vuelve a este estado. */
+.prop-video { display: grid; grid-template-areas: "stage"; place-items: center; padding-bottom: 0; }
+.prop-video > * { grid-area: stage; }
+.prop-video .cscreens--inline { opacity: .38; transition: opacity .4s var(--ease); }
+.prop-video .pv-play { position: relative; z-index: 2; left: auto; top: auto; bottom: auto; margin: 0; transform: none; align-self: center; justify-self: center; }
+@media (hover: hover) { .prop-video .pv-play:hover { transform: scale(1.04); } }
+.prop-video .pv-player { align-self: center; }
