@@ -3145,10 +3145,6 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
   .si-moment + .si-moment::before { left: 8%; right: 8%; top: -14px; bottom: auto; width: auto; height: 1px; }
   .si-ph { flex-basis: 46%; }
 }
-/* Mensaje clave: trazo de pincel que se pinta al entrar (excepción a «sin tachado fuera de títulos») */
-.case .chapters--si .si-key em { padding: 0 .1em !important; margin: 0 -.06em !important;
-  background: var(--brush-svg) 0 58% / 100% 72% no-repeat !important; transition: background-size .95s var(--ease) .45s; }
-.js .case .chapters--si .si-key:not(.in) em { background-size: 0% 72% !important; }
 
 /* ==========================================================================
    Santa Isabel · 02 Los hallazgos: proceso compacto → personas → insights
@@ -3169,7 +3165,7 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .si-persona img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px var(--bg-3); }
 .si-persona div { display: grid; gap: 6px; }
 .si-persona h4 { font-family: var(--display); font-weight: var(--w-bold); font-size: 1.2rem; line-height: 1.2; color: var(--ink); }
-.si-persona-mot { justify-self: start; padding: 0 .12em; margin: 0 -.12em 2px; font: 500 .74rem/1.5 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); background: var(--brush-svg) left 60% / 100% 90% no-repeat; }
+.si-persona-mot { justify-self: start; padding: 0 .12em; margin: 0 -.12em 2px; font: 500 .74rem/1.5 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
 .si-persona p:not(.si-persona-mot) { font-size: .95rem; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
 .si-insights li { display: grid; gap: 8px; align-content: start; padding: 18px 20px 20px; border-top: 2px solid var(--ink); background: none; }
 .si-ins-label { font: 500 .74rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
@@ -3189,3 +3185,5 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 }
 .si-process h4, .si-process p, .si-persona h4, .si-persona p, .si-insights h4, .si-insights p, .si-sub { margin: 0; }
 .si-persona .si-persona-mot { margin: 0 -.12em 2px; }
+/* Santa Isabel: sin tachado fuera de los títulos */
+.si-persona-mot { background: none !important; padding: 0; margin: 0; color: var(--muted); }
