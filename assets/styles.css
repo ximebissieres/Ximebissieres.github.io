@@ -3090,3 +3090,5 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .jstep-tag { margin-block: -6px; line-height: 1.2; }
 /* Journey: 24px más de aire entre la bajada y la infografía */
 .journey { padding-top: 24px; }
+/* Home · bajadas de Proyectos y Mi enfoque con el estilo de las bajadas de los casos (.lead) */
+#proyectos .sec-note, #enfoque .sec-note { font-size: var(--fs-lead); line-height: 1.6; font-weight: var(--w-regular); letter-spacing: -0.006em; color: var(--ink); }
