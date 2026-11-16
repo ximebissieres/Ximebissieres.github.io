@@ -3120,5 +3120,6 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .chapters--si .chapter-head, .chapters--si .lead, .chapters--si .crit-close { max-width: none; }
 .chapters--si .lead { font-size: var(--fs-lead); line-height: 1.6; color: var(--ink); }
 .chapters--si .si-criteria { margin-top: 0; }
-@media (min-width: 900px) { .chapters--si .si-criteria { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 640px) { .chapters--si .si-criteria { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .chapters--si .chapter-title { max-width: none; }
+.chapters--si .lead + .lead { margin-top: -8px; }
