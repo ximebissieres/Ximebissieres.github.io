@@ -123,3 +123,10 @@
   cover_position: 50% 50%
   card_cover: /assets/img/santa-isabel-logo.webp
   card_cover_alt: Logo de Santa Isabel sobre fondo rojo
+  # Hero narrativo, igual al de Monchis: título a la izquierda e imagen a la derecha.
+  hero:
+    titulo: "Darle *identidad propia* // a una app que era // copia de otra"   # *texto* = subrayado rosa · " // " = salto de línea
+    # Mientras no esté la imagen se muestra un recuadro punteado con este texto.
+    # Cuando la tengas, reemplaza esta línea por un bloque imagen: (src, alt, ancho, alto).
+    imagen_pendiente: "Imagen por definir"
+    ocultar_imagen: true

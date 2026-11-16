@@ -25,6 +25,9 @@ body_class: is-project
         <figure class="case-lede-img">
           <img src="{{ p.hero.imagen.src }}" alt="{{ p.hero.imagen.alt | escape }}" width="{{ p.hero.imagen.ancho }}" height="{{ p.hero.imagen.alto }}" decoding="async" fetchpriority="high">
         </figure>
+        {%- elsif p.hero.imagen_pendiente %}
+        {%- comment -%} Espacio reservado mientras se define la imagen (hero.imagen_pendiente) {%- endcomment -%}
+        <figure class="case-lede-img case-lede-ph ph-box" aria-hidden="true"><span>{{ p.hero.imagen_pendiente }}</span></figure>
         {%- else %}
         <p class="case-lede">{% include texto.html t=p.hero.bajada %}</p>
         {%- endif %}
