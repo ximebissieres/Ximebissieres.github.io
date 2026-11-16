@@ -3080,3 +3080,8 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .journey-steps::before, .journey-steps::after { z-index: 0; }
 .journey .jstep { z-index: 1; }
 @media (min-width: 900px) { .journey-loop { margin-right: calc(25% - 22px); } }
+/* Journey · celular: la línea va por tramos entre nodos y termina en el último */
+@media (max-width: 899px) {
+  .journey-steps::before, .journey-steps::after { display: none; }
+  .journey .jstep:not(:last-child)::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: -28px; width: 2px; background: var(--ink); z-index: 0; }
+}
