@@ -2980,3 +2980,5 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .chapter--impact .imp-note { padding: 18px 20px 20px; border-radius: 14px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
 .chapter--impact .imp-note-title { font: 400 .78rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
 .chapter--impact .imp-note p:not(.imp-note-title) { margin-top: 10px; font-size: 1.04rem; line-height: 1.45; color: var(--ink); }
+/* Impacto: la nota de propinas a la misma distancia que el espacio entre tarjetas (16px) */
+.chapter--impact .imp-note { margin-top: -12px; } /* + 28px del gap del capítulo = 16px, igual que entre tarjetas */
