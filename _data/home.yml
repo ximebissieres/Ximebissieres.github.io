@@ -89,7 +89,7 @@ enfoque:
   # Capacidades: "destacada: true" pinta la tarjeta en rosa con su "marca".
   capacidades:
     - nombre: "Research"
-      descripcion: "Investigo y testeo para detectar fricciones y oportunidades que orientan las decisiones."
+      descripcion: "Investigo y testeo para detectar fricciones, necesidades y oportunidades que orientan las decisiones."
     - nombre: "Estrategia"
       descripcion: "Colaboro con stakeholders para conectar hallazgos con los objetivos del negocio."
     - nombre: "Diseño"
