@@ -2993,3 +2993,5 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 /* Submenú de proyectos: sin fondo en hover/foco/actual; solo el trazo de pincel sobre el nombre */
 .menu-item:hover, .menu-item:focus-visible, .menu-item[aria-current="page"],
 .m-project:hover, .m-project[aria-current="page"] { background: none; }
+/* Submenú: el proyecto actual se ve igual que en hover (trazo + flecha) */
+.menu-item[aria-current="page"] .menu-arr { opacity: 1; transform: none; }
