@@ -18,7 +18,7 @@
           </button>
           <div class="menu" id="menu-proyectos" hidden>
             <ul class="menu-list">
-              {% for p in site.data.projects %}
+              {% for p in site.data.projects %}{% if p.wip %}{% continue %}{% endif %}
               <li>
                 <a class="menu-item" href="/proyectos/{{ p.slug }}/"{% if page.slug == p.slug %} aria-current="page"{% endif %}>
                   <span class="menu-n" aria-hidden="true">0{{ p.order }}</span>
@@ -47,7 +47,7 @@
       <a class="m-link{% if page.url == '/' %} is-active{% endif %}" href="/"{% if page.url == '/' %} aria-current="page"{% endif %}><span class="m-txt">{{ m.inicio }}</span></a>
       <p class="m-group eyebrow">{{ m.proyectos }}</p>
       <ul class="m-projects">
-        {% for p in site.data.projects %}
+        {% for p in site.data.projects %}{% if p.wip %}{% continue %}{% endif %}
         <li><a class="m-project" href="/proyectos/{{ p.slug }}/"{% if page.slug == p.slug %} aria-current="page"{% endif %}><span class="menu-n" aria-hidden="true">0{{ p.order }}</span><span class="menu-text"><b>{{ p.company }}</b><span>{{ p.menu }}</span></span></a></li>
         {% endfor %}
       </ul>

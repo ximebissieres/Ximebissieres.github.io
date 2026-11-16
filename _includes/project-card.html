@@ -3,6 +3,19 @@
   descripción breve. Toda la card abre el caso (enlace extendido).
 {%- endcomment -%}
 {%- assign p = include.project -%}
+{%- if p.wip -%}
+<article class="pcard is-wip" aria-label="{{ p.company }}: proyecto en progreso">
+  <div class="pcard-media">
+    {% include project-media.html project=p size="card" %}
+    <span class="pcard-wip">Work in progress</span>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-kicker">{{ p.company }} · {{ p.category }}</p>
+    <h3 class="pcard-title">{{ p.name }}</h3>
+    <p class="pcard-desc">{{ p.teaser }}</p>
+  </div>
+</article>
+{%- else -%}
 <article class="pcard">
   <div class="pcard-media">
     {% include project-media.html project=p size="card" %}
@@ -17,3 +30,4 @@
     <span class="pcard-more" aria-hidden="true">{{ site.data.home.proyectos.tarjeta_ver_proyecto }} →</span>
   </div>
 </article>
+{%- endif -%}

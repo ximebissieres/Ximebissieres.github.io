@@ -3092,3 +3092,19 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .journey { padding-top: 24px; }
 /* Home · bajadas de Proyectos y Mi enfoque con el estilo de las bajadas de los casos (.lead) */
 #proyectos .sec-note, #enfoque .sec-note { font-size: var(--fs-lead); line-height: 1.6; font-weight: var(--w-regular); letter-spacing: -0.006em; color: var(--ink); }
+
+/* Home · tarjeta de proyecto en progreso: borrosa, sin enlace, con aviso */
+.pcard.is-wip { cursor: default; }
+.pcard.is-wip .pcard-media { overflow: hidden; border-radius: inherit; }
+.pcard.is-wip .pcard-media > .pmedia { filter: blur(10px) saturate(.8); transform: scale(1.08); }
+.pcard.is-wip .pcard-body { filter: blur(3px); opacity: .6; user-select: none; }
+.pcard-wip { position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 2; white-space: nowrap;
+  padding: 7px 14px; border-radius: 999px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  font: 500 .74rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
+@media (hover: hover) { .pcard.is-wip:hover { transform: none; box-shadow: none; border-color: var(--line); } }
+.pcard.is-wip { position: relative; }
+@media (max-width: 639px) {
+  .pcard.is-wip .pcard-media { position: static; }
+  .pcard.is-wip .pcard-media > .pmedia { position: relative; }
+  .pcard-wip { font-size: .68rem; }
+}
