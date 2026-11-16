@@ -2982,3 +2982,8 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .chapter--impact .imp-note p:not(.imp-note-title) { margin-top: 10px; font-size: 1.04rem; line-height: 1.45; color: var(--ink); }
 /* Impacto: la nota de propinas a la misma distancia que el espacio entre tarjetas (16px) */
 .chapter--impact .imp-note { margin-top: -12px; } /* + 28px del gap del capítulo = 16px, igual que entre tarjetas */
+/* Siguiente proyecto: «Explorar» sin trazo en reposo; el trazo se pinta al pasar el mouse o con foco */
+.next-cta-t { background-size: 0% 100%; transition: background-size .45s var(--ease); }
+.next-card--v2:focus-visible .next-cta-t { background-size: 100% 100%; }
+@media (hover: hover) { .next-card--v2:hover .next-cta-t { background-size: 100% 100%; } }
+@media (prefers-reduced-motion: reduce) { .next-cta-t { transition: none; } }
