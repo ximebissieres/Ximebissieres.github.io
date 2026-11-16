@@ -2995,3 +2995,28 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .m-project:hover, .m-project[aria-current="page"] { background: none; }
 /* Submenú: el proyecto actual se ve igual que en hover (trazo + flecha) */
 .menu-item[aria-current="page"] .menu-arr { opacity: 1; transform: none; }
+
+/* Dar control · mockups en teléfono (PNG sin fondo, cortados abajo): sin tarjeta ni giro,
+   apoyados en el borde inferior del panel; el del centro al frente */
+.crit-carousel .crit-visual.is-phones { align-items: flex-end; padding-bottom: 0; padding-top: clamp(28px, 4vw, 48px); }
+.crit-carousel .crit-visual.is-phones .comp,
+.crit-carousel .crit-visual.is-phones .comp:nth-child(2),
+.crit-carousel .crit-visual.is-phones .comp:last-child { width: min(36%, 15.5rem); transform: none; margin-left: -7%; }
+.crit-carousel .crit-visual.is-phones .comp:first-child { margin-left: 0; z-index: 1; }
+.crit-visual.is-phones .comp:nth-child(2) { z-index: 3; }
+.crit-visual.is-phones .comp:last-child { z-index: 2; }
+.crit-visual.is-phones .comp img { border-radius: 0; box-shadow: none; filter: drop-shadow(0 18px 30px rgba(41, 38, 43, .22)); }
+@media (hover: hover) {
+  .crit-visual.is-phones .comp:hover,
+  .crit-visual.is-phones .comp:first-child:hover,
+  .crit-visual.is-phones .comp:nth-child(2):hover,
+  .crit-visual.is-phones .comp:last-child:hover { transform: translateY(-8px); z-index: 4; }
+}
+@media (max-width: 599px) {
+  .crit-carousel .crit-visual.is-phones { padding: 24px 8px 0; }
+  .crit-carousel .crit-visual.is-phones .comp,
+  .crit-carousel .crit-visual.is-phones .comp:nth-child(2),
+  .crit-carousel .crit-visual.is-phones .comp:last-child { width: 38%; margin-left: -8%; }
+  .crit-carousel .crit-visual.is-phones .comp:first-child { margin-left: 0; }
+}
+.crit-visual.is-phones .comp img { background: transparent; }
