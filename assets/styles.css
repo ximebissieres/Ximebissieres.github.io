@@ -3030,3 +3030,53 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 @media (hover: hover) {
   .crit-carousel .is-play.is-phones:has(.comp:nth-child(3)) .comp:first-child:hover { transform: rotate(1.5deg) translateY(32px) scale(1.02); z-index: 4; }
 }
+
+/* ==========================================================================
+   PROPUESTA · Mi enfoque como journey: 4 pasos sobre una línea, el último
+   (Impacto) es la meta y una flecha de retorno marca la mejora continua.
+   ========================================================================== */
+.journey { position: relative; margin-top: clamp(8px, 2vw, 24px); }
+.journey-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); position: relative; }
+/* línea base + progreso rosa que se dibuja al entrar */
+.journey-steps::before, .journey-steps::after { content: ""; position: absolute; left: 22px; right: calc(25% - 22px); top: 21px; height: 2px; border-radius: 2px; }
+.journey-steps::before { background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--ink) 28%, transparent) 0 6px, transparent 6px 12px); }
+.journey-steps::after { background: var(--ink); transform-origin: left; transform: scaleX(1); transition: transform 1.6s var(--ease) .3s; }
+.motion .journey:not(.m-in) .journey-steps::after { transform: scaleX(0); }
+.jstep { position: relative; display: grid; gap: 18px; align-content: start; padding-right: clamp(16px, 2.4vw, 36px); }
+.jstep-node {
+  position: relative; z-index: 1; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--surface); border: 1.5px solid var(--ink); font: 500 .8rem/1 var(--mono); color: var(--ink);
+  transition: background-color .4s var(--ease), transform .4s var(--ease);
+}
+.jstep.is-goal .jstep-node { background: var(--brush); border-color: var(--ink); box-shadow: 0 0 0 6px color-mix(in srgb, var(--brush) 35%, transparent); }
+.jstep-body { display: grid; gap: 8px; }
+.jstep-label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: 500 .74rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.jstep-tag { padding: 3px 8px; border-radius: 999px; background: var(--brush); color: var(--ink); font-size: .66rem; }
+.jstep h3 { font-family: var(--display); font-weight: var(--w-bold); font-size: clamp(1.15rem, 1rem + .5vw, 1.4rem); line-height: 1.2; letter-spacing: -0.015em; }
+.jstep-text { font-size: .98rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; max-width: 22rem; }
+.motion .journey .jstep { opacity: 0; translate: 0 16px; transition: opacity .7s var(--ease), translate .7s var(--ease); transition-delay: calc(.35s + var(--i) * .22s); }
+.motion .journey.m-in .jstep { opacity: 1; translate: 0 0; }
+@media (hover: hover) { .jstep:hover .jstep-node { transform: scale(1.08); } .jstep:not(.is-goal):hover .jstep-node { background: var(--brush); } }
+/* retorno: de Impacto vuelve a Research */
+.journey-loop { position: relative; margin: 28px 0 0 22px; margin-right: calc(25% - 22px + 22px); height: 30px;
+  border: 1.5px dashed color-mix(in srgb, var(--ink) 35%, transparent); border-top: 0; border-radius: 0 0 22px 22px; }
+.journey-loop::before { content: ""; position: absolute; left: -6px; top: -4px; border: 5px solid transparent; border-bottom: 8px solid color-mix(in srgb, var(--ink) 55%, transparent); border-top: 0; }
+.journey-loop span { position: absolute; left: 50%; bottom: 0; translate: -50% 50%; padding: 4px 12px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line);
+  font: 500 .72rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
+@media (max-width: 899px) {
+  .journey-steps { grid-template-columns: 1fr; gap: 28px; }
+  .journey-steps::before, .journey-steps::after { left: 21px; right: auto; top: 22px; bottom: 22px; width: 2px; height: auto; }
+  .journey-steps::before { background: repeating-linear-gradient(180deg, color-mix(in srgb, var(--ink) 28%, transparent) 0 6px, transparent 6px 12px); }
+  .journey-steps::after { transform-origin: top; }
+  .motion .journey:not(.m-in) .journey-steps::after { transform: scaleY(0); }
+  .jstep { grid-template-columns: 44px minmax(0, 1fr); gap: 18px; padding-right: 0; }
+  .journey-loop { margin: 22px 0 0; height: auto; border: 0; }
+  .journey-loop::before { display: none; }
+  .journey-loop span { position: static; translate: none; display: inline-flex; margin-left: 0; }
+  .journey-loop span::before { content: "↺"; margin-right: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .journey-steps::after, .journey .jstep { transition: none; } }
+.journey .jstep { background: none; border: 0; border-radius: 0; box-shadow: none; padding-top: 0; padding-bottom: 0; padding-left: 0; min-height: 0; }
+.journey-steps::before, .journey-steps::after { z-index: 0; }
+.journey .jstep { z-index: 1; }
+@media (min-width: 900px) { .journey-loop { margin-right: calc(25% - 22px); } }
