@@ -53,8 +53,8 @@ hero:
   herramientas:                                 # etiquetas bajo los botones
     - "Figma"
     - "Claude Code"
-    - "Design Systems"
-    - "Research"
+    - "Notebook"
+    - "Maze"
   sticker_linea_1: "Vibe"                       # sticker sobre la foto
   sticker_linea_2: "Coding + UX"
 
