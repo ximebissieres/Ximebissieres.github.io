@@ -3149,3 +3149,43 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .case .chapters--si .si-key em { padding: 0 .1em !important; margin: 0 -.06em !important;
   background: var(--brush-svg) 0 58% / 100% 72% no-repeat !important; transition: background-size .95s var(--ease) .45s; }
 .js .case .chapters--si .si-key:not(.in) em { background-size: 0% 72% !important; }
+
+/* ==========================================================================
+   Santa Isabel · 02 Los hallazgos: proceso compacto → personas → insights
+   ========================================================================== */
+.si-process { list-style: none; margin: 8px 0 0; padding: 18px 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+.si-process li { display: grid; grid-template-columns: 32px minmax(0, 1fr); column-gap: 12px; row-gap: 4px; align-content: start; padding-inline: clamp(12px, 1.6vw, 20px); }
+.si-process li:first-child { padding-left: 0; }
+.si-process li + li { border-left: 1px solid var(--line); }
+.si-proc-ic { grid-row: span 2; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--brush); }
+.si-proc-ic svg { width: 17px; height: 17px; fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.si-process h4 { font-family: var(--display); font-weight: var(--w-semibold); font-size: .98rem; line-height: 1.3; color: var(--ink); }
+.si-process p { font-size: .88rem; line-height: 1.45; color: var(--muted); text-wrap: pretty; }
+.si-block { display: grid; gap: 18px; margin-top: 12px; }
+.si-sub { font-family: var(--display); font-weight: var(--w-semibold); font-size: clamp(1.25rem, 1.05rem + .7vw, 1.6rem); line-height: 1.25; letter-spacing: -0.015em; color: var(--ink); }
+.si-sub + .lead { margin-top: -6px; }
+.si-personas, .si-insights { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.si-persona { display: grid; gap: 14px; align-content: start; padding: 20px; border-radius: 14px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.si-persona img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px var(--bg-3); }
+.si-persona div { display: grid; gap: 6px; }
+.si-persona h4 { font-family: var(--display); font-weight: var(--w-bold); font-size: 1.2rem; line-height: 1.2; color: var(--ink); }
+.si-persona-mot { justify-self: start; padding: 0 .12em; margin: 0 -.12em 2px; font: 500 .74rem/1.5 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); background: var(--brush-svg) left 60% / 100% 90% no-repeat; }
+.si-persona p:not(.si-persona-mot) { font-size: .95rem; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+.si-insights li { display: grid; gap: 8px; align-content: start; padding: 18px 20px 20px; border-top: 2px solid var(--ink); background: none; }
+.si-ins-label { font: 500 .74rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.si-insights h4 { font-family: var(--display); font-weight: var(--w-semibold); font-size: clamp(1.05rem, .98rem + .25vw, 1.15rem); line-height: 1.35; letter-spacing: -0.01em; color: var(--ink); text-wrap: pretty; }
+.si-insights p:not(.si-ins-label) { font-size: .95rem; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+.si-insights li { padding-inline: 0; }
+@media (max-width: 899px) {
+  .si-process { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; }
+  .si-process li:nth-child(3) { border-left: 0; padding-left: 0; }
+  .si-personas, .si-insights { grid-template-columns: 1fr; }
+  .si-persona { grid-template-columns: 64px minmax(0, 1fr); }
+  .si-persona img { width: 64px; height: 64px; }
+}
+@media (max-width: 479px) {
+  .si-process { grid-template-columns: 1fr; }
+  .si-process li, .si-process li:nth-child(3) { border-left: 0; padding-left: 0; }
+}
+.si-process h4, .si-process p, .si-persona h4, .si-persona p, .si-insights h4, .si-insights p, .si-sub { margin: 0; }
+.si-persona .si-persona-mot { margin: 0 -.12em 2px; }
