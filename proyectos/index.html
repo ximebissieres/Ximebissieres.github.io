@@ -9,7 +9,7 @@ head_extra: '<meta http-equiv="refresh" content="0; url=/#proyectos">'
     <p class="eyebrow">Proyectos</p>
     <h1 class="section-title">Te llevamos a todos los proyectos…</h1>
     <ul class="simple-list">
-      {% for p in site.data.projects %}{% if p.wip %}{% continue %}{% endif %}<li><a class="link-arrow" href="/proyectos/{{ p.slug }}/">{{ p.company }}: {{ p.name }} →</a></li>{% endfor %}
+      {% for p in site.data.projects %}{% if p.wip or p.oculto %}{% continue %}{% endif %}<li><a class="link-arrow" href="/proyectos/{{ p.slug }}/">{{ p.company }}: {{ p.name }} →</a></li>{% endfor %}
     </ul>
   </div>
 </section>

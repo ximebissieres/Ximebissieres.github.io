@@ -67,7 +67,7 @@ body_class: is-home
         <p class="sec-note" data-m>{% include texto.html t=h.proyectos.bajada %}</p>
       </header>
       <ol class="project-grid">
-        {% for p in site.data.projects %}
+        {% for p in site.data.projects %}{% if p.oculto %}{% continue %}{% endif %}
         <li data-m style="--i:{{ forloop.index0 }}">{% include project-card.html project=p %}</li>
         {% endfor %}
       </ol>

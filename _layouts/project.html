@@ -6,7 +6,7 @@ body_class: is-project
 {%- assign total = site.data.projects | size -%}
 {%- assign next_index = p.order | modulo: total -%}
 {%- assign n = site.data.projects[next_index] -%}
-{%- if n.wip -%}{%- assign next_index = next_index | plus: 1 | modulo: total -%}{%- assign n = site.data.projects[next_index] -%}{%- endif -%}
+{%- for _k in (1..total) -%}{%- if n.wip or n.oculto -%}{%- assign next_index = next_index | plus: 1 | modulo: total -%}{%- assign n = site.data.projects[next_index] -%}{%- endif -%}{%- endfor -%}
 <article class="case" aria-labelledby="case-title">
   <div class="wrap">
     <div class="case-top">

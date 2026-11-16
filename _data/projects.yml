@@ -90,21 +90,6 @@
   card_cover: /assets/img/latam-logo.webp
   card_cover_alt: Logo de LATAM Airlines sobre fondo azul oscuro
   hero_layout: navegador   # portada del caso: captura dentro de una ventana de navegador
-- slug: paris
-  category: Sellers
-  teaser: Un manual de voz y tono que cualquier equipo puede aplicar.
-  order: 3
-  company: Paris Marketplace
-  sector: Cencosud · Sellers
-  name: Sistema de voz y tono
-  menu: Voz y tono
-  title_html: Un sistema de voz y tono para que cualquier equipo *hable igual* con los sellers
-  cover: /assets/img/paris-portada.webp
-  cover_alt: Portada de Paris Marketplace
-  cover_position: 50% 50%
-  card_cover: /assets/img/paris-logo.webp
-  card_cover_alt: Logo de Paris sobre fondo azul
-
 - slug: santa-isabel
   # En progreso: en la home se ve borrosa y sin enlace, no aparece en el menú ni en
   # «Siguiente proyecto», y la página no se indexa. La URL directa sigue funcionando.
@@ -112,7 +97,7 @@
   wip: true
   category: Supermercado
   teaser: Una app con identidad propia, diseñada desde el research.
-  order: 4
+  order: 3
   company: Santa Isabel
   sector: Cencosud · App
   name: Rediseño de la app
@@ -130,3 +115,21 @@
     # Cuando la tengas, reemplaza esta línea por un bloque imagen: (src, alt, ancho, alto).
     imagen_pendiente: "Imagen por definir"
     ocultar_imagen: true
+
+- slug: paris
+  # Oculto: no aparece en la home, el menú ni en «Siguiente proyecto», y la página
+  # no se indexa. La URL directa sigue funcionando. Para mostrarlo, borra la línea siguiente.
+  oculto: true
+  category: Sellers
+  teaser: Un manual de voz y tono que cualquier equipo puede aplicar.
+  order: 4
+  company: Paris Marketplace
+  sector: Cencosud · Sellers
+  name: Sistema de voz y tono
+  menu: Voz y tono
+  title_html: Un sistema de voz y tono para que cualquier equipo *hable igual* con los sellers
+  cover: /assets/img/paris-portada.webp
+  cover_alt: Portada de Paris Marketplace
+  cover_position: 50% 50%
+  card_cover: /assets/img/paris-logo.webp
+  card_cover_alt: Logo de Paris sobre fondo azul
