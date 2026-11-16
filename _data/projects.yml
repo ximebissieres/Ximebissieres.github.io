@@ -90,28 +90,10 @@
   card_cover: /assets/img/latam-logo.webp
   card_cover_alt: Logo de LATAM Airlines sobre fondo azul oscuro
   hero_layout: navegador   # portada del caso: captura dentro de una ventana de navegador
-- slug: santa-isabel
-  # En progreso: en la home se ve borrosa y sin enlace, no aparece en el menú ni en
-  # «Siguiente proyecto», y la página no se indexa. La URL directa sigue funcionando.
-  # Para publicarla de nuevo, borra la línea siguiente.
-  wip: true
-  category: Supermercado
-  teaser: Una app con identidad propia, diseñada desde el research.
-  order: 3
-  company: Santa Isabel
-  sector: Cencosud · App
-  name: Rediseño de la app
-  menu: Rediseño app
-  title_html: Darle *identidad propia* a una app que era copia de otra
-  cover: /assets/img/santa-isabel-propuesta.webp
-  cover_alt: Pantallas de la propuesta de la app de Santa Isabel, desde el acceso hasta el pago
-  cover_position: 50% 50%
-  card_cover: /assets/img/santa-isabel-logo.webp
-  card_cover_alt: Logo de Santa Isabel sobre fondo rojo
 - slug: paris
   category: Sellers
   teaser: Un manual de voz y tono que cualquier equipo puede aplicar.
-  order: 4
+  order: 3
   company: Paris Marketplace
   sector: Cencosud · Sellers
   name: Sistema de voz y tono
@@ -122,3 +104,22 @@
   cover_position: 50% 50%
   card_cover: /assets/img/paris-logo.webp
   card_cover_alt: Logo de Paris sobre fondo azul
+
+- slug: santa-isabel
+  # En progreso: en la home se ve borrosa y sin enlace, no aparece en el menú ni en
+  # «Siguiente proyecto», y la página no se indexa. La URL directa sigue funcionando.
+  # Para publicarla de nuevo, borra la línea siguiente.
+  wip: true
+  category: Supermercado
+  teaser: Una app con identidad propia, diseñada desde el research.
+  order: 4
+  company: Santa Isabel
+  sector: Cencosud · App
+  name: Rediseño de la app
+  menu: Rediseño app
+  title_html: Darle *identidad propia* a una app que era copia de otra
+  cover: /assets/img/santa-isabel-propuesta.webp
+  cover_alt: Pantallas de la propuesta de la app de Santa Isabel, desde el acceso hasta el pago
+  cover_position: 50% 50%
+  card_cover: /assets/img/santa-isabel-logo.webp
+  card_cover_alt: Logo de Santa Isabel sobre fondo rojo
