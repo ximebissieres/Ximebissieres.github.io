@@ -3026,3 +3026,7 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .crit-carousel .crit-visual.is-phones .comp:first-child,
 .crit-carousel .crit-visual.is-phones .comp:nth-child(2),
 .crit-carousel .crit-visual.is-phones .comp:last-child { margin-left: 0; width: auto; flex: 0 1 13.5rem; min-width: 0; }
+/* Dar control: el primer mockup con la misma animación de hover que el tercero */
+@media (hover: hover) {
+  .crit-carousel .is-play.is-phones:has(.comp:nth-child(3)) .comp:first-child:hover { transform: rotate(1.5deg) translateY(32px) scale(1.02); z-index: 4; }
+}
