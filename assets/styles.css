@@ -3088,3 +3088,5 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 /* Journey: la pill no empuja hacia abajo el título ni el texto de Impacto */
 .jstep-label { min-height: 1.3em; }
 .jstep-tag { margin-block: -6px; line-height: 1.2; }
+/* Journey: 24px más de aire entre la bajada y la infografía */
+.journey { padding-top: 24px; }
