@@ -2976,3 +2976,7 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .is-play:has(.comp:nth-child(3)) .comp:last-child { z-index: 2; margin-left: -2%; }
 /* Impacto: cifras sin trazo de pincel */
 .imp-fig, html.brush-js .imp-kpi .imp-fig, html.brush-js .imp-kpi:not(.in) .imp-fig { background: none; }
+/* Impacto · nota de propinas con el mismo estilo que las tarjetas de resultados */
+.chapter--impact .imp-note { padding: 18px 20px 20px; border-radius: 14px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.chapter--impact .imp-note-title { font: 400 .78rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
+.chapter--impact .imp-note p:not(.imp-note-title) { margin-top: 10px; font-size: 1.04rem; line-height: 1.45; color: var(--ink); }
