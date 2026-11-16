@@ -2987,3 +2987,10 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
 .next-card--v2:focus-visible .next-cta-t { background-size: 100% 100%; }
 @media (hover: hover) { .next-card--v2:hover .next-cta-t { background-size: 100% 100%; } }
 @media (prefers-reduced-motion: reduce) { .next-cta-t { transition: none; } }
+/* Header · «Mis proyectos» con el submenú abierto: subrayado en vez de trazo de pincel */
+.nav-trigger[aria-expanded="true"] { background: none; color: var(--ink); }
+.nav-trigger[aria-expanded="true"]::after,
+.nav-trigger[aria-expanded="true"]:hover::after,
+.nav-trigger[aria-expanded="true"].is-active::after {
+  top: auto; bottom: 8px; height: 2px; border-radius: 2px; background: var(--ink); transform: scaleX(1);
+}
