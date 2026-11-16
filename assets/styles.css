@@ -3020,3 +3020,9 @@ html.brush-js .imp-kpi .imp-fig { transition: background-size 1s var(--ease) cal
   .crit-carousel .crit-visual.is-phones .comp:first-child { margin-left: 0; }
 }
 .crit-visual.is-phones .comp img { background: transparent; }
+/* Dar control: misma separación que los mockups de Dar claridad (sin superposición) */
+.crit-carousel .crit-visual.is-phones { gap: clamp(8px, 2.4vw, 32px); padding-inline: clamp(12px, 3vw, 36px); }
+.crit-carousel .crit-visual.is-phones .comp,
+.crit-carousel .crit-visual.is-phones .comp:first-child,
+.crit-carousel .crit-visual.is-phones .comp:nth-child(2),
+.crit-carousel .crit-visual.is-phones .comp:last-child { margin-left: 0; width: auto; flex: 0 1 13.5rem; min-width: 0; }
