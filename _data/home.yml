@@ -93,7 +93,7 @@ enfoque:
     - nombre: "Estrategia"
       descripcion: "Colaboro con stakeholders para conectar hallazgos con los objetivos del negocio."
     - nombre: "Diseño y contenido"
-      descripcion: "Transformo hallazgos en flujos, interfaces y narrativas para simplificar experiencias."
+      descripcion: "Transformo hallazgos en flujos, interfaces y narrativas que simplifican experiencias."
     - nombre: "Impacto"
       descripcion: "Conecto decisiones de diseño con product outcomes y KPI's para evaluar resultados e impulsar la mejora continua."
       destacada: true
